@@ -295,7 +295,11 @@ extension `Performance Tests` {
 
 extension Double {
     func rounded(toPlaces places: Int) -> Double {
-        let divisor = pow(10.0, Double(places))
+        // Compute 10^places using simple multiplication
+        var divisor = 1.0
+        for _ in 0..<places {
+            divisor *= 10.0
+        }
         return (self * divisor).rounded() / divisor
     }
 }
