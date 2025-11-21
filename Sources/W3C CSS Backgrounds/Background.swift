@@ -328,16 +328,16 @@ extension Background {
     ///
     /// - Parameters:
     ///   - url: The URL of the image
-    ///   - position: The position of the image
+    ///   - position: The position pof the image
     ///   - size: The size of the image
     ///   - repeat: How the image repeats
     /// - Returns: A background with a single image
     public static func image(
-        _ url: String,
+        _ url: Url,
         position: BackgroundPosition? = nil,
         size: BackgroundSize? = nil,
         repeat: BackgroundRepeat? = nil
     ) -> Background {
-        .layer(Layer.image(.url(.init(url)), position: position, size: size, repeat: `repeat`))
+        .layer(Layer.image(.url(url), position: position, size: size, repeat: `repeat`))
     }
 }

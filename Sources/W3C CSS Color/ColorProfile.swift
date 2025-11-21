@@ -57,9 +57,9 @@ public struct ColorProfile: AtRule {
     ///
     /// - Parameter url: The URL to retrieve the color profile information from.
     /// - Returns: An updated ColorProfile instance.
-    public func src(_ url: String) -> ColorProfile {
+    public func src(_ url: Url) -> ColorProfile {
         var profile = self
-        profile.descriptors["src"] = "url(\"\(url)\")"
+        profile.descriptors["src"] = url.description
         profile.updateRawValue()
         return profile
     }

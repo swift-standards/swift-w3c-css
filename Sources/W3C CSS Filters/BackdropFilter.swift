@@ -63,7 +63,7 @@ public enum BackdropFilter: Property {
     case url(Url)
 
     /// Combined filters (URL + functions)
-    case combined(url: String, filters: [FilterFunction])
+    case combined(url: Url, filters: [FilterFunction])
 
     /// Global CSS values
     case global(Global)
@@ -128,7 +128,7 @@ extension BackdropFilter: CustomStringConvertible {
             return url.description
         case .combined(let url, let filters):
             let filterString = filters.map { $0.description }.joined(separator: " ")
-            return "url(\(url)) \(filterString)"
+            return "\(url.description) \(filterString)"
         case .global(let global):
             return global.description
         }
@@ -283,7 +283,7 @@ extension BackdropFilter {
     /// ```swift
     /// .backdropFilter(.urlWithFilters("filters.svg#myFilter", [.blur(.px(4)), .saturate(1.5)]))
     /// ```
-    public static func urlWithFilters(_ url: String, _ filters: [FilterFunction]) -> BackdropFilter
+    public static func urlWithFilters(_ url: Url, _ filters: [FilterFunction]) -> BackdropFilter
     {
         return .combined(url: url, filters: filters)
     }

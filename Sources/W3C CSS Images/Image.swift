@@ -61,7 +61,7 @@ extension Image: CustomStringConvertible {
             let formattedPercentage = value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
             return "cross-fade(\(formattedPercentage)% \(from), \(to))"
         case .imageSet(let images):
-            let imageParts = images.map { "\'\($0.url)\' \($0.resolution)" }
+            let imageParts = images.map { "\($0.url.description) \($0.resolution)" }
             return "image-set(\(imageParts.joined(separator: ", ")))"
         case .paint(let name, let arguments):
             if arguments.isEmpty {
@@ -131,7 +131,7 @@ extension Image {
     }
 
     /// Creates an image-set from an array of URLs and resolutions
-    public static func imageSet(_ items: [(url: String, resolution: String)]) -> Self {
+    public static func imageSet(_ items: [(url: Url, resolution: String)]) -> Self {
         let imageItems = items.map { ImageSetItem(url: $0.url, resolution: $0.resolution) }
         return .imageSet(images: imageItems)
     }
@@ -139,10 +139,10 @@ extension Image {
 
 /// A tuple representing an image source with its resolution
 public struct ImageSetItem: Sendable, Hashable {
-    public let url: String
+    public let url: Url
     public let resolution: String
 
-    public init(url: String, resolution: String) {
+    public init(url: Url, resolution: String) {
         self.url = url
         self.resolution = resolution
     }

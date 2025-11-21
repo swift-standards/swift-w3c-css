@@ -37,7 +37,7 @@ public struct Import: AtRule {
     public static let identifier: String = "import"
 
     public var rawValue: String
-    private var url: String
+    private var urlString: String
     private var conditions: [String] = []
     private var layerName: String?
 
@@ -51,9 +51,9 @@ public struct Import: AtRule {
                 options: .regularExpression
             )
         {
-            self.url = String(rawValue[matches]).trimmingCharacters(in: .whitespacesAndNewlines)
+            self.urlString = String(rawValue[matches]).trimmingCharacters(in: .whitespacesAndNewlines)
         } else {
-            self.url = ""
+            self.urlString = ""
         }
     }
 
@@ -61,24 +61,24 @@ public struct Import: AtRule {
     ///
     /// - Parameter path: The path to the CSS file to import.
     public init(_ path: String) {
-        self.url = "\"\(path)\""
-        self.rawValue = "@import \(self.url);"
+        self.urlString = "\"\(path)\""
+        self.rawValue = "@import \(self.urlString);"
     }
 
     /// Creates an import rule with the specified URL.
     ///
     /// - Parameter url: The URL to the CSS file to import.
     /// - Returns: An Import instance.
-    public static func url(_ url: String) -> Import {
-        let formattedUrl = "url(\"\(url)\")"
+    public static func url(_ url: Url) -> Import {
+        let formattedUrl = url.description
         var importRule = Import(rawValue: "@import \(formattedUrl);")
-        importRule.url = formattedUrl
+        importRule.urlString = formattedUrl
         return importRule
     }
 
     /// Updates the raw value based on the current conditions.
     private mutating func updateRawValue() {
-        var parts: [String] = ["@import", url]
+        var parts: [String] = ["@import", urlString]
 
         if let layerName = layerName {
             if layerName.isEmpty {

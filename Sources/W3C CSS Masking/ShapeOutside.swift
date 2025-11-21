@@ -50,7 +50,7 @@ public enum ShapeOutside: Property {
     case shapeWithBox(BasicShape, ShapeBox)
 
     /// The float area is extracted from the alpha channel of the specified image
-    case image(url: String)
+    case image(url: Url)
 
     /// Global CSS value
     case global(Global)
@@ -66,7 +66,7 @@ public enum ShapeOutside: Property {
         case .shapeWithBox(let shape, let box):
             return "\(shape.description) \(box.rawValue)"
         case .image(let url):
-            return "url(\(url))"
+            return url.description
         case .global(let global):
             return global.description
         }
