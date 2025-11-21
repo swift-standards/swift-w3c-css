@@ -342,14 +342,14 @@ extension Length: Numeric {
     ///
     /// - Returns: A new Length value with the divided magnitude
     ///
-    /// - Precondition: The divisor must not be zero
+    /// - Note: Division by zero will produce infinity as per floating-point semantics
     ///
     /// Example:
     /// ```swift
     /// let half = 10.px / 2 // 5px
     /// ```
     public static func / (lhs: Length, rhs: Double) -> Length {
-        guard rhs != 0 else { fatalError("Division by zero") }
+        // Note: Division by zero produces infinity in floating-point math
         switch lhs {
         case .length(let value, let unit):
             return .length(value / rhs, unit)

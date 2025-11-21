@@ -20,6 +20,11 @@ import Foundation
 ///
 /// - SeeAlso: [MDN Web Docs on ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/ratio)
 public struct Ratio: Sendable, Hashable, Comparable {
+    /// Errors that can occur when creating a Ratio
+    public enum RatioError: Error, Sendable {
+        case invalidValue(String)
+    }
+
     /// The width component of the ratio
     public let width: Double
 
@@ -30,9 +35,14 @@ public struct Ratio: Sendable, Hashable, Comparable {
     /// - Parameters:
     ///   - width: The width component (must be positive)
     ///   - height: The height component (must be positive)
-    public init(_ width: Double, _ height: Double) {
-        precondition(width >= 0, "Width component of ratio must be positive")
-        precondition(height >= 0, "Height component of ratio must be positive")
+    /// - Throws: `RatioError.invalidValue` if width or height is negative
+    public init(_ width: Double, _ height: Double) throws {
+        guard width >= 0 else {
+            throw RatioError.invalidValue("Width component of ratio must be positive, got \(width)")
+        }
+        guard height >= 0 else {
+            throw RatioError.invalidValue("Height component of ratio must be positive, got \(height)")
+        }
         self.width = width
         self.height = height
     }
@@ -41,20 +51,23 @@ public struct Ratio: Sendable, Hashable, Comparable {
     /// - Parameters:
     ///   - width: The width component (must be positive)
     ///   - height: The height component (must be positive)
-    public init(_ width: Int, _ height: Int) {
-        self.init(Double(width), Double(height))
+    /// - Throws: `RatioError.invalidValue` if width or height is negative
+    public init(_ width: Int, _ height: Int) throws {
+        try self.init(Double(width), Double(height))
     }
 
     /// Creates a square ratio (width/height = value/1)
     /// - Parameter value: The ratio value (must be positive)
-    public init(_ value: Double) {
-        self.init(value, 1)
+    /// - Throws: `RatioError.invalidValue` if value is negative
+    public init(_ value: Double) throws {
+        try self.init(value, 1)
     }
 
     /// Creates a square ratio (width/height = value/1) from an integer
     /// - Parameter value: The ratio value (must be positive)
-    public init(_ value: Int) {
-        self.init(Double(value))
+    /// - Throws: `RatioError.invalidValue` if value is negative
+    public init(_ value: Int) throws {
+        try self.init(Double(value))
     }
 
     /// The quotient of width divided by height
@@ -63,22 +76,22 @@ public struct Ratio: Sendable, Hashable, Comparable {
     }
 
     /// Creates a square ratio (1:1)
-    public static let square = Ratio(1, 1)
+    public static let square = try! Ratio(1, 1)
 
     /// Creates a 4:3 ratio (traditional TV)
-    public static let tv = Ratio(4, 3)
+    public static let tv = try! Ratio(4, 3)
 
     /// Creates a 16:9 ratio (widescreen)
-    public static let widescreen = Ratio(16, 9)
+    public static let widescreen = try! Ratio(16, 9)
 
     /// Creates a 21:9 ratio (ultrawide)
-    public static let ultrawide = Ratio(21, 9)
+    public static let ultrawide = try! Ratio(21, 9)
 
     /// Creates a 1.85:1 ratio (common movie format)
-    public static let movie = Ratio(185, 100)
+    public static let movie = try! Ratio(185, 100)
 
     /// Creates a 2.39:1 ratio (anamorphic widescreen)
-    public static let cinemascope = Ratio(239, 100)
+    public static let cinemascope = try! Ratio(239, 100)
 }
 
 /// Provides string conversion for CSS output
@@ -101,7 +114,7 @@ extension Ratio: CustomStringConvertible {
 extension Ratio: ExpressibleByIntegerLiteral {
     /// Creates a ratio from an integer literal (value/1)
     public init(integerLiteral value: Int) {
-        self.init(value)
+        try! self.init(value)
     }
 }
 
@@ -109,7 +122,7 @@ extension Ratio: ExpressibleByIntegerLiteral {
 extension Ratio: ExpressibleByFloatLiteral {
     /// Creates a ratio from a floating point literal (value/1)
     public init(floatLiteral value: Double) {
-        self.init(value)
+        try! self.init(value)
     }
 }
 
@@ -122,7 +135,8 @@ extension Ratio {
 
     /// Returns the inverse of this ratio (height/width)
     public var inverse: Ratio {
-        return Ratio(height, width)
+        // Since this ratio is valid, the inverse will also be valid (both components are positive)
+        return try! Ratio(height, width)
     }
 
     /// Simplifies the ratio to its lowest terms
@@ -154,6 +168,7 @@ extension Ratio {
         }
 
         let divisor = gcd(width, height)
-        return Ratio(width / divisor, height / divisor)
+        // Since we're dividing positive values by a positive divisor, result will be positive
+        return try! Ratio(width / divisor, height / divisor)
     }
 }

@@ -91,6 +91,50 @@ public struct Media: AtRule {
     public static let all = Media(.all)
     public static let print = Media(.print)
     public static let screen = Media(.screen)
+
+    // Predefined media queries for common use cases
+
+    /// Targets devices in dark mode.
+    public static let dark = Media(rawValue: "@media (prefers-color-scheme: dark)")
+
+    /// Targets desktop devices (min-width: 832px).
+    public static let desktop = Media(rawValue: "@media only screen and (min-width: 832px)")
+
+    /// Targets mobile devices (max-width: 831px).
+    public static let mobile = Media(rawValue: "@media only screen and (max-width: 831px)")
+
+    /// Targets tablet devices (768px - 1024px).
+    public static let tablet = Media(
+        rawValue: "@media only screen and (min-width: 768px) and (max-width: 1024px)"
+    )
+
+    /// Targets devices in landscape orientation.
+    public static let landscape = Media(rawValue: "@media (orientation: landscape)")
+
+    /// Targets devices in portrait orientation.
+    public static let portrait = Media(rawValue: "@media (orientation: portrait)")
+
+    /// Targets retina displays (2x pixel density).
+    public static let retina = Media(
+        rawValue: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+    )
+
+    /// Targets very small mobile devices (max-width: 320px).
+    public static let smallMobile = Media(rawValue: "@media only screen and (max-width: 320px)")
+
+    /// Targets large mobile devices (321px - 767px).
+    public static let largeMobile = Media(
+        rawValue: "@media only screen and (min-width: 321px) and (max-width: 767px)"
+    )
+
+    /// Targets large desktop displays (min-width: 1200px).
+    public static let largeDesktop = Media(rawValue: "@media only screen and (min-width: 1200px)")
+
+    /// Targets devices with hover capability.
+    public static let hover = Media(rawValue: "@media (hover: hover)")
+
+    /// Targets devices with reduced motion preference.
+    public static let reducedMotion = Media(rawValue: "@media (prefers-reduced-motion: reduce)")
 }
 
 // MARK: - Media Type

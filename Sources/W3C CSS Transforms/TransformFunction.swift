@@ -178,6 +178,68 @@ extension TransformFunction {
     public static func scale(_ value: Int) -> Self {
         .scale(sx: .number(Number(value)))
     }
+
+    // MARK: - Overloads for Double/Int parameter conversion
+
+    /// Creates a matrix transform with Double values
+    public static func matrix(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) -> Self {
+        .matrix(a: Number(a), b: Number(b), c: Number(c), d: Number(d), tx: Number(tx), ty: Number(ty))
+    }
+
+    /// Creates a matrix transform with Int values
+    public static func matrix(a: Int, b: Int, c: Int, d: Int, tx: Int, ty: Int) -> Self {
+        .matrix(a: Number(a), b: Number(b), c: Number(c), d: Number(d), tx: Number(tx), ty: Number(ty))
+    }
+
+    /// Creates a rotate3d transform with Double values
+    public static func rotate3d(x: Double, y: Double, z: Double, angle: Angle) -> Self {
+        .rotate3d(x: Number(x), y: Number(y), z: Number(z), angle: angle)
+    }
+
+    /// Creates a rotate3d transform with Int values
+    public static func rotate3d(x: Int, y: Int, z: Int, angle: Angle) -> Self {
+        .rotate3d(x: Number(x), y: Number(y), z: Number(z), angle: angle)
+    }
+
+    /// Creates a scale3d transform with Double values
+    public static func scale3d(sx: Double, sy: Double, sz: Double) -> Self {
+        .scale3d(sx: Number(sx), sy: Number(sy), sz: Number(sz))
+    }
+
+    /// Creates a scale3d transform with Int values
+    public static func scale3d(sx: Int, sy: Int, sz: Int) -> Self {
+        .scale3d(sx: Number(sx), sy: Number(sy), sz: Number(sz))
+    }
+
+    /// Creates a scaleX transform with Double value
+    public static func scaleX(_ factor: Double) -> Self {
+        .scaleX(Number(factor))
+    }
+
+    /// Creates a scaleX transform with Int value
+    public static func scaleX(_ factor: Int) -> Self {
+        .scaleX(Number(factor))
+    }
+
+    /// Creates a scaleY transform with Double value
+    public static func scaleY(_ factor: Double) -> Self {
+        .scaleY(Number(factor))
+    }
+
+    /// Creates a scaleY transform with Int value
+    public static func scaleY(_ factor: Int) -> Self {
+        .scaleY(Number(factor))
+    }
+
+    /// Creates a scaleZ transform with Double value
+    public static func scaleZ(_ factor: Double) -> Self {
+        .scaleZ(Number(factor))
+    }
+
+    /// Creates a scaleZ transform with Int value
+    public static func scaleZ(_ factor: Int) -> Self {
+        .scaleZ(Number(factor))
+    }
 }
 /// Provides string conversion for CSS output
 extension TransformFunction: CustomStringConvertible {
@@ -290,5 +352,30 @@ extension TransformFunction {
     ///   - y: Vertical translation as percentage
     public static func translatePercent(_ x: Percentage, _ y: Percentage) -> TransformFunction {
         return .translate(.percentage(x), .percentage(y))
+    }
+
+    /// Creates a transform that translates an element using Int pixel values
+    /// - Parameters:
+    ///   - x: Horizontal translation in pixels as Int
+    ///   - y: Vertical translation in pixels as Int
+    public static func translate(_ x: Int, _ y: Int) -> TransformFunction {
+        return Self.translate(Length.px(Double(x)), Length.px(Double(y)))
+    }
+
+    // MARK: - Overloads for Length conversion to LengthPercentage
+
+    /// Creates a translateX transform with Length value
+    public static func translateX(_ distance: Length) -> Self {
+        .translateX(LengthPercentage.length(distance))
+    }
+
+    /// Creates a translateY transform with Length value
+    public static func translateY(_ distance: Length) -> Self {
+        .translateY(LengthPercentage.length(distance))
+    }
+
+    /// Creates a translate3d transform with Length values
+    public static func translate3d(_ x: Length, _ y: Length, _ z: Length) -> Self {
+        .translate3d(LengthPercentage.length(x), LengthPercentage.length(y), z)
     }
 }

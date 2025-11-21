@@ -214,13 +214,17 @@ let package = Package(
         .library(name: .w3cCSSAnimation, targets: [.w3cCSSAnimation]),
         .library(name: .w3cCSS, targets: [.w3cCSS]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(path: "../swift-cssom")
+    ],
     targets: [
         // MARK: - Core Modules
 
         .target(
             name: .w3cCSSShared,
-            dependencies: []
+            dependencies: [
+                .product(name: "W3C CSSOM", package: "swift-cssom")
+            ]
         ),
         .testTarget(
             name: .w3cCSSShared.tests,

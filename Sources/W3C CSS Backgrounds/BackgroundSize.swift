@@ -115,7 +115,9 @@ extension BackgroundSize: LengthPercentageConvertible {
             return .width(.length(length))
         case .percentage(let percentage):
             return .width(.percentage(percentage))
-        default: fatalError()
+        case .calc(let expression):
+            // For calc expressions, wrap them in a BackgroundSize.width with calc
+            return .width(.calc(expression))
         }
     }
 

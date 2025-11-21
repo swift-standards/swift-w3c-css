@@ -17,6 +17,11 @@ import Foundation
 ///
 /// - SeeAlso: [MDN Web Docs on resolution](https://developer.mozilla.org/en-US/docs/Web/CSS/resolution)
 public struct Resolution: Sendable, Hashable {
+    /// Errors that can occur when creating a Resolution
+    public enum ResolutionError: Error, Sendable {
+        case invalidValue(String)
+    }
+
     /// Represents the resolution unit (dpi, dpcm, dppx, x)
     public enum Unit: String, Sendable, Hashable {
         /// Dots per inch (1dpi ≈ 0.39dpcm)
@@ -40,40 +45,47 @@ public struct Resolution: Sendable, Hashable {
 
     /// Creates a new CSS resolution value
     /// - Parameters:
-    ///   - value: The numeric value (must be positive)
+    ///   - value: The numeric value (must be non-negative)
     ///   - unit: The resolution unit
-    public init(_ value: Double, unit: Unit) {
-        precondition(value > 0, "Resolution value must be positive")
+    /// - Throws: `ResolutionError.invalidValue` if the value is negative
+    public init(_ value: Double, unit: Unit) throws {
+        guard value >= 0 else {
+            throw ResolutionError.invalidValue("Resolution value must be non-negative, got \(value)")
+        }
         self.value = value
         self.unit = unit
     }
 
     /// Creates a resolution in dots per inch (dpi)
-    /// - Parameter value: The dpi value (must be positive)
+    /// - Parameter value: The dpi value (must be non-negative)
     /// - Returns: A resolution value in dpi
-    public static func dpi(_ value: Double) -> Resolution {
-        return Resolution(value, unit: .dpi)
+    /// - Throws: `ResolutionError.invalidValue` if the value is negative
+    public static func dpi(_ value: Double) throws -> Resolution {
+        return try Resolution(value, unit: .dpi)
     }
 
     /// Creates a resolution in dots per centimeter (dpcm)
-    /// - Parameter value: The dpcm value (must be positive)
+    /// - Parameter value: The dpcm value (must be non-negative)
     /// - Returns: A resolution value in dpcm
-    public static func dpcm(_ value: Double) -> Resolution {
-        return Resolution(value, unit: .dpcm)
+    /// - Throws: `ResolutionError.invalidValue` if the value is negative
+    public static func dpcm(_ value: Double) throws -> Resolution {
+        return try Resolution(value, unit: .dpcm)
     }
 
     /// Creates a resolution in dots per px unit (dppx)
-    /// - Parameter value: The dppx value (must be positive)
+    /// - Parameter value: The dppx value (must be non-negative)
     /// - Returns: A resolution value in dppx
-    public static func dppx(_ value: Double) -> Resolution {
-        return Resolution(value, unit: .dppx)
+    /// - Throws: `ResolutionError.invalidValue` if the value is negative
+    public static func dppx(_ value: Double) throws -> Resolution {
+        return try Resolution(value, unit: .dppx)
     }
 
     /// Creates a resolution in x units (alias for dppx)
-    /// - Parameter value: The x value (must be positive)
+    /// - Parameter value: The x value (must be non-negative)
     /// - Returns: A resolution value in x units
-    public static func x(_ value: Double) -> Resolution {
-        return Resolution(value, unit: .x)
+    /// - Throws: `ResolutionError.invalidValue` if the value is negative
+    public static func x(_ value: Double) throws -> Resolution {
+        return try Resolution(value, unit: .x)
     }
 
     /// Converts the resolution to different units
@@ -96,26 +108,27 @@ public struct Resolution: Sendable, Hashable {
         }
 
         // Then convert from dpi to the target unit
+        // Note: These won't throw since we're converting from a valid positive value
         switch targetUnit {
         case .dpi:
-            return Resolution(dpiValue, unit: .dpi)
+            return try! Resolution(dpiValue, unit: .dpi)
         case .dpcm:
-            return Resolution(dpiValue / 2.54, unit: .dpcm)
+            return try! Resolution(dpiValue / 2.54, unit: .dpcm)
         case .dppx:
-            return Resolution(dpiValue / 96, unit: .dppx)
+            return try! Resolution(dpiValue / 96, unit: .dppx)
         case .x:
-            return Resolution(dpiValue / 96, unit: .x)
+            return try! Resolution(dpiValue / 96, unit: .x)
         }
     }
 
     /// Standard screen resolution (96dpi, 1dppx)
-    public static let standard = Resolution.dpi(96)
+    public static let standard = try! Resolution.dpi(96)
 
     /// High-DPI (Retina) resolution (192dpi, 2dppx)
-    public static let retina = Resolution.dpi(192)
+    public static let retina = try! Resolution.dpi(192)
 
     /// Common print resolution (300dpi)
-    public static let print = Resolution.dpi(300)
+    public static let print = try! Resolution.dpi(300)
 }
 
 /// Provides string conversion for CSS output
