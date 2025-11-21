@@ -57,19 +57,15 @@ public enum GridAutoColumns: Property {
     case global(Global)
 
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .auto:
             return "auto"
         case .px(let value):
-            return "\(format(value))px"
+            return "\(value.formattedForCSS)px"
         case .percentage(let percentage):
             return percentage.description
         case .fr(let value):
-            return "\(format(value))fr"
+            return "\(value.formattedForCSS)fr"
         case .minContent:
             return "min-content"
         case .maxContent:
@@ -107,19 +103,15 @@ public enum MinMaxValue: Sendable, Hashable, CustomStringConvertible {
     case maxContent
 
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .auto:
             return "auto"
         case .px(let value):
-            return "\(format(value))px"
+            return "\(value.formattedForCSS)px"
         case .percentage(let percentage):
             return percentage.description
         case .fr(let value):
-            return "\(format(value))fr"
+            return "\(value.formattedForCSS)fr"
         case .minContent:
             return "min-content"
         case .maxContent:

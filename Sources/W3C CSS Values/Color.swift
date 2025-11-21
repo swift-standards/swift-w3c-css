@@ -67,10 +67,6 @@ public indirect enum Color: Sendable, Hashable {
 extension Color: CustomStringConvertible {
     /// Converts the color to its CSS string representation
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .named(let name):
             return name.description
@@ -82,32 +78,32 @@ extension Color: CustomStringConvertible {
             return "rgb(\(r), \(g), \(b))"
 
         case .rgba(let r, let g, let b, let a):
-            return "rgba(\(r), \(g), \(b), \(format(a)))"
+            return "rgba(\(r), \(g), \(b), \(a.formattedForCSS))"
 
         case .hsl(let h, let s, let l):
-            return "hsl(\(h), \(format(s))%, \(format(l))%)"
+            return "hsl(\(h), \(s.formattedForCSS)%, \(l.formattedForCSS)%)"
 
         case .hsla(let h, let s, let l, let a):
-            return "hsla(\(h), \(format(s))%, \(format(l))%, \(format(a)))"
+            return "hsla(\(h), \(s.formattedForCSS)%, \(l.formattedForCSS)%, \(a.formattedForCSS))"
 
         case .hwb(let h, let w, let b):
-            return "hwb(\(h) \(format(w))% \(format(b))%)"
+            return "hwb(\(h) \(w.formattedForCSS)% \(b.formattedForCSS)%)"
 
         case .lab(let l, let a, let b):
-            return "lab(\(format(l))% \(format(a)) \(format(b)))"
+            return "lab(\(l.formattedForCSS)% \(a.formattedForCSS) \(b.formattedForCSS))"
 
         case .lch(let l, let c, let h):
-            return "lch(\(format(l))% \(format(c)) \(format(h)))"
+            return "lch(\(l.formattedForCSS)% \(c.formattedForCSS) \(h.formattedForCSS))"
 
         case .oklab(let l, let a, let b):
-            return "oklab(\(format(l)) \(format(a)) \(format(b)))"
+            return "oklab(\(l.formattedForCSS) \(a.formattedForCSS) \(b.formattedForCSS))"
 
         case .oklch(let l, let c, let h):
-            return "oklch(\(format(l)) \(format(c)) \(format(h)))"
+            return "oklch(\(l.formattedForCSS) \(c.formattedForCSS) \(h.formattedForCSS))"
 
         case .mix(let method, let color1, let color2, let percentage):
             if let percentage = percentage {
-                return "color-mix(\(method), \(color1), \(color2) \(format(percentage))%)"
+                return "color-mix(\(method), \(color1), \(color2) \(percentage.formattedForCSS)%)"
             } else {
                 return "color-mix(\(method), \(color1), \(color2))"
             }

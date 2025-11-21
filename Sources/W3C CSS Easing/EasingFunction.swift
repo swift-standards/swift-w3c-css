@@ -94,10 +94,6 @@ public enum StepPosition: String, Sendable, Hashable, CustomStringConvertible {
 extension EasingFunction: CustomStringConvertible {
     /// Converts the easing function to its CSS string representation
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .linear:
             return "linear"
@@ -105,9 +101,9 @@ extension EasingFunction: CustomStringConvertible {
         case .linearPoints(let points):
             let pointsString = points.map { point in
                 if let percentage = point.percentage {
-                    return "\(format(point.value)) \(percentage.description)"
+                    return "\(point.value.formattedForCSS) \(percentage.description)"
                 } else {
-                    return format(point.value)
+                    return point.value.formattedForCSS
                 }
             }.joined(separator: ", ")
             return "linear(\(pointsString))"
@@ -126,7 +122,7 @@ extension EasingFunction: CustomStringConvertible {
 
         case .cubicBezier(let x1, let y1, let x2, let y2):
             return
-                "cubic-bezier(\(format(x1)), \(format(y1)), \(format(x2)), \(format(y2)))"
+                "cubic-bezier(\(x1.formattedForCSS), \(y1.formattedForCSS), \(x2.formattedForCSS), \(y2.formattedForCSS))"
 
         case .stepStart:
             return "step-start"

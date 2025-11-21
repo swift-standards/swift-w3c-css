@@ -42,13 +42,9 @@ public enum FloodOpacity: Property, PercentageConvertible {
     }
 
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .number(let number):
-            return format(max(0, min(1, number.value)))
+            return max(0, min(1, number.value)).formattedForCSS
         case .percentage(let percentage):
             return percentage.description
         case .global(let value):

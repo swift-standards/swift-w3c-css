@@ -71,13 +71,9 @@ extension Hue: ExpressibleByFloatLiteral {
 extension Hue: CustomStringConvertible {
     /// Converts the hue to its CSS string representation
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
-        case .number(let value):
-            return format(value.value)
+        case .number(let number):
+            return number.value.formattedForCSS
         case .angle(let angle):
             return angle.description
         }

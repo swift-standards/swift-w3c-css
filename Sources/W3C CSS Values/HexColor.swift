@@ -1,4 +1,3 @@
-import W3C_CSS_Values
 import IEEE_754
 import RFC_4648
 

@@ -55,10 +55,6 @@ public enum Rotate: Property {
     }
 
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .none:
             return "none"
@@ -67,7 +63,7 @@ public enum Rotate: Property {
         case .axis(let axis, let angle):
             return "\(axis.rawValue) \(angle.description)"
         case .vector(let x, let y, let z, let angle):
-            return "\(format(x)) \(format(y)) \(format(z)) \(angle.description)"
+            return "\(x.formattedForCSS) \(y.formattedForCSS) \(z.formattedForCSS) \(angle.description)"
         case .global(let global):
             return global.description
         }

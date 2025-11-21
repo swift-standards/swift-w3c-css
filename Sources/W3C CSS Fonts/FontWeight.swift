@@ -71,9 +71,9 @@ public enum FontWeight: Property, ExpressibleByIntegerLiteral {
 
     public var description: String {
         switch self {
-        case .number(let value):
-            // Ensure the value is between 1 and 1000
-            let clampedValue = max(1, min(1000, value))
+        case .number(let number):
+            // Ensure the number is between 1 and 1000
+            let clampedValue = max(1, min(1000, number))
             return "\(clampedValue)"
         case .normal:
             return "normal"

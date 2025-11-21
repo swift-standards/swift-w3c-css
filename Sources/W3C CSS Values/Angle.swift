@@ -126,18 +126,15 @@ extension Angle: CustomStringConvertible {
     /// transform: rotate(0.5turn);
     /// ```
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
         switch self {
         case .deg(let value):
-            return "\(format(value))deg"
+            return "\(value.formattedForCSS)deg"
         case .rad(let value):
-            return "\(format(value))rad"
+            return "\(value.formattedForCSS)rad"
         case .grad(let value):
-            return "\(format(value))grad"
+            return "\(value.formattedForCSS)grad"
         case .turn(let value):
-            return "\(format(value))turn"
+            return "\(value.formattedForCSS)turn"
         }
     }
 }

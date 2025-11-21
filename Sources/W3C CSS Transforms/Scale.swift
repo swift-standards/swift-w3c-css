@@ -50,18 +50,14 @@ public enum Scale: Property, ExpressibleByIntegerLiteral, ExpressibleByFloatLite
     }
 
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .none: return "none"
         case .single(let value):
-            return format(value)
+            return value.formattedForCSS
         case .xy(let x, let y):
-            return "\(format(x)) \(format(y))"
+            return "\(x.formattedForCSS) \(y.formattedForCSS)"
         case .xyz(let x, let y, let z):
-            return "\(format(x)) \(format(y)) \(format(z))"
+            return "\(x.formattedForCSS) \(y.formattedForCSS) \(z.formattedForCSS)"
         case .global(let global):
             return global.description
         }

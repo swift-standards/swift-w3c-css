@@ -102,10 +102,6 @@ public enum FilterFunction: Sendable, Hashable {
 extension FilterFunction: CustomStringConvertible {
     /// Converts the filter function to its CSS string representation
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         switch self {
         case .blur(let radius):
             return "blur(\(radius))"
@@ -158,17 +154,13 @@ extension FilterFunction: CustomStringConvertible {
 
     /// Helper function to format number values, using percentage notation for values between 0 and 1
     private func formatNumberOrPercentage(_ value: Double) -> String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
-
         if value >= 0 && value <= 1 {
             // Format as percentage for values between 0 and 1
             let percentage = Percentage(value * 100)
             return percentage.description
         } else {
             // Format as decimal for other values
-            return format(value)
+            return value.formattedForCSS
         }
     }
 }

@@ -97,14 +97,11 @@ public struct Ratio: Sendable, Hashable, Comparable {
 extension Ratio: CustomStringConvertible {
     /// Converts the ratio to its CSS string representation
     public var description: String {
-        func format(_ value: Double) -> String {
-            value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        }
         // Check if height is 1 and the CSS allows the simplified form
         if height == 1 {
-            return format(width)
+            return width.formattedForCSS
         } else {
-            return "\(format(width)) / \(format(height))"
+            return "\(width.formattedForCSS) / \(height.formattedForCSS)"
         }
     }
 }

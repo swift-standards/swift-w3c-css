@@ -154,8 +154,8 @@ extension Time {
     /// Negates a time value
     /// - Parameter value: Time value to negate
     /// - Returns: The negated value
-    public static prefix func - (value: Time) -> Time {
-        return .init(-value.value, unit: value.unit)
+    public static prefix func - (time: Time) -> Time {
+        return .init(-time.value, unit: time.unit)
     }
 }
 
