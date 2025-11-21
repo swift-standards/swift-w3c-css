@@ -1,4 +1,4 @@
-import W3C_CSS_Values
+import W3C_CSS_Shared
 import Foundation
 
 /// Represents CSS color interpolation methods used in gradients and color mixing.
@@ -119,7 +119,7 @@ extension ColorInterpolationMethod: CustomStringConvertible {
                 return "in \(space)"
             }
         case .custom(let profile):
-            return "in \(profile)"
+            return "in \(CSSString(profile, quotes: .single))"
         }
     }
 }

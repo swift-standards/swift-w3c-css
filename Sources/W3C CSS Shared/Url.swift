@@ -52,6 +52,10 @@ public struct Url: Sendable, Hashable {
 /// Provides string conversion for CSS output
 extension Url: CustomStringConvertible {
     /// Converts the URL to its CSS string representation
+    ///
+    /// Per CSSOM specification, URLs are serialized as strings with minimal escaping:
+    /// - Quoted: only newlines, backslashes, and the quote character need escaping
+    /// - Unquoted: spaces, parentheses, quotes, and special chars need backslash-escaping
     public var description: String {
         // Remove surrounding quotes if present in the input value
         var processedValue = value
@@ -64,38 +68,41 @@ extension Url: CustomStringConvertible {
             processedValue = String(processedValue[startIndex..<endIndex])
         }
 
-        // First escape the URL-specific characters (not quote related)
-        let escapedValue = escapeUrlCharacters(processedValue)
-
         // Handle quotes based on the quotes property
         let urlString: String
         if let quoteStyle = quotes {
-            // URL with quotes
+            // Per CSSOM: quoted URLs only escape newlines, backslashes, and the quote character
+            // Spaces and other characters remain literal (no percent-encoding)
             switch quoteStyle {
             case .single:
-                // Escape single quotes in the URL value to be used in single-quoted context
-                let escapedForSingleQuotes = escapedValue.replacingOccurrences(of: "'", with: "\\'")
-                urlString = "'\(escapedForSingleQuotes)'"
+                let escaped = processedValue
+                    .replacing("\\", with: "\\\\")
+                    .replacing("\n", with: "\\n")
+                    .replacing("'", with: "\\'")
+                urlString = "'\(escaped)'"
             case .double:
-                // Escape double quotes in the URL value to be used in double-quoted context
-                let escapedForDoubleQuotes = escapedValue.replacingOccurrences(
-                    of: "\"",
-                    with: "\\\""
-                )
-                urlString = "\"\(escapedForDoubleQuotes)\""
+                let escaped = processedValue
+                    .replacing("\\", with: "\\\\")
+                    .replacing("\n", with: "\\n")
+                    .replacing("\"", with: "\\\"")
+                urlString = "\"\(escaped)\""
             }
         } else {
-            // URL without quotes
+            // Unquoted URLs: backslash-escape spaces and special characters
+            let escapedValue = escapeUrlCharacters(processedValue)
             urlString = escapedValue
         }
 
         return "url(\(urlString))"
     }
 
-    /// Escapes URL-specific special characters in a string
+    /// Escapes URL-specific special characters for unquoted URL syntax
+    ///
+    /// Per CSS Values spec: "parentheses, whitespace characters, single quotes (')
+    /// and double quotes (") appearing in a URL must be escaped with a backslash"
     ///
     /// - Parameter string: The URL string to escape
-    /// - Returns: An escaped URL string
+    /// - Returns: An escaped URL string suitable for unquoted url() syntax
     private func escapeUrlCharacters(_ string: String) -> String {
         // Special handling for data URLs
         if string.hasPrefix("data:") {
@@ -103,14 +110,16 @@ extension Url: CustomStringConvertible {
             return string
         }
 
-        // For regular URLs, escape parentheses, commas, spaces
-        var result = string
-        result = result.replacingOccurrences(of: "(", with: "%28")
-        result = result.replacingOccurrences(of: ")", with: "%29")
-        result = result.replacingOccurrences(of: ",", with: "%2C")
-        result = result.replacingOccurrences(of: " ", with: "%20")
-
-        return result
+        // For unquoted URLs, use backslash-escaping (not percent-encoding)
+        return string
+            .replacing("\\", with: "\\\\")
+            .replacing("(", with: "\\(")
+            .replacing(")", with: "\\)")
+            .replacing(" ", with: "\\ ")
+            .replacing("\t", with: "\\\t")
+            .replacing("\n", with: "\\n")
+            .replacing("'", with: "\\'")
+            .replacing("\"", with: "\\\"")
     }
 }
 
