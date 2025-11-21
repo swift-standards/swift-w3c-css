@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The `container-type` CSS property defines the type of container context used in a container query.
 ///

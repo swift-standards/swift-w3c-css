@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The line-clamp CSS property allows limiting of the contents of a block to the specified number of lines.
 ///

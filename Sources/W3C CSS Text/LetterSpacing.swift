@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The letter-spacing CSS property sets the horizontal spacing behavior between text characters.
 ///

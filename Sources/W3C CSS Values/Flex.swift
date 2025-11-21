@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS flexible length unit (fr) used in grid layouts.
 ///

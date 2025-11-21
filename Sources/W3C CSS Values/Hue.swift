@@ -1,5 +1,4 @@
 import W3C_CSS_Values
-import Foundation
 
 /// Represents a CSS hue angle value for color functions.
 ///

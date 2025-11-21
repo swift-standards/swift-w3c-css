@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-width` shorthand property, which sets the width of an element's borders.
 ///

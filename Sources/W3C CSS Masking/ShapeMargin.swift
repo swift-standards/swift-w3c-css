@@ -3,7 +3,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `shape-margin` CSS property sets a margin for a CSS shape created using `shape-outside`.
 /// The margin lets you adjust the distance between the edges of the shape (the float element)

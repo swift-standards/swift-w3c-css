@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `will-change` property hints to browsers how an element is expected to change.
 ///

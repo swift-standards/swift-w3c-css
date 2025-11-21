@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard `-webkit-mask-box-image` property is a shorthand property that sets the mask image
 /// for an element's border box.

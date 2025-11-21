@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS value that can be either a frequency or a percentage.
 ///

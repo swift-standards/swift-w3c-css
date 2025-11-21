@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-underline-offset` property sets the offset distance of an underline text
 /// decoration line (applied using text-decoration) from its original position.

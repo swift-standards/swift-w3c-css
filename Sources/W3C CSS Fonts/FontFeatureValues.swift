@@ -1,4 +1,3 @@
-import Foundation
 import W3C_CSS_Syntax
 
 /// Represents a CSS @font-feature-values at-rule.
@@ -35,21 +34,37 @@ public struct FontFeatureValues: AtRule {
     public init(rawValue: String) {
         self.rawValue = rawValue
 
-        // Extract families from rawValue - simplified implementation
-        if let familiesRange = rawValue.range(
-            of: "@font-feature-values\\s+([^{]+)",
-            options: .regularExpression
-        ),
-            let matches = rawValue[familiesRange].range(
-                of: "\\s+([^{]+)",
-                options: .regularExpression
-            )
-        {
-            let familiesString = String(rawValue[matches]).trimmingCharacters(
-                in: .whitespacesAndNewlines
-            )
-            self.families = familiesString.split(separator: ",").map {
-                String($0.trimmingCharacters(in: .whitespacesAndNewlines))
+        // Extract families from rawValue - simplified implementation without Foundation
+        // Parse "@font-feature-values families {" to extract "families"
+        var cleaned = rawValue
+        if cleaned.hasPrefix("@font-feature-values") {
+            cleaned = String(cleaned.dropFirst(21)) // Remove "@font-feature-values"
+        }
+
+        // Trim leading whitespace
+        while cleaned.first?.isWhitespace == true {
+            cleaned = String(cleaned.dropFirst())
+        }
+
+        // Extract families until '{'
+        if let braceIndex = cleaned.firstIndex(of: "{") {
+            var familiesString = String(cleaned[..<braceIndex])
+
+            // Trim trailing whitespace
+            while familiesString.last?.isWhitespace == true {
+                familiesString = String(familiesString.dropLast())
+            }
+
+            // Split by comma and trim each family name
+            self.families = familiesString.split(separator: ",").map { family in
+                var trimmed = String(family)
+                while trimmed.first?.isWhitespace == true {
+                    trimmed = String(trimmed.dropFirst())
+                }
+                while trimmed.last?.isWhitespace == true {
+                    trimmed = String(trimmed.dropLast())
+                }
+                return trimmed
             }
         } else {
             self.families = []

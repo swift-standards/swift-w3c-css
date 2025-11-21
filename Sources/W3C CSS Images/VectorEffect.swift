@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `vector-effect` property suppresses specific transformation effects in SVG.
 ///

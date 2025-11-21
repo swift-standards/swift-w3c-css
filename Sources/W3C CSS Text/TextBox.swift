@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-box` property is a shorthand that combines `text-box-trim` and `text-box-edge`,
 /// which together specify the amount of space to trim from block edges of a text element's container.

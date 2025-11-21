@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-image-slice` property, which divides a border image into regions
 /// that form the components of an element's border.

@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-moz-user-input` property determines if an element will accept user input
 /// in Mozilla applications.

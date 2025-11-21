@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `overscroll-behavior-block` CSS property sets the browser's behavior when the block direction
 /// boundary of a scrolling area is reached.

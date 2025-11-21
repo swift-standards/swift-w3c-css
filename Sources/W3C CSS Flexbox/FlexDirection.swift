@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `flex-direction` property sets how flex items are placed in the flex container by defining the main axis and direction.
 ///

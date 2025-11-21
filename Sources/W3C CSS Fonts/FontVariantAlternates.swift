@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-variant-alternates` property controls the usage of alternate glyphs.
 /// These alternate glyphs may be referenced by alternative names defined in @font-feature-values.

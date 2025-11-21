@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-optical-sizing` property sets whether text rendering is optimized for viewing at different sizes.
 ///

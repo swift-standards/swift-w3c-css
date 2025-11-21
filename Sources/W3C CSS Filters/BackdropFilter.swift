@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `backdrop-filter` property, which applies filter effects to the area behind an element.
 ///

@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `fill-opacity` CSS property defines the opacity of the fill applied to SVG shapes
 /// and text content elements.
@@ -35,10 +34,9 @@ public enum FillOpacity: Property {
             if clampedValue == Double(Int(clampedValue)) {
                 return "\(Int(clampedValue))"
             } else {
-                return String(format: "%.2f", clampedValue).replacingOccurrences(
-                    of: ".00",
-                    with: ""
-                )
+                // Format to 2 decimal places without Foundation
+                let rounded = (clampedValue * 100).rounded() / 100
+                return String(rounded)
             }
         case .percentage(let percentage):
             return percentage.description

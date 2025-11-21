@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-spacing` property, which sets the distance between borders of adjacent table cells.
 ///

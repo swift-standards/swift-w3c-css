@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents the CSS `backface-visibility` property, which determines whether the back face of an element is visible when turned towards the user.
 ///

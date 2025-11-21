@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-style` shorthand property, which sets the line style for all sides of an element's border.
 ///

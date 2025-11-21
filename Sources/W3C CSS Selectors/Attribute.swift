@@ -1,4 +1,3 @@
-import Foundation
 import W3C_CSS_Shared
 
 /// Represents a CSS attribute selector.

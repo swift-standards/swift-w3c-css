@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `x` property defines the x-axis coordinate of the top left corner of an SVG element.
 ///

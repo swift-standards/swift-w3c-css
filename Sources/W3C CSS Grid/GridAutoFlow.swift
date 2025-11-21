@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `grid-auto-flow` property controls how the auto-placement algorithm works,
 /// specifying exactly how auto-placed items get flowed into the grid.

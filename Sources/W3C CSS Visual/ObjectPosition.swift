@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Positioning
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `object-position` property specifies the alignment of the selected replaced element's
 /// contents within the element's box. Areas of the box which aren't covered by the replaced

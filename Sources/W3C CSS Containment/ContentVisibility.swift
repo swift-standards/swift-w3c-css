@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The `content-visibility` CSS property controls whether or not an element renders its contents,
 /// along with forcing a strong set of containments.

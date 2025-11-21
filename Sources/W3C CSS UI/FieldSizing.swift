@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `field-sizing` CSS property controls the sizing behavior of form control elements
 /// that have a default preferred size.

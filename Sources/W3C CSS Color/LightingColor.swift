@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The lighting-color CSS property defines the color of the light source for the
 /// <feDiffuseLighting> and <feSpecularLighting> SVG lighting filter primitives within an SVG <filter>.

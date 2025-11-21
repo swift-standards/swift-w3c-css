@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-inline-end` shorthand property, which sets border properties for
 /// the logical inline-end border of an element.

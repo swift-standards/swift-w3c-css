@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS display box keywords that define whether an element generates boxes.
 ///

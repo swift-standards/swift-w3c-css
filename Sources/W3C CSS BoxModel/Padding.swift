@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `padding` shorthand property sets the padding area on all four sides of an element at once.
 ///

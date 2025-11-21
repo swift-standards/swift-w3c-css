@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `cx` CSS property defines the x-axis coordinate of the center point of SVG circle and ellipse elements.
 ///

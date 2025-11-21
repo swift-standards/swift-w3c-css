@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-webkit-mask-position-y` property sets the initial vertical position of a mask image.
 ///

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `grid-column-end` property specifies a grid item's end position within the
 /// grid column by contributing a line, a span, or nothing (automatic) to its grid placement.

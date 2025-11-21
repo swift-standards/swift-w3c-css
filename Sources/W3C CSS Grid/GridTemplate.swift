@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `grid-template` property is a shorthand property for defining grid columns, rows, and areas.
 ///

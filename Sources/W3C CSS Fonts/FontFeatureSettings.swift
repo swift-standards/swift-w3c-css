@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-feature-settings` property controls advanced typographic features in OpenType fonts.
 ///
@@ -154,7 +153,10 @@ extension FontFeatureSettings {
         guard number >= 1 && number <= 20 else {
             return .normal
         }
-        let setName = String(format: "ss%02d", number)
+        // Zero-pad to 2 digits without Foundation
+        let numStr = String(number)
+        let paddedNum = numStr.count == 1 ? "0" + numStr : numStr
+        let setName = "ss" + paddedNum
         return .features([setName: nil])
     }
 }

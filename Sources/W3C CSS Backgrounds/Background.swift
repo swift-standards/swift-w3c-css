@@ -2,7 +2,6 @@ import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
 import W3C_CSS_Images
-import Foundation
 
 /// Represents the CSS `background` shorthand property, which sets all background style properties at once.
 ///

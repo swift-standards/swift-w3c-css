@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `scrollbar-gutter` CSS property allows authors to reserve space for the scrollbar,
 /// preventing unwanted layout changes as the content grows while also avoiding unnecessary

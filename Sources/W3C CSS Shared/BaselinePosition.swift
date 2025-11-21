@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS baseline position value for alignment properties.
 ///

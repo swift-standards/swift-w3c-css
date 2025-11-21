@@ -1,6 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
-import Foundation
+import INCITS_4_1986
 
 /// Represents a CSS @counter-style at-rule.
 ///
@@ -45,17 +45,21 @@ public struct CounterStyle: AtRule {
     public init(rawValue: String) {
         self.rawValue = rawValue
 
-        // Extract name from rawValue for future reference
-        // This is a simplified implementation; a proper parser would be more complex
-        if let nameRange = rawValue.range(
-            of: "@counter-style\\s+([\\w-]+)\\s*\\{",
-            options: .regularExpression
-        ),
-            let match = rawValue[nameRange].range(of: "\\s+([\\w-]+)", options: .regularExpression)
-        {
-            self.name = String(rawValue[match]).trimmingCharacters(in: .whitespacesAndNewlines)
+        // Extract name from rawValue using standard utilities
+        // Parse "@counter-style name {" to extract "name"
+        var cleaned = rawValue
+        if cleaned.hasPrefix("@counter-style") {
+            cleaned = String(cleaned.dropFirst(14))
+        }
+
+        // Trim whitespace using INCITS 4-1986
+        cleaned = cleaned.trimming(.ascii.whitespaces)
+
+        // Extract name until whitespace or '{'
+        if let endIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace || $0 == "{" }) {
+            self.name = String(cleaned[..<endIndex])
         } else {
-            self.name = ""
+            self.name = cleaned
         }
     }
 

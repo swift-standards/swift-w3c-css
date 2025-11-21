@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The CSS `-webkit-text-stroke-color` property specifies the stroke (outline) color of characters of text.
 /// If this property is not set, the value of the `color` property is used.

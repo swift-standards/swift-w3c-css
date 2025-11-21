@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-range-start property is used to set the start of an animation's attachment range
 /// along its timeline, i.e. where along the timeline an animation will start.

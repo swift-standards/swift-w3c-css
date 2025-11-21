@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `left` property participates in specifying the horizontal position of a positioned element.
 /// This inset property has no effect on non-positioned elements.

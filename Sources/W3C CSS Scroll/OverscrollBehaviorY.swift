@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `overscroll-behavior-y` CSS property sets the browser's behavior when the vertical boundary
 /// of a scrolling area is reached.

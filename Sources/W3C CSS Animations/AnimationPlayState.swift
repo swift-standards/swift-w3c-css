@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-play-state property sets whether an animation is running or paused.
 ///

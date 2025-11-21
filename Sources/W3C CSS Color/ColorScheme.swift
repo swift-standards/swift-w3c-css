@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `color-scheme` property allows an element to indicate which color schemes it can comfortably be rendered in.
 /// Common choices for operating system color schemes are "light" and "dark", or "day mode" and "night mode".

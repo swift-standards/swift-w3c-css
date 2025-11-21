@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-wrap` shorthand property controls how text inside an element is wrapped.
 /// The different values provide:

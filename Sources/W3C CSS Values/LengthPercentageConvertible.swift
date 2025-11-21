@@ -5,7 +5,6 @@
 //  Created on 03/23/2025.
 //
 
-import Foundation
 
 /// Protocol for types that can be created from CSS Length values
 ///

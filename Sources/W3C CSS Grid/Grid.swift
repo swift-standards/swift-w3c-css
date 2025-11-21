@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `grid` property is a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.
 ///

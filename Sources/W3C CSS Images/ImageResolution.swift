@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `image-resolution` property specifies the intrinsic resolution of all raster images
 /// used in or on the element.

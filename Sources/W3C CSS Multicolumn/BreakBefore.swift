@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `break-before` property sets how page, column, or region breaks should behave before a generated box.
 /// If there is no generated box, the property is ignored.

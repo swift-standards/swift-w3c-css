@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// Represents the CSS `mask-type` property, which sets whether an SVG mask element uses luminance or alpha values.
 ///

@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `touch-action` property sets how an element's region can be manipulated by a touchscreen user
 /// (for example, by zooming features built into the browser).

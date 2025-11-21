@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `direction` property sets the direction of text, table columns, and horizontal overflow.
 ///

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS alignment-baseline property specifies the specific baseline used to align the box's text and inline-level contents.
 ///

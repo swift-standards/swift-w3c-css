@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `clip-rule` property defines how to determine which pixels in a mask's box are inside the
 /// clipping shape defined by a clip path, and which are outside, when parts of the path overlap other parts.

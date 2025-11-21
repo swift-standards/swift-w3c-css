@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS frequency value with unit (Hz or kHz).
 ///

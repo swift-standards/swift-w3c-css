@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The CSS `-webkit-text-stroke` property is a shorthand that sets the width and color of strokes
 /// for text characters in a single declaration.

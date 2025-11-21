@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `pointer-events` CSS property sets under what circumstances (if any)
 /// a particular graphic element can become the target of pointer events.

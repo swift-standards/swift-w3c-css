@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `margin-trim` property allows a container to trim the margins of its children
 /// where they adjoin the container's edges.

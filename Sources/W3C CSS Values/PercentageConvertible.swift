@@ -5,7 +5,6 @@
 //  Created on 03/23/2025.
 //
 
-import Foundation
 
 public protocol PercentageConvertible {
     static func percentage(_ percentage: Percentage) -> Self

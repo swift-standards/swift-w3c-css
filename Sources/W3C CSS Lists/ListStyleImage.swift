@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Images
-import Foundation
 
 /// The CSS `list-style-image` property sets an image to be used as the list item marker.
 ///

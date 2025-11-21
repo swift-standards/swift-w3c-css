@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `flex-wrap` property sets whether flex items wrap onto multiple lines or are forced onto a single line.
 ///

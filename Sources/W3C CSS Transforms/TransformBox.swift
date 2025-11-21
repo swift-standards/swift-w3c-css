@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `transform-box` property defines the layout box to which the `transform`,
 /// individual transform properties (`translate`, `scale`, `rotate`), and `transform-origin` properties relate.

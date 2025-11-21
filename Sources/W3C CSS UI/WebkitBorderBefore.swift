@@ -9,7 +9,6 @@ import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
 import W3C_CSS_Backgrounds
-import Foundation
 
 /// The non-standard `-webkit-border-before` CSS property is a shorthand property for setting
 /// border properties for the logical block-start edge of an element.

@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `image-rendering` property sets an image scaling algorithm.
 ///

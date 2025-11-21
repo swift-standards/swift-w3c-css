@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `marker-start` CSS property points to a marker that will be drawn on the first vertex of the element's path.
 ///

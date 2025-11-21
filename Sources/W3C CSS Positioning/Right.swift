@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `right` property participates in specifying the horizontal position of a positioned element.
 ///

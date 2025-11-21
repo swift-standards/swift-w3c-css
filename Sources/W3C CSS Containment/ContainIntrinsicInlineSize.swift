@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The `contain-intrinsic-inline-size` CSS property defines the inline size of an element that a browser can use for
 /// layout when the element is subject to size containment.

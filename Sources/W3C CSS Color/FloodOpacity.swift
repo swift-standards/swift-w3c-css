@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `flood-opacity` property defines the opacity of the color used in filter effects for
 /// the `<feFlood>` and `<feDropShadow>` SVG filter elements.

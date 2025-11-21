@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `overflow-anchor` CSS property provides a way to opt out of the browser's scroll anchoring behavior,
 /// which adjusts scroll position to minimize content shifts.

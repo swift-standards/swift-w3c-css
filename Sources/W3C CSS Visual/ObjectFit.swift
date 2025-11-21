@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `object-fit` property sets how the content of a replaced element, such as an
 /// `<img>` or `<video>`, should be resized to fit its container.

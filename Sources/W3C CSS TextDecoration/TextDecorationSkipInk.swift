@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Specifies how overlines and underlines are drawn when they pass over glyph ascenders and descenders.
 ///

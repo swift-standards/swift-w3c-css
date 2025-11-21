@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `inline-size` property, which defines the size of an element in the inline dimension.
 ///

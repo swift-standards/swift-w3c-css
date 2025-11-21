@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `font-smooth` property controls the application of anti-aliasing when fonts are rendered.
 ///

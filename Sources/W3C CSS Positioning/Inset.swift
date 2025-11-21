@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `inset` property is a shorthand that corresponds to the `top`, `right`, `bottom`, and/or `left` properties.
 ///

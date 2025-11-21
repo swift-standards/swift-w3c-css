@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The CSS `box-shadow` property adds shadow effects around an element's frame.
 ///

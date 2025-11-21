@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-synthesis-small-caps` property lets you specify whether or not the browser may synthesize
 /// small-caps typeface when it is missing in a font family. Small-caps glyphs typically use the form of

@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-start-end-radius` property, which rounds the corner between
 /// the block-start and inline-end edges of an element.

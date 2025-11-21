@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-webkit-mask-position-x` property sets the initial horizontal position of a mask image.
 ///

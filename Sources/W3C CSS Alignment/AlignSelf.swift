@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS align-self property overrides a grid or flex item's align-items value.
 ///

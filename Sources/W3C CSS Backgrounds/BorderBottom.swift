@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-bottom` shorthand property, which sets all the bottom border properties at once.
 ///

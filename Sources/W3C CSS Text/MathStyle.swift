@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `math-style` property indicates whether MathML equations should render
 /// with normal or compact height.

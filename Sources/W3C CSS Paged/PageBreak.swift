@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// Represents the CSS page break properties that control how printed content is split across pages.
 ///

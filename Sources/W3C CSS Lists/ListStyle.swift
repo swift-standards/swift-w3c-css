@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `list-style` property is a shorthand that sets the list-style-type, list-style-position,
 /// and list-style-image properties in a single declaration.

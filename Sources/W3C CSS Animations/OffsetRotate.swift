@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `offset-rotate` property defines the orientation/direction of the element
 /// as it is positioned along the `offset-path`.

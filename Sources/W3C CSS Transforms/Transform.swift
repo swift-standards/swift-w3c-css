@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `transform` property lets you rotate, scale, skew, or translate an element.
 /// It modifies the coordinate space of the CSS visual formatting model.

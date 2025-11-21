@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-justify` property sets what type of justification should be applied
 /// to text when `text-align: justify` is set on an element.

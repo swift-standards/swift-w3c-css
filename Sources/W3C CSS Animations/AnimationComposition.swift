@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-composition property specifies the composite operation
 /// to use when multiple animations affect the same property simultaneously.

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS place-items shorthand property aligns items along both the block and inline directions at once.
 ///

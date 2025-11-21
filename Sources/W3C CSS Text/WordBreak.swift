@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `word-break` property sets whether line breaks appear wherever the text would otherwise overflow its content box.
 ///

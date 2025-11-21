@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS display outside values that determine the element's outer display type.
 ///

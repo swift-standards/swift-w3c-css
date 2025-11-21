@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-timeline property specifies the timeline that is used to control
 /// the progress of a CSS animation.

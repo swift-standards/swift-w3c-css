@@ -1,7 +1,6 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
-import Foundation
 
 /// Represents a CSS @keyframes at-rule.
 ///

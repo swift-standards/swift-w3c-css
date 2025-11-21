@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-size-adjust` property provides a way to modify the size of lowercase letters
 /// relative to the size of uppercase letters, which defines the overall font-size.

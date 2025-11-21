@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-variant-east-asian` property controls the use of alternate glyphs for
 /// East Asian scripts, like Japanese and Chinese.

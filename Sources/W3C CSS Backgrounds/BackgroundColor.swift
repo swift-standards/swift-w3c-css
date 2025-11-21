@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// Represents the CSS `background-color` property, which sets the background color of an element.
 ///

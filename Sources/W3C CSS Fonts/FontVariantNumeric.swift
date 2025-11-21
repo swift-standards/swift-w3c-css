@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-variant-numeric` property controls the usage of alternate glyphs
 /// for numbers, fractions, and ordinal markers.

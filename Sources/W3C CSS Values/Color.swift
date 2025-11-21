@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// Represents CSS color values.
 ///

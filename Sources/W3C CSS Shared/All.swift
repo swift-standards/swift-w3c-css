@@ -1,5 +1,4 @@
-// import Foundation
-// import W3C_CSS_Shared
+// // import W3C_CSS_Shared
 //
 ///// The all shorthand CSS property resets all of an element's properties except
 ///// unicode-bidi, direction, and CSS Custom Properties.

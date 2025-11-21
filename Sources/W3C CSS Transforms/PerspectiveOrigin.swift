@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `perspective-origin` property determines the position at which the viewer is looking.
 /// It is used as the vanishing point by the `perspective` property.

@@ -1,7 +1,7 @@
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
 import W3C_CSS_Values
-import Foundation
+import INCITS_4_1986
 
 /// Represents a CSS @font-palette-values at-rule.
 ///
@@ -47,18 +47,21 @@ public struct FontPaletteValues: AtRule {
     public init(rawValue: String) {
         self.rawValue = rawValue
 
-        // Extract identifier from rawValue - simplified implementation
-        if let idRange = rawValue.range(
-            of: "@font-palette-values\\s+([^{]+)",
-            options: .regularExpression
-        ),
-            let matches = rawValue[idRange].range(of: "\\s+([^{]+)", options: .regularExpression)
-        {
-            self.identifier = String(rawValue[matches]).trimmingCharacters(
-                in: .whitespacesAndNewlines
-            )
+        // Extract identifier from rawValue using standard utilities
+        // Parse "@font-palette-values identifier {" to extract "identifier"
+        var cleaned = rawValue
+        if cleaned.hasPrefix("@font-palette-values") {
+            cleaned = String(cleaned.dropFirst(20))
+        }
+
+        // Trim whitespace using INCITS 4-1986
+        cleaned = cleaned.trimming(.ascii.whitespaces)
+
+        // Extract identifier until whitespace or '{'
+        if let endIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace || $0 == "{" }) {
+            self.identifier = String(cleaned[..<endIndex])
         } else {
-            self.identifier = ""
+            self.identifier = cleaned
         }
     }
 

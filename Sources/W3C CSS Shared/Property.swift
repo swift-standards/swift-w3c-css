@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 27/03/2025.
 //
 
-import Foundation
 
 /// A protocol that all CSS properties conform to
 ///

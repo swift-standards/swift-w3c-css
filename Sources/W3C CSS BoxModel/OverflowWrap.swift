@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `overflow-wrap` property applies to text, setting whether the browser should insert
 /// line breaks within an otherwise unbreakable string to prevent text from overflowing its line box.

@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-moz-float-edge` property specifies whether the height and width
 /// properties of the element include the margin, border, or padding thickness.

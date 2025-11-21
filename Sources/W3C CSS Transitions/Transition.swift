@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `transition` property is a shorthand property for setting the four transition properties
 /// in a single declaration: `transition-property`, `transition-duration`, `transition-timing-function`,

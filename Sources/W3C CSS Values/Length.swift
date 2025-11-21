@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// Represents CSS length values for properties that accept dimensions
 ///

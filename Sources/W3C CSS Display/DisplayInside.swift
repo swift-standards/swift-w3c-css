@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS display inside values that determine the layout of an element's contents.
 ///

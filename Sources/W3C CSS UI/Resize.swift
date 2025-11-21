@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `resize` property sets whether an element is resizable, and if so, in which directions.
 ///

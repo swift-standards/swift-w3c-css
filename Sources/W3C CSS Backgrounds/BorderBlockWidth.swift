@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `border-block-width` property defines the width of the logical block borders of an element.
 ///

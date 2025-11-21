@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `box-sizing` property sets how the total width and height of an element is calculated.
 ///

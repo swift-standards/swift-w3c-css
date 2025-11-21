@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `inset-block` property is a shorthand that defines the logical block start and end
 /// offsets of an element, which map to physical offsets depending on the element's writing mode,

@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `mask-border` shorthand property, which allows creating a mask along the edge
 /// of an element's border.

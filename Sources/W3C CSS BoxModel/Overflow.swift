@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `overflow` CSS property sets what to do when content overflows an element's box.
 ///

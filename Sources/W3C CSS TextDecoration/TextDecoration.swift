@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 public enum TextDecoration: Property {
     public static let property: String = "text-decoration"

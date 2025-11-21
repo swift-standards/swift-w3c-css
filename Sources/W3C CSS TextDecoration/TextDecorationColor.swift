@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// Sets the color of decorations added to text by text-decoration-line.
 ///

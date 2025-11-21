@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `orphans` property sets the minimum number of lines in a block container that
 /// must be shown at the bottom of a page, region, or column.

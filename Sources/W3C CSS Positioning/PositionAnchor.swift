@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `position-anchor` property specifies the anchor name of the anchor element that
 /// a positioned element is associated with.

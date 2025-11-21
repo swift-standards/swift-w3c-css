@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `visibility` property shows or hides an element without changing the layout of a document.
 ///

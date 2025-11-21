@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 26/03/2025.
 //
 
-import Foundation
 
 /// The CSS `quotes` property sets how the browser should render quotation marks.
 ///

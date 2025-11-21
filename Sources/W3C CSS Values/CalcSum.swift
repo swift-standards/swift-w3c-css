@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS calculation expression that performs mathematical operations.
 ///

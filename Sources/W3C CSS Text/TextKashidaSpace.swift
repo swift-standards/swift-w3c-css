@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-kashida-space` property controls how kashida elongation is used
 /// for text justification in Arabic script.

@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Easing
-import Foundation
 
 /// The CSS `transition-timing-function` property sets how intermediate values are calculated
 /// for CSS properties being affected by a transition effect.

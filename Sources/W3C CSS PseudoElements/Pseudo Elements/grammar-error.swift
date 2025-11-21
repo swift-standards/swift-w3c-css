@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents the CSS ::grammar-error pseudo-element.
 ///

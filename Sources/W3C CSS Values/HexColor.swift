@@ -1,5 +1,6 @@
 import W3C_CSS_Values
-import Foundation
+import IEEE_754
+import RFC_4648
 
 /// Represents a CSS hexadecimal color notation.
 ///
@@ -42,12 +43,13 @@ public struct HexColor: Sendable, Hashable {
     ///   - blue: The blue component (0-255)
     /// - Returns: A HexColor in 6-digit format (#RRGGBB)
     public static func rgb(_ red: Int, _ green: Int, _ blue: Int) -> HexColor {
-        let hexString: String = .init(
-            format: "#%02X%02X%02X",
-            min(max(0, red), 255),
-            min(max(0, green), 255),
-            min(max(0, blue), 255)
-        )
+        let bytes: [UInt8] = [
+            UInt8(min(max(0, red), 255)),
+            UInt8(min(max(0, green), 255)),
+            UInt8(min(max(0, blue), 255))
+        ]
+        let hexBytes = RFC_4648.Base16.encode(bytes, uppercase: true)
+        let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
         return HexColor(hexString)
     }
 
@@ -60,16 +62,17 @@ public struct HexColor: Sendable, Hashable {
     ///   - alpha: The alpha component (0.0-1.0)
     /// - Returns: A HexColor in 8-digit format (#RRGGBBAA)
     public static func rgba(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Double) -> HexColor {
-        // Convert alpha from 0.0-1.0 to 0-255 (using rounding instead of truncation)
-        let alphaInt = Int(round(min(max(0.0, alpha), 1.0) * 255))
+        // Convert alpha from 0.0-1.0 to 0-255 (using IEEE 754 rounding)
+        let alphaInt = Int((min(max(0.0, alpha), 1.0) * 255).round)
 
-        let hexString = String(
-            format: "#%02X%02X%02X%02X",
-            min(max(0, red), 255),
-            min(max(0, green), 255),
-            min(max(0, blue), 255),
-            alphaInt
-        )
+        let bytes: [UInt8] = [
+            UInt8(min(max(0, red), 255)),
+            UInt8(min(max(0, green), 255)),
+            UInt8(min(max(0, blue), 255)),
+            UInt8(alphaInt)
+        ]
+        let hexBytes = RFC_4648.Base16.encode(bytes, uppercase: true)
+        let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
         return HexColor(hexString)
     }
 
@@ -77,10 +80,18 @@ public struct HexColor: Sendable, Hashable {
     ///
     /// - Returns: True if the hex color has a valid format (3, 4, 6, or 8 digits with # prefix)
     public var isValid: Bool {
-        let pattern = "^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$"
-        let regex = try? NSRegularExpression(pattern: pattern)
-        let range = NSRange(location: 0, length: value.utf16.count)
-        return regex?.firstMatch(in: value, range: range) != nil
+        guard value.hasPrefix("#") else { return false }
+        let hex = value.dropFirst()
+
+        // Check if length is valid (3, 4, 6, or 8)
+        guard [3, 4, 6, 8].contains(hex.count) else { return false }
+
+        // Check if all characters are valid hexadecimal digits
+        return hex.allSatisfy { char in
+            (char >= "0" && char <= "9") ||
+            (char >= "A" && char <= "F") ||
+            (char >= "a" && char <= "f")
+        }
     }
 }
 

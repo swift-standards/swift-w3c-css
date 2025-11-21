@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `gap` shorthand property sets the gaps (gutters) between rows and columns.
 ///

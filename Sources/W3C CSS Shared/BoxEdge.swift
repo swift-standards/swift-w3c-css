@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS box edge keywords used for various box model properties.
 ///

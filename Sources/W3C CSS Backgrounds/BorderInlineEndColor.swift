@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// Represents the CSS `border-inline-end-color` property, which defines the color of the logical inline-end
 /// border of an element.

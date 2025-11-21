@@ -1,5 +1,4 @@
 import W3C_CSS_Syntax
-import Foundation
 
 /// Type-safe extensions for Import to work with Media queries
 extension Import {

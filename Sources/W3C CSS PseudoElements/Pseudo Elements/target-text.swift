@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents the CSS ::target-text pseudo-element.
 ///

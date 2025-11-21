@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-delay property specifies the amount of time to wait from applying
 /// the animation to an element before beginning to perform the animation.

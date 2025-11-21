@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The isolation CSS property determines whether an element must create a new stacking context.
 ///

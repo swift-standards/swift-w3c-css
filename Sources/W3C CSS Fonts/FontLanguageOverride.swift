@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-language-override` property controls the use of language-specific glyphs in a typeface.
 ///

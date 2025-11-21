@@ -3,7 +3,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `shape-image-threshold` CSS property sets the alpha channel threshold used to extract the shape using
 /// an image as the value for `shape-outside`. Any pixels whose alpha component's value is greater than the
@@ -28,7 +27,7 @@ public enum ShapeImageThreshold: Property {
         case .value(let threshold):
             // Ensure the value is clamped between 0.0 and 1.0
             let clampedValue = min(1.0, max(0.0, threshold))
-            return String(format: "%.5g", clampedValue)
+            return String(clampedValue)
         case .global(let global):
             return global.description
         }

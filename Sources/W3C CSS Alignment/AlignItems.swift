@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS align-items property sets the align-self value on all direct children as a group.
 ///

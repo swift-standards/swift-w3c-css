@@ -32,7 +32,7 @@ public enum StrokeOpacity: Property {
         case .number(let number):
             // Clamp opacity value between 0 and 1
             let clampedValue = min(1.0, max(0.0, number.value))
-            return String(format: "%.5g", clampedValue)
+            return String(clampedValue)
         case .percentage(let percentage):
             return percentage.description
         case .global(let global):

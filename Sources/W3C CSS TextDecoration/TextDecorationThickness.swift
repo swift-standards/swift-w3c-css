@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Sets the thickness of lines used for text decoration (underline, overline, line-through).
 ///

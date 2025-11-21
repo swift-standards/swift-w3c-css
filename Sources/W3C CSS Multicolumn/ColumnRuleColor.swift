@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The CSS `column-rule-color` property sets the color of the line drawn between columns
 /// in a multi-column layout.

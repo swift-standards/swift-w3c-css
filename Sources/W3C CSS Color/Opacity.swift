@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `opacity` property sets the opacity of an element. Opacity is the degree to
 /// which content behind an element is hidden, and is the opposite of transparency.
@@ -52,7 +51,13 @@ extension Opacity: CustomStringConvertible {
     public var description: String {
         switch self {
         case .value(let value):
-            return String(format: "%.2f", value)
+            // Format to 2 decimal places without Foundation
+            let rounded = (value * 100).rounded() / 100
+            if rounded.truncatingRemainder(dividingBy: 1) == 0 {
+                return String(Int(rounded))
+            } else {
+                return String(rounded)
+            }
         case .global(let global):
             return global.description
         }

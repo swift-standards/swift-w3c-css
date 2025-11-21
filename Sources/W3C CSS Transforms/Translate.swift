@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `translate` property allows you to specify translation transforms individually and
 /// independently of the `transform` property.

@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `math-depth` property describes a notion of depth for each element of a mathematical formula,
 /// with respect to the top-level container of that formula.

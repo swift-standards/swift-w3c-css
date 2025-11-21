@@ -32,7 +32,7 @@ public enum StrokeMiterlimit: Property, ExpressibleByIntegerLiteral, Expressible
         case .value(let limit):
             // Ensure the value is at least 1.0
             let clampedValue = max(1.0, limit)
-            return String(format: "%.5g", clampedValue)
+            return String(clampedValue)
         case .global(let global):
             return global.description
         }

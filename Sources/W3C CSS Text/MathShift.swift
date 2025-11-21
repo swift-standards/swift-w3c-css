@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `math-shift` property indicates whether superscripts inside MathML formulas
 /// should be raised by a normal or compact shift.

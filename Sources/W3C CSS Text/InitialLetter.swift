@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `initial-letter` property sets the size and sink for dropped, raised,
 /// and sunken initial letters.

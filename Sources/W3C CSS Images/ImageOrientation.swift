@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `image-orientation` property specifies a layout-independent correction to the orientation of an image.
 ///

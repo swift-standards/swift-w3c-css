@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Specifies how overflowed content that is not displayed should be signaled to the user.
 ///

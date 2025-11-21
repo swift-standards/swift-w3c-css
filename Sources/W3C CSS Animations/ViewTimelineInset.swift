@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS view-timeline-inset property specifies adjustments to the position of the scrollport
 /// in which the subject element of a named view progress timeline animation is deemed to be visible.

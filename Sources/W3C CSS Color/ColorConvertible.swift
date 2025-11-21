@@ -6,7 +6,6 @@ import W3C_CSS_Values
 //  Created by Coen ten Thije Boonkkamp on 01/04/2025.
 //
 
-import Foundation
 
 public protocol ColorConvertible {
     static func color(_ color: W3C_CSS_Values.Color) -> Self

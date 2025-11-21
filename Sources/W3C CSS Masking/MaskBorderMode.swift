@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `mask-border-mode` property, which specifies the blending mode used in a mask border.
 ///

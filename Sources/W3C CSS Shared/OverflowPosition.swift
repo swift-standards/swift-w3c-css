@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS overflow position values for alignment properties.
 ///

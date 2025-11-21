@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS aspect-ratio property allows you to define the desired width-to-height ratio
 /// of an element's box.

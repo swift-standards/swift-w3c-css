@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-bottom-right-radius` property, which rounds the bottom-right corner of an element.
 ///

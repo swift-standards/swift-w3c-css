@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-variant-position` property controls the use of alternate, smaller glyphs
 /// that are positioned as superscript or subscript.

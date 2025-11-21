@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `transition-delay` property specifies the amount of time to wait before starting
 /// a transition effect.

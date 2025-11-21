@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS animation-fill-mode property sets how a CSS animation applies styles
 /// to its target before and after its execution.

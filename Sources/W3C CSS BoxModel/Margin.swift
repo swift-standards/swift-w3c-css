@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `margin` shorthand property sets the margin area on all four sides of an element at once.
 ///

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-synthesis-weight` property lets you specify whether or not the browser may synthesize
 /// the bold typeface when it is missing in a font family.

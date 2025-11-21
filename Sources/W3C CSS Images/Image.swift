@@ -1,4 +1,3 @@
-import Foundation
 import W3C_CSS_Shared
 import W3C_CSS_Values
 

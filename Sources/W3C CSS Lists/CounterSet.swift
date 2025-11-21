@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `counter-set` CSS property sets CSS counters to given values.
 ///

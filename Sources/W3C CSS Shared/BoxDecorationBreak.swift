@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 26/03/2025.
 //
 
-import Foundation
 
 /// The CSS `box-decoration-break` property specifies how an element's fragments should be rendered
 /// when broken across multiple lines, columns, or pages.

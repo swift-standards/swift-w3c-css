@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `flex-shrink` property defines how much a flex item will shrink relative to the rest of the flex items in the container.
 ///

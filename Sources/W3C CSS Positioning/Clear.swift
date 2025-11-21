@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `clear` property sets whether an element must be moved below (cleared) floating elements that precede it.
 /// The clear property applies to floating and non-floating elements.

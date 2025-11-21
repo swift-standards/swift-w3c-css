@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `scale` CSS property allows you to specify scale transforms individually and independently
 /// of the transform property.

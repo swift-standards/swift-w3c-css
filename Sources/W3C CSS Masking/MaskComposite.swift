@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `mask-composite` property, which sets how the current mask layer interacts with the mask layers below it.
 ///

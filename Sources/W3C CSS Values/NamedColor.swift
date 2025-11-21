@@ -1,5 +1,4 @@
 import W3C_CSS_Values
-import Foundation
 
 /// Represents CSS named color values.
 ///

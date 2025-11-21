@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `list-style-position` property sets the position of the marker relative to the list item.
 ///

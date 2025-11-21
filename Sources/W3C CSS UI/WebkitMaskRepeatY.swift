@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-webkit-mask-repeat-y` property specifies whether and how
 /// a mask image is repeated (tiled) vertically.

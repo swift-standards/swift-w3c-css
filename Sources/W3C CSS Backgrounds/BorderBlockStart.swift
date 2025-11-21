@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-block-start` shorthand property, which sets border properties for the block-start edge.
 ///

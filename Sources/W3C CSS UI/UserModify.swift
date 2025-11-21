@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `user-modify` property is a non-standard, deprecated property that was originally planned
 /// to determine whether or not the content of an element can be edited by a user.

@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `stroke-dasharray` property defines a pattern of dashes and gaps used in the painting
 /// of an SVG shape's stroke. If present, it overrides the element's stroke-dasharray attribute.
@@ -74,7 +73,7 @@ public enum StrokeDasharray: Property {
         case .none:
             return "none"
         case .numbers(let values):
-            return values.map { String(format: "%.5g", $0) }.joined(separator: ", ")
+            return values.map { String($0) }.joined(separator: ", ")
         case .lengths(let values):
             return values.map { $0.description }.joined(separator: ", ")
         case .percentages(let values):

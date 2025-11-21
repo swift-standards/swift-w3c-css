@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `marker-mid` CSS property points to a marker that will be drawn on all middle vertices of the element's path.
 ///

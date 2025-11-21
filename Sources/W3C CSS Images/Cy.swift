@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `cy` CSS property defines the y-axis coordinate of the center point of SVG circle and ellipse elements.
 ///

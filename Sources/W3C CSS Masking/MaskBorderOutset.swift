@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `mask-border-outset` property, which sets the distance by which an element's
 /// mask border is set out from its border box.

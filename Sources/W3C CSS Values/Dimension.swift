@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS dimension, which is a number with a unit.
 ///

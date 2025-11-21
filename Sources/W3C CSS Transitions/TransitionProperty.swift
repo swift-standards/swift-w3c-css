@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `transition-property` property specifies the names of the CSS properties to which
 /// a transition effect should be applied.

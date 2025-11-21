@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `grid-row-start` property specifies a grid item's start position within the
 /// grid row by contributing a line, a span, or nothing (automatic) to its grid placement.

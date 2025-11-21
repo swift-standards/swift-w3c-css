@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS dashed identifier for user-defined custom properties and values.
 ///

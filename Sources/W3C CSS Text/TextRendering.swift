@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-rendering` property provides information to the rendering engine about what to optimize for when rendering text.
 ///

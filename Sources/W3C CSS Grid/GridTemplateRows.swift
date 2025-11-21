@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `grid-template-rows` property defines the line names and track sizing functions of the grid rows.
 ///

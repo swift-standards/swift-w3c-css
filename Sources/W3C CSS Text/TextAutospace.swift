@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-autospace` property controls inter-script spacing in documents containing different
 /// writing systems, such as Latin and CJK.

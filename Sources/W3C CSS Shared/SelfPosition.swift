@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents a CSS self-position value.
 ///

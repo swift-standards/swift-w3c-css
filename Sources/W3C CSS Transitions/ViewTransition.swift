@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Syntax
-import Foundation
 
 /// Represents a CSS @view-transition at-rule.
 ///
@@ -41,20 +40,14 @@ public struct ViewTransition: AtRule {
         let currentContent = rawValue
 
         // Check if the rule already has a navigation property
-        if currentContent.contains("navigation:") {
-            // Replace the existing navigation property
-            let pattern = "navigation: [a-z]+;"
-            let replacement = "navigation: \(value.rawValue);"
-            if let regex = try? NSRegularExpression(pattern: pattern) {
-                let range = NSRange(
-                    currentContent.startIndex..<currentContent.endIndex,
-                    in: currentContent
-                )
-                let newContent = regex.stringByReplacingMatches(
-                    in: currentContent,
-                    range: range,
-                    withTemplate: replacement
-                )
+        if let navStartRange = currentContent.ranges(of: "navigation:").first {
+            // Find the end of the navigation property (the semicolon)
+            let afterNav = currentContent[navStartRange.lowerBound...]
+            if let semiIndex = afterNav.firstIndex(of: ";") {
+                // Replace from "navigation:" to ";"
+                var newContent = String(currentContent[..<navStartRange.lowerBound])
+                newContent += "navigation: \(value.rawValue);"
+                newContent += String(currentContent[currentContent.index(after: semiIndex)...])
                 return ViewTransition(rawValue: newContent)
             }
         }

@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS appearance property is used to display UI elements with platform-specific
 /// styling, based on the operating system's theme.

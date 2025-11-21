@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `vertical-align` property sets vertical alignment of an inline, inline-block or table-cell box.
 ///

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `transform-style` property sets whether children of an element are positioned in the 3D space
 /// or are flattened in the plane of the element.

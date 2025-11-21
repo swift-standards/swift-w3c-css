@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-end-start-radius` property, which defines a logical border radius on an element,
 /// which maps to a physical border radius depending on the element's writing-mode, direction, and text-orientation.

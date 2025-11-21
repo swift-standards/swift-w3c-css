@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `ime-mode` property controls the state of the Input Method Editor (IME)
 /// for text inputs, which is important for entering text in many East Asian languages.

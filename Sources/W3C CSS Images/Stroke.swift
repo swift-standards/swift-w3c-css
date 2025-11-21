@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The CSS `stroke` property defines the color or SVG paint server used to draw an element's stroke outline.
 ///

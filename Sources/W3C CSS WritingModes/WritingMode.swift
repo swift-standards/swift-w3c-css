@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `writing-mode` property sets whether lines of text are laid out horizontally or vertically,
 /// as well as the direction in which blocks progress.

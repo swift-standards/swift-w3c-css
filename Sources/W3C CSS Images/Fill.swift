@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The `fill` CSS property defines how the interior of SVG shapes and text content are painted.
 ///

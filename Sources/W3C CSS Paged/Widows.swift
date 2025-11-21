@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `widows` property sets the minimum number of lines in a block container that must be shown
 /// at the top of a page, region, or column.

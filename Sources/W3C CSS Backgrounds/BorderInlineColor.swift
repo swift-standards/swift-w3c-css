@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// Represents the CSS `border-inline-color` property, which sets the color of the logical inline borders.
 ///

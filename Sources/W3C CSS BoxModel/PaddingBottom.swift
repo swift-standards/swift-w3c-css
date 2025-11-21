@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `padding-bottom` property sets the height of the padding area on the bottom of an element.
 ///

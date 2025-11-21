@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Text
-import Foundation
 
 /// The CSS `font` property is a shorthand for setting font-style, font-variant, font-weight,
 /// font-stretch, font-size, line-height, and font-family all at once.

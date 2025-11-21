@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `offset` shorthand property sets all the properties required for animating
 /// an element along a defined path.

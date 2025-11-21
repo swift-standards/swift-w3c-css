@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS display values for list items.
 ///

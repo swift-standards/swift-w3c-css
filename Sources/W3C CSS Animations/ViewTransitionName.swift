@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS view-transition-name property provides the selected element with a distinct identifying name
 /// and causes it to participate in a separate view transition from the root view transition.

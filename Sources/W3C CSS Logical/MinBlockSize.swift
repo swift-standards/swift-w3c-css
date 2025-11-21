@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `min-block-size` property defines the minimum size of an element in the block direction.
 /// When writing mode is horizontal, this refers to the element's minimum height. When writing mode

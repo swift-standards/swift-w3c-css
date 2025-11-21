@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `position-area` property enables an anchor-positioned element to be positioned
 /// relative to the edges of its associated anchor element.

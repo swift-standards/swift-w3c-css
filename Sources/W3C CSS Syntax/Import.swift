@@ -1,5 +1,5 @@
 import W3C_CSS_Shared
-import Foundation
+import INCITS_4_1986
 
 /// Represents a CSS @import at-rule.
 ///
@@ -44,16 +44,24 @@ public struct Import: AtRule {
     public init(rawValue: String) {
         self.rawValue = rawValue
 
-        // Extract URL from rawValue - simplified implementation
-        if let urlRange = rawValue.range(of: "@import\\s+([^\\s;]+)", options: .regularExpression),
-            let matches = rawValue[urlRange].range(
-                of: "\\s+([^\\s;]+)",
-                options: .regularExpression
-            )
-        {
-            self.urlString = String(rawValue[matches]).trimmingCharacters(in: .whitespacesAndNewlines)
+        // Extract URL from rawValue using standard utilities
+        // Remove @import prefix and semicolon suffix
+        var cleaned = rawValue
+        if cleaned.hasPrefix("@import") {
+            cleaned = String(cleaned.dropFirst(7))
+        }
+        if cleaned.hasSuffix(";") {
+            cleaned = String(cleaned.dropLast())
+        }
+
+        // Trim whitespace using INCITS 4-1986
+        cleaned = cleaned.trimming(.ascii.whitespaces)
+
+        // Extract first token (the URL) before any conditions
+        if let spaceIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace }) {
+            self.urlString = String(cleaned[..<spaceIndex])
         } else {
-            self.urlString = ""
+            self.urlString = cleaned
         }
     }
 

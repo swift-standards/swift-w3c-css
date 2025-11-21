@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-spacing` property is a shorthand property that controls spacing behavior in East Asian text.
 ///

@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `padding-inline-end` property defines the logical inline end padding of an element,
 /// which maps to a physical padding depending on the element's writing mode, directionality, and text orientation.

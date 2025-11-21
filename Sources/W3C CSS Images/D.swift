@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `d` CSS property defines a path to be drawn by SVG path elements.
 ///

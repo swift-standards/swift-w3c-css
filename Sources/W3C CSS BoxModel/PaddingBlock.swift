@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `padding-block` shorthand property defines the logical block start and end padding of an element,
 /// which maps to physical padding properties depending on the element's writing mode, directionality, and text orientation.

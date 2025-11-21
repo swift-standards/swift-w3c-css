@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-combine-upright` property sets the combination of characters into the space
 /// of a single character.

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `flex-flow` property is a shorthand for the `flex-direction` and `flex-wrap` properties.
 ///

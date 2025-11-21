@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end
 /// of the block dimension that is used for snapping this box to the snapport.

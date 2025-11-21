@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `counter-increment` CSS property increases or decreases the value of CSS counters.
 ///

@@ -215,7 +215,10 @@ let package = Package(
         .library(name: .w3cCSS, targets: [.w3cCSS]),
     ],
     dependencies: [
-        .package(path: "../swift-cssom")
+        .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.1.0")
     ],
     targets: [
         // MARK: - Core Modules
@@ -223,7 +226,8 @@ let package = Package(
         .target(
             name: .w3cCSSShared,
             dependencies: [
-                .product(name: "W3C CSSOM", package: "swift-cssom")
+                .product(name: "W3C CSSOM", package: "swift-cssom"),
+                .product(name: "INCITS 4-1986", package: "swift-incits-4-1986")
             ]
         ),
         .testTarget(
@@ -233,7 +237,11 @@ let package = Package(
 
         .target(
             name: .w3cCSSValues,
-            dependencies: [.w3cCSSShared]
+            dependencies: [
+                .w3cCSSShared,
+                .product(name: "IEEE 754", package: "swift-ieee-754"),
+                .product(name: "RFC 4648", package: "swift-rfc-4648")
+            ]
         ),
         .testTarget(
             name: .w3cCSSValues.tests,

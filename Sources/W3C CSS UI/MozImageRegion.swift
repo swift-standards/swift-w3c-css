@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The non-standard CSS `-moz-image-region` property specifies a region of an image to use
 /// in place of the whole image for certain Mozilla XUL elements.

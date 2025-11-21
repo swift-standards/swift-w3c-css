@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-indent` property sets the length of empty space (indentation) that is put
 /// before lines of text in a block.

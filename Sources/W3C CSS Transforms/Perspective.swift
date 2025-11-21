@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `perspective` CSS property determines the distance between the z=0 plane and the user
 /// in order to give a 3D-positioned element some perspective.

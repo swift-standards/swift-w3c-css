@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `margin-inline` shorthand property defines both the logical inline start and end margins
 /// of an element, which maps to physical margins depending on the element's writing mode,

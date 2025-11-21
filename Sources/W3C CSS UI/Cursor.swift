@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `cursor` CSS property sets the type of cursor to be displayed when pointing over an element.
 ///

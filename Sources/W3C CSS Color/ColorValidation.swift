@@ -1,5 +1,4 @@
 import W3C_CSS_Values
-import Foundation
 
 /// Provides validation functions for CSS color components.
 ///

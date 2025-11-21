@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents mathematical constants that can be used in CSS calculations.
 ///

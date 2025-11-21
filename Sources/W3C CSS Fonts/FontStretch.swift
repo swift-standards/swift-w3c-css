@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `font-stretch` property selects a normal, condensed, or expanded face from a font.
 ///

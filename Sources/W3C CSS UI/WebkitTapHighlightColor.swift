@@ -8,7 +8,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Color
-import Foundation
 
 /// The non-standard CSS `-webkit-tap-highlight-color` property sets the color of the highlight
 /// that appears over a link or interactive element while it's being tapped on mobile devices.

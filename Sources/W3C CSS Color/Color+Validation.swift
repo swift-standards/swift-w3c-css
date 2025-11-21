@@ -1,5 +1,4 @@
 import W3C_CSS_Values
-import Foundation
 
 /// Extension providing validated factory methods for creating color values.
 ///

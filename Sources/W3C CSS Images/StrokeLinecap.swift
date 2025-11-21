@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `stroke-linecap` property defines the shape to be used at the end of open subpaths
 /// of SVG elements' unclosed strokes. If present, it overrides the element's stroke-linecap attribute.

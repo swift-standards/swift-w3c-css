@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `float` property places an element on the left or right side of its container,
 /// allowing text and inline elements to wrap around it.

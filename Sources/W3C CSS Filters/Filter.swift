@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `filter` property applies graphical effects like blur, saturate, or hue rotation to an element.
 ///

@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `column-span` property makes it possible for an element to span across all columns when its value is set to `all`.
 /// An element that spans more than one column is called a spanning element.

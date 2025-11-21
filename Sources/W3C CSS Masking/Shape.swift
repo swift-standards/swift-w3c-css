@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents a legacy CSS shape value for use with the deprecated `clip` property.
 ///

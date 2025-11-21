@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The `scroll-margin` shorthand property sets all of the scroll margins of an element at once,
 /// assigning values much like the margin property does for margins of an element.

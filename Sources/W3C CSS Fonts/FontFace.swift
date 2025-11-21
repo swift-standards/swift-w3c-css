@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
 import W3C_CSS_Values
-import Foundation
 
 /// Represents a CSS @font-face at-rule.
 ///

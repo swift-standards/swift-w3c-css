@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `z-index` property sets the z-order of a positioned element and its descendants or flex/grid items.
 ///

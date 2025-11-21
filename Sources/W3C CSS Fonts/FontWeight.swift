@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-weight` property sets the weight (or boldness) of the font.
 ///

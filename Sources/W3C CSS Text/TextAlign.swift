@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-align` property sets the horizontal alignment of the inline-level
 /// content inside a block element or table-cell box.

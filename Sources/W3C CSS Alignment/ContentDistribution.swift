@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS content distribution values for aligning items within a container.
 ///

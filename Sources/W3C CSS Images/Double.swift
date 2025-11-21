@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 25/03/2025.
 //
 
-import Foundation
 
 /// Provides utility extensions for Double values used in CSS properties.
 ///

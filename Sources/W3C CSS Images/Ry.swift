@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `ry` property defines the y-axis (vertical) radius of an SVG ellipse
 /// and the vertical curve of the corners of an SVG rectangle.

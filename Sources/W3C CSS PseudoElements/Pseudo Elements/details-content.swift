@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents the CSS ::details-content pseudo-element.
 ///

@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS display internal values for elements within table and ruby layouts.
 ///

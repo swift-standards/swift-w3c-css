@@ -1,7 +1,6 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
 import W3C_CSS_Syntax
-import Foundation
 
 /// Represents a CSS @media at-rule.
 ///
@@ -136,6 +135,26 @@ public struct Media: AtRule {
     /// Targets devices with reduced motion preference.
     public static let reducedMotion = Media(rawValue: "@media (prefers-reduced-motion: reduce)")
 }
+
+//extension W3C_CSS_MediaQueries.Media {
+//    public static let desktop = Self(rawValue: "@media only screen and (min-width: 832px)")
+//    public static let mobile = Self(rawValue: "@media only screen and (max-width: 831px)")
+//    public static let tablet = Self(
+//        rawValue: "@media only screen and (min-width: 768px) and (max-width: 1024px)"
+//    )
+//    public static let landscape = Self(rawValue: "@media (orientation: landscape)")
+//    public static let portrait = Self(rawValue: "@media (orientation: portrait)")
+//    public static let retina = Self(
+//        rawValue: "@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+//    )
+//    public static let smallMobile = Self(rawValue: "@media only screen and (max-width: 320px)")
+//    public static let largeMobile = Self(
+//        rawValue: "@media only screen and (min-width: 321px) and (max-width: 767px)"
+//    )
+//    public static let largeDesktop = Self(rawValue: "@media only screen and (min-width: 1200px)")
+//    public static let hover = Self(rawValue: "@media (hover: hover)")
+//    public static let reducedMotion = Self(rawValue: "@media (prefers-reduced-motion: reduce)")
+//}
 
 // MARK: - Media Type
 

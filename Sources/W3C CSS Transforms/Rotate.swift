@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `rotate` property allows you to specify rotation transforms individually and
 /// independently of the `transform` property.

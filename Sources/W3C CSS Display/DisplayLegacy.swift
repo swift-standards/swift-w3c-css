@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS legacy display values for backward compatibility.
 ///

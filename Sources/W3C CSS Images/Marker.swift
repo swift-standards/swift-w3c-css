@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The `marker` CSS property is a shorthand property for setting the `marker-start`, `marker-mid`, and `marker-end`
 /// properties in a single declaration, establishing the markers to be used at the start, middle,

@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `page-break-before` property adjusts page breaks before the current element.
 ///

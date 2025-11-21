@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `overscroll-behavior-x` CSS property sets the browser's behavior when the horizontal boundary
 /// of a scrolling area is reached.

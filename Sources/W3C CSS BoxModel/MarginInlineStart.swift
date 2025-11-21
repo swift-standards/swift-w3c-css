@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `margin-inline-start` property defines the logical inline start margin of an element.
 ///

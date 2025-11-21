@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// Represents a CSS position value for two-dimensional placement.
 ///

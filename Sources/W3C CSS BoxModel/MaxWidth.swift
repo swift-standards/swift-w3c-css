@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `max-width` property sets the maximum width of an element. It prevents
 /// the used value of the width property from becoming larger than the value specified for max-width.

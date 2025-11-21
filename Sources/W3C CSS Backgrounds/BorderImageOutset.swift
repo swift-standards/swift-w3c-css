@@ -1,6 +1,5 @@
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// Represents the CSS `border-image-outset` property, which sets the distance by which an element's
 /// border image is set out from its border box.

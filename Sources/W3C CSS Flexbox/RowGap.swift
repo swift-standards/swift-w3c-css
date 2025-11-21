@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `row-gap` property sets the size of the gap (gutter) between an element's rows.
 ///

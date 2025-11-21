@@ -7,7 +7,6 @@ import W3C_CSS_Values
 //
 
 import W3C_CSS_Shared
-import Foundation
 
 /// The `scroll-behavior` CSS property sets the behavior for a scrolling box when scrolling
 /// is triggered by the navigation or CSSOM scrolling APIs.

@@ -1,7 +1,6 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
 import W3C_CSS_Easing
-import Foundation
 
 /// The CSS animation shorthand property applies an animation between styles.
 ///

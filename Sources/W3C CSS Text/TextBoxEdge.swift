@@ -7,7 +7,6 @@
 
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import Foundation
 
 /// The CSS `text-box-edge` property specifies an amount of space to trim from a text
 /// element's block container.

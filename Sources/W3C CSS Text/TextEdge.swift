@@ -1,4 +1,3 @@
-import Foundation
 
 /// Represents CSS text-edge keywords that specify font metrics for block edges.
 ///

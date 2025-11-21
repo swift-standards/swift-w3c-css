@@ -1,5 +1,4 @@
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `font-synthesis-position` property lets you specify whether or not a browser may synthesize
 /// the subscript and superscript "position" typefaces when they are missing in a font family,

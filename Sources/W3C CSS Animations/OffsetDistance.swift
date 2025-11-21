@@ -1,6 +1,5 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
-import Foundation
 
 /// The CSS `offset-distance` property specifies a position along an `offset-path` for an element to be placed.
 ///
