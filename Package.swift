@@ -227,7 +227,7 @@ let package = Package(
             name: .w3cCSSShared,
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
-                .product(name: "INCITS 4-1986", package: "swift-incits-4-1986")
+                .product(name: "INCITS 4 1986", package: "swift-incits-4-1986")
             ]
         ),
         .testTarget(

@@ -1,6 +1,7 @@
 import W3C_CSS_Values
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
+import INCITS_4_1986
 
 /// Represents a CSS @keyframes at-rule.
 ///
@@ -58,19 +59,21 @@ public struct Keyframes: AtRule {
     public init(rawValue: String) {
         self.rawValue = rawValue
 
-        // Extract name from rawValue - simplified implementation
-        if let nameRange = rawValue.range(
-            of: "@keyframes\\s+([^\\s{]+)",
-            options: .regularExpression
-        ),
-            let matches = rawValue[nameRange].range(
-                of: "\\s+([^\\s{]+)",
-                options: .regularExpression
-            )
-        {
-            self.name = String(rawValue[matches]).trimmingCharacters(in: .whitespacesAndNewlines)
+        // Extract name from rawValue using standard utilities
+        // Parse "@keyframes name {" to extract "name"
+        var cleaned = rawValue
+        if cleaned.hasPrefix("@keyframes") {
+            cleaned = String(cleaned.dropFirst(10))
+        }
+
+        // Trim whitespace using INCITS 4-1986
+        cleaned = cleaned.trimming(.ascii.whitespaces)
+
+        // Extract name until whitespace or '{'
+        if let endIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace || $0 == "{" }) {
+            self.name = String(cleaned[..<endIndex])
         } else {
-            self.name = ""
+            self.name = cleaned
         }
     }
 
