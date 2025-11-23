@@ -669,7 +669,7 @@ let package = Package(
                 .w3cCSSCounterStyles,
                 .w3cCSSPaged,
             ]
-        ),
+        )
     ],
     swiftLanguageModes: [.v6]
 )

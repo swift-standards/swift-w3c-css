@@ -94,17 +94,17 @@ extension Number {
 
     /// Rounds the number to the nearest integer
     public var rounded: Number {
-        return Number(value.round)
+        return Number(value.rounded())
     }
 
     /// Rounds the number down to the nearest integer
     public var floor: Number {
-        return Number(value.floor)
+        return Number(value.ieee754.floor)
     }
 
     /// Rounds the number up to the nearest integer
     public var ceil: Number {
-        return Number(value.ceil)
+        return Number(value.ieee754.ceil)
     }
 }
 

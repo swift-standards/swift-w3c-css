@@ -118,7 +118,7 @@ extension ColorInterpolationMethod: CustomStringConvertible {
                 return "in \(space)"
             }
         case .custom(let profile):
-            return "in \(CSSString(profile, quotes: .single))"
+            return "in \(CSSString(profile))"
         }
     }
 }

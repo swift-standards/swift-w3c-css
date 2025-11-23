@@ -4,6 +4,7 @@
 // Tests for CSS HexColor type
 
 import Testing
+import Foundation
 @testable import W3C_CSS_Color
 import W3C_CSS_Values
 

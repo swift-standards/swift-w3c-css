@@ -62,7 +62,9 @@ public struct HexColor: Sendable, Hashable {
     /// - Returns: A HexColor in 8-digit format (#RRGGBBAA)
     public static func rgba(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Double) -> HexColor {
         // Convert alpha from 0.0-1.0 to 0-255 (using IEEE 754 rounding)
-        let alphaInt = Int((min(max(0.0, alpha), 1.0) * 255).round)
+        let alphaInt = Int(
+            (min(max(0.0, alpha), 1.0) * 255).rounded()
+        )
 
         let bytes: [UInt8] = [
             UInt8(min(max(0, red), 255)),

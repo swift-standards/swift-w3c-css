@@ -70,11 +70,11 @@ extension AnimationName: ExpressibleByStringLiteral {
         } else if value.starts(with: "\"") && value.hasSuffix("\"") {
             // Remove the quotes and treat as a string with double quotes
             let trimmed = String(value.dropFirst().dropLast())
-            self = .keyframes(.string(.init(trimmed, quotes: .double)))
+            self = .keyframes(.string(.init(trimmed)))
         } else if value.starts(with: "'") && value.hasSuffix("'") {
             // Remove the quotes and treat as a string with single quotes
             let trimmed = String(value.dropFirst().dropLast())
-            self = .keyframes(.string(.init(trimmed, quotes: .single)))
+            self = .keyframes(.string(.init(trimmed)))
         } else {
             // Treat as a custom identifier
             self = .keyframes(.customIdent(.init(value)))
