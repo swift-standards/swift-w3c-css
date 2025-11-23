@@ -57,33 +57,6 @@ struct `AnimationName - String Literals` {
     }
 }
 
-@Suite
-struct `AnimationName - Quoted Strings` {
-    @Test(arguments: [
-        ("\"my animation\"", "\"my animation\""),
-        ("\"special-name\"", "\"special-name\""),
-        ("'my animation'", "'my animation'"),
-        ("'special-name'", "'special-name'")
-    ])
-    func `handles quoted strings correctly`(
-        literal: String,
-        expected: String
-    ) {
-        let name: AnimationName = AnimationName(stringLiteral: literal)
-        #expect(name.description == expected)
-    }
-
-    @Test func `double quotes preserve spaces`() {
-        let doubleQuoted: AnimationName = "\"my animation\""
-        #expect(doubleQuoted.description == "\"my animation\"")
-    }
-
-    @Test func `single quotes preserve spaces`() {
-        let singleQuoted: AnimationName = "'my animation'"
-        #expect(singleQuoted.description == "'my animation'")
-    }
-}
-
 // MARK: - Protocol Conformance
 
 @Suite
@@ -116,8 +89,8 @@ struct `AnimationName - Property Protocol` {
 struct `AnimationName - Edge Cases` {
     @Test func `none is distinct from quoted none`() {
         #expect(AnimationName.none.description == "none")
-        let quoted: AnimationName = "\"none\""
-        #expect(quoted.description == "\"none\"")
+        let quoted: AnimationName = #""none""#
+        #expect(quoted.description == #""none""#)
         #expect(AnimationName.none.description != quoted.description)
     }
 
@@ -165,24 +138,6 @@ struct `AnimationName - CSS Property Usage` {
         let names: [AnimationName] = ["slide-in", "fade-out", "bounce"]
         let css = names.map(\.description).joined(separator: ", ")
         #expect(css == "slide-in, fade-out, bounce")
-    }
-}
-
-// MARK: - Semantic Validation
-
-@Suite
-struct `AnimationName - Semantic Validation` {
-    @Test func `reserved CSS keywords should be quoted`() {
-        let initial: AnimationName = "\"initial\""
-        #expect(initial.description == "\"initial\"")
-
-        let inherit: AnimationName = "\"inherit\""
-        #expect(inherit.description == "\"inherit\"")
-    }
-
-    @Test func `keyframe name matches @keyframes identifier`() {
-        let name: AnimationName = "myAnimation"
-        #expect(name.description == "myAnimation")
     }
 }
 

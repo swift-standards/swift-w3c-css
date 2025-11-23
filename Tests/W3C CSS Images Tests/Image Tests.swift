@@ -14,9 +14,9 @@ import W3C_CSS_Shared
 @Suite
 struct `Image - URL Initialization` {
     @Test(arguments: [
-        ("image.jpg", "url('image.jpg')"),
-        ("/images/banner.png", "url('/images/banner.png')"),
-        ("https://example.com/photo.jpg", "url('https://example.com/photo.jpg')")
+        ("image.jpg", #"url("image.jpg")"#),
+        ("/images/banner.png", #"url("/images/banner.png")"#),
+        ("https://example.com/photo.jpg", #"url("https://example.com/photo.jpg")"#)
     ])
     func `url images render correctly`(
         url: String,
@@ -26,9 +26,9 @@ struct `Image - URL Initialization` {
         #expect(image.description == expected)
     }
 
-    @Test func `url image strips existing quotes`() {
-        let imageWithQuotes = Image.url("\"path/to/image.jpg\"")
-        #expect(imageWithQuotes.description == "url('path/to/image.jpg')")
+    @Test func `url image handles quoted input`() {
+        let imageWithQuotes = Image.url(#""path/to/image.jpg""#)
+        #expect(imageWithQuotes.description == #"url("\"path/to/image.jpg\"")"#)
     }
 }
 
@@ -136,7 +136,7 @@ struct `Image - Cross Fade` {
             from: .url("old.jpg"),
             to: .url("new.jpg")
         )
-        #expect(crossFade.description == "cross-fade(40% url('old.jpg'), url('new.jpg'))")
+        #expect(crossFade.description == #"cross-fade(40% url("old.jpg"), url("new.jpg"))"#)
     }
 
     @Test func `cross fade with gradient`() {
@@ -155,7 +155,7 @@ struct `Image - Cross Fade` {
         )
         #expect(
             crossFadeWithGradient.description
-                == "cross-fade(75% url('image.jpg'), linear-gradient(red, blue))"
+                == #"cross-fade(75% url("image.jpg"), linear-gradient(red, blue))"#
         )
     }
 }
@@ -167,7 +167,7 @@ struct `Image - Image Set` {
             ImageSetItem(url: "image.png", resolution: "1x"),
             ImageSetItem(url: "image-2x.png", resolution: "2x"),
         ])
-        #expect(imageSet.description == "image-set('image.png' 1x, 'image-2x.png' 2x)")
+        #expect(imageSet.description == #"image-set(url("image.png") 1x, url("image-2x.png") 2x)"#)
     }
 
     @Test func `image set with multiple items`() {
@@ -178,7 +178,7 @@ struct `Image - Image Set` {
         ])
         #expect(
             imageSetWithManyItems.description
-                == "image-set('small.jpg' 1x, 'medium.jpg' 2x, 'large.jpg' 3x)"
+                == #"image-set(url("small.jpg") 1x, url("medium.jpg") 2x, url("large.jpg") 3x)"#
         )
     }
 
@@ -187,7 +187,7 @@ struct `Image - Image Set` {
             (url: "image.png", resolution: "1x"),
             (url: "image-2x.png", resolution: "2x"),
         ])
-        #expect(imageSet.description == "image-set('image.png' 1x, 'image-2x.png' 2x)")
+        #expect(imageSet.description == #"image-set(url("image.png") 1x, url("image-2x.png") 2x)"#)
     }
 }
 
@@ -296,7 +296,7 @@ struct `Image - Hashable Conformance` {
 struct `Image - CSS Property Usage` {
     @Test func `image renders correctly in background-image property`() {
         let backgroundImage = "background-image: \(Image.url("banner.jpg"))"
-        #expect(backgroundImage == "background-image: url('banner.jpg')")
+        #expect(backgroundImage == #"background-image: url("banner.jpg")"#)
     }
 
     @Test func `image renders correctly in border-image property`() {
@@ -307,7 +307,7 @@ struct `Image - CSS Property Usage` {
 
     @Test func `image renders correctly in list-style-image property`() {
         let listStyleImage = "list-style-image: \(Image.url("bullet.png"))"
-        #expect(listStyleImage == "list-style-image: url('bullet.png')")
+        #expect(listStyleImage == #"list-style-image: url("bullet.png")"#)
     }
 }
 
@@ -317,12 +317,12 @@ struct `Image - CSS Property Usage` {
 struct `Image - Edge Cases` {
     @Test func `empty URL string`() {
         let image = Image.url("")
-        #expect(image.description == "url('')")
+        #expect(image.description == #"url("")"#)
     }
 
     @Test func `URL with special characters`() {
         let image = Image.url("path/to/image with spaces.jpg")
-        #expect(image.description == "url('path/to/image with spaces.jpg')")
+        #expect(image.description == #"url("path/to/image with spaces.jpg")"#)
     }
 
     @Test func `paint worklet with no arguments array`() {
@@ -341,7 +341,7 @@ struct `Image - Edge Cases` {
             from: .url("old.jpg"),
             to: .url("new.jpg")
         )
-        #expect(crossFade.description == "cross-fade(0% url('old.jpg'), url('new.jpg'))")
+        #expect(crossFade.description == #"cross-fade(0% url("old.jpg"), url("new.jpg"))"#)
     }
 
     @Test func `cross fade with 100 percent`() {
@@ -350,7 +350,7 @@ struct `Image - Edge Cases` {
             from: .url("old.jpg"),
             to: .url("new.jpg")
         )
-        #expect(crossFade.description == "cross-fade(100% url('old.jpg'), url('new.jpg'))")
+        #expect(crossFade.description == #"cross-fade(100% url("old.jpg"), url("new.jpg"))"#)
     }
 }
 

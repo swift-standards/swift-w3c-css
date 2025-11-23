@@ -72,9 +72,9 @@ struct `ColorInterpolationMethod - Polar Spaces With Hue` {
 @Suite
 struct `ColorInterpolationMethod - Custom Profile` {
     @Test(arguments: [
-        ("my-custom-profile", "in 'my-custom-profile'"),
-        ("sRGB-IEC61966", "in 'sRGB-IEC61966'"),
-        ("Adobe-RGB-1998", "in 'Adobe-RGB-1998'")
+        ("my-custom-profile", #"in "my-custom-profile""#),
+        ("sRGB-IEC61966", #"in "sRGB-IEC61966""#),
+        ("Adobe-RGB-1998", #"in "Adobe-RGB-1998""#)
     ])
     func `custom color profile renders correctly`(
         profileName: String,
@@ -190,13 +190,13 @@ struct `ColorInterpolationMethod - Edge Cases` {
     @Test func `custom profile with empty string`() {
         let emptyProfile = ""
         let method = ColorInterpolationMethod.custom(emptyProfile)
-        #expect(method.description == "in ''")
+        #expect(method.description == #"in """#)
     }
 
     @Test func `custom profile with special characters`() {
         let specialProfile = "my-profile-2.0"
         let method = ColorInterpolationMethod.custom(specialProfile)
-        #expect(method.description == "in 'my-profile-2.0'")
+        #expect(method.description == #"in "my-profile-2.0""#)
     }
 }
 
