@@ -19,7 +19,7 @@ import W3C_CSS_Shared
 ///         which provides perceptually uniform color transitions.
 ///
 /// - SeeAlso: [MDN Web Docs on color interpolation methods](https://developer.mozilla.org/en-US/docs/Web/CSS/color-interpolation-method)
-public enum ColorInterpolationMethod: Sendable, Hashable {
+public struct ColorInterpolationMethod: Sendable, Hashable, CustomStringConvertible {
     /// Rectangular color spaces for color interpolation
     public enum RectangularColorSpace: String, Sendable, Hashable, CustomStringConvertible {
         /// The standard sRGB color space
@@ -92,33 +92,73 @@ public enum ColorInterpolationMethod: Sendable, Hashable {
         public var description: String { rawValue }
     }
 
-    /// Interpolation using a rectangular color space
-    case rectangular(RectangularColorSpace)
+    // MARK: - Storage
 
-    /// Interpolation using a polar color space with optional hue interpolation method
-    case polar(PolarColorSpace, HueInterpolationMethod? = nil)
+    private let colorSpace: String
+    private let hueMethod: String?
 
-    /// Interpolation using a custom color profile
-    case custom(String)
-}
+    // MARK: - Initialization
 
-/// Provides string conversion for CSS output
-extension ColorInterpolationMethod: CustomStringConvertible {
+    /// Creates a color interpolation method with a custom color space.
+    ///
+    /// This initializer allows you to specify any color space, including custom
+    /// `@color-profile` references using dashed-ident syntax.
+    ///
+    /// - Parameters:
+    ///   - colorSpace: The name of the color space (e.g., "srgb", "--my-profile")
+    ///   - hueMethod: Optional hue interpolation method for polar color spaces
+    public init(colorSpace: String, hueMethod: String? = nil) {
+        self.colorSpace = colorSpace
+        self.hueMethod = hueMethod
+    }
+
+    // MARK: - Static Factory Methods
+
+    /// Creates a color interpolation method using a rectangular color space.
+    ///
+    /// - Parameter space: The rectangular color space to use
+    /// - Returns: A color interpolation method configured for the specified space
+    public static func rectangular(_ space: RectangularColorSpace) -> Self {
+        Self(colorSpace: space.rawValue)
+    }
+
+    /// Creates a color interpolation method using a polar color space.
+    ///
+    /// - Parameters:
+    ///   - space: The polar color space to use
+    ///   - method: Optional hue interpolation method (defaults to `shorter` if not specified)
+    /// - Returns: A color interpolation method configured for the specified space and hue method
+    public static func polar(_ space: PolarColorSpace, _ method: HueInterpolationMethod? = nil) -> Self {
+        Self(colorSpace: space.rawValue, hueMethod: method?.rawValue)
+    }
+
+    /// Creates a color interpolation method using a custom color profile.
+    ///
+    /// This method creates an interpolation method that references a custom `@color-profile`
+    /// using a dashed-ident. The profile name will be automatically quoted in the CSS output.
+    ///
+    /// - Parameter profile: The name of the custom color profile
+    /// - Returns: A color interpolation method for the custom profile
+    ///
+    /// Example:
+    /// ```swift
+    /// ColorInterpolationMethod.custom("my-profile")
+    /// // Outputs: in "my-profile"
+    /// ```
+    public static func custom(_ profile: String) -> Self {
+        Self(colorSpace: CSSString(profile).description)
+    }
+
+    // MARK: - CustomStringConvertible
+
     /// Converts the color interpolation method to its CSS string representation
     ///
     /// This method formats the interpolation method for use in CSS functions.
     public var description: String {
-        switch self {
-        case .rectangular(let space):
-            return "in \(space)"
-        case .polar(let space, let method):
-            if let method = method {
-                return "in \(space) \(method)"
-            } else {
-                return "in \(space)"
-            }
-        case .custom(let profile):
-            return "in \(CSSString(profile))"
+        if let hueMethod = hueMethod {
+            return "in \(colorSpace) \(hueMethod)"
+        } else {
+            return "in \(colorSpace)"
         }
     }
 }
