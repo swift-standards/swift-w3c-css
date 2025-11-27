@@ -134,6 +134,6 @@ public struct Resolution: Sendable, Hashable {
 extension Resolution: CustomStringConvertible {
     /// Converts the resolution to its CSS string representation
     public var description: String {
-        return "\(value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value))\(unit.rawValue)"
+        return "\(value.formatted(.number))\(unit.rawValue)"
     }
 }

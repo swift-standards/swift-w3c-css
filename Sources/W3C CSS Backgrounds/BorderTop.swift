@@ -81,12 +81,12 @@ public enum BorderTop: Property {
     }
 
     /// Creates a border-top with style and color
-    public init(_ style: LineStyle, _ color: W3C_CSS_Values.Color) {
+    public init(_ style: LineStyle, _ color: Color) {
         self = .properties(Properties(style: style, color: color))
     }
 
     /// Creates a border-top with width, style, and color
-    public init(_ width: BorderWidth, _ style: LineStyle, _ color: W3C_CSS_Values.Color) {
+    public init(_ width: BorderWidth, _ style: LineStyle, _ color: Color) {
         self = .properties(Properties(width: width, style: style, color: color))
     }
 

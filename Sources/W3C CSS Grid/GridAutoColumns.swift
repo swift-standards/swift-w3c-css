@@ -61,11 +61,11 @@ public enum GridAutoColumns: Property {
         case .auto:
             return "auto"
         case .px(let value):
-            return "\(value.formattedForCSS)px"
+            return "\(value.formatted(.number))px"
         case .percentage(let percentage):
             return percentage.description
         case .fr(let value):
-            return "\(value.formattedForCSS)fr"
+            return "\(value.formatted(.number))fr"
         case .minContent:
             return "min-content"
         case .maxContent:
@@ -107,11 +107,11 @@ public enum MinMaxValue: Sendable, Hashable, CustomStringConvertible {
         case .auto:
             return "auto"
         case .px(let value):
-            return "\(value.formattedForCSS)px"
+            return "\(value.formatted(.number))px"
         case .percentage(let percentage):
             return percentage.description
         case .fr(let value):
-            return "\(value.formattedForCSS)fr"
+            return "\(value.formatted(.number))fr"
         case .minContent:
             return "min-content"
         case .maxContent:

@@ -218,7 +218,8 @@ let package = Package(
         .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.1.0")
+        .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-numeric-formatting-standard", from: "0.1.0")
     ],
     targets: [
         // MARK: - Core Modules
@@ -227,7 +228,8 @@ let package = Package(
             name: .w3cCSSShared,
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
-                .product(name: "INCITS 4 1986", package: "swift-incits-4-1986")
+                .product(name: "INCITS 4 1986", package: "swift-incits-4-1986"),
+                .product(name: "Numeric Formatting", package: "swift-numeric-formatting-standard")
             ]
         ),
         .testTarget(

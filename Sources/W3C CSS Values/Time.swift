@@ -106,8 +106,7 @@ public struct Time: Sendable, Hashable {
 extension Time: CustomStringConvertible {
     /// Converts the time to its CSS string representation
     public var description: String {
-        let formatted = value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-        return "\(formatted)\(unit.rawValue)"
+        return "\(value.formatted(.number))\(unit.rawValue)"
     }
 }
 

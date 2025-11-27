@@ -1,4 +1,5 @@
 import W3C_CSS_Values
+import Numeric_Formatting
 
 /// Represents a CSS filter function for applying graphical effects to elements.
 ///
@@ -160,7 +161,7 @@ extension FilterFunction: CustomStringConvertible {
             return percentage.description
         } else {
             // Format as decimal for other values
-            return value.truncatingRemainder()
+            return value.formatted(.number)
         }
     }
 }

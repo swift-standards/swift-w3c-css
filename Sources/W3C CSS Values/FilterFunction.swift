@@ -160,7 +160,7 @@ extension FilterFunction: CustomStringConvertible {
             return percentage.description
         } else {
             // Format as decimal for other values
-            return value.formattedForCSS
+            return value.formatted(.number)
         }
     }
 }

@@ -56,9 +56,7 @@ extension Image: CustomStringConvertible {
         case .element(let id):
             return "element(#\(id))"
         case .crossFade(let percentage, let from, let to):
-            let value = percentage.value
-            let formattedPercentage = value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
-            return "cross-fade(\(formattedPercentage)% \(from), \(to))"
+            return "cross-fade(\(percentage.value.formatted(.number))% \(from), \(to))"
         case .imageSet(let images):
             let imageParts = images.map { "\($0.url.description) \($0.resolution)" }
             return "image-set(\(imageParts.joined(separator: ", ")))"

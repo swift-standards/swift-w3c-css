@@ -44,7 +44,7 @@ public enum FloodOpacity: Property, PercentageConvertible {
     public var description: String {
         switch self {
         case .number(let number):
-            return max(0, min(1, number.value)).formattedForCSS
+            return max(0, min(1, number.value)).formatted(.number)
         case .percentage(let percentage):
             return percentage.description
         case .global(let value):

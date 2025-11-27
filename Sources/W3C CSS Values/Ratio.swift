@@ -99,9 +99,9 @@ extension Ratio: CustomStringConvertible {
     public var description: String {
         // Check if height is 1 and the CSS allows the simplified form
         if height == 1 {
-            return width.formattedForCSS
+            return width.formatted(.number)
         } else {
-            return "\(width.formattedForCSS) / \(height.formattedForCSS)"
+            return "\(width.formatted(.number)) / \(height.formatted(.number))"
         }
     }
 }

@@ -514,7 +514,7 @@ extension Length: CustomStringConvertible {
     public var description: String {
         switch self {
         case .length(let value, let unit):
-            return "\(value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value))\(unit.rawValue)"
+            return "\(value.formatted(.number))\(unit.rawValue)"
         case .keyword(let keyword):
             return keyword.rawValue
         case .calc(let expression):

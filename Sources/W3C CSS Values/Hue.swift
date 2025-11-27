@@ -73,7 +73,7 @@ extension Hue: CustomStringConvertible {
     public var description: String {
         switch self {
         case .number(let number):
-            return number.value.formattedForCSS
+            return number.value.formatted(.number)
         case .angle(let angle):
             return angle.description
         }

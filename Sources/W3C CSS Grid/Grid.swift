@@ -142,23 +142,23 @@ public enum GridTrackSize: Sendable, Hashable, CustomStringConvertible {
     case fitContent(LengthPercentage)
 
     public var description: String {
-        switch self {
+        return switch self {
         case .auto:
-            return "auto"
+            "auto"
         case .px(let value):
-            return "\(value.truncatingRemainder(dividingBy: 0))px"
+            value.formatted(.number) + "px"
         case .percentage(let percentage):
-            return percentage.description
+            percentage.description
         case .fr(let value):
-            return "\(value.truncatingRemainder(dividingBy: 0))fr"
+            value.formatted(.number) + "fr"
         case .minContent:
-            return "min-content"
+            "min-content"
         case .maxContent:
-            return "max-content"
+            "max-content"
         case .minMax(let min, let max):
-            return "minmax(\(min), \(max))"
+            "minmax(\(min), \(max))"
         case .fitContent(let value):
-            return "fit-content(\(value))"
+            "fit-content(\(value))"
         }
     }
 }

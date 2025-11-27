@@ -101,9 +101,9 @@ extension EasingFunction: CustomStringConvertible {
         case .linearPoints(let points):
             let pointsString = points.map { point in
                 if let percentage = point.percentage {
-                    return "\(point.value.formattedForCSS) \(percentage.description)"
+                    return "\(point.value.formatted(.number)) \(percentage.description)"
                 } else {
-                    return point.value.formattedForCSS
+                    return point.value.formatted(.number)
                 }
             }.joined(separator: ", ")
             return "linear(\(pointsString))"
@@ -122,7 +122,7 @@ extension EasingFunction: CustomStringConvertible {
 
         case .cubicBezier(let x1, let y1, let x2, let y2):
             return
-                "cubic-bezier(\(x1.formattedForCSS), \(y1.formattedForCSS), \(x2.formattedForCSS), \(y2.formattedForCSS))"
+                "cubic-bezier(\(x1.formatted(.number)), \(y1.formatted(.number)), \(x2.formatted(.number)), \(y2.formatted(.number)))"
 
         case .stepStart:
             return "step-start"

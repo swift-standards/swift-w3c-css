@@ -25,7 +25,7 @@ extension Dimension {
     ///
     /// This method formats the numeric value with its unit for CSS output.
     public var description: String {
-        return "\(value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value))\(unit)"
+        return "\(value.formatted(.number))\(unit)"
     }
 }
 

@@ -63,7 +63,7 @@ public enum Rotate: Property {
         case .axis(let axis, let angle):
             return "\(axis.rawValue) \(angle.description)"
         case .vector(let x, let y, let z, let angle):
-            return "\(x.formattedForCSS) \(y.formattedForCSS) \(z.formattedForCSS) \(angle.description)"
+            return "\(x.formatted(.number)) \(y.formatted(.number)) \(z.formatted(.number)) \(angle.description)"
         case .global(let global):
             return global.description
         }

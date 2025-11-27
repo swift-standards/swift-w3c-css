@@ -52,7 +52,7 @@ public enum LineHeight: Property, LengthPercentageConvertible, ExpressibleByFloa
         case .multiple(let factor):
             // Ensure non-negative value
             let nonNegative = max(0, factor)
-            return nonNegative.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(nonNegative)) : String(nonNegative)
+            return nonNegative.formatted(.number)
         case .global(let value):
             return value.description
         }

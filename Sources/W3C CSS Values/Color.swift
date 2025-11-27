@@ -78,32 +78,32 @@ extension Color: CustomStringConvertible {
             return "rgb(\(r), \(g), \(b))"
 
         case .rgba(let r, let g, let b, let a):
-            return "rgba(\(r), \(g), \(b), \(a.formattedForCSS))"
+            return "rgba(\(r), \(g), \(b), \(a.formatted(.number)))"
 
         case .hsl(let h, let s, let l):
-            return "hsl(\(h), \(s.formattedForCSS)%, \(l.formattedForCSS)%)"
+            return "hsl(\(h), \(s.formatted(.number))%, \(l.formatted(.number))%)"
 
         case .hsla(let h, let s, let l, let a):
-            return "hsla(\(h), \(s.formattedForCSS)%, \(l.formattedForCSS)%, \(a.formattedForCSS))"
+            return "hsla(\(h), \(s.formatted(.number))%, \(l.formatted(.number))%, \(a.formatted(.number)))"
 
         case .hwb(let h, let w, let b):
-            return "hwb(\(h) \(w.formattedForCSS)% \(b.formattedForCSS)%)"
+            return "hwb(\(h) \(w.formatted(.number))% \(b.formatted(.number))%)"
 
         case .lab(let l, let a, let b):
-            return "lab(\(l.formattedForCSS)% \(a.formattedForCSS) \(b.formattedForCSS))"
+            return "lab(\(l.formatted(.number))% \(a.formatted(.number)) \(b.formatted(.number)))"
 
         case .lch(let l, let c, let h):
-            return "lch(\(l.formattedForCSS)% \(c.formattedForCSS) \(h.formattedForCSS))"
+            return "lch(\(l.formatted(.number))% \(c.formatted(.number)) \(h.formatted(.number)))"
 
         case .oklab(let l, let a, let b):
-            return "oklab(\(l.formattedForCSS) \(a.formattedForCSS) \(b.formattedForCSS))"
+            return "oklab(\(l.formatted(.number)) \(a.formatted(.number)) \(b.formatted(.number)))"
 
         case .oklch(let l, let c, let h):
-            return "oklch(\(l.formattedForCSS) \(c.formattedForCSS) \(h.formattedForCSS))"
+            return "oklch(\(l.formatted(.number)) \(c.formatted(.number)) \(h.formatted(.number)))"
 
         case .mix(let method, let color1, let color2, let percentage):
             if let percentage = percentage {
-                return "color-mix(\(method), \(color1), \(color2) \(percentage.formattedForCSS)%)"
+                return "color-mix(\(method), \(color1), \(color2) \(percentage.formatted(.number))%)"
             } else {
                 return "color-mix(\(method), \(color1), \(color2))"
             }

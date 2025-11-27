@@ -114,6 +114,6 @@ extension Number: CustomStringConvertible {
     ///
     /// - Returns: A string representation with decimal points removed if not needed
     public var description: String {
-        return value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
+        return value.formatted(.number)
     }
 }

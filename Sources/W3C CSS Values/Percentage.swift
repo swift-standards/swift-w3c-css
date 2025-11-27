@@ -51,7 +51,7 @@ public struct Percentage: Sendable, Hashable {
 extension Percentage: CustomStringConvertible {
     /// Converts the percentage to its CSS string representation
     public var description: String {
-        return "\(value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value))%"
+        return "\(value.formatted(.number))%"
     }
 }
 
@@ -104,12 +104,6 @@ extension Percentage {
     /// - Returns: A new percentage representing the specified fraction
     public func fraction(_ fraction: Double) -> Percentage {
         return self * fraction
-    }
-}
-
-extension Percentage {
-    public func truncatingRemainder() -> String {
-        value.truncatingRemainder(dividingBy: 1) == 0 ? String(Int(value)) : String(value)
     }
 }
 
