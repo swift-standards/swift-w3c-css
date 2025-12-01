@@ -47,7 +47,7 @@ public struct HexColor: Sendable, Hashable {
             UInt8(min(max(0, green), 255)),
             UInt8(min(max(0, blue), 255))
         ]
-        let hexBytes = RFC_4648.Base16.encode(bytes, uppercase: true)
+        let hexBytes: [UInt8] = RFC_4648.Base16.encode(bytes, uppercase: true)
         let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
         return HexColor(hexString)
     }
@@ -72,7 +72,7 @@ public struct HexColor: Sendable, Hashable {
             UInt8(min(max(0, blue), 255)),
             UInt8(alphaInt)
         ]
-        let hexBytes = RFC_4648.Base16.encode(bytes, uppercase: true)
+        let hexBytes: [UInt8] = RFC_4648.Base16.encode(bytes, uppercase: true)
         let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
         return HexColor(hexString)
     }
