@@ -15,7 +15,7 @@
 /// The ::backdrop pseudo-element appears in the following instances:
 /// - Elements in fullscreen mode using the Fullscreen API (`Element.requestFullscreen()`)
 /// - `<dialog>` elements shown in the top layer via `HTMLDialogElement.showModal()`
-/// - Popover elements shown in the top layer via `HTMLElement.showPopover()`
+/// - Popover elements shown in the top layer via `WHATWG_HTML.Element.showPopover()`
 ///
 /// Key characteristics:
 /// - Each element in the top layer has its own ::backdrop pseudo-element

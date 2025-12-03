@@ -15,6 +15,9 @@
 public protocol Property: Sendable, Hashable, CustomStringConvertible, GlobalConvertible {
 
     static var property: String { get }
+
+    /// The CSS declaration (property:value) for this property
+    var declaration: Declaration { get }
 }
 
 extension Property {
@@ -25,6 +28,11 @@ extension Property {
 
 public struct Declaration: Sendable, Hashable, CustomStringConvertible {
     public let description: String
+
+    /// Create a declaration from a raw string (for testing or special cases)
+    public init(description: String) {
+        self.description = description
+    }
 }
 
 extension Declaration {
