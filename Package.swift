@@ -144,11 +144,11 @@ extension Target.Dependency {
 let package = Package(
     name: "swift-w3c-css",
     platforms: [
-        .macOS(.v15),
-        .iOS(.v18),
-        .tvOS(.v18),
-        .watchOS(.v11),
-        .macCatalyst(.v18),
+        .macOS(.v26),
+        .iOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .macCatalyst(.v26),
     ],
     products: [
         // Core Modules
@@ -216,6 +216,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-standards", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-numeric-formatting-standard", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.1.0"),
@@ -229,7 +230,7 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
                 .product(name: "INCITS 4 1986", package: "swift-incits-4-1986"),
-                .product(name: "Numeric Formatting", package: "swift-numeric-formatting-standard")
+                .product(name: "Formatting", package: "swift-standards")
             ]
         ),
         .testTarget(

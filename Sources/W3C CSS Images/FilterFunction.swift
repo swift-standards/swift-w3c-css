@@ -1,5 +1,5 @@
 import W3C_CSS_Values
-import Numeric_Formatting
+import Formatting
 
 /// Represents a CSS filter function for applying graphical effects to elements.
 ///
