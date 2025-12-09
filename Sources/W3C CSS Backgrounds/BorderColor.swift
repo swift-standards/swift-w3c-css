@@ -42,7 +42,7 @@ import W3C_CSS_Color
 ///         `border-top-color`, `border-right-color`, `border-bottom-color`, and `border-left-color`.
 ///
 /// - SeeAlso: [MDN Web Docs on border-color](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color)
-public enum BorderColor: Property {
+public enum BorderColor: Property, ColorConvertible {
 
     public static let property: String = "border-color"
 
@@ -124,5 +124,17 @@ extension BorderColor: CustomStringConvertible {
         case .global(let global):
             return global.description
         }
+    }
+}
+
+// MARK: - ColorConvertible
+
+extension BorderColor {
+    /// Creates a border color with the same value for all sides.
+    ///
+    /// This satisfies the `ColorConvertible` protocol requirement,
+    /// mapping to the `all(_:)` case.
+    public static func color(_ color: W3C_CSS_Values.Color) -> Self {
+        .all(color)
     }
 }
