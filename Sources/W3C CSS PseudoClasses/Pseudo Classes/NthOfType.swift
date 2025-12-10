@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:nth-of-type()` pseudo-class.
 ///
 /// The `:nth-of-type()` pseudo-class matches elements based on their position among siblings of the same type.

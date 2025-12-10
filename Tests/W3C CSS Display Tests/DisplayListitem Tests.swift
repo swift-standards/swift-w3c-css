@@ -4,6 +4,7 @@
 // Tests for CSS DisplayListitem type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `DisplayListitem - Initialization` {
         (DisplayListitem.blockFlowListItem, "block flow list-item"),
         (DisplayListitem.blockFlowRootListItem, "block flow-root list-item"),
         (DisplayListitem.inlineFlowListItem, "inline flow list-item"),
-        (DisplayListitem.inlineFlowRootListItem, "inline flow-root list-item")
+        (DisplayListitem.inlineFlowRootListItem, "inline flow-root list-item"),
     ])
     func `displayListitem initializes with correct raw value and description`(
         value: DisplayListitem,
@@ -33,7 +34,7 @@ struct `DisplayListitem - Raw Value Initialization` {
         ("block flow list-item", DisplayListitem.blockFlowListItem),
         ("block flow-root list-item", DisplayListitem.blockFlowRootListItem),
         ("inline flow list-item", DisplayListitem.inlineFlowListItem),
-        ("inline flow-root list-item", DisplayListitem.inlineFlowRootListItem)
+        ("inline flow-root list-item", DisplayListitem.inlineFlowRootListItem),
     ])
     func `creates displayListitem from valid raw values`(
         rawValue: String,
@@ -68,7 +69,7 @@ struct `DisplayListitem - Hashable Conformance` {
 
     @Test func `hashable allows use in sets`() {
         let set: Set<DisplayListitem> = [
-            .listItem, .blockFlowListItem, .inlineFlowListItem, .listItem
+            .listItem, .blockFlowListItem, .inlineFlowListItem, .listItem,
         ]
         #expect(set.count == 3)
         #expect(set.contains(.listItem))
@@ -80,7 +81,7 @@ struct `DisplayListitem - Hashable Conformance` {
         let dict: [DisplayListitem: String] = [
             .listItem: "simple",
             .blockFlowListItem: "block-level",
-            .inlineFlowListItem: "inline-level"
+            .inlineFlowListItem: "inline-level",
         ]
         #expect(dict[.listItem] == "simple")
         #expect(dict[.blockFlowListItem] == "block-level")
@@ -97,7 +98,7 @@ struct `DisplayListitem - CSS Property Usage` {
         (DisplayListitem.blockFlowListItem, "display: block flow list-item"),
         (DisplayListitem.blockFlowRootListItem, "display: block flow-root list-item"),
         (DisplayListitem.inlineFlowListItem, "display: inline flow list-item"),
-        (DisplayListitem.inlineFlowRootListItem, "display: inline flow-root list-item")
+        (DisplayListitem.inlineFlowRootListItem, "display: inline flow-root list-item"),
     ])
     func `renders correctly in display property`(
         value: DisplayListitem,
@@ -128,7 +129,7 @@ struct `DisplayListitem - Factory Creation` {
         (DisplayOutside.block, DisplayInside.flow, DisplayListitem.blockFlowListItem),
         (DisplayOutside.block, DisplayInside.flowRoot, DisplayListitem.blockFlowRootListItem),
         (DisplayOutside.inline, DisplayInside.flow, DisplayListitem.inlineFlowListItem),
-        (DisplayOutside.inline, DisplayInside.flowRoot, DisplayListitem.inlineFlowRootListItem)
+        (DisplayOutside.inline, DisplayInside.flowRoot, DisplayListitem.inlineFlowRootListItem),
     ])
     func `factory creates correct combinations`(
         outer: DisplayOutside,
@@ -212,7 +213,7 @@ struct `DisplayListitem - CSS Specification` {
         // Ensure we have all important spec-defined display-listitem values
         let allValues: Set<DisplayListitem> = [
             .listItem, .blockFlowListItem, .blockFlowRootListItem,
-            .inlineFlowListItem, .inlineFlowRootListItem
+            .inlineFlowListItem, .inlineFlowRootListItem,
         ]
         #expect(allValues.count == 5)
     }
@@ -242,8 +243,13 @@ struct `DisplayListitem - Edge Cases` {
     }
 
     @Test func `multi-word values with spaces are parsed correctly`() {
-        #expect(DisplayListitem(rawValue: "block flow list-item") == DisplayListitem.blockFlowListItem)
-        #expect(DisplayListitem(rawValue: "inline flow-root list-item") == DisplayListitem.inlineFlowRootListItem)
+        #expect(
+            DisplayListitem(rawValue: "block flow list-item") == DisplayListitem.blockFlowListItem
+        )
+        #expect(
+            DisplayListitem(rawValue: "inline flow-root list-item")
+                == DisplayListitem.inlineFlowRootListItem
+        )
     }
 
     @Test func `missing list-item suffix fails`() {
@@ -258,7 +264,7 @@ struct `DisplayListitem - Edge Cases` {
 struct `DisplayListitem - Semantic Categories` {
     @Test func `block-level list items`() {
         let blockLevel: [DisplayListitem] = [
-            .blockFlowListItem, .blockFlowRootListItem
+            .blockFlowListItem, .blockFlowRootListItem,
         ]
         for value in blockLevel {
             #expect(value.description.hasPrefix("block"))
@@ -267,7 +273,7 @@ struct `DisplayListitem - Semantic Categories` {
 
     @Test func `inline-level list items`() {
         let inlineLevel: [DisplayListitem] = [
-            .inlineFlowListItem, .inlineFlowRootListItem
+            .inlineFlowListItem, .inlineFlowRootListItem,
         ]
         for value in inlineLevel {
             #expect(value.description.hasPrefix("inline"))
@@ -276,7 +282,7 @@ struct `DisplayListitem - Semantic Categories` {
 
     @Test func `flow-based list items`() {
         let flowBased: [DisplayListitem] = [
-            .blockFlowListItem, .inlineFlowListItem
+            .blockFlowListItem, .inlineFlowListItem,
         ]
         for value in flowBased {
             #expect(value.description.contains("flow"))
@@ -286,7 +292,7 @@ struct `DisplayListitem - Semantic Categories` {
 
     @Test func `flow-root-based list items`() {
         let flowRootBased: [DisplayListitem] = [
-            .blockFlowRootListItem, .inlineFlowRootListItem
+            .blockFlowRootListItem, .inlineFlowRootListItem,
         ]
         for value in flowRootBased {
             #expect(value.description.contains("flow-root"))
@@ -296,7 +302,7 @@ struct `DisplayListitem - Semantic Categories` {
     @Test func `all values end with list-item`() {
         let allValues: [DisplayListitem] = [
             .listItem, .blockFlowListItem, .blockFlowRootListItem,
-            .inlineFlowListItem, .inlineFlowRootListItem
+            .inlineFlowListItem, .inlineFlowRootListItem,
         ]
         for value in allValues {
             #expect(value.description.hasSuffix("list-item"))
@@ -312,7 +318,7 @@ struct `DisplayListitem - Marker Semantics` {
         // All display-listitem values should generate list markers
         let allValues: [DisplayListitem] = [
             .listItem, .blockFlowListItem, .blockFlowRootListItem,
-            .inlineFlowListItem, .inlineFlowRootListItem
+            .inlineFlowListItem, .inlineFlowRootListItem,
         ]
         for value in allValues {
             #expect(value.description.contains("list-item"))

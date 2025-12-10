@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::slotted() pseudo-element.
 ///
 /// The `Slotted` pseudo-element represents any element that has been placed into

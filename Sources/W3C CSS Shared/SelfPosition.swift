@@ -1,4 +1,3 @@
-
 /// Represents a CSS self-position value.
 ///
 /// The `SelfPosition` type is used by alignment properties like `justify-self`, `align-self`,

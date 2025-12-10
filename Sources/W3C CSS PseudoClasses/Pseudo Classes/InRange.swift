@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:in-range` pseudo-class.
 ///
 /// The `:in-range` pseudo-class matches input elements whose current value is within the range limits specified by the min and max attributes.

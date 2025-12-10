@@ -4,6 +4,7 @@
 // Tests for CSS PseudoElement types
 
 import Testing
+
 @testable import W3C_CSS_PseudoElements
 
 // MARK: - Basic Functionality
@@ -99,7 +100,7 @@ struct `PseudoElement - Highlight` {
     @Test(arguments: [
         ("search-result", "::highlight(search-result)"),
         ("custom-highlight", "::highlight(custom-highlight)"),
-        ("note", "::highlight(note)")
+        ("note", "::highlight(note)"),
     ])
     func `highlight pseudo element with name`(
         name: String,
@@ -117,7 +118,7 @@ struct `PseudoElement - Shadow DOM` {
     @Test(arguments: [
         ("button", "::part(button)"),
         ("container", "::part(container)"),
-        ("header", "::part(header)")
+        ("header", "::part(header)"),
     ])
     func `part pseudo element`(
         part: String,
@@ -154,7 +155,7 @@ struct `PseudoElement - Media` {
 
     @Test(arguments: [
         ("v[voice=\"announcer\"]", "::cue(v[voice=\"announcer\"])"),
-        (".speaker", "::cue(.speaker)")
+        (".speaker", "::cue(.speaker)"),
     ])
     func `cue pseudo element with selector`(
         selector: String,
@@ -274,7 +275,9 @@ struct `PseudoElement - Hashable Conformance` {
     }
 
     @Test func `pseudo elements can be used in set`() {
-        let set: Set<AnyPseudoElement> = [AnyPseudoElement(Before()), AnyPseudoElement(After()), AnyPseudoElement(Before())]
+        let set: Set<AnyPseudoElement> = [
+            AnyPseudoElement(Before()), AnyPseudoElement(After()), AnyPseudoElement(Before()),
+        ]
         #expect(set.count == 2)
     }
 }

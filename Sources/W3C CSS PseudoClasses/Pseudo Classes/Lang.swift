@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:lang()` pseudo-class.
 ///
 /// The `:lang()` pseudo-class matches elements based on the language they are determined to be in.

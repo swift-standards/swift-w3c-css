@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::after pseudo-element.
 ///
 /// The `After` pseudo-element creates an inline element that is the last child of the selected element.

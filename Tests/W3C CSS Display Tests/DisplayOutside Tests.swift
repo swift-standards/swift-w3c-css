@@ -4,6 +4,7 @@
 // Tests for CSS DisplayOutside type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -13,7 +14,7 @@ struct `DisplayOutside - Initialization` {
     @Test(arguments: [
         (DisplayOutside.block, "block"),
         (DisplayOutside.inline, "inline"),
-        (DisplayOutside.runIn, "run-in")
+        (DisplayOutside.runIn, "run-in"),
     ])
     func `displayOutside initializes with correct raw value and description`(
         value: DisplayOutside,
@@ -29,7 +30,7 @@ struct `DisplayOutside - Raw Value Initialization` {
     @Test(arguments: [
         ("block", DisplayOutside.block),
         ("inline", DisplayOutside.inline),
-        ("run-in", DisplayOutside.runIn)
+        ("run-in", DisplayOutside.runIn),
     ])
     func `creates displayOutside from valid raw values`(
         rawValue: String,
@@ -74,7 +75,7 @@ struct `DisplayOutside - Hashable Conformance` {
         let dict: [DisplayOutside: String] = [
             .block: "block-level",
             .inline: "inline-level",
-            .runIn: "conditional"
+            .runIn: "conditional",
         ]
         #expect(dict[.block] == "block-level")
         #expect(dict[.inline] == "inline-level")
@@ -89,7 +90,7 @@ struct `DisplayOutside - CSS Property Usage` {
     @Test(arguments: [
         (DisplayOutside.block, "display: block"),
         (DisplayOutside.inline, "display: inline"),
-        (DisplayOutside.runIn, "display: run-in")
+        (DisplayOutside.runIn, "display: run-in"),
     ])
     func `renders correctly in display property`(
         value: DisplayOutside,
@@ -121,7 +122,7 @@ struct `DisplayOutside - Combination Behavior` {
         (DisplayOutside.block, DisplayInside.flex, "block flex"),
         (DisplayOutside.inline, DisplayInside.grid, "inline grid"),
         (DisplayOutside.inline, DisplayInside.flex, "inline flex"),
-        (DisplayOutside.block, DisplayInside.grid, "block grid")
+        (DisplayOutside.block, DisplayInside.grid, "block grid"),
     ])
     func `combines with displayInside values`(
         outside: DisplayOutside,

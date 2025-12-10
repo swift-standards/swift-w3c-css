@@ -1,4 +1,3 @@
-
 /// Represents the Mozilla-specific ::-moz-placeholder pseudo-element.
 ///
 /// The `MozPlaceholder` pseudo-element represents placeholder text in input fields

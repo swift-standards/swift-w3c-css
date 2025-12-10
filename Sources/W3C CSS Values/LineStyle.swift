@@ -1,4 +1,3 @@
-
 /// Represents CSS line style values.
 ///
 /// The `LineStyle` type represents keyword values that define the style of a line, or the

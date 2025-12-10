@@ -1,4 +1,3 @@
-
 /// Represents mathematical constants that can be used in CSS calculations.
 ///
 /// The `CalcKeyword` data type provides well-defined mathematical constants

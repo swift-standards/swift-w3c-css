@@ -1,7 +1,7 @@
+import INCITS_4_1986
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
 import W3C_CSS_Values
-import INCITS_4_1986
 
 /// Represents a CSS @font-palette-values at-rule.
 ///

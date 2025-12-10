@@ -26,10 +26,10 @@ public enum BasicShape: Sendable, Hashable {
     /// Represents a fill rule for the polygon and path shapes
     public enum FillRule: String, Sendable, Hashable {
         /// The default fill rule
-        case nonzero = "nonzero"
+        case nonzero
 
         /// Alternative fill rule for complex shapes with self-intersections
-        case evenodd = "evenodd"
+        case evenodd
     }
 
     /// Specifies a radius keyword for circle and ellipse shapes

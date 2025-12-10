@@ -4,8 +4,9 @@
 // Tests for CSS Gradient type
 
 import Testing
-@testable import W3C_CSS_Images
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Images
 
 // MARK: - Linear Gradients
 
@@ -458,7 +459,7 @@ struct `Gradient - Edge Cases` {
         let gradient = Gradient.linear(
             direction: nil,
             colorStops: [
-                Gradient.ColorStop(.named(.red)),
+                Gradient.ColorStop(.named(.red))
             ]
         )
         #expect(gradient.description == "linear-gradient(red)")
@@ -475,12 +476,14 @@ struct `Gradient - Edge Cases` {
                 Gradient.ColorStop(.named(.blue)),
             ]
         )
-        #expect(gradient.description == "linear-gradient(to right, red, orange, yellow, green, blue)")
+        #expect(
+            gradient.description == "linear-gradient(to right, red, orange, yellow, green, blue)"
+        )
     }
 
     @Test func `radial gradient with all size keywords`() {
         let keywords: [Gradient.RadialOptions.Size.Keyword] = [
-            .closestSide, .farthestSide, .closestCorner, .farthestCorner
+            .closestSide, .farthestSide, .closestCorner, .farthestCorner,
         ]
 
         for keyword in keywords {
@@ -565,10 +568,12 @@ extension `Performance Tests` {
             )
             for i in 0..<100_000 {
                 let side: Gradient.Direction.Side = (i % 2 == 0) ? .right : .left
-                _ = gradient1 == Gradient.linearGradient(
-                    to: side,
-                    colors: [.named(.red), .named(.blue)]
-                )
+                _ =
+                    gradient1
+                    == Gradient.linearGradient(
+                        to: side,
+                        colors: [.named(.red), .named(.blue)]
+                    )
             }
         }
     }

@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:last-child` pseudo-class.
 ///
 /// The `:last-child` pseudo-class matches an element that is the last child of its parent.

@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::before pseudo-element.
 ///
 /// The `Before` pseudo-element creates an inline element that is the first child of the selected element.

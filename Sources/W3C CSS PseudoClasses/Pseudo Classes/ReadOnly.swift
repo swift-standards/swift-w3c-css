@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:read-only` pseudo-class.
 ///
 /// The `:read-only` pseudo-class matches elements that are not editable by the user.

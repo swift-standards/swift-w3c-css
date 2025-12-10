@@ -4,6 +4,7 @@
 // Tests for CSS AnimationName type
 
 import Testing
+
 @testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
@@ -28,7 +29,7 @@ struct `AnimationName - Keyframe Names` {
         ("slide-in", "slide-in"),
         ("bounce", "bounce"),
         ("fade-out", "fade-out"),
-        ("rotate", "rotate")
+        ("rotate", "rotate"),
     ])
     func `renders keyframe names correctly`(
         name: String,
@@ -46,7 +47,7 @@ struct `AnimationName - String Literals` {
         ("slide-in", "slide-in"),
         ("bounce", "bounce"),
         ("none", "none"),
-        ("fadeIn", "fadeIn")
+        ("fadeIn", "fadeIn"),
     ])
     func `works with string literals`(
         literal: String,
@@ -66,7 +67,7 @@ struct `AnimationName - Global Values` {
         (AnimationName.initial, "initial"),
         (AnimationName.revert, "revert"),
         (AnimationName.revertLayer, "revert-layer"),
-        (AnimationName.unset, "unset")
+        (AnimationName.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationName,

@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::target-text pseudo-element.
 ///
 /// The `TargetText` pseudo-element represents the text that has been scrolled to

@@ -1,4 +1,3 @@
-
 /// Represents a CSS relative size value.
 ///
 /// The `RelativeSize` type describes size keywords that define a size relative to

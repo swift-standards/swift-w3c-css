@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:disabled` pseudo-class.
 ///
 /// The `:disabled` pseudo-class matches any disabled element.

@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::part() pseudo-element.
 ///
 /// The `Part` pseudo-element represents any element within a shadow tree that has a

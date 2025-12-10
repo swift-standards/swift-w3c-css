@@ -1,4 +1,3 @@
-
 /// Represents CSS display box keywords that define whether an element generates boxes.
 ///
 /// The `DisplayBox` data type contains values that control whether an element

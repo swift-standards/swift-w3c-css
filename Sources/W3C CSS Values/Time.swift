@@ -1,4 +1,3 @@
-
 /// Represents a CSS time value.
 ///
 /// The `Time` type represents a time value expressed in seconds or milliseconds. It is used
@@ -137,6 +136,7 @@ extension Time {
     ///   - lhs: Time value
     ///   - rhs: Scalar multiplier
     /// - Returns: The product
+    @_disfavoredOverload
     public static func * (lhs: Time, rhs: Double) -> Time {
         return .init(lhs.value * rhs, unit: lhs.unit)
     }
@@ -146,6 +146,7 @@ extension Time {
     ///   - lhs: Time value
     ///   - rhs: Scalar divisor
     /// - Returns: The quotient
+    @_disfavoredOverload
     public static func / (lhs: Time, rhs: Double) -> Time {
         return .init(lhs.value / rhs, unit: lhs.unit)
     }
@@ -153,6 +154,7 @@ extension Time {
     /// Negates a time value
     /// - Parameter value: Time value to negate
     /// - Returns: The negated value
+    @_disfavoredOverload
     public static prefix func - (time: Time) -> Time {
         return .init(-time.value, unit: time.unit)
     }

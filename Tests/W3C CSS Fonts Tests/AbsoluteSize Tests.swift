@@ -4,6 +4,7 @@
 // Tests for CSS AbsoluteSize type
 
 import Testing
+
 @testable import W3C_CSS_Fonts
 
 // MARK: - Basic Functionality
@@ -18,7 +19,7 @@ struct `AbsoluteSize - Values and Descriptions` {
         (.large, "large"),
         (.xLarge, "x-large"),
         (.xxLarge, "xx-large"),
-        (.xxxLarge, "xxx-large")
+        (.xxxLarge, "xxx-large"),
     ])
     func `absolute size has correct description`(size: AbsoluteSize, expected: String) {
         #expect(size.description == expected)
@@ -32,7 +33,7 @@ struct `AbsoluteSize - Values and Descriptions` {
         (.large, "large"),
         (.xLarge, "x-large"),
         (.xxLarge, "xx-large"),
-        (.xxxLarge, "xxx-large")
+        (.xxxLarge, "xxx-large"),
     ])
     func `absolute size has correct raw value`(size: AbsoluteSize, expected: String) {
         #expect(size.rawValue == expected)
@@ -51,7 +52,7 @@ struct `AbsoluteSize - RawRepresentable Conformance` {
         ("large", .large),
         ("x-large", .xLarge),
         ("xx-large", .xxLarge),
-        ("xxx-large", .xxxLarge)
+        ("xxx-large", .xxxLarge),
     ])
     func `absolute size can be created from raw value`(rawValue: String, expected: AbsoluteSize) {
         #expect(AbsoluteSize(rawValue: rawValue) == expected)
@@ -92,7 +93,7 @@ struct `AbsoluteSize - Logical Ordering` {
             .large,
             .xLarge,
             .xxLarge,
-            .xxxLarge
+            .xxxLarge,
         ]
 
         // Verify array is in the expected order
@@ -109,7 +110,7 @@ struct `AbsoluteSize - Logical Ordering` {
     @Test func `all sizes are unique`() {
         let sizes: [AbsoluteSize] = [
             .xxSmall, .xSmall, .small, .medium,
-            .large, .xLarge, .xxLarge, .xxxLarge
+            .large, .xLarge, .xxLarge, .xxxLarge,
         ]
         for i in sizes.indices {
             for j in sizes.indices where i != j {
@@ -131,7 +132,7 @@ struct `AbsoluteSize - CSS Property Usage` {
     @Test(arguments: [
         (AbsoluteSize.small, "font-size: small"),
         (.large, "font-size: large"),
-        (.xLarge, "font-size: x-large")
+        (.xLarge, "font-size: x-large"),
     ])
     func `various absolute sizes render correctly`(size: AbsoluteSize, expected: String) {
         let fontSize = "font-size: \(size)"
@@ -180,7 +181,7 @@ struct `AbsoluteSize - Edge Cases` {
     @Test func `no uppercase in raw values`() {
         let allSizes: [AbsoluteSize] = [
             .xxSmall, .xSmall, .small, .medium,
-            .large, .xLarge, .xxLarge, .xxxLarge
+            .large, .xLarge, .xxLarge, .xxxLarge,
         ]
         for size in allSizes {
             #expect(!size.rawValue.contains(where: { $0.isUppercase }))
@@ -225,7 +226,7 @@ extension `Performance Tests` {
         @Test(.timeLimit(.minutes(1)))
         func `absolute size raw value access 100K times`() {
             let sizes: [AbsoluteSize] = [
-                .xxSmall, .small, .medium, .large, .xxLarge
+                .xxSmall, .small, .medium, .large, .xxLarge,
             ]
             for i in 0..<100_000 {
                 _ = sizes[i % sizes.count].rawValue
@@ -244,7 +245,7 @@ extension `Performance Tests` {
         func `absolute size comparison 100K times`() {
             let medium = AbsoluteSize.medium
             let sizes: [AbsoluteSize] = [
-                .xxSmall, .small, .medium, .large, .xxLarge
+                .xxSmall, .small, .medium, .large, .xxLarge,
             ]
             for i in 0..<100_000 {
                 _ = sizes[i % sizes.count] == medium

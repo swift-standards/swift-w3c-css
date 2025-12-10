@@ -4,6 +4,7 @@
 // Tests for CSS Flex type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `Flex - Initialization with Number` {
         (1.0, "1fr"),
         (2.5, "2.5fr"),
         (0.0, "0fr"),
-        (-1.0, "-1fr")
+        (-1.0, "-1fr"),
     ])
     func `flex values with number render correctly`(
         value: Double,
@@ -30,7 +31,7 @@ struct `Flex - Initialization with Integer` {
     @Test(arguments: [
         (1, "1fr"),
         (3, "3fr"),
-        (0, "0fr")
+        (0, "0fr"),
     ])
     func `flex initializes correctly with integer values`(
         value: Int,

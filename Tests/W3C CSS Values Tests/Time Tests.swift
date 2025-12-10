@@ -4,6 +4,7 @@
 // Tests for CSS Time type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Time - Initialization` {
         (500.0, .ms, "500ms"),
         (0.0, .s, "0s"),
         (0.0, .ms, "0ms"),
-        (-0.5, .s, "-0.5s")
+        (-0.5, .s, "-0.5s"),
     ])
     func `time values render correctly`(
         value: Double,
@@ -305,7 +306,7 @@ struct `Time - Edge Cases` {
 
     @Test func `very large times render correctly`() {
         #expect(Time.s(999999).description == "999999s")
-        #expect(Time.ms(1000000).description == "1000000ms")
+        #expect(Time.ms(1_000_000).description == "1000000ms")
     }
 
     @Test func `whole number decimals render without fractional part`() {

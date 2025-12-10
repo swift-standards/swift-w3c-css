@@ -1,5 +1,5 @@
-import W3C_CSS_Values
 import W3C_CSS_Shared
+import W3C_CSS_Values
 
 /// The CSS `scrollbar-width` property allows the author to set the desired thickness of an element's scrollbars
 /// when they are shown.

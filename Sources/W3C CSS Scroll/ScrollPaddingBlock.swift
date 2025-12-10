@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollPaddingBlock.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-padding-block` CSS property is a shorthand property that sets the scroll padding of an element
 /// in the block dimension. This allows the author to exclude regions of the scrollport that are obscured

@@ -4,6 +4,7 @@
 // Tests for CSS DisplayInternal type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -18,7 +19,7 @@ struct `DisplayInternal - Table Values Initialization` {
         (DisplayInternal.tableCell, "table-cell"),
         (DisplayInternal.tableColumnGroup, "table-column-group"),
         (DisplayInternal.tableColumn, "table-column"),
-        (DisplayInternal.tableCaption, "table-caption")
+        (DisplayInternal.tableCaption, "table-caption"),
     ])
     func `table-related values initialize correctly`(
         value: DisplayInternal,
@@ -35,7 +36,7 @@ struct `DisplayInternal - Ruby Values Initialization` {
         (DisplayInternal.rubyBase, "ruby-base"),
         (DisplayInternal.rubyText, "ruby-text"),
         (DisplayInternal.rubyBaseContainer, "ruby-base-container"),
-        (DisplayInternal.rubyTextContainer, "ruby-text-container")
+        (DisplayInternal.rubyTextContainer, "ruby-text-container"),
     ])
     func `ruby-related values initialize correctly`(
         value: DisplayInternal,
@@ -58,7 +59,7 @@ struct `DisplayInternal - Table Raw Value Initialization` {
         ("table-cell", DisplayInternal.tableCell),
         ("table-column-group", DisplayInternal.tableColumnGroup),
         ("table-column", DisplayInternal.tableColumn),
-        ("table-caption", DisplayInternal.tableCaption)
+        ("table-caption", DisplayInternal.tableCaption),
     ])
     func `creates displayInternal from valid table raw values`(
         rawValue: String,
@@ -74,7 +75,7 @@ struct `DisplayInternal - Ruby Raw Value Initialization` {
         ("ruby-base", DisplayInternal.rubyBase),
         ("ruby-text", DisplayInternal.rubyText),
         ("ruby-base-container", DisplayInternal.rubyBaseContainer),
-        ("ruby-text-container", DisplayInternal.rubyTextContainer)
+        ("ruby-text-container", DisplayInternal.rubyTextContainer),
     ])
     func `creates displayInternal from valid ruby raw values`(
         rawValue: String,
@@ -115,7 +116,7 @@ struct `DisplayInternal - Hashable Conformance` {
 
     @Test func `hashable allows use in sets`() {
         let set: Set<DisplayInternal> = [
-            .tableRow, .tableCell, .rubyText, .tableRow
+            .tableRow, .tableCell, .rubyText, .tableRow,
         ]
         #expect(set.count == 3)
         #expect(set.contains(.tableRow))
@@ -127,7 +128,7 @@ struct `DisplayInternal - Hashable Conformance` {
         let dict: [DisplayInternal: String] = [
             .tableRow: "tr",
             .tableCell: "td",
-            .rubyText: "rt"
+            .rubyText: "rt",
         ]
         #expect(dict[.tableRow] == "tr")
         #expect(dict[.tableCell] == "td")
@@ -147,7 +148,7 @@ struct `DisplayInternal - Table CSS Usage` {
         (DisplayInternal.tableCell, "display: table-cell"),
         (DisplayInternal.tableColumnGroup, "display: table-column-group"),
         (DisplayInternal.tableColumn, "display: table-column"),
-        (DisplayInternal.tableCaption, "display: table-caption")
+        (DisplayInternal.tableCaption, "display: table-caption"),
     ])
     func `table values render correctly in display property`(
         value: DisplayInternal,
@@ -164,7 +165,7 @@ struct `DisplayInternal - Ruby CSS Usage` {
         (DisplayInternal.rubyBase, "display: ruby-base"),
         (DisplayInternal.rubyText, "display: ruby-text"),
         (DisplayInternal.rubyBaseContainer, "display: ruby-base-container"),
-        (DisplayInternal.rubyTextContainer, "display: ruby-text-container")
+        (DisplayInternal.rubyTextContainer, "display: ruby-text-container"),
     ])
     func `ruby values render correctly in display property`(
         value: DisplayInternal,
@@ -248,7 +249,7 @@ struct `DisplayInternal - Ruby Specification` {
             .tableRowGroup, .tableHeaderGroup, .tableFooterGroup,
             .tableRow, .tableCell, .tableColumnGroup, .tableColumn,
             .tableCaption, .rubyBase, .rubyText, .rubyBaseContainer,
-            .rubyTextContainer
+            .rubyTextContainer,
         ]
         #expect(allValues.count == 12)
     }
@@ -280,7 +281,9 @@ struct `DisplayInternal - Edge Cases` {
     @Test func `hyphenated values are parsed correctly`() {
         #expect(DisplayInternal(rawValue: "table-row") == DisplayInternal.tableRow)
         #expect(DisplayInternal(rawValue: "ruby-text") == DisplayInternal.rubyText)
-        #expect(DisplayInternal(rawValue: "ruby-base-container") == DisplayInternal.rubyBaseContainer)
+        #expect(
+            DisplayInternal(rawValue: "ruby-base-container") == DisplayInternal.rubyBaseContainer
+        )
     }
 }
 
@@ -291,21 +294,21 @@ struct `DisplayInternal - Semantic Categories` {
     @Test func `table structure values`() {
         let structuralValues: [DisplayInternal] = [
             .tableRowGroup, .tableHeaderGroup, .tableFooterGroup,
-            .tableColumnGroup
+            .tableColumnGroup,
         ]
         #expect(structuralValues.count == 4)
     }
 
     @Test func `table content values`() {
         let contentValues: [DisplayInternal] = [
-            .tableRow, .tableCell, .tableColumn, .tableCaption
+            .tableRow, .tableCell, .tableColumn, .tableCaption,
         ]
         #expect(contentValues.count == 4)
     }
 
     @Test func `ruby base values`() {
         let baseValues: [DisplayInternal] = [
-            .rubyBase, .rubyBaseContainer
+            .rubyBase, .rubyBaseContainer,
         ]
         #expect(baseValues.count == 2)
         for value in baseValues {
@@ -315,7 +318,7 @@ struct `DisplayInternal - Semantic Categories` {
 
     @Test func `ruby annotation values`() {
         let annotationValues: [DisplayInternal] = [
-            .rubyText, .rubyTextContainer
+            .rubyText, .rubyTextContainer,
         ]
         #expect(annotationValues.count == 2)
         for value in annotationValues {

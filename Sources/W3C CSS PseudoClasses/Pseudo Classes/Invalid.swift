@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:invalid` pseudo-class.
 ///
 /// The `:invalid` pseudo-class matches form elements whose contents fail to validate.

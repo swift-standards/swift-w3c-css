@@ -4,6 +4,7 @@
 // Tests for CSS Resolution type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `Resolution - Unit Creation` {
         (300.0, Resolution.Unit.dpi, "300dpi"),
         (120.0, .dpcm, "120dpcm"),
         (2.0, .dppx, "2dppx"),
-        (3.0, .x, "3x")
+        (3.0, .x, "3x"),
     ])
     func `resolution values render correctly`(
         value: Double,
@@ -64,7 +65,7 @@ struct `Resolution - Fractional Values` {
     @Test(arguments: [
         (72.5, Resolution.Unit.dpi, "72.5dpi"),
         (28.452, .dpcm, "28.452dpcm"),
-        (1.5, .dppx, "1.5dppx")
+        (1.5, .dppx, "1.5dppx"),
     ])
     func `fractional resolution values render correctly`(
         value: Double,

@@ -4,6 +4,7 @@
 // Tests for CSS BasicShape type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Inset Shape
@@ -105,7 +106,7 @@ struct `BasicShape - Circle` {
     @Test(arguments: [
         (BasicShape.ShapeRadius.length(.px(50)), Position.center, "circle(50px at center)"),
         (.percentage(50), .topLeft, "circle(50% at top left)"),
-        (.closestSide, .bottom, "circle(closest-side at bottom)")
+        (.closestSide, .bottom, "circle(closest-side at bottom)"),
     ])
     func `circle with radius and position renders correctly`(
         radius: BasicShape.ShapeRadius,
@@ -270,7 +271,7 @@ struct `BasicShape - ShapeRadius` {
         (BasicShape.ShapeRadius.length(.px(50)), "50px"),
         (.percentage(75), "75%"),
         (.closestSide, "closest-side"),
-        (.farthestSide, "farthest-side")
+        (.farthestSide, "farthest-side"),
     ])
     func `shape radius renders correctly`(radius: BasicShape.ShapeRadius, expected: String) {
         #expect(radius.description == expected)

@@ -4,8 +4,9 @@
 // Tests for CSS AnimationDelay type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -22,7 +23,7 @@ struct `AnimationDelay - Time Values` {
         (AnimationDelay.s(2), "2s"),
         (AnimationDelay.ms(500), "500ms"),
         (AnimationDelay.s(-1), "-1s"),
-        (AnimationDelay.zero, "0s")
+        (AnimationDelay.zero, "0s"),
     ])
     func `renders time values correctly`(
         value: AnimationDelay,
@@ -47,7 +48,7 @@ struct `AnimationDelay - Time Objects` {
         (Time.s(3.5), "3.5s"),
         (Time.ms(250), "250ms"),
         (Time.s(0), "0s"),
-        (Time.ms(-500), "-500ms")
+        (Time.ms(-500), "-500ms"),
     ])
     func `renders Time objects correctly`(
         time: Time,
@@ -66,7 +67,7 @@ struct `AnimationDelay - Global Values` {
         (AnimationDelay.initial, "initial"),
         (AnimationDelay.revert, "revert"),
         (AnimationDelay.revertLayer, "revert-layer"),
-        (AnimationDelay.unset, "unset")
+        (AnimationDelay.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationDelay,

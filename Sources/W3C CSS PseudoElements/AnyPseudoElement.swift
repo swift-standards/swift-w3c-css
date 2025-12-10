@@ -1,4 +1,3 @@
-
 /// A type-erased wrapper for any CSSPseudoElement.
 ///
 /// `AnyPseudoElement` allows different concrete pseudo-element types to be used

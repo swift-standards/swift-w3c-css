@@ -1,4 +1,3 @@
-
 /// Represents CSS display inside values that determine the layout of an element's contents.
 ///
 /// The `DisplayInside` data type specifies the element's inner display type, which defines

@@ -1,4 +1,3 @@
-
 /// Represents a CSS percentage value.
 ///
 /// The `Percentage` type represents a percentage value in CSS, which is often used to
@@ -74,26 +73,31 @@ extension Percentage: ExpressibleByFloatLiteral {
 /// Percentage comparison and arithmetic operations
 extension Percentage {
     /// Compares two percentages
+    @_disfavoredOverload
     public static func < (lhs: Percentage, rhs: Percentage) -> Bool {
         return lhs.value < rhs.value
     }
 
     /// Adds two percentages
+    @_disfavoredOverload
     public static func + (lhs: Percentage, rhs: Percentage) -> Percentage {
         return Percentage(lhs.value + rhs.value)
     }
 
     /// Subtracts one percentage from another
+    @_disfavoredOverload
     public static func - (lhs: Percentage, rhs: Percentage) -> Percentage {
         return Percentage(lhs.value - rhs.value)
     }
 
     /// Multiplies a percentage by a factor
+    @_disfavoredOverload
     public static func * (lhs: Percentage, rhs: Double) -> Percentage {
         return Percentage(lhs.value * rhs)
     }
 
     /// Divides a percentage by a factor
+    @_disfavoredOverload
     public static func / (lhs: Percentage, rhs: Double) -> Percentage {
         return Percentage(lhs.value / rhs)
     }

@@ -6,7 +6,6 @@
 //
 
 import W3C_CSS_Shared
-import W3C_CSS_Values
 
 /// Represents size-related CSS properties, primarily for `width`, `height`, and `object-fit` values.
 ///

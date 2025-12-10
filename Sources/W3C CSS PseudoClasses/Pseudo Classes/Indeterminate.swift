@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:indeterminate` pseudo-class.
 ///
 /// The `:indeterminate` pseudo-class matches form elements whose state is indeterminate.

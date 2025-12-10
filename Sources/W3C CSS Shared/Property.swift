@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 27/03/2025.
 //
 
-
 /// A protocol that all CSS properties conform to
 ///
 /// This protocol represents a CSS property in the Swift-CSS library.

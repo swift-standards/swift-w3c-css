@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollPaddingBlockEnd.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-padding-block-end` CSS property defines offsets for the end edge in the block dimension
 /// of the optimal viewing region of the scrollport: the region used as the target region for placing things

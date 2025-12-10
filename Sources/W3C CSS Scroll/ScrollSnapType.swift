@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollSnapType.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-snap-type` CSS property sets the strictness of snap points in the scroll container in both
 /// horizontal and vertical directions. It is set on a scroll container, opting it into scroll snapping by

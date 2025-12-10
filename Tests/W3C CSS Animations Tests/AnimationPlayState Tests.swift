@@ -4,6 +4,7 @@
 // Tests for CSS AnimationPlayState type
 
 import Testing
+
 @testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
@@ -21,7 +22,7 @@ struct `AnimationPlayState - Declaration` {
 struct `AnimationPlayState - Basic Values` {
     @Test(arguments: [
         (AnimationPlayState.running, "running"),
-        (AnimationPlayState.paused, "paused")
+        (AnimationPlayState.paused, "paused"),
     ])
     func `renders basic values correctly`(
         value: AnimationPlayState,
@@ -40,7 +41,7 @@ struct `AnimationPlayState - Global Values` {
         (AnimationPlayState.initial, "initial"),
         (AnimationPlayState.revert, "revert"),
         (AnimationPlayState.revertLayer, "revert-layer"),
-        (AnimationPlayState.unset, "unset")
+        (AnimationPlayState.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationPlayState,
@@ -103,7 +104,9 @@ struct `AnimationPlayState - CSS Property Usage` {
     }
 
     @Test func `multiple play states can be combined in array notation`() {
-        let states = [AnimationPlayState.running, AnimationPlayState.paused, AnimationPlayState.running]
+        let states = [
+            AnimationPlayState.running, AnimationPlayState.paused, AnimationPlayState.running,
+        ]
         let css = states.map(\.description).joined(separator: ", ")
         #expect(css == "running, paused, running")
     }

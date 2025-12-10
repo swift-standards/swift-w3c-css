@@ -4,6 +4,7 @@
 // Tests for CSS DisplayBox type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -12,7 +13,7 @@ import Testing
 struct `DisplayBox - Initialization` {
     @Test(arguments: [
         (DisplayBox.none, "none"),
-        (DisplayBox.contents, "contents")
+        (DisplayBox.contents, "contents"),
     ])
     func `displayBox initializes with correct raw value and description`(
         value: DisplayBox,
@@ -63,7 +64,7 @@ struct `DisplayBox - Hashable Conformance` {
     @Test func `hashable allows use as dictionary keys`() {
         let dict: [DisplayBox: String] = [
             .none: "hidden",
-            .contents: "unwrapped"
+            .contents: "unwrapped",
         ]
         #expect(dict[.none] == "hidden")
         #expect(dict[.contents] == "unwrapped")

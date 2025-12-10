@@ -45,7 +45,7 @@ public struct HexColor: Sendable, Hashable {
         let bytes: [UInt8] = [
             UInt8(min(max(0, red), 255)),
             UInt8(min(max(0, green), 255)),
-            UInt8(min(max(0, blue), 255))
+            UInt8(min(max(0, blue), 255)),
         ]
         let hexBytes: [UInt8] = RFC_4648.Base16.encode(bytes, uppercase: true)
         let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
@@ -70,7 +70,7 @@ public struct HexColor: Sendable, Hashable {
             UInt8(min(max(0, red), 255)),
             UInt8(min(max(0, green), 255)),
             UInt8(min(max(0, blue), 255)),
-            UInt8(alphaInt)
+            UInt8(alphaInt),
         ]
         let hexBytes: [UInt8] = RFC_4648.Base16.encode(bytes, uppercase: true)
         let hexString = "#" + String(decoding: hexBytes, as: UTF8.self)
@@ -89,9 +89,8 @@ public struct HexColor: Sendable, Hashable {
 
         // Check if all characters are valid hexadecimal digits
         return hex.allSatisfy { char in
-            (char >= "0" && char <= "9") ||
-            (char >= "A" && char <= "F") ||
-            (char >= "a" && char <= "f")
+            (char >= "0" && char <= "9") || (char >= "A" && char <= "F")
+                || (char >= "a" && char <= "f")
         }
     }
 }

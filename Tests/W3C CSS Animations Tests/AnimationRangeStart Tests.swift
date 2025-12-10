@@ -4,8 +4,9 @@
 // Tests for CSS AnimationRangeStart type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -33,7 +34,7 @@ struct `AnimationRangeStart - Named Range Values` {
         (AnimationRangeStart.namedRange(.entry), "entry"),
         (AnimationRangeStart.namedRange(.exit), "exit"),
         (AnimationRangeStart.namedRange(.entryCrossing), "entry-crossing"),
-        (AnimationRangeStart.namedRange(.exitCrossing), "exit-crossing")
+        (AnimationRangeStart.namedRange(.exitCrossing), "exit-crossing"),
     ])
     func `renders named range values correctly`(
         value: AnimationRangeStart,
@@ -48,7 +49,7 @@ struct `AnimationRangeStart - Percentage Values` {
     @Test(arguments: [
         (AnimationRangeStart.percentage(20), "20%"),
         (AnimationRangeStart.percentage(0), "0%"),
-        (AnimationRangeStart.percentage(50), "50%")
+        (AnimationRangeStart.percentage(50), "50%"),
     ])
     func `renders percentage values correctly`(
         value: AnimationRangeStart,
@@ -63,7 +64,7 @@ struct `AnimationRangeStart - Named Range with Percentage` {
     @Test(arguments: [
         (AnimationRangeStart.namedRange(.entry, 25), "entry 25%"),
         (AnimationRangeStart.namedRange(.contain, 10), "contain 10%"),
-        (AnimationRangeStart.namedRange(.cover, 0), "cover 0%")
+        (AnimationRangeStart.namedRange(.cover, 0), "cover 0%"),
     ])
     func `renders named range with percentage values correctly`(
         value: AnimationRangeStart,
@@ -82,7 +83,7 @@ struct `AnimationRangeStart - Global Values` {
         (AnimationRangeStart.initial, "initial"),
         (AnimationRangeStart.revert, "revert"),
         (AnimationRangeStart.revertLayer, "revert-layer"),
-        (AnimationRangeStart.unset, "unset")
+        (AnimationRangeStart.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationRangeStart,
@@ -119,7 +120,7 @@ struct `AnimationRangeStart - TimelineRangeName` {
         (TimelineRangeName.entry, "entry"),
         (TimelineRangeName.exit, "exit"),
         (TimelineRangeName.entryCrossing, "entry-crossing"),
-        (TimelineRangeName.exitCrossing, "exit-crossing")
+        (TimelineRangeName.exitCrossing, "exit-crossing"),
     ])
     func `TimelineRangeName has correct raw values`(
         name: TimelineRangeName,

@@ -1,7 +1,7 @@
-import W3C_CSS_Values
+import INCITS_4_1986
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
-import INCITS_4_1986
+import W3C_CSS_Values
 
 /// Represents a CSS @color-profile at-rule.
 ///

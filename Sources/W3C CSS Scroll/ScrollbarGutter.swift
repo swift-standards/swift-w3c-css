@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  ScrollbarGutter.swift
 //  swift-css
 //
 //  Created by Claude on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The `scrollbar-gutter` CSS property allows authors to reserve space for the scrollbar,
 /// preventing unwanted layout changes as the content grows while also avoiding unnecessary

@@ -4,8 +4,9 @@
 // Tests for CSS AnimationRangeEnd type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -31,7 +32,7 @@ struct `AnimationRangeEnd - Named Range Values` {
         (AnimationRangeEnd.namedRange(.entry), "entry"),
         (AnimationRangeEnd.namedRange(.exit), "exit"),
         (AnimationRangeEnd.namedRange(.entryCrossing), "entry-crossing"),
-        (AnimationRangeEnd.namedRange(.exitCrossing), "exit-crossing")
+        (AnimationRangeEnd.namedRange(.exitCrossing), "exit-crossing"),
     ])
     func `renders named range values correctly`(
         value: AnimationRangeEnd,
@@ -47,7 +48,7 @@ struct `AnimationRangeEnd - Percentage Values` {
         (AnimationRangeEnd.percentage(75), "75%"),
         (AnimationRangeEnd.percentage(100), "100%"),
         (AnimationRangeEnd.percentage(50), "50%"),
-        (AnimationRangeEnd.percentage(0), "0%")
+        (AnimationRangeEnd.percentage(0), "0%"),
     ])
     func `renders percentage values correctly`(
         value: AnimationRangeEnd,
@@ -62,7 +63,7 @@ struct `AnimationRangeEnd - Named Range with Percentage` {
     @Test(arguments: [
         (AnimationRangeEnd.namedRange(.exit, 75), "exit 75%"),
         (AnimationRangeEnd.namedRange(.contain, 90), "contain 90%"),
-        (AnimationRangeEnd.namedRange(.cover, 100), "cover 100%")
+        (AnimationRangeEnd.namedRange(.cover, 100), "cover 100%"),
     ])
     func `renders named range with percentage values correctly`(
         value: AnimationRangeEnd,
@@ -81,7 +82,7 @@ struct `AnimationRangeEnd - Global Values` {
         (AnimationRangeEnd.initial, "initial"),
         (AnimationRangeEnd.revert, "revert"),
         (AnimationRangeEnd.revertLayer, "revert-layer"),
-        (AnimationRangeEnd.unset, "unset")
+        (AnimationRangeEnd.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationRangeEnd,

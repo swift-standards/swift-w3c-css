@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  ScrollBehavior.swift
 //  swift-css
 //
 //  Created by Claude on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The `scroll-behavior` CSS property sets the behavior for a scrolling box when scrolling
 /// is triggered by the navigation or CSSOM scrolling APIs.

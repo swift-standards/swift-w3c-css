@@ -4,6 +4,7 @@
 // Tests for CSS align-items property
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -22,7 +23,7 @@ struct `AlignItems - Declaration Rendering` {
         (AlignItems.stretch, "align-items:stretch"),
         (AlignItems.center, "align-items:center"),
         (AlignItems.baseline, "align-items:baseline"),
-        (AlignItems.safe(.center), "align-items:safe center")
+        (AlignItems.safe(.center), "align-items:safe center"),
     ])
     func `declaration renders correctly`(
         value: AlignItems,
@@ -39,7 +40,7 @@ struct `AlignItems - Basic Values` {
     @Test(arguments: [
         (AlignItems.normal, "normal"),
         (AlignItems.stretch, "stretch"),
-        (AlignItems.anchorCenter, "anchor-center")
+        (AlignItems.anchorCenter, "anchor-center"),
     ])
     func `basic values render correctly`(
         value: AlignItems,
@@ -58,7 +59,7 @@ struct `AlignItems - Baseline Positions` {
         (AlignItems.firstBaseline, "first baseline"),
         (AlignItems.lastBaseline, "last baseline"),
         (AlignItems.baseline(.firstBaseline), "first baseline"),
-        (AlignItems.baseline(.lastBaseline), "last baseline")
+        (AlignItems.baseline(.lastBaseline), "last baseline"),
     ])
     func `baseline positions render correctly`(
         value: AlignItems,
@@ -79,7 +80,7 @@ struct `AlignItems - Self Position Values` {
         (AlignItems.selfStart, "self-start"),
         (AlignItems.selfEnd, "self-end"),
         (AlignItems.flexStart, "flex-start"),
-        (AlignItems.flexEnd, "flex-end")
+        (AlignItems.flexEnd, "flex-end"),
     ])
     func `self position values render correctly`(
         value: AlignItems,
@@ -99,7 +100,7 @@ struct `AlignItems - Overflow Position with Safe` {
         (AlignItems.safe(.flexStart), "safe flex-start"),
         (AlignItems.safe(.selfStart), "safe self-start"),
         (AlignItems.safe(.selfEnd), "safe self-end"),
-        (AlignItems.safe(.flexEnd), "safe flex-end")
+        (AlignItems.safe(.flexEnd), "safe flex-end"),
     ])
     func `safe overflow with self positions renders correctly`(
         value: AlignItems,
@@ -115,7 +116,7 @@ struct `AlignItems - Overflow Position with Unsafe` {
         (AlignItems.unsafe(.start), "unsafe start"),
         (AlignItems.unsafe(.flexStart), "unsafe flex-start"),
         (AlignItems.unsafe(.selfStart), "unsafe self-start"),
-        (AlignItems.unsafe(.selfEnd), "unsafe self-end")
+        (AlignItems.unsafe(.selfEnd), "unsafe self-end"),
     ])
     func `unsafe overflow with self positions renders correctly`(
         value: AlignItems,
@@ -131,7 +132,7 @@ struct `AlignItems - Overflow Position with Function Syntax` {
         (AlignItems.position(.safe, .center), "safe center"),
         (AlignItems.position(.unsafe, .end), "unsafe end"),
         (AlignItems.position(.safe, .flexStart), "safe flex-start"),
-        (AlignItems.position(.unsafe, .selfStart), "unsafe self-start")
+        (AlignItems.position(.unsafe, .selfStart), "unsafe self-start"),
     ])
     func `position function with overflow parameter renders correctly`(
         value: AlignItems,
@@ -150,7 +151,7 @@ struct `AlignItems - Global Values` {
         (AlignItems.initial, "initial"),
         (AlignItems.revert, "revert"),
         (AlignItems.revertLayer, "revert-layer"),
-        (AlignItems.unset, "unset")
+        (AlignItems.unset, "unset"),
     ])
     func `global values render correctly`(
         value: AlignItems,
@@ -172,7 +173,7 @@ struct `AlignItems - Edge Cases` {
             (.safe(.selfStart), "safe self-start"),
             (.safe(.selfEnd), "safe self-end"),
             (.safe(.flexStart), "safe flex-start"),
-            (.safe(.flexEnd), "safe flex-end")
+            (.safe(.flexEnd), "safe flex-end"),
         ]
 
         for (value, expected) in positions {
@@ -188,7 +189,7 @@ struct `AlignItems - Edge Cases` {
             (.unsafe(.selfStart), "unsafe self-start"),
             (.unsafe(.selfEnd), "unsafe self-end"),
             (.unsafe(.flexStart), "unsafe flex-start"),
-            (.unsafe(.flexEnd), "unsafe flex-end")
+            (.unsafe(.flexEnd), "unsafe flex-end"),
         ]
 
         for (value, expected) in positions {

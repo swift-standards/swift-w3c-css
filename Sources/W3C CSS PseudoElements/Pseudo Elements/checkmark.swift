@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::checkmark pseudo-element.
 ///
 /// The `Checkmark` pseudo-element targets the checkmark placed inside the currently-selected

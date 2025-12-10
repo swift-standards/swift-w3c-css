@@ -4,8 +4,9 @@
 // Tests for CSS Hue type
 
 import Testing
-@testable import W3C_CSS_Color
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Number Hue
 
@@ -15,7 +16,7 @@ struct `Hue - Number Format` {
         (Number(120), "120"),
         (Number(240.5), "240.5"),
         (Number(0), "0"),
-        (Number(360), "360")
+        (Number(360), "360"),
     ])
     func `hue with number renders correctly`(
         value: Number,
@@ -34,7 +35,7 @@ struct `Hue - Angle Format` {
         (Angle.deg(120), "120deg"),
         (Angle.turn(0.5), "0.5turn"),
         (Angle.rad(3.14159), "3.14159rad"),
-        (Angle.grad(100), "100grad")
+        (Angle.grad(100), "100grad"),
     ])
     func `hue with angle renders correctly`(
         angle: Angle,
@@ -53,7 +54,7 @@ struct `Hue - Normalization` {
         (Hue.angle(.deg(120)), 120.0),
         (Hue.number(Number(240)), 240.0),
         (Hue.angle(.deg(0)), 0.0),
-        (Hue.angle(.deg(360)), 0.0)
+        (Hue.angle(.deg(360)), 0.0),
     ])
     func `basic hue normalization`(
         hue: Hue,
@@ -65,7 +66,7 @@ struct `Hue - Normalization` {
     @Test(arguments: [
         (Hue.angle(.deg(420)), 60.0),
         (Hue.number(Number(540)), 180.0),
-        (Hue.angle(.deg(720)), 0.0)
+        (Hue.angle(.deg(720)), 0.0),
     ])
     func `hue over 360 wraps around`(
         hue: Hue,
@@ -77,7 +78,7 @@ struct `Hue - Normalization` {
     @Test(arguments: [
         (Hue.angle(.deg(-120)), 240.0),
         (Hue.number(Number(-90)), 270.0),
-        (Hue.angle(.deg(-360)), 0.0)
+        (Hue.angle(.deg(-360)), 0.0),
     ])
     func `negative hue wraps around`(
         hue: Hue,
@@ -139,7 +140,7 @@ struct `Hue - Color Function Usage` {
     @Test(arguments: [
         (Hue.angle(.deg(120)), "hsl(120deg, 100%, 50%)"),
         (Hue.angle(.turn(0.25)), "hwb(0.25turn 20% 0%)"),
-        (Hue.number(Number(240)), "lch(50% 50 240)")
+        (Hue.number(Number(240)), "lch(50% 50 240)"),
     ])
     func `hue is used correctly in color function context`(
         hue: Hue,

@@ -4,8 +4,9 @@
 // Tests for CSS AnimationDuration type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -29,7 +30,7 @@ struct `AnimationDuration - Time Values` {
         (AnimationDuration.s(3), "3s"),
         (AnimationDuration.ms(750), "750ms"),
         (AnimationDuration.zero, "0s"),
-        (AnimationDuration.s(0.5), "0.5s")
+        (AnimationDuration.s(0.5), "0.5s"),
     ])
     func `renders time values correctly`(
         value: AnimationDuration,
@@ -48,7 +49,7 @@ struct `AnimationDuration - Non-Negative Values` {
     @Test(arguments: [
         (AnimationDuration.s(-1), "0s"),
         (AnimationDuration.ms(-500), "0ms"),
-        (AnimationDuration.s(-0.5), "0s")
+        (AnimationDuration.s(-0.5), "0s"),
     ])
     func `enforces non-negative values`(
         value: AnimationDuration,
@@ -68,7 +69,7 @@ struct `AnimationDuration - Time Objects` {
     @Test(arguments: [
         (Time.s(2.5), "2.5s"),
         (Time.ms(250), "250ms"),
-        (Time.s(0), "0s")
+        (Time.s(0), "0s"),
     ])
     func `renders Time objects correctly`(
         time: Time,
@@ -87,7 +88,7 @@ struct `AnimationDuration - Global Values` {
         (AnimationDuration.initial, "initial"),
         (AnimationDuration.revert, "revert"),
         (AnimationDuration.revertLayer, "revert-layer"),
-        (AnimationDuration.unset, "unset")
+        (AnimationDuration.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationDuration,

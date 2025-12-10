@@ -282,8 +282,7 @@ extension BackdropFilter {
     /// ```swift
     /// .backdropFilter(.urlWithFilters("filters.svg#myFilter", [.blur(.px(4)), .saturate(1.5)]))
     /// ```
-    public static func urlWithFilters(_ url: Url, _ filters: [FilterFunction]) -> BackdropFilter
-    {
+    public static func urlWithFilters(_ url: Url, _ filters: [FilterFunction]) -> BackdropFilter {
         return .combined(url: url, filters: filters)
     }
 }

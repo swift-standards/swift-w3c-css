@@ -1,6 +1,6 @@
 import W3C_CSS_Shared
-import W3C_CSS_Values
 import W3C_CSS_Syntax
+import W3C_CSS_Values
 
 /// Represents a CSS @media at-rule.
 ///
@@ -136,7 +136,7 @@ public struct Media: AtRule {
     public static let reducedMotion = Media(rawValue: "@media (prefers-reduced-motion: reduce)")
 }
 
-//extension W3C_CSS_MediaQueries.Media {
+// extension W3C_CSS_MediaQueries.Media {
 //    public static let desktop = Self(rawValue: "@media only screen and (min-width: 832px)")
 //    public static let mobile = Self(rawValue: "@media only screen and (max-width: 831px)")
 //    public static let tablet = Self(
@@ -154,7 +154,7 @@ public struct Media: AtRule {
 //    public static let largeDesktop = Self(rawValue: "@media only screen and (min-width: 1200px)")
 //    public static let hover = Self(rawValue: "@media (hover: hover)")
 //    public static let reducedMotion = Self(rawValue: "@media (prefers-reduced-motion: reduce)")
-//}
+// }
 
 // MARK: - Media Type
 

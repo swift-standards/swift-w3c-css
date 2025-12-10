@@ -4,6 +4,7 @@
 // Tests for CSS BlendMode type
 
 import Testing
+
 @testable import W3C_CSS_Compositing
 
 // MARK: - Basic Blend Modes
@@ -16,7 +17,7 @@ struct `BlendMode - Basic Values` {
         (BlendMode.screen, "screen"),
         (BlendMode.overlay, "overlay"),
         (BlendMode.darken, "darken"),
-        (BlendMode.lighten, "lighten")
+        (BlendMode.lighten, "lighten"),
     ])
     func `basic blend mode values render correctly`(
         mode: BlendMode,
@@ -34,7 +35,7 @@ struct `BlendMode - Compound Values` {
         (BlendMode.colorDodge, "color-dodge"),
         (BlendMode.colorBurn, "color-burn"),
         (BlendMode.hardLight, "hard-light"),
-        (BlendMode.softLight, "soft-light")
+        (BlendMode.softLight, "soft-light"),
     ])
     func `compound blend mode values render correctly`(
         mode: BlendMode,
@@ -54,7 +55,7 @@ struct `BlendMode - Special Values` {
         (BlendMode.hue, "hue"),
         (BlendMode.saturation, "saturation"),
         (BlendMode.color, "color"),
-        (BlendMode.luminosity, "luminosity")
+        (BlendMode.luminosity, "luminosity"),
     ])
     func `special blend mode values render correctly`(
         mode: BlendMode,
@@ -73,7 +74,7 @@ struct `BlendMode - Raw Value` {
         ("multiply", BlendMode.multiply),
         ("screen", BlendMode.screen),
         ("color-dodge", BlendMode.colorDodge),
-        ("hard-light", BlendMode.hardLight)
+        ("hard-light", BlendMode.hardLight),
     ])
     func `raw values are correct`(
         rawValue: String,
@@ -122,7 +123,7 @@ struct `BlendMode - Hashable Conformance` {
         (BlendMode.hue, BlendMode.saturation),
         (BlendMode.colorDodge, BlendMode.colorBurn),
         (BlendMode.hardLight, BlendMode.softLight),
-        (BlendMode.difference, BlendMode.exclusion)
+        (BlendMode.difference, BlendMode.exclusion),
     ])
     func `different specific blend modes are not equal`(
         mode1: BlendMode,
@@ -142,7 +143,7 @@ struct `BlendMode - Hashable Conformance` {
         let dict: [BlendMode: String] = [
             .normal: "Normal blending",
             .multiply: "Multiply blending",
-            .screen: "Screen blending"
+            .screen: "Screen blending",
         ]
         #expect(dict[.normal] == "Normal blending")
         #expect(dict[.multiply] == "Multiply blending")
@@ -166,7 +167,7 @@ struct `BlendMode - CSS Property Usage` {
     @Test(arguments: [
         (BlendMode.overlay, "mix-blend-mode: overlay"),
         (BlendMode.colorDodge, "mix-blend-mode: color-dodge"),
-        (BlendMode.hue, "mix-blend-mode: hue")
+        (BlendMode.hue, "mix-blend-mode: hue"),
     ])
     func `various blend modes in CSS properties`(
         mode: BlendMode,
@@ -188,11 +189,11 @@ struct `BlendMode - Complete List` {
             .screen,
             .overlay,
             .darken,
-            .lighten
+            .lighten,
         ]
 
         for mode in basicModes {
-            #expect(mode.description.count > 0)
+            #expect(!mode.description.isEmpty)
         }
     }
 
@@ -201,7 +202,7 @@ struct `BlendMode - Complete List` {
             .colorDodge,
             .colorBurn,
             .hardLight,
-            .softLight
+            .softLight,
         ]
 
         for mode in compoundModes {
@@ -216,11 +217,11 @@ struct `BlendMode - Complete List` {
             .hue,
             .saturation,
             .color,
-            .luminosity
+            .luminosity,
         ]
 
         for mode in specialModes {
-            #expect(mode.description.count > 0)
+            #expect(!mode.description.isEmpty)
         }
     }
 }
@@ -263,7 +264,7 @@ struct `BlendMode - Categorization` {
         let separableModes: [BlendMode] = [
             .normal, .multiply, .screen, .overlay,
             .darken, .lighten, .colorDodge, .colorBurn,
-            .hardLight, .softLight, .difference, .exclusion
+            .hardLight, .softLight, .difference, .exclusion,
         ]
 
         #expect(separableModes.count == 12)
@@ -272,7 +273,7 @@ struct `BlendMode - Categorization` {
     @Test func `non-separable blend modes`() {
         // Non-separable blend modes consider all color components together
         let nonSeparableModes: [BlendMode] = [
-            .hue, .saturation, .color, .luminosity
+            .hue, .saturation, .color, .luminosity,
         ]
 
         #expect(nonSeparableModes.count == 4)

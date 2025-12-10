@@ -4,6 +4,7 @@
 // Tests for CSS CalcSum type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `CalcSum - Initialization` {
         ("100% - 20px", "calc(100% - 20px)"),
         ("3 * (2em + 5px)", "calc(3 * (2em + 5px))"),
         ("50% + 1rem", "calc(50% + 1rem)"),
-        ("(100vw - 2 * 3rem) / 2", "calc((100vw - 2 * 3rem) / 2)")
+        ("(100vw - 2 * 3rem) / 2", "calc((100vw - 2 * 3rem) / 2)"),
     ])
     func `initializer creates proper instances`(
         expression: String,
@@ -31,7 +32,7 @@ struct `CalcSum - Initialization` {
 struct `CalcSum - Calc Factory` {
     @Test(arguments: [
         ("50% + 1rem", "calc(50% + 1rem)"),
-        ("(100vw - 2 * 3rem) / 2", "calc((100vw - 2 * 3rem) / 2)")
+        ("(100vw - 2 * 3rem) / 2", "calc((100vw - 2 * 3rem) / 2)"),
     ])
     func `calc factory creates proper instances`(
         expression: String,
@@ -46,7 +47,7 @@ struct `CalcSum - Calc Factory` {
 struct `CalcSum - Min Factory` {
     @Test(arguments: [
         ("10px, 2em", "min(10px, 2em)"),
-        ("50%, 300px, 20em", "min(50%, 300px, 20em)")
+        ("50%, 300px, 20em", "min(50%, 300px, 20em)"),
     ])
     func `min factory creates proper instances`(
         expression: String,
@@ -61,7 +62,7 @@ struct `CalcSum - Min Factory` {
 struct `CalcSum - Max Factory` {
     @Test(arguments: [
         ("100px, 50%", "max(100px, 50%)"),
-        ("10vw, 50px, 4em", "max(10vw, 50px, 4em)")
+        ("10vw, 50px, 4em", "max(10vw, 50px, 4em)"),
     ])
     func `max factory creates proper instances`(
         expression: String,
@@ -76,7 +77,7 @@ struct `CalcSum - Max Factory` {
 struct `CalcSum - Clamp Factory` {
     @Test(arguments: [
         ("10px", "5vw", "50px", "clamp(10px, 5vw, 50px)"),
-        ("1rem", "5vw", "2rem", "clamp(1rem, 5vw, 2rem)")
+        ("1rem", "5vw", "2rem", "clamp(1rem, 5vw, 2rem)"),
     ])
     func `clamp factory creates proper instances`(
         min: String,
@@ -126,7 +127,7 @@ struct `CalcSum - CSS Keywords` {
     @Test(arguments: [
         ("e * 10px", "calc(e * 10px)"),
         ("pi * 1rem", "calc(pi * 1rem)"),
-        ("2 * pi * 5rem", "calc(2 * pi * 5rem)")
+        ("2 * pi * 5rem", "calc(2 * pi * 5rem)"),
     ])
     func `expressions with keywords render correctly`(
         expression: String,

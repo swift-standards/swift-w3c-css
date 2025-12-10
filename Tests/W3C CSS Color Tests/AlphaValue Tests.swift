@@ -4,8 +4,9 @@
 // Tests for CSS AlphaValue type
 
 import Testing
-@testable import W3C_CSS_Color
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Number Values
 
@@ -16,7 +17,7 @@ struct `AlphaValue - Number Format` {
         (0.5, "0.5"),
         (1, "1"),
         (1.5, "1.5"),
-        (-0.2, "-0.2")
+        (-0.2, "-0.2"),
     ])
     func `number alpha values render correctly`(
         value: Double,
@@ -37,7 +38,7 @@ struct `AlphaValue - Percentage Format` {
         (100, "100%"),
         (33.33, "33.33%"),
         (120, "120%"),
-        (-10, "-10%")
+        (-10, "-10%"),
     ])
     func `percentage alpha values render correctly`(
         value: Double,
@@ -54,7 +55,7 @@ struct `AlphaValue - Percentage Format` {
 struct `AlphaValue - Integer Literal Conversion` {
     @Test(arguments: [
         (0, 0.0),
-        (1, 1.0)
+        (1, 1.0),
     ])
     func `integer literal conversion works correctly`(
         literal: Int,
@@ -86,7 +87,7 @@ struct `AlphaValue - Integer Literal Conversion` {
 struct `AlphaValue - Float Literal Conversion` {
     @Test(arguments: [
         (0.5, 0.5),
-        (0.95, 0.95)
+        (0.95, 0.95),
     ])
     func `float literal conversion works correctly`(
         literal: Double,

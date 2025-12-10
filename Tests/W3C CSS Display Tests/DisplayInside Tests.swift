@@ -4,6 +4,7 @@
 // Tests for CSS DisplayInside type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -16,7 +17,7 @@ struct `DisplayInside - Initialization` {
         (DisplayInside.table, "table"),
         (DisplayInside.flex, "flex"),
         (DisplayInside.grid, "grid"),
-        (DisplayInside.ruby, "ruby")
+        (DisplayInside.ruby, "ruby"),
     ])
     func `displayInside initializes with correct raw value and description`(
         value: DisplayInside,
@@ -35,7 +36,7 @@ struct `DisplayInside - Raw Value Initialization` {
         ("table", DisplayInside.table),
         ("flex", DisplayInside.flex),
         ("grid", DisplayInside.grid),
-        ("ruby", DisplayInside.ruby)
+        ("ruby", DisplayInside.ruby),
     ])
     func `creates displayInside from valid raw values`(
         rawValue: String,
@@ -80,7 +81,7 @@ struct `DisplayInside - Hashable Conformance` {
         let dict: [DisplayInside: String] = [
             .flex: "flexbox",
             .grid: "css-grid",
-            .table: "table-layout"
+            .table: "table-layout",
         ]
         #expect(dict[.flex] == "flexbox")
         #expect(dict[.grid] == "css-grid")
@@ -98,7 +99,7 @@ struct `DisplayInside - CSS Property Usage` {
         (DisplayInside.table, "display: table"),
         (DisplayInside.flex, "display: flex"),
         (DisplayInside.grid, "display: grid"),
-        (DisplayInside.ruby, "display: ruby")
+        (DisplayInside.ruby, "display: ruby"),
     ])
     func `renders correctly in display property`(
         value: DisplayInside,
@@ -166,7 +167,7 @@ struct `DisplayInside - CSS Specification` {
     @Test func `all specification values are present`() {
         // Ensure we have all important spec-defined display-inside values
         let allValues: Set<DisplayInside> = [
-            .flow, .flowRoot, .table, .flex, .grid, .ruby
+            .flow, .flowRoot, .table, .flex, .grid, .ruby,
         ]
         #expect(allValues.count == 6)
     }

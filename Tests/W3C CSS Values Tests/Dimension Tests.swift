@@ -4,6 +4,7 @@
 // Tests for CSS GenericDimension type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `GenericDimension - Double Initialization` {
         (1.75, "em", "1.75em"),
         (50.0, "%", "50%"),
         (2.25, "cm", "2.25cm"),
-        (3.75, "rem", "3.75rem")
+        (3.75, "rem", "3.75rem"),
     ])
     func `initializer creates proper instances with double values`(
         value: Double,
@@ -35,7 +36,7 @@ struct `GenericDimension - Int Initialization` {
         (20, "px", "20px"),
         (2, "em", "2em"),
         (100, "vw", "100vw"),
-        (5, "q", "5q")
+        (5, "q", "5q"),
     ])
     func `initializer creates proper instances with int values`(
         value: Int,
@@ -111,7 +112,7 @@ struct `GenericDimension - Absolute Length Units` {
         (10.0, "mm", "10mm"),
         (1.0, "in", "1in"),
         (10.0, "pt", "10pt"),
-        (2.0, "pc", "2pc")
+        (2.0, "pc", "2pc"),
     ])
     func `absolute length units render correctly`(
         value: Double,
@@ -133,7 +134,7 @@ struct `GenericDimension - Relative Length Units` {
         (50.0, "vw", "50vw"),
         (75.0, "vh", "75vh"),
         (80.0, "vmin", "80vmin"),
-        (90.0, "vmax", "90vmax")
+        (90.0, "vmax", "90vmax"),
     ])
     func `relative length units render correctly`(
         value: Double,
@@ -149,7 +150,7 @@ struct `GenericDimension - Relative Length Units` {
 struct `GenericDimension - Time Units` {
     @Test(arguments: [
         (2.0, "s", "2s"),
-        (500.0, "ms", "500ms")
+        (500.0, "ms", "500ms"),
     ])
     func `time units render correctly`(
         value: Double,
@@ -165,7 +166,7 @@ struct `GenericDimension - Time Units` {
 struct `GenericDimension - Frequency Units` {
     @Test(arguments: [
         (44100.0, "Hz", "44100Hz"),
-        (15.0, "kHz", "15kHz")
+        (15.0, "kHz", "15kHz"),
     ])
     func `frequency units render correctly`(
         value: Double,
@@ -182,7 +183,7 @@ struct `GenericDimension - Resolution Units` {
     @Test(arguments: [
         (300.0, "dpi", "300dpi"),
         (2.0, "dpcm", "2dpcm"),
-        (96.0, "dppx", "96dppx")
+        (96.0, "dppx", "96dppx"),
     ])
     func `resolution units render correctly`(
         value: Double,
@@ -217,7 +218,8 @@ struct `GenericDimension - CSS Property Usage` {
     }
 
     @Test func `dimension renders correctly in multiple contexts`() {
-        let combined = "padding: \(GenericDimension(10, unit: "px")) \(GenericDimension(20, unit: "px"))"
+        let combined =
+            "padding: \(GenericDimension(10, unit: "px")) \(GenericDimension(20, unit: "px"))"
         #expect(combined == "padding: 10px 20px")
     }
 
@@ -248,7 +250,7 @@ struct `GenericDimension - Edge Cases` {
 
     @Test func `very large values render correctly`() {
         #expect(GenericDimension(999999, unit: "px").description == "999999px")
-        #expect(GenericDimension(1000000, unit: "em").description == "1000000em")
+        #expect(GenericDimension(1_000_000, unit: "em").description == "1000000em")
     }
 
     @Test func `decimal precision is maintained`() {

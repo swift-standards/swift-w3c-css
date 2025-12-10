@@ -4,6 +4,7 @@
 // Tests for CSS Ratio type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `Ratio - Two Value Initialization` {
         (16.0, 9.0, "16 / 9"),
         (185.0, 100.0, "185 / 100"),
         (4.0, 3.0, "4 / 3"),
-        (21.0, 9.0, "21 / 9")
+        (21.0, 9.0, "21 / 9"),
     ])
     func `ratio with two values renders correctly`(
         width: Double,
@@ -38,7 +39,7 @@ struct `Ratio - Single Value Initialization` {
     @Test(arguments: [
         (1.5, "1.5"),
         (2.0, "2"),
-        (1.78, "1.78")
+        (1.78, "1.78"),
     ])
     func `ratio with single value renders correctly`(
         value: Double,

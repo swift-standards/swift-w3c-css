@@ -4,6 +4,7 @@
 // Tests for CSS ContentDistribution type
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `ContentDistribution - Initialization` {
         (ContentDistribution.spaceBetween, "space-between"),
         (ContentDistribution.spaceAround, "space-around"),
         (ContentDistribution.spaceEvenly, "space-evenly"),
-        (ContentDistribution.stretch, "stretch")
+        (ContentDistribution.stretch, "stretch"),
     ])
     func `content distribution renders with correct description`(
         distribution: ContentDistribution,
@@ -71,7 +72,7 @@ struct `ContentDistribution - Hashable Conformance` {
             ContentDistribution.spaceBetween,
             ContentDistribution.spaceAround,
             ContentDistribution.spaceEvenly,
-            ContentDistribution.stretch
+            ContentDistribution.stretch,
         ]
         let uniqueValues = Set(values)
         #expect(uniqueValues.count == values.count)

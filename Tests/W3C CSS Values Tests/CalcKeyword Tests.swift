@@ -4,6 +4,7 @@
 // Tests for CSS CalcKeyword type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `CalcKeyword - Enum Cases` {
         (.pi, "pi"),
         (.infinity, "infinity"),
         (.negativeInfinity, "-infinity"),
-        (.NaN, "NaN")
+        (.NaN, "NaN"),
     ])
     func `calc keyword renders correctly`(
         keyword: CalcKeyword,
@@ -147,7 +148,7 @@ struct `CalcKeyword - All Keywords Coverage` {
             CalcKeyword.pi.rawValue,
             CalcKeyword.infinity.rawValue,
             CalcKeyword.negativeInfinity.rawValue,
-            CalcKeyword.NaN.rawValue
+            CalcKeyword.NaN.rawValue,
         ])
         #expect(rawValues.count == 5)
     }

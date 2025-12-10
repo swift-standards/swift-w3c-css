@@ -4,6 +4,7 @@
 // Tests for CSS align-content property
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -22,7 +23,7 @@ struct `AlignContent - Declaration Rendering` {
         (AlignContent.baseline, "align-content:baseline"),
         (AlignContent.spaceBetween, "align-content:space-between"),
         (AlignContent.center, "align-content:center"),
-        (AlignContent.safe(.center), "align-content:safe center")
+        (AlignContent.safe(.center), "align-content:safe center"),
     ])
     func `declaration renders correctly`(
         value: AlignContent,
@@ -46,7 +47,7 @@ struct `AlignContent - Baseline Positions` {
     @Test(arguments: [
         (AlignContent.baseline, "baseline"),
         (AlignContent.firstBaseline, "first baseline"),
-        (AlignContent.lastBaseline, "last baseline")
+        (AlignContent.lastBaseline, "last baseline"),
     ])
     func `baseline positions render correctly`(
         value: AlignContent,
@@ -62,7 +63,7 @@ struct `AlignContent - Content Distribution` {
         (AlignContent.spaceBetween, "space-between"),
         (AlignContent.spaceAround, "space-around"),
         (AlignContent.spaceEvenly, "space-evenly"),
-        (AlignContent.stretch, "stretch")
+        (AlignContent.stretch, "stretch"),
     ])
     func `content distribution values render correctly`(
         value: AlignContent,
@@ -79,7 +80,7 @@ struct `AlignContent - Content Position` {
         (AlignContent.center, "center"),
         (AlignContent.end, "end"),
         (AlignContent.flexStart, "flex-start"),
-        (AlignContent.flexEnd, "flex-end")
+        (AlignContent.flexEnd, "flex-end"),
     ])
     func `content position values render correctly`(
         value: AlignContent,
@@ -97,7 +98,7 @@ struct `AlignContent - Overflow Position` {
         (AlignContent.safe(.end), "safe end"),
         (AlignContent.unsafe(.flexStart), "unsafe flex-start"),
         (AlignContent.safe(.flexEnd), "safe flex-end"),
-        (AlignContent.unsafe(.center), "unsafe center")
+        (AlignContent.unsafe(.center), "unsafe center"),
     ])
     func `overflow position with content position renders correctly`(
         value: AlignContent,
@@ -116,7 +117,7 @@ struct `AlignContent - Global Values` {
         (AlignContent.initial, "initial"),
         (AlignContent.revert, "revert"),
         (AlignContent.revertLayer, "revert-layer"),
-        (AlignContent.unset, "unset")
+        (AlignContent.unset, "unset"),
     ])
     func `global values render correctly`(
         value: AlignContent,
@@ -136,7 +137,7 @@ struct `AlignContent - Edge Cases` {
             (.safe(.center), "safe center"),
             (.safe(.end), "safe end"),
             (.safe(.flexStart), "safe flex-start"),
-            (.safe(.flexEnd), "safe flex-end")
+            (.safe(.flexEnd), "safe flex-end"),
         ]
 
         for (value, expected) in positions {
@@ -150,7 +151,7 @@ struct `AlignContent - Edge Cases` {
             (.unsafe(.center), "unsafe center"),
             (.unsafe(.end), "unsafe end"),
             (.unsafe(.flexStart), "unsafe flex-start"),
-            (.unsafe(.flexEnd), "unsafe flex-end")
+            (.unsafe(.flexEnd), "unsafe flex-end"),
         ]
 
         for (value, expected) in positions {

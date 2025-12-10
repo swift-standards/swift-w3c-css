@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:first-of-type` pseudo-class.
 ///
 /// The `:first-of-type` pseudo-class matches the first element of its type among a group of sibling elements.

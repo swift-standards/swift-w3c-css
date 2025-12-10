@@ -1,9 +1,9 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollMarginInline.swift
 //
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-inline` CSS property is a shorthand property for setting the scroll-margin in the inline
 /// dimension. This property is not interpolable according to CSS standards.

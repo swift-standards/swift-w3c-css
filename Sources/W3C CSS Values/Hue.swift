@@ -1,5 +1,3 @@
-import W3C_CSS_Values
-
 /// Represents a CSS hue angle value for color functions.
 ///
 /// The `Hue` type represents the hue angle of a color, used in color functions such as

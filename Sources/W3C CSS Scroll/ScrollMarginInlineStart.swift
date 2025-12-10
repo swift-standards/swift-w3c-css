@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollMarginInlineStart.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-inline-start` CSS property defines the margin of the scroll snap area at the start of the inline
 /// dimension. This property is not interpolable according to CSS standards.

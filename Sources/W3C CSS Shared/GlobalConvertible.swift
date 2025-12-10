@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 25/03/2025.
 //
 
-
 public protocol GlobalConvertible {
     static func global(_ global: Global) -> Self
 }

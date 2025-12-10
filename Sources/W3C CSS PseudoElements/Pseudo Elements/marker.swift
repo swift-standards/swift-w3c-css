@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::marker pseudo-element.
 ///
 /// The `Marker` pseudo-element selects the marker box of a list item, which typically

@@ -4,8 +4,9 @@
 // Tests for CSS Color type
 
 import Testing
-@testable import W3C_CSS_Color
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Named Colors
 
@@ -17,7 +18,7 @@ struct `Color - Named Colors` {
         (.transparent, "transparent"),
         (.currentColor, "currentColor"),
         (.black, "black"),
-        (.white, "white")
+        (.white, "white"),
     ])
     func `named color renders correctly`(
         named: NamedColor,
@@ -60,7 +61,7 @@ struct `Color - RGB Format` {
         (255, 0, 0, "rgb(255, 0, 0)"),
         (0, 128, 255, "rgb(0, 128, 255)"),
         (0, 0, 0, "rgb(0, 0, 0)"),
-        (255, 255, 255, "rgb(255, 255, 255)")
+        (255, 255, 255, "rgb(255, 255, 255)"),
     ])
     func `rgb color renders correctly`(
         red: Int,
@@ -72,7 +73,9 @@ struct `Color - RGB Format` {
     }
 
     @Test func `rgb with named parameters renders correctly`() {
-        #expect(W3C_CSS_Values.Color.rgb(red: 255, green: 0, blue: 0).description == "rgb(255, 0, 0)")
+        #expect(
+            W3C_CSS_Values.Color.rgb(red: 255, green: 0, blue: 0).description == "rgb(255, 0, 0)"
+        )
     }
 }
 
@@ -81,7 +84,7 @@ struct `Color - RGBA Format` {
     @Test(arguments: [
         (255, 0, 0, 1.0, "rgba(255, 0, 0, 1)"),
         (0, 128, 255, 0.5, "rgba(0, 128, 255, 0.5)"),
-        (0, 255, 0, 0.5, "rgba(0, 255, 0, 0.5)")
+        (0, 255, 0, 0.5, "rgba(0, 255, 0, 0.5)"),
     ])
     func `rgba color renders correctly`(
         red: Int,
@@ -107,11 +110,15 @@ struct `Color - RGBA Format` {
 struct `Color - HSL Format` {
     @Test func `hsl with degrees renders correctly`() {
         #expect(W3C_CSS_Values.Color.hsl(.deg(0), 100, 50).description == "hsl(0deg, 100%, 50%)")
-        #expect(W3C_CSS_Values.Color.hsl(.deg(120), 100, 50).description == "hsl(120deg, 100%, 50%)")
+        #expect(
+            W3C_CSS_Values.Color.hsl(.deg(120), 100, 50).description == "hsl(120deg, 100%, 50%)"
+        )
     }
 
     @Test func `hsl with turns renders correctly`() {
-        #expect(W3C_CSS_Values.Color.hsl(.turn(0.5), 75, 25).description == "hsl(0.5turn, 75%, 25%)")
+        #expect(
+            W3C_CSS_Values.Color.hsl(.turn(0.5), 75, 25).description == "hsl(0.5turn, 75%, 25%)"
+        )
     }
 
     @Test func `hsl with named parameters renders correctly`() {
@@ -125,11 +132,17 @@ struct `Color - HSL Format` {
 @Suite
 struct `Color - HSLA Format` {
     @Test func `hsla with degrees renders correctly`() {
-        #expect(W3C_CSS_Values.Color.hsla(.deg(0), 100, 50, 1.0).description == "hsla(0deg, 100%, 50%, 1)")
+        #expect(
+            W3C_CSS_Values.Color.hsla(.deg(0), 100, 50, 1.0).description
+                == "hsla(0deg, 100%, 50%, 1)"
+        )
     }
 
     @Test func `hsla with radians renders correctly`() {
-        #expect(W3C_CSS_Values.Color.hsla(.rad(3.14), 75, 25, 0.5).description == "hsla(3.14rad, 75%, 25%, 0.5)")
+        #expect(
+            W3C_CSS_Values.Color.hsla(.rad(3.14), 75, 25, 0.5).description
+                == "hsla(3.14rad, 75%, 25%, 0.5)"
+        )
     }
 }
 

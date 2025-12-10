@@ -44,7 +44,8 @@ public struct AttributeSelector: Sendable, Hashable {
     ///   - value: The value to match against
     ///   - operator: The matching operator to use
     ///   - caseInsensitive: Whether the match should be case-insensitive (default: false)
-    public init(attribute: String, value: String, operator: Operator, caseInsensitive: Bool = false) {
+    public init(attribute: String, value: String, operator: Operator, caseInsensitive: Bool = false)
+    {
         self.attribute = attribute
         self.value = value
         self.operator = `operator`

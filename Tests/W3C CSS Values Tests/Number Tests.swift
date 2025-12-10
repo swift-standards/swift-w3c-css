@@ -4,6 +4,7 @@
 // Tests for CSS Number type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -17,7 +18,7 @@ struct `Number - Initialization` {
         (3.5, "3.5"),
         (0.25, "0.25"),
         (-1.75, "-1.75"),
-        (2.0, "2")
+        (2.0, "2"),
     ])
     func `number initializes with correct value and description`(
         value: Double,
@@ -188,7 +189,7 @@ struct `Number - Rounding` {
     @Test(arguments: [
         (3.2, "3"),
         (3.8, "4"),
-        (-2.7, "-3")
+        (-2.7, "-3"),
     ])
     func `rounded returns nearest integer`(
         value: Double,
@@ -204,7 +205,7 @@ struct `Number - Floor` {
     @Test(arguments: [
         (3.2, "3"),
         (3.8, "3"),
-        (-2.2, "-3")
+        (-2.2, "-3"),
     ])
     func `floor returns largest integer less than or equal to number`(
         value: Double,
@@ -220,7 +221,7 @@ struct `Number - Ceiling` {
     @Test(arguments: [
         (3.2, "4"),
         (3.8, "4"),
-        (-2.7, "-2")
+        (-2.7, "-2"),
     ])
     func `ceil returns smallest integer greater than or equal to number`(
         value: Double,
@@ -272,7 +273,7 @@ struct `Number - Edge Cases` {
 
     @Test func `very large numbers render correctly`() {
         #expect(Number(999999).description == "999999")
-        #expect(Number(1000000).description == "1000000")
+        #expect(Number(1_000_000).description == "1000000")
     }
 
     @Test func `whole number decimals render without fractional part`() {

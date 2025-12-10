@@ -4,6 +4,7 @@
 // Tests for CSS SelfPosition type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Basic Functionality
@@ -17,7 +18,7 @@ struct `SelfPosition - Initialization` {
         (SelfPosition.selfStart, "self-start"),
         (SelfPosition.selfEnd, "self-end"),
         (SelfPosition.flexStart, "flex-start"),
-        (SelfPosition.flexEnd, "flex-end")
+        (SelfPosition.flexEnd, "flex-end"),
     ])
     func `self position renders with correct description`(
         position: SelfPosition,
@@ -98,7 +99,7 @@ struct `SelfPosition - Hashable Conformance` {
             SelfPosition.selfStart,
             SelfPosition.selfEnd,
             SelfPosition.flexStart,
-            SelfPosition.flexEnd
+            SelfPosition.flexEnd,
         ]
         let uniqueValues = Set(values)
         #expect(uniqueValues.count == values.count)
@@ -163,7 +164,7 @@ struct `SelfPosition - RawRepresentable Conformance` {
         ("self-start", SelfPosition.selfStart),
         ("self-end", SelfPosition.selfEnd),
         ("flex-start", SelfPosition.flexStart),
-        ("flex-end", SelfPosition.flexEnd)
+        ("flex-end", SelfPosition.flexEnd),
     ])
     func `initialization from raw value works correctly`(
         rawValue: String,

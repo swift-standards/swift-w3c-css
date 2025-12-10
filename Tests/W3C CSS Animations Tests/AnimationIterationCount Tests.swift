@@ -4,8 +4,9 @@
 // Tests for CSS AnimationIterationCount type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -32,7 +33,7 @@ struct `AnimationIterationCount - Count Values` {
         (AnimationIterationCount.count(3), "3"),
         (AnimationIterationCount.count(2.5), "2.5"),
         (AnimationIterationCount.count(1), "1"),
-        (AnimationIterationCount.count(10), "10")
+        (AnimationIterationCount.count(10), "10"),
     ])
     func `renders count values correctly`(
         value: AnimationIterationCount,
@@ -50,7 +51,7 @@ struct `AnimationIterationCount - Integer Literals` {
         (3, "3"),
         (1, "1"),
         (5, "5"),
-        (100, "100")
+        (100, "100"),
     ])
     func `works with integer literals`(
         value: Int,
@@ -67,7 +68,7 @@ struct `AnimationIterationCount - Float Literals` {
         (2.5, "2.5"),
         (1.75, "1.75"),
         (0.5, "0.5"),
-        (10.25, "10.25")
+        (10.25, "10.25"),
     ])
     func `works with float literals`(
         value: Double,
@@ -86,7 +87,7 @@ struct `AnimationIterationCount - Non-Positive Values` {
         (0, "1"),
         (-2, "1"),
         (-0.5, "1"),
-        (-10, "1")
+        (-10, "1"),
     ])
     func `handles non-positive values by clamping to 1`(
         value: Double,
@@ -116,7 +117,7 @@ struct `AnimationIterationCount - Global Values` {
         (AnimationIterationCount.initial, "initial"),
         (AnimationIterationCount.revert, "revert"),
         (AnimationIterationCount.revertLayer, "revert-layer"),
-        (AnimationIterationCount.unset, "unset")
+        (AnimationIterationCount.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationIterationCount,
@@ -148,7 +149,10 @@ struct `AnimationIterationCount - Edge Cases` {
     }
 
     @Test func `infinite is distinct from numeric values`() {
-        #expect(AnimationIterationCount.infinite.description != AnimationIterationCount.count(999999).description)
+        #expect(
+            AnimationIterationCount.infinite.description
+                != AnimationIterationCount.count(999999).description
+        )
     }
 
     @Test func `minimum valid count is 1`() {
@@ -177,7 +181,10 @@ struct `AnimationIterationCount - CSS Property Usage` {
     }
 
     @Test func `multiple counts can be combined in array notation`() {
-        let counts = [AnimationIterationCount.count(1), AnimationIterationCount.count(2), AnimationIterationCount.infinite]
+        let counts = [
+            AnimationIterationCount.count(1), AnimationIterationCount.count(2),
+            AnimationIterationCount.infinite,
+        ]
         let css = counts.map(\.description).joined(separator: ", ")
         #expect(css == "1, 2, infinite")
     }

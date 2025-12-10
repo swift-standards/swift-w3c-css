@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollSnapStop.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-snap-stop` CSS property defines whether the scroll container is allowed to "pass over"
 /// possible snap positions.

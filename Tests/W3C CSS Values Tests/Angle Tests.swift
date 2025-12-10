@@ -4,6 +4,7 @@
 // Tests for CSS Angle type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Angle - Degree Values` {
         (-90.0, "-90deg"),
         (0.0, "0deg"),
         (180.0, "180deg"),
-        (360.0, "360deg")
+        (360.0, "360deg"),
     ])
     func `degree values render correctly`(
         value: Double,
@@ -37,7 +38,7 @@ struct `Angle - Radian Values` {
         (1.5708, "1.5708rad"),
         (-3.14159, "-3.14159rad"),
         (0.0, "0rad"),
-        (6.28318, "6.28318rad")
+        (6.28318, "6.28318rad"),
     ])
     func `radian values render correctly`(
         value: Double,
@@ -59,7 +60,7 @@ struct `Angle - Gradian Values` {
         (100.0, "100grad"),
         (-50.0, "-50grad"),
         (0.0, "0grad"),
-        (200.0, "200grad")
+        (200.0, "200grad"),
     ])
     func `gradian values render correctly`(
         value: Double,
@@ -81,7 +82,7 @@ struct `Angle - Turn Values` {
         (0.25, "0.25turn"),
         (1.0, "1turn"),
         (2.5, "2.5turn"),
-        (-0.5, "-0.5turn")
+        (-0.5, "-0.5turn"),
     ])
     func `turn values render correctly`(
         value: Double,

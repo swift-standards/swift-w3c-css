@@ -5,10 +5,10 @@
 //  Created by Coen ten Thije Boonkkamp on 28/03/2025.
 //
 
+import W3C_CSS_Backgrounds
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
-import W3C_CSS_Backgrounds
 
 /// The non-standard `-webkit-border-before` CSS property is a shorthand property for setting
 /// border properties for the logical block-start edge of an element.
@@ -43,7 +43,11 @@ public enum WebkitBorderBefore: Property {
 
     /// Specifies border properties (width, style, color)
     /// Note that per CSS spec, these can be specified in any order
-    case properties(width: BorderWidth? = nil, style: LineStyle? = nil, color: W3C_CSS_Values.Color? = nil)
+    case properties(
+        width: BorderWidth? = nil,
+        style: LineStyle? = nil,
+        color: W3C_CSS_Values.Color? = nil
+    )
 
     /// Global CSS values
     case global(Global)

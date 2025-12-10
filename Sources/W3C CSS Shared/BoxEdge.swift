@@ -1,4 +1,3 @@
-
 /// Represents CSS box edge keywords used for various box model properties.
 ///
 /// The `BoxEdge` data type defines the different edges of an element's box model.

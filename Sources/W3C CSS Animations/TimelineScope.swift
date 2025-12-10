@@ -1,5 +1,5 @@
-import W3C_CSS_Values
 import W3C_CSS_Shared
+import W3C_CSS_Values
 
 /// The CSS `timeline-scope` property modifies the scope of a named animation timeline.
 ///

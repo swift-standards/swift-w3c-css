@@ -1,5 +1,3 @@
-import W3C_CSS_Values
-
 /// Represents a CSS alpha value for opacity or transparency.
 ///
 /// The `AlphaValue` data type can be expressed as either a number (between 0 and 1)

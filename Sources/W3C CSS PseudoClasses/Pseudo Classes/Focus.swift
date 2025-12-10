@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:focus` pseudo-class.
 ///
 /// The `:focus` pseudo-class matches when an element has received focus.

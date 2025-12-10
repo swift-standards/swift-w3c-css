@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:target` pseudo-class.
 ///
 /// The `:target` pseudo-class matches an element with an id matching the URL's fragment identifier.

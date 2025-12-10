@@ -1,6 +1,6 @@
 import W3C_CSS_Shared
-import W3C_CSS_Values
 import W3C_CSS_Syntax
+import W3C_CSS_Values
 
 /// Represents a CSS @position-try at-rule.
 ///

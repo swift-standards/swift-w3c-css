@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:local-link` pseudo-class.
 ///
 /// The `:local-link` pseudo-class matches links to the same document.

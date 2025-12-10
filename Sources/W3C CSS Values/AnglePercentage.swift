@@ -1,4 +1,3 @@
-
 /// Represents a CSS value that can be either an angle or a percentage.
 ///
 /// The `AnglePercentage` data type allows expressing a value as either a specific angle

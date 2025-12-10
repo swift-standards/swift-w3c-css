@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:only-child` pseudo-class.
 ///
 /// The `:only-child` pseudo-class matches an element that has no siblings.

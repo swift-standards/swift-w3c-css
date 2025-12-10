@@ -4,6 +4,7 @@
 // Tests for CSS DisplayLegacy type
 
 import Testing
+
 @testable import W3C_CSS_Display
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `DisplayLegacy - Initialization` {
         (DisplayLegacy.inlineBlock, "inline-block"),
         (DisplayLegacy.inlineTable, "inline-table"),
         (DisplayLegacy.inlineFlex, "inline-flex"),
-        (DisplayLegacy.inlineGrid, "inline-grid")
+        (DisplayLegacy.inlineGrid, "inline-grid"),
     ])
     func `displayLegacy initializes with correct raw value and description`(
         value: DisplayLegacy,
@@ -31,7 +32,7 @@ struct `DisplayLegacy - Raw Value Initialization` {
         ("inline-block", DisplayLegacy.inlineBlock),
         ("inline-table", DisplayLegacy.inlineTable),
         ("inline-flex", DisplayLegacy.inlineFlex),
-        ("inline-grid", DisplayLegacy.inlineGrid)
+        ("inline-grid", DisplayLegacy.inlineGrid),
     ])
     func `creates displayLegacy from valid raw values`(
         rawValue: String,
@@ -67,7 +68,7 @@ struct `DisplayLegacy - Hashable Conformance` {
 
     @Test func `hashable allows use in sets`() {
         let set: Set<DisplayLegacy> = [
-            .inlineBlock, .inlineFlex, .inlineGrid, .inlineBlock
+            .inlineBlock, .inlineFlex, .inlineGrid, .inlineBlock,
         ]
         #expect(set.count == 3)
         #expect(set.contains(.inlineBlock))
@@ -79,7 +80,7 @@ struct `DisplayLegacy - Hashable Conformance` {
         let dict: [DisplayLegacy: String] = [
             .inlineBlock: "inline block container",
             .inlineFlex: "inline flex container",
-            .inlineGrid: "inline grid container"
+            .inlineGrid: "inline grid container",
         ]
         #expect(dict[.inlineBlock] == "inline block container")
         #expect(dict[.inlineFlex] == "inline flex container")
@@ -95,7 +96,7 @@ struct `DisplayLegacy - CSS Property Usage` {
         (DisplayLegacy.inlineBlock, "display: inline-block"),
         (DisplayLegacy.inlineTable, "display: inline-table"),
         (DisplayLegacy.inlineFlex, "display: inline-flex"),
-        (DisplayLegacy.inlineGrid, "display: inline-grid")
+        (DisplayLegacy.inlineGrid, "display: inline-grid"),
     ])
     func `renders correctly in display property`(
         value: DisplayLegacy,
@@ -149,7 +150,7 @@ struct `DisplayLegacy - CSS Specification` {
     @Test func `all specification values are present`() {
         // Ensure we have all important spec-defined display-legacy values
         let allValues: Set<DisplayLegacy> = [
-            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid
+            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid,
         ]
         #expect(allValues.count == 4)
     }
@@ -235,7 +236,7 @@ struct `DisplayLegacy - Edge Cases` {
 struct `DisplayLegacy - Layout Categories` {
     @Test func `all values are inline-level`() {
         let allValues: [DisplayLegacy] = [
-            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid
+            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid,
         ]
         for value in allValues {
             #expect(value.description.hasPrefix("inline-"))
@@ -262,7 +263,7 @@ struct `DisplayLegacy - Backward Compatibility` {
     @Test func `widely supported legacy values`() {
         // These values have wide browser support
         let widelySupported: [DisplayLegacy] = [
-            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid
+            .inlineBlock, .inlineTable, .inlineFlex, .inlineGrid,
         ]
         #expect(widelySupported.count == 4)
     }

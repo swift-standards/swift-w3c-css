@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollTimelineName.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-timeline-name` CSS property defines the name of a named scroll progress timeline, which is
 /// progressed through by scrolling a scrollable element (scroller) between top and bottom (or left and right).

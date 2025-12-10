@@ -4,10 +4,11 @@
 // Tests for CSS Image type
 
 import Testing
-@testable import W3C_CSS_Images
 import W3C_CSS_Color
-import W3C_CSS_Values
 import W3C_CSS_Shared
+import W3C_CSS_Values
+
+@testable import W3C_CSS_Images
 
 // MARK: - URL Images
 
@@ -16,7 +17,7 @@ struct `Image - URL Initialization` {
     @Test(arguments: [
         ("image.jpg", #"url("image.jpg")"#),
         ("/images/banner.png", #"url("/images/banner.png")"#),
-        ("https://example.com/photo.jpg", #"url("https://example.com/photo.jpg")"#)
+        ("https://example.com/photo.jpg", #"url("https://example.com/photo.jpg")"#),
     ])
     func `url images render correctly`(
         url: String,
@@ -117,7 +118,7 @@ struct `Image - Element Reference` {
     @Test(arguments: [
         ("header", "element(#header)"),
         ("logo", "element(#logo)"),
-        ("nav", "element(#nav)")
+        ("nav", "element(#nav)"),
     ])
     func `element images render correctly`(
         id: String,
@@ -371,7 +372,7 @@ extension `Performance Tests` {
             for _ in 0..<10_000 {
                 _ = Image.linearGradient([
                     Color.named(.red),
-                    Color.named(.blue)
+                    Color.named(.blue),
                 ])
             }
         }

@@ -84,7 +84,8 @@ extension Color: CustomStringConvertible {
             return "hsl(\(h), \(s.formatted(.number))%, \(l.formatted(.number))%)"
 
         case .hsla(let h, let s, let l, let a):
-            return "hsla(\(h), \(s.formatted(.number))%, \(l.formatted(.number))%, \(a.formatted(.number)))"
+            return
+                "hsla(\(h), \(s.formatted(.number))%, \(l.formatted(.number))%, \(a.formatted(.number)))"
 
         case .hwb(let h, let w, let b):
             return "hwb(\(h) \(w.formatted(.number))% \(b.formatted(.number))%)"
@@ -103,7 +104,8 @@ extension Color: CustomStringConvertible {
 
         case .mix(let method, let color1, let color2, let percentage):
             if let percentage = percentage {
-                return "color-mix(\(method), \(color1), \(color2) \(percentage.formatted(.number))%)"
+                return
+                    "color-mix(\(method), \(color1), \(color2) \(percentage.formatted(.number))%)"
             } else {
                 return "color-mix(\(method), \(color1), \(color2))"
             }

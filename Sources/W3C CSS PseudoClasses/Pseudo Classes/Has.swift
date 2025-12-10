@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:has()` pseudo-class.
 ///
 /// The `:has()` pseudo-class matches elements that have at least one element matching the given selector in their descendants.

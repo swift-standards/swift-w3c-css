@@ -5,6 +5,7 @@
 
 import Testing
 import W3C_CSS_Shared
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -31,7 +32,7 @@ struct `Length - Unit Creation` {
         (50.0.vw, "50vw"),
         (100.0.vh, "100vh"),
         (10.0.vmin, "10vmin"),
-        (90.0.vmax, "90vmax")
+        (90.0.vmax, "90vmax"),
     ])
     func `length with unit renders correctly`(
         length: Length,
@@ -47,7 +48,7 @@ struct `Length - Keywords` {
         (Length.Keyword.auto, "auto"),
         (.maxContent, "max-content"),
         (.minContent, "min-content"),
-        (.fitContent, "fit-content")
+        (.fitContent, "fit-content"),
     ])
     func `length keyword renders correctly`(
         keyword: Length.Keyword,
@@ -117,7 +118,7 @@ struct `Length - Global Values` {
     @Test(arguments: [
         (Global.inherit, "inherit"),
         (.initial, "initial"),
-        (.unset, "unset")
+        (.unset, "unset"),
     ])
     func `global value renders correctly`(
         global: Global,
@@ -154,7 +155,7 @@ struct `Length - Int Extensions` {
         (2.em, "2em"),
         (50.vw, "50vw"),
         (1.cm, "1cm"),
-        (3.q, "3q")
+        (3.q, "3q"),
     ])
     func `int extension creates correct length`(
         length: Length,
@@ -171,7 +172,7 @@ struct `Length - Double Extensions` {
         (1.5.em, "1.5em"),
         (50.5.vw, "50.5vw"),
         (2.25.cm, "2.25cm"),
-        (3.75.q, "3.75q")
+        (3.75.q, "3.75q"),
     ])
     func `double extension creates correct length`(
         length: Length,

@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:valid` pseudo-class.
 ///
 /// The `:valid` pseudo-class matches form elements whose contents validate successfully according to their input type.

@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  OverscrollBehaviorBlock.swift
 //  swift-css
 //
 //  Created by Claude on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The `overscroll-behavior-block` CSS property sets the browser's behavior when the block direction
 /// boundary of a scrolling area is reached.

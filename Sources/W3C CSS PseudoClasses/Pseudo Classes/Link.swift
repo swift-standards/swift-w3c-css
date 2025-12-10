@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:link` pseudo-class.
 ///
 /// The `:link` pseudo-class matches links that have not yet been visited.

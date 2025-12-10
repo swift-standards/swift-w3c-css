@@ -54,36 +54,43 @@ extension Number: ExpressibleByIntegerLiteral, ExpressibleByFloatLiteral {
 /// Number comparison and arithmetic operations
 extension Number {
     /// Compares two numbers
+    @_disfavoredOverload
     public static func < (lhs: Number, rhs: Number) -> Bool {
         return lhs.value < rhs.value
     }
 
     /// Compares two numbers
+    @_disfavoredOverload
     public static func > (lhs: Number, rhs: Number) -> Bool {
         return lhs.value > rhs.value
     }
 
     /// Adds two numbers
+    @_disfavoredOverload
     public static func + (lhs: Number, rhs: Number) -> Number {
         return Number(lhs.value + rhs.value)
     }
 
     /// Subtracts one number from another
+    @_disfavoredOverload
     public static func - (lhs: Number, rhs: Number) -> Number {
         return Number(lhs.value - rhs.value)
     }
 
     /// Multiplies two numbers
+    @_disfavoredOverload
     public static func * (lhs: Number, rhs: Number) -> Number {
         return Number(lhs.value * rhs.value)
     }
 
     /// Divides one number by another
+    @_disfavoredOverload
     public static func / (lhs: Number, rhs: Number) -> Number {
         return Number(lhs.value / rhs.value)
     }
 
     /// Negates a number
+    @_disfavoredOverload
     public static prefix func - (operand: Number) -> Number {
         return Number(-operand.value)
     }

@@ -4,6 +4,7 @@
 // Tests for CSS RelativeSize type
 
 import Testing
+
 @testable import W3C_CSS_Fonts
 
 // MARK: - Basic Functionality
@@ -12,7 +13,7 @@ import Testing
 struct `RelativeSize - Values and Descriptions` {
     @Test(arguments: [
         (RelativeSize.smaller, "smaller"),
-        (.larger, "larger")
+        (.larger, "larger"),
     ])
     func `relative size has correct description`(size: RelativeSize, expected: String) {
         #expect(size.description == expected)
@@ -20,7 +21,7 @@ struct `RelativeSize - Values and Descriptions` {
 
     @Test(arguments: [
         (RelativeSize.smaller, "smaller"),
-        (.larger, "larger")
+        (.larger, "larger"),
     ])
     func `relative size has correct raw value`(size: RelativeSize, expected: String) {
         #expect(size.rawValue == expected)
@@ -64,7 +65,7 @@ struct `RelativeSize - Hashable Conformance` {
 struct `RelativeSize - RawRepresentable Conformance` {
     @Test(arguments: [
         ("smaller", RelativeSize.smaller),
-        ("larger", .larger)
+        ("larger", .larger),
     ])
     func `relative size can be created from raw value`(rawValue: String, expected: RelativeSize) {
         #expect(RelativeSize(rawValue: rawValue) == expected)
@@ -94,7 +95,7 @@ struct `RelativeSize - CSS Property Usage` {
 
     @Test(arguments: [
         (RelativeSize.smaller, "font-size: smaller"),
-        (.larger, "font-size: larger")
+        (.larger, "font-size: larger"),
     ])
     func `relative sizes render correctly in context`(size: RelativeSize, expected: String) {
         let fontSize = "font-size: \(size)"

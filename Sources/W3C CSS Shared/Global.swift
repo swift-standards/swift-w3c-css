@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 25/03/2025.
 //
 
-
 /// Global CSS values that can be applied to any CSS property
 public enum Global: String, Sendable, CaseIterable, CustomStringConvertible {
     /// Inherits the value from the parent element

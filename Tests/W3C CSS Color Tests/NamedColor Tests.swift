@@ -4,8 +4,9 @@
 // Tests for CSS NamedColor type
 
 import Testing
-@testable import W3C_CSS_Color
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Basic Named Colors
 
@@ -16,7 +17,7 @@ struct `NamedColor - Basic Colors` {
         (.blue, "blue"),
         (.green, "green"),
         (.black, "black"),
-        (.white, "white")
+        (.white, "white"),
     ])
     func `basic named colors render correctly`(
         color: NamedColor,
@@ -32,7 +33,7 @@ struct `NamedColor - Extended Colors` {
         (NamedColor.cornflowerblue, "cornflowerblue"),
         (.rebeccapurple, "rebeccapurple"),
         (.hotpink, "hotpink"),
-        (.mediumseagreen, "mediumseagreen")
+        (.mediumseagreen, "mediumseagreen"),
     ])
     func `extended named colors render correctly`(
         color: NamedColor,
@@ -49,7 +50,7 @@ struct `NamedColor - Special Values` {
     @Test(arguments: [
         (NamedColor.transparent, "transparent"),
         (.currentColor, "currentColor"),
-        (.current, "currentColor")
+        (.current, "currentColor"),
     ])
     func `special color values render correctly`(
         color: NamedColor,
@@ -78,7 +79,7 @@ struct `NamedColor - CaseIterable Conformance` {
     @Test(arguments: [
         NamedColor.red,
         .transparent,
-        .rebeccapurple
+        .rebeccapurple,
     ])
     func `specific colors are in all cases`(color: NamedColor) {
         #expect(NamedColor.allCases.contains(color))
@@ -118,7 +119,7 @@ struct `NamedColor - CSS Context Usage` {
     @Test(arguments: [
         (NamedColor.blue, "color: blue"),
         (.transparent, "background-color: transparent"),
-        (.currentColor, "border-color: currentColor")
+        (.currentColor, "border-color: currentColor"),
     ])
     func `named color is used correctly in CSS properties`(
         color: NamedColor,

@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:active` pseudo-class.
 ///
 /// The `:active` pseudo-class matches when an element is being activated by the user.

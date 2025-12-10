@@ -4,8 +4,9 @@
 // Tests for CSS Shape type
 
 import Testing
-@testable import W3C_CSS_Masking
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Masking
 
 // MARK: - Basic Functionality
 

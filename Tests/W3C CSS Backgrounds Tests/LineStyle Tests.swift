@@ -4,8 +4,9 @@
 // Tests for CSS LineStyle type
 
 import Testing
-@testable import W3C_CSS_Backgrounds
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Backgrounds
 
 // MARK: - Basic Functionality
 
@@ -21,7 +22,7 @@ struct `LineStyle - Enum Cases and Raw Values` {
         (.groove, "groove"),
         (.ridge, "ridge"),
         (.inset, "inset"),
-        (.outset, "outset")
+        (.outset, "outset"),
     ])
     func `line style has correct raw value`(style: LineStyle, expected: String) {
         #expect(style.rawValue == expected)
@@ -37,7 +38,7 @@ struct `LineStyle - Enum Cases and Raw Values` {
         (.groove, "groove"),
         (.ridge, "ridge"),
         (.inset, "inset"),
-        (.outset, "outset")
+        (.outset, "outset"),
     ])
     func `line style description returns raw value`(style: LineStyle, expected: String) {
         #expect(style.description == expected)
@@ -91,7 +92,7 @@ struct `LineStyle - RawRepresentable Conformance` {
         ("groove", .groove),
         ("ridge", .ridge),
         ("inset", .inset),
-        ("outset", .outset)
+        ("outset", .outset),
     ])
     func `line style can be created from raw value`(rawValue: String, expected: LineStyle) {
         #expect(LineStyle(rawValue: rawValue) == expected)
@@ -110,7 +111,7 @@ struct `LineStyle - Is3D Property` {
         (LineStyle.groove, true),
         (.ridge, true),
         (.inset, true),
-        (.outset, true)
+        (.outset, true),
     ])
     func `3D styles are correctly identified`(style: LineStyle, expected: Bool) {
         #expect(style.is3D == expected)
@@ -122,7 +123,7 @@ struct `LineStyle - Is3D Property` {
         (.dotted, false),
         (.dashed, false),
         (.solid, false),
-        (.double, false)
+        (.double, false),
     ])
     func `non-3D styles are correctly identified`(style: LineStyle, expected: Bool) {
         #expect(style.is3D == expected)
@@ -133,7 +134,7 @@ struct `LineStyle - Is3D Property` {
 struct `LineStyle - IsVisible Property` {
     @Test(arguments: [
         (LineStyle.none, false),
-        (.hidden, false)
+        (.hidden, false),
     ])
     func `invisible styles are correctly identified`(style: LineStyle, expected: Bool) {
         #expect(style.isVisible == expected)
@@ -147,7 +148,7 @@ struct `LineStyle - IsVisible Property` {
         (.groove, true),
         (.ridge, true),
         (.inset, true),
-        (.outset, true)
+        (.outset, true),
     ])
     func `visible styles are correctly identified`(style: LineStyle, expected: Bool) {
         #expect(style.isVisible == expected)
@@ -160,7 +161,7 @@ struct `LineStyle - Opposite3D Property` {
         (LineStyle.groove, LineStyle.ridge),
         (.ridge, .groove),
         (.inset, .outset),
-        (.outset, .inset)
+        (.outset, .inset),
     ])
     func `3D styles have correct opposites`(style: LineStyle, expected: LineStyle) {
         #expect(style.opposite3D == expected)
@@ -177,7 +178,7 @@ struct `LineStyle - Opposite3D Property` {
         .dotted,
         .dashed,
         .solid,
-        .double
+        .double,
     ])
     func `non-3D styles return nil for opposite3D`(style: LineStyle) {
         #expect(style.opposite3D == nil)

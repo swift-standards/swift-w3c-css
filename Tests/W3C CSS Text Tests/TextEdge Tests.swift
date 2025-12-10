@@ -4,6 +4,7 @@
 // Tests for CSS TextEdge type
 
 import Testing
+
 @testable import W3C_CSS_Text
 
 // MARK: - Single Value Text Edge
@@ -13,7 +14,7 @@ struct `TextEdge - Single Values` {
     @Test(arguments: [
         (TextEdge.text, "text"),
         (.ideographic, "ideographic"),
-        (.ideographicInk, "ideographic-ink")
+        (.ideographicInk, "ideographic-ink"),
     ])
     func `single value text edge renders correctly`(edge: TextEdge, expected: String) {
         #expect(edge.description == expected)
@@ -34,7 +35,7 @@ struct `TextEdge - Single Values` {
 struct `TextEdge - Paired Values` {
     @Test(arguments: [
         (TextEdge.capAlphabetic, "cap alphabetic"),
-        (.exAlphabetic, "ex alphabetic")
+        (.exAlphabetic, "ex alphabetic"),
     ])
     func `predefined paired values render correctly`(edge: TextEdge, expected: String) {
         #expect(edge.description == expected)
@@ -52,7 +53,7 @@ struct `TextEdge - Paired Values` {
         (TextEdge.OverValue.cap, TextEdge.UnderValue.alphabetic, "cap alphabetic"),
         (.ex, .alphabetic, "ex alphabetic"),
         (.text, .text, "text text"),
-        (.ideographic, .ideographic, "ideographic ideographic")
+        (.ideographic, .ideographic, "ideographic ideographic"),
     ])
     func `various pair combinations render correctly`(
         over: TextEdge.OverValue,
@@ -79,7 +80,7 @@ struct `TextEdge - Value Enum` {
     @Test(arguments: [
         (TextEdge.Value.text, "text"),
         (.ideographic, "ideographic"),
-        (.ideographicInk, "ideographic-ink")
+        (.ideographicInk, "ideographic-ink"),
     ])
     func `Value enum raw values are correct`(value: TextEdge.Value, expected: String) {
         #expect(value.rawValue == expected)
@@ -103,7 +104,7 @@ struct `TextEdge - OverValue Enum` {
         (.ideographic, "ideographic"),
         (.ideographicInk, "ideographic-ink"),
         (.cap, "cap"),
-        (.ex, "ex")
+        (.ex, "ex"),
     ])
     func `OverValue enum raw values are correct`(value: TextEdge.OverValue, expected: String) {
         #expect(value.rawValue == expected)
@@ -125,7 +126,7 @@ struct `TextEdge - UnderValue Enum` {
         (TextEdge.UnderValue.text, "text"),
         (.ideographic, "ideographic"),
         (.ideographicInk, "ideographic-ink"),
-        (.alphabetic, "alphabetic")
+        (.alphabetic, "alphabetic"),
     ])
     func `UnderValue enum raw values are correct`(value: TextEdge.UnderValue, expected: String) {
         #expect(value.rawValue == expected)
@@ -222,7 +223,7 @@ struct `TextEdge - CSS Property Usage` {
     @Test(arguments: [
         (TextEdge.text, "text-box-edge: text"),
         (.capAlphabetic, "text-box-edge: cap alphabetic"),
-        (.exAlphabetic, "text-box-edge: ex alphabetic")
+        (.exAlphabetic, "text-box-edge: ex alphabetic"),
     ])
     func `various text edges render correctly in properties`(edge: TextEdge, expected: String) {
         let property = "text-box-edge: \(edge)"

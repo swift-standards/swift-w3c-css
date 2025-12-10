@@ -4,6 +4,7 @@
 // Tests for CSS Percentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -17,7 +18,7 @@ struct `Percentage - Initialization` {
         (33.3, "33.3%"),
         (0.5, "0.5%"),
         (-12.5, "-12.5%"),
-        (75.0, "75%")
+        (75.0, "75%"),
     ])
     func `percentage initializes with correct value and description`(
         value: Double,
@@ -133,7 +134,7 @@ struct `Percentage - Fraction Method` {
         (100.0, 0.5, "50%"),
         (100.0, 0.25, "25%"),
         (100.0, 1.5, "150%"),
-        (50.0, 0.5, "25%")
+        (50.0, 0.5, "25%"),
     ])
     func `fraction method calculates correctly`(
         base: Double,

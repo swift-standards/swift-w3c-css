@@ -46,7 +46,7 @@ public enum Grid: Property {
             let rowsStr = rows.map { $0.description }.joined(separator: " ")
             let columnsStr = columns.map { $0.description }.joined(separator: " ")
             return "\(rowsStr) / \(columnsStr)"
-        case .autoFlow(let direction, let density, let trackSize):
+        case .autoFlow(_, let density, let trackSize):
             var result = "auto-flow"
             if let density = density, density == .dense {
                 result += " dense"

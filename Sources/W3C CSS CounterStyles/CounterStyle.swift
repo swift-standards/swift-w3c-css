@@ -1,6 +1,6 @@
+import INCITS_4_1986
 import W3C_CSS_Shared
 import W3C_CSS_Syntax
-import INCITS_4_1986
 
 /// Represents a CSS @counter-style at-rule.
 ///

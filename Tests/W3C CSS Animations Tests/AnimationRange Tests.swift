@@ -4,8 +4,9 @@
 // Tests for CSS AnimationRange type
 
 import Testing
-@testable import W3C_CSS_Animations
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
 
@@ -20,7 +21,7 @@ struct `AnimationRange - Declaration` {
 struct `AnimationRange - Normal Value` {
     @Test(arguments: [
         (AnimationRange.normal, "normal"),
-        (AnimationRange.single(.normal), "normal")
+        (AnimationRange.single(.normal), "normal"),
     ])
     func `renders normal value correctly`(
         value: AnimationRange,
@@ -38,7 +39,7 @@ struct `AnimationRange - Named Range Values` {
         (AnimationRange.namedRange(.entry), "entry"),
         (AnimationRange.namedRange(.exit), "exit"),
         (AnimationRange.namedRange(.entryCrossing), "entry-crossing"),
-        (AnimationRange.namedRange(.exitCrossing), "exit-crossing")
+        (AnimationRange.namedRange(.exitCrossing), "exit-crossing"),
     ])
     func `renders named range values correctly`(
         value: AnimationRange,
@@ -54,7 +55,7 @@ struct `AnimationRange - Percentage Values` {
         (AnimationRange.percentage(20), "20%"),
         (AnimationRange.single(.percentage(50)), "50%"),
         (AnimationRange.percentage(0), "0%"),
-        (AnimationRange.percentage(100), "100%")
+        (AnimationRange.percentage(100), "100%"),
     ])
     func `renders percentage values correctly`(
         value: AnimationRange,
@@ -69,7 +70,7 @@ struct `AnimationRange - Named Range with Percentage` {
     @Test(arguments: [
         (AnimationRange.single(.namedRange(.entry, 10)), "entry 10%"),
         (AnimationRange.single(.namedRange(.contain, 75)), "contain 75%"),
-        (AnimationRange.single(.namedRange(.exit, 50)), "exit 50%")
+        (AnimationRange.single(.namedRange(.exit, 50)), "exit 50%"),
     ])
     func `renders named range with percentage values correctly`(
         value: AnimationRange,
@@ -116,7 +117,7 @@ struct `AnimationRange - Global Values` {
         (AnimationRange.initial, "initial"),
         (AnimationRange.revert, "revert"),
         (AnimationRange.revertLayer, "revert-layer"),
-        (AnimationRange.unset, "unset")
+        (AnimationRange.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationRange,
@@ -175,7 +176,8 @@ struct `AnimationRange - CSS Property Usage` {
     }
 
     @Test func `complex range renders correctly`() {
-        let css = "animation-range: \(AnimationRange.startEnd(.namedRange(.entry, 10), .namedRange(.exit, 90)))"
+        let css =
+            "animation-range: \(AnimationRange.startEnd(.namedRange(.entry, 10), .namedRange(.exit, 90)))"
         #expect(css == "animation-range: entry 10% exit 90%")
     }
 }
@@ -228,7 +230,10 @@ extension `Performance Tests` {
         @Test(.timeLimit(.minutes(1)))
         func `complex range creation 100K times`() {
             for i in 0..<100_000 {
-                _ = AnimationRange.startEnd(.namedRange(.entry, Percentage(Double(i % 50))), .namedRange(.exit, Percentage(50 + Double(i % 50))))
+                _ = AnimationRange.startEnd(
+                    .namedRange(.entry, Percentage(Double(i % 50))),
+                    .namedRange(.exit, Percentage(50 + Double(i % 50)))
+                )
             }
         }
     }

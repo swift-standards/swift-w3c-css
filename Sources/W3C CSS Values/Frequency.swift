@@ -1,4 +1,3 @@
-
 /// Represents a CSS frequency value with unit (Hz or kHz).
 ///
 /// Frequency values represent audio frequencies such as pitch of a speaking voice.

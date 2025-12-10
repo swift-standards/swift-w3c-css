@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  ScrollMarginBlockEnd.swift
 //  swift-css
 //
 //  Created by Claude on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-block-end` property defines the margin of the scroll snap area at the end
 /// of the block dimension that is used for snapping this box to the snapport.

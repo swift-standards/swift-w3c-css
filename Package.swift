@@ -217,7 +217,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-standards", from: "0.1.0"),
-        .package(url: "https://github.com/swift-standards/swift-numeric-formatting-standard", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.1.0"),
         .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.1.0"),
@@ -430,7 +429,7 @@ let package = Package(
 
         .target(
             name: .w3cCSSMasking,
-            dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSImages]
+            dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSImages, .w3cCSSPositioning]
         ),
         .testTarget(
             name: .w3cCSSMasking.tests,
@@ -450,7 +449,7 @@ let package = Package(
 
         .target(
             name: .w3cCSSAnimations,
-            dependencies: [.w3cCSSShared, .w3cCSSEasing, .w3cCSSMasking]
+            dependencies: [.w3cCSSShared, .w3cCSSEasing, .w3cCSSMasking, .w3cCSSPositioning]
         ),
         .testTarget(
             name: .w3cCSSAnimations.tests,
@@ -625,6 +624,7 @@ let package = Package(
                 .w3cCSSFilters,
                 .w3cCSSMasking,
                 .w3cCSSCompositing,
+                .w3cCSSPositioning,
             ]
         ),
 
@@ -634,6 +634,7 @@ let package = Package(
                 .w3cCSSAnimations,
                 .w3cCSSTransitions,
                 .w3cCSSEasing,
+                .w3cCSSPositioning,
             ]
         ),
 

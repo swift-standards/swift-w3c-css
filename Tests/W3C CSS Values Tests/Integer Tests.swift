@@ -4,6 +4,7 @@
 // Tests for CSS Integer type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Integer - Initialization` {
         (-10, "-10"),
         (0, "0"),
         (100, "100"),
-        (-50, "-50")
+        (-50, "-50"),
     ])
     func `integer initializes with correct value and description`(
         value: Int,

@@ -1,5 +1,5 @@
-import W3C_CSS_Shared
 import W3C_CSS_Positioning
+import W3C_CSS_Shared
 import W3C_CSS_Values
 
 /// The CSS `object-position` property specifies the alignment of the selected replaced element's
@@ -66,7 +66,8 @@ public enum ObjectPosition: Property, LengthPercentageConvertible {
     /// Creates a positioning style with a keyword or global value
     /// - Parameter position: A Position.Keyword or Global
     /// - Returns: An ObjectPosition instance
-    public static func objectPosition(_ position: W3C_CSS_Values.Position.Keyword) -> ObjectPosition {
+    public static func objectPosition(_ position: W3C_CSS_Values.Position.Keyword) -> ObjectPosition
+    {
         .keyword(position)
     }
 

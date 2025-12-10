@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:hover` pseudo-class.
 ///
 /// The `:hover` pseudo-class matches when the user interacts with an element with a pointing device, but does not necessarily activate it.

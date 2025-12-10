@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:required` pseudo-class.
 ///
 /// The `:required` pseudo-class matches form elements that have the required attribute set.

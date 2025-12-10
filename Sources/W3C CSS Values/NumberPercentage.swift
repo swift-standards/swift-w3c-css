@@ -1,4 +1,3 @@
-
 /// Represents a CSS value that can be either a number or a percentage.
 ///
 /// The `NumberPercentage` type is used in properties that accept either a number value

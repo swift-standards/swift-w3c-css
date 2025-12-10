@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  Width.swift
 //  swift-css
 //
 //  Created by Coen ten Thije Boonkkamp on 26/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The CSS `width` property sets an element's width.
 ///

@@ -1,6 +1,6 @@
+import W3C_CSS_Images
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Images
 
 /// Represents the CSS `mask-image` property, which sets one or more images to be used as mask layers for an element.
 ///

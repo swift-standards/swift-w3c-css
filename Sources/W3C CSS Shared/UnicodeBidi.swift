@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 26/03/2025.
 //
 
-
 /// The CSS `unicode-bidi` property, together with the `direction` property, determines how bidirectional text
 /// in a document is handled.
 ///

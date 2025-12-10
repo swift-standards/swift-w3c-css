@@ -1,4 +1,3 @@
-
 /// Represents a CSS value that can be either a length or a percentage.
 ///
 /// The `LengthPercentage` type is used in properties that accept either a length value

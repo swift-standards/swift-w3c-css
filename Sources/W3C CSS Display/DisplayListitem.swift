@@ -1,4 +1,3 @@
-
 /// Represents CSS display values for list items.
 ///
 /// The `DisplayListitem` data type is used to make elements behave like list items,

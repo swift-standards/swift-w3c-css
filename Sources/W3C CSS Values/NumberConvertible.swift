@@ -5,7 +5,6 @@
 //  Created on 03/31/2025.
 //
 
-
 /// Protocol for types that can be created from CSS Number values
 ///
 /// NumberConvertible provides a common interface for types that accept CSS number values.

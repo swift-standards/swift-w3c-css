@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:focus-within` pseudo-class.
 ///
 /// The `:focus-within` pseudo-class matches an element if the element or any of its descendants are focused.

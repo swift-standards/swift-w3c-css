@@ -4,8 +4,9 @@
 // Tests for CSS EasingFunction type
 
 import Testing
-@testable import W3C_CSS_Easing
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Easing
 
 // MARK: - Predefined Easing Functions
 
@@ -18,7 +19,7 @@ struct `EasingFunction - Predefined Values` {
         (EasingFunction.easeOut, "ease-out"),
         (EasingFunction.easeInOut, "ease-in-out"),
         (EasingFunction.stepStart, "step-start"),
-        (EasingFunction.stepEnd, "step-end")
+        (EasingFunction.stepEnd, "step-end"),
     ])
     func `predefined easing functions render correctly`(
         easing: EasingFunction,
@@ -45,7 +46,7 @@ struct `EasingFunction - Cubic Bezier` {
     @Test(arguments: [
         (0.0, 0.0, 1.0, 1.0, "cubic-bezier(0, 0, 1, 1)"),
         (0.5, 0.5, 0.5, 0.5, "cubic-bezier(0.5, 0.5, 0.5, 0.5)"),
-        (1.0, 0.0, 0.0, 1.0, "cubic-bezier(1, 0, 0, 1)")
+        (1.0, 0.0, 0.0, 1.0, "cubic-bezier(1, 0, 0, 1)"),
     ])
     func `cubic bezier with various control points`(
         x1: Double,
@@ -72,7 +73,7 @@ struct `EasingFunction - Steps Basic` {
         (2, "steps(2)"),
         (5, "steps(5)"),
         (10, "steps(10)"),
-        (1, "steps(1)")
+        (1, "steps(1)"),
     ])
     func `steps with different counts`(
         count: Int,
@@ -175,7 +176,7 @@ struct `EasingFunction - Step Position Values` {
         (StepPosition.jumpStart, "jump-start"),
         (StepPosition.jumpEnd, "jump-end"),
         (StepPosition.jumpNone, "jump-none"),
-        (StepPosition.jumpBoth, "jump-both")
+        (StepPosition.jumpBoth, "jump-both"),
     ])
     func `step position values render correctly`(
         position: StepPosition,
@@ -206,7 +207,7 @@ struct `EasingFunction - Linear Point` {
         (1.0, nil),
         (0.5, 50),
         (0.25, 25),
-        (0.75, 75)
+        (0.75, 75),
     ])
     func `linear point initialization`(
         value: Double,

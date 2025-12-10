@@ -1,4 +1,3 @@
-
 /// Represents CSS generic font family keywords.
 ///
 /// Generic font families are used in the `font-family` property to specify broad categories

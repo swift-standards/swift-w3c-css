@@ -1,4 +1,3 @@
-
 /// Represents a CSS calculation expression that performs mathematical operations.
 ///
 /// The `CalcSum` data type is used within CSS `calc()` and other math functions to

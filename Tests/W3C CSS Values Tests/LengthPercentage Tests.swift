@@ -4,6 +4,7 @@
 // Tests for CSS LengthPercentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `LengthPercentage - Length Values` {
         (Length.em(1.5), "1.5em"),
         (Length.rem(2), "2rem"),
         (Length.vw(50), "50vw"),
-        (Length.vh(100), "100vh")
+        (Length.vh(100), "100vh"),
     ])
     func `length value renders correctly`(
         length: Length,
@@ -33,7 +34,7 @@ struct `LengthPercentage - Percentage Values` {
         (75, "75%"),
         (33.3, "33.3%"),
         (100, "100%"),
-        (0, "0%")
+        (0, "0%"),
     ])
     func `percentage value renders correctly`(
         value: Double,
@@ -49,7 +50,7 @@ struct `LengthPercentage - Calc Expressions` {
     @Test(arguments: [
         ("100% - 20px", "calc(100% - 20px)"),
         ("50vh + 2em", "calc(50vh + 2em)"),
-        ("100% + 10px", "calc(100% + 10px)")
+        ("100% + 10px", "calc(100% + 10px)"),
     ])
     func `calc expression renders correctly`(
         expression: String,

@@ -78,6 +78,7 @@ extension Layer {
     /// ```swift
     /// let nestedLayer = Layer.theme / "dark" // @layer theme.dark
     /// ```
+    @_disfavoredOverload
     public static func / (lhs: Layer, rhs: String) -> Layer {
         return lhs / Layer(rhs)
     }
@@ -88,6 +89,7 @@ extension Layer {
     /// ```swift
     /// let nestedLayer = Layer.theme / Layer("dark") // @layer theme.dark
     /// ```
+    @_disfavoredOverload
     public static func / (lhs: Layer, rhs: Layer) -> Layer {
         // Extract the layer names from both layers
         let parentName = String(lhs.rawValue.dropFirst(7))

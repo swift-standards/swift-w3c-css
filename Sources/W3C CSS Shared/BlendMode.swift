@@ -1,4 +1,3 @@
-
 /// Represents CSS blend mode values for combining colors when elements overlap.
 ///
 /// The `BlendMode` data type defines how colors should appear when elements or backgrounds

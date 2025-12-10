@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollMarginRight.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-right` CSS property defines the right margin of the scroll snap area that is used
 /// for snapping this element to the snapport. This property is not interpolable according to CSS standards.

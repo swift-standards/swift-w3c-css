@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollSnapAlign.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-snap-align` CSS property specifies the box's snap position as an alignment of its snap area
 /// (as the alignment subject) within its snap container's snap port (as the alignment container).

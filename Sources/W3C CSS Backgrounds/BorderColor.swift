@@ -1,6 +1,6 @@
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
 
 /// Represents the CSS `border-color` shorthand property, which sets the color of an element's borders.
 ///
@@ -56,7 +56,12 @@ public enum BorderColor: Property, ColorConvertible {
     case top_horizontal_bottom(W3C_CSS_Values.Color, W3C_CSS_Values.Color, W3C_CSS_Values.Color)
 
     /// Different colors for each side in clockwise order: top, right, bottom, left
-    case top_right_bottom_left(W3C_CSS_Values.Color, W3C_CSS_Values.Color, W3C_CSS_Values.Color, W3C_CSS_Values.Color)
+    case top_right_bottom_left(
+        W3C_CSS_Values.Color,
+        W3C_CSS_Values.Color,
+        W3C_CSS_Values.Color,
+        W3C_CSS_Values.Color
+    )
 
     /// Global CSS values
     case global(Global)
@@ -83,7 +88,11 @@ public enum BorderColor: Property, ColorConvertible {
     ///   - top: The color for the top border
     ///   - horizontal: The color for left and right borders
     ///   - bottom: The color for the bottom border
-    public init(_ top: W3C_CSS_Values.Color, _ horizontal: W3C_CSS_Values.Color, _ bottom: W3C_CSS_Values.Color) {
+    public init(
+        _ top: W3C_CSS_Values.Color,
+        _ horizontal: W3C_CSS_Values.Color,
+        _ bottom: W3C_CSS_Values.Color
+    ) {
         self = .top_horizontal_bottom(top, horizontal, bottom)
     }
 
@@ -94,7 +103,12 @@ public enum BorderColor: Property, ColorConvertible {
     ///   - right: The color for the right border
     ///   - bottom: The color for the bottom border
     ///   - left: The color for the left border
-    public init(_ top: W3C_CSS_Values.Color, _ right: W3C_CSS_Values.Color, _ bottom: W3C_CSS_Values.Color, _ left: W3C_CSS_Values.Color) {
+    public init(
+        _ top: W3C_CSS_Values.Color,
+        _ right: W3C_CSS_Values.Color,
+        _ bottom: W3C_CSS_Values.Color,
+        _ left: W3C_CSS_Values.Color
+    ) {
         self = .top_right_bottom_left(top, right, bottom, left)
     }
 }

@@ -4,6 +4,7 @@
 // Tests for CSS PseudoClass types
 
 import Testing
+
 @testable import W3C_CSS_PseudoClasses
 
 // MARK: - Basic Functionality
@@ -75,7 +76,7 @@ struct `PseudoClass - Nth Child` {
         (1, ":nth-child(1)"),
         (2, ":nth-child(2)"),
         (5, ":nth-child(5)"),
-        (10, ":nth-child(10)")
+        (10, ":nth-child(10)"),
     ])
     func `nth child with numeric value`(
         n: Int,
@@ -99,7 +100,7 @@ struct `PseudoClass - Nth Child` {
         ("2n", ":nth-child(2n)"),
         ("2n+1", ":nth-child(2n+1)"),
         ("3n", ":nth-child(3n)"),
-        ("-n+3", ":nth-child(-n+3)")
+        ("-n+3", ":nth-child(-n+3)"),
     ])
     func `nth child with formula`(
         formula: String,
@@ -115,7 +116,7 @@ struct `PseudoClass - Nth Last Child` {
     @Test(arguments: [
         (1, ":nth-last-child(1)"),
         (2, ":nth-last-child(2)"),
-        (3, ":nth-last-child(3)")
+        (3, ":nth-last-child(3)"),
     ])
     func `nth last child with numeric value`(
         n: Int,
@@ -141,7 +142,7 @@ struct `PseudoClass - Nth Of Type` {
     @Test(arguments: [
         (1, ":nth-of-type(1)"),
         (2, ":nth-of-type(2)"),
-        (5, ":nth-of-type(5)")
+        (5, ":nth-of-type(5)"),
     ])
     func `nth of type with numeric value`(
         n: Int,
@@ -167,7 +168,7 @@ struct `PseudoClass - Nth Last Of Type` {
     @Test(arguments: [
         (1, ":nth-last-of-type(1)"),
         (2, ":nth-last-of-type(2)"),
-        (3, ":nth-last-of-type(3)")
+        (3, ":nth-last-of-type(3)"),
     ])
     func `nth last of type with numeric value`(
         n: Int,
@@ -413,7 +414,7 @@ struct `PseudoClass - Language` {
         ("en", ":lang(en)"),
         ("fr", ":lang(fr)"),
         ("de", ":lang(de)"),
-        ("ja", ":lang(ja)")
+        ("ja", ":lang(ja)"),
     ])
     func `lang pseudo class with language code`(
         lang: String,

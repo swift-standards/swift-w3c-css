@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::details-content pseudo-element.
 ///
 /// The `DetailsContent` pseudo-element represents the expandable/collapsible contents

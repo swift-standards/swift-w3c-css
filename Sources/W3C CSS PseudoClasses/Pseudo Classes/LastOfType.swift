@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:last-of-type` pseudo-class.
 ///
 /// The `:last-of-type` pseudo-class matches the last element of its type among a group of sibling elements.

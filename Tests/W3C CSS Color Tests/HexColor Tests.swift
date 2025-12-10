@@ -3,10 +3,11 @@
 //
 // Tests for CSS HexColor type
 
-import Testing
 import Foundation
-@testable import W3C_CSS_Color
+import Testing
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Basic Hex Colors
 
@@ -17,7 +18,7 @@ struct `HexColor - Basic Values` {
         ("#00ff00", "#00ff00"),
         ("#0000ff", "#0000ff"),
         ("#000000", "#000000"),
-        ("#ffffff", "#ffffff")
+        ("#ffffff", "#ffffff"),
     ])
     func `basic hex color values render correctly`(
         input: String,
@@ -34,7 +35,7 @@ struct `HexColor - Short Format` {
         ("#0f0", "#0f0"),
         ("#00f", "#00f"),
         ("#000", "#000"),
-        ("#fff", "#fff")
+        ("#fff", "#fff"),
     ])
     func `short hex color values render correctly`(
         input: String,
@@ -51,7 +52,7 @@ struct `HexColor - With Alpha` {
     @Test(arguments: [
         ("#ff0000ff", "#ff0000ff"),
         ("#00ff0080", "#00ff0080"),
-        ("#0000ff00", "#0000ff00")
+        ("#0000ff00", "#0000ff00"),
     ])
     func `hex color values with alpha render correctly`(
         input: String,
@@ -63,7 +64,7 @@ struct `HexColor - With Alpha` {
     @Test(arguments: [
         ("#f00f", "#f00f"),
         ("#0f08", "#0f08"),
-        ("#00f0", "#00f0")
+        ("#00f0", "#00f0"),
     ])
     func `short hex color values with alpha render correctly`(
         input: String,
@@ -79,7 +80,7 @@ struct `HexColor - With Alpha` {
 struct `HexColor - Prefix Handling` {
     @Test(arguments: [
         ("ff0000", "#ff0000"),
-        ("f00", "#f00")
+        ("f00", "#f00"),
     ])
     func `missing # prefix is automatically added`(
         input: String,
@@ -97,7 +98,7 @@ struct `HexColor - RGB Constructor` {
         (255, 0, 0, "#FF0000"),
         (0, 255, 0, "#00FF00"),
         (0, 0, 255, "#0000FF"),
-        (128, 128, 128, "#808080")
+        (128, 128, 128, "#808080"),
     ])
     func `RGB constructor creates correct hex color`(
         red: Int,
@@ -127,7 +128,7 @@ struct `HexColor - RGBA Constructor` {
     @Test(arguments: [
         (255, 0, 0, 1.0, "#FF0000FF"),
         (0, 255, 0, 0.5, "#00FF0080"),
-        (0, 0, 255, 0.0, "#0000FF00")
+        (0, 0, 255, 0.0, "#0000FF00"),
     ])
     func `RGBA constructor creates correct hex color with alpha`(
         red: Int,
@@ -159,7 +160,7 @@ struct `HexColor - Validation` {
         ("#f00", true),
         ("#f00f", true),
         ("#ff0000", true),
-        ("#ff0000ff", true)
+        ("#ff0000ff", true),
     ])
     func `valid hex color formats are recognized`(
         input: String,
@@ -172,7 +173,7 @@ struct `HexColor - Validation` {
         ("#f0", false),
         ("#f0000", false),
         ("#f00000000", false),
-        ("no-prefix", false)
+        ("no-prefix", false),
     ])
     func `invalid hex color formats are rejected`(
         input: String,

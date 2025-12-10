@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:first-child` pseudo-class.
 ///
 /// The `:first-child` pseudo-class matches an element that is the first child of its parent.

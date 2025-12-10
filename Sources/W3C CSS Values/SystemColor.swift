@@ -1,5 +1,3 @@
-import W3C_CSS_Values
-
 /// Represents CSS system colors.
 ///
 /// The SystemColor data type represents default color choices used for different parts of a web page,

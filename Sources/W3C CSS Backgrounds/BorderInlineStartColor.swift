@@ -1,6 +1,6 @@
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
 
 /// Represents the CSS `border-inline-start-color` property, which defines the color of the logical
 /// inline-start border of an element.

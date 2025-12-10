@@ -38,7 +38,7 @@ public struct FontFeatureValues: AtRule {
         // Parse "@font-feature-values families {" to extract "families"
         var cleaned = rawValue
         if cleaned.hasPrefix("@font-feature-values") {
-            cleaned = String(cleaned.dropFirst(21)) // Remove "@font-feature-values"
+            cleaned = String(cleaned.dropFirst(21))  // Remove "@font-feature-values"
         }
 
         // Trim leading whitespace

@@ -4,6 +4,7 @@
 // Tests for CSS NumberPercentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `NumberPercentage - Number Values` {
         (2.5, "2.5"),
         (0, "0"),
         (42, "42"),
-        (3.14, "3.14")
+        (3.14, "3.14"),
     ])
     func `number value renders correctly`(
         value: Double,
@@ -33,7 +34,7 @@ struct `NumberPercentage - Percentage Values` {
         (75, "75%"),
         (33.333, "33.333%"),
         (100, "100%"),
-        (0, "0%")
+        (0, "0%"),
     ])
     func `percentage value renders correctly`(
         value: Double,

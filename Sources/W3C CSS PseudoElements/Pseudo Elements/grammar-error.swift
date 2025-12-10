@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::grammar-error pseudo-element.
 ///
 /// The `GrammarError` pseudo-element represents a text segment that the user agent

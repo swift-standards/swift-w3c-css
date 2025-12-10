@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::backdrop pseudo-element.
 ///
 /// The `Backdrop` pseudo-element is a box the size of the viewport, which is rendered

@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:where()` pseudo-class.
 ///
 /// The `:where()` pseudo-class takes a selector list as an argument and matches any element that can be matched by one of the selectors in that list.

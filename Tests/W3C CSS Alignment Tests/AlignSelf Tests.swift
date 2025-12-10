@@ -4,6 +4,7 @@
 // Tests for CSS align-self property
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -22,7 +23,7 @@ struct `AlignSelf - Declaration Rendering` {
         (AlignSelf.normal, "align-self:normal"),
         (AlignSelf.center, "align-self:center"),
         (AlignSelf.baseline, "align-self:baseline"),
-        (AlignSelf.safe(.center), "align-self:safe center")
+        (AlignSelf.safe(.center), "align-self:safe center"),
     ])
     func `declaration renders correctly`(
         value: AlignSelf,
@@ -45,7 +46,7 @@ struct `AlignSelf - Auto Value` {
 struct `AlignSelf - Normal and Stretch Values` {
     @Test(arguments: [
         (AlignSelf.normal, "normal"),
-        (AlignSelf.stretch, "stretch")
+        (AlignSelf.stretch, "stretch"),
     ])
     func `normal and stretch values render correctly`(
         value: AlignSelf,
@@ -69,7 +70,7 @@ struct `AlignSelf - Baseline Positions` {
     @Test(arguments: [
         (AlignSelf.baseline, "baseline"),
         (AlignSelf.firstBaseline, "first baseline"),
-        (AlignSelf.lastBaseline, "last baseline")
+        (AlignSelf.lastBaseline, "last baseline"),
     ])
     func `baseline positions render correctly`(
         value: AlignSelf,
@@ -90,7 +91,7 @@ struct `AlignSelf - Self Position Values` {
         (AlignSelf.selfStart, "self-start"),
         (AlignSelf.selfEnd, "self-end"),
         (AlignSelf.flexStart, "flex-start"),
-        (AlignSelf.flexEnd, "flex-end")
+        (AlignSelf.flexEnd, "flex-end"),
     ])
     func `self position values render correctly`(
         value: AlignSelf,
@@ -111,7 +112,7 @@ struct `AlignSelf - Overflow Position with Safe` {
         (AlignSelf.safe(.flexEnd), "safe flex-end"),
         (AlignSelf.safe(.selfStart), "safe self-start"),
         (AlignSelf.safe(.selfEnd), "safe self-end"),
-        (AlignSelf.safe(.flexStart), "safe flex-start")
+        (AlignSelf.safe(.flexStart), "safe flex-start"),
     ])
     func `safe overflow with self positions renders correctly`(
         value: AlignSelf,
@@ -128,7 +129,7 @@ struct `AlignSelf - Overflow Position with Unsafe` {
         (AlignSelf.unsafe(.center), "unsafe center"),
         (AlignSelf.unsafe(.flexEnd), "unsafe flex-end"),
         (AlignSelf.unsafe(.selfStart), "unsafe self-start"),
-        (AlignSelf.unsafe(.selfEnd), "unsafe self-end")
+        (AlignSelf.unsafe(.selfEnd), "unsafe self-end"),
     ])
     func `unsafe overflow with self positions renders correctly`(
         value: AlignSelf,
@@ -147,7 +148,7 @@ struct `AlignSelf - Global Values` {
         (AlignSelf.initial, "initial"),
         (AlignSelf.revert, "revert"),
         (AlignSelf.revertLayer, "revert-layer"),
-        (AlignSelf.unset, "unset")
+        (AlignSelf.unset, "unset"),
     ])
     func `global values render correctly`(
         value: AlignSelf,
@@ -169,7 +170,7 @@ struct `AlignSelf - Edge Cases` {
             (.safe(.selfStart), "safe self-start"),
             (.safe(.selfEnd), "safe self-end"),
             (.safe(.flexStart), "safe flex-start"),
-            (.safe(.flexEnd), "safe flex-end")
+            (.safe(.flexEnd), "safe flex-end"),
         ]
 
         for (value, expected) in positions {
@@ -185,7 +186,7 @@ struct `AlignSelf - Edge Cases` {
             (.unsafe(.selfStart), "unsafe self-start"),
             (.unsafe(.selfEnd), "unsafe self-end"),
             (.unsafe(.flexStart), "unsafe flex-start"),
-            (.unsafe(.flexEnd), "unsafe flex-end")
+            (.unsafe(.flexEnd), "unsafe flex-end"),
         ]
 
         for (value, expected) in positions {

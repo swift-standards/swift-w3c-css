@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:blank` pseudo-class.
 ///
 /// The `:blank` pseudo-class matches empty user input elements, such as `<input>` or `<textarea>`.

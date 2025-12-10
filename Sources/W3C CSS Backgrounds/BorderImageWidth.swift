@@ -147,8 +147,7 @@ public enum BorderImageWidth: Property {
 }
 
 extension BorderImageWidth: LengthPercentageConvertible {
-    public static func lengthPercentage(_ value: LengthPercentage) -> BorderImageWidth
-    {
+    public static func lengthPercentage(_ value: LengthPercentage) -> BorderImageWidth {
         .all(.lengthPercentage(value))
     }
 }

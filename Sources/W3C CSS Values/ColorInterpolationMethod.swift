@@ -61,16 +61,16 @@ public struct ColorInterpolationMethod: Sendable, Hashable, CustomStringConverti
     /// Polar color spaces for color interpolation
     public enum PolarColorSpace: String, Sendable, Hashable, CustomStringConvertible {
         /// The HSL (Hue, Saturation, Lightness) color space
-        case hsl = "hsl"
+        case hsl
 
         /// The HWB (Hue, Whiteness, Blackness) color space
-        case hwb = "hwb"
+        case hwb
 
         /// The LCH (Lightness, Chroma, Hue) color space
-        case lch = "lch"
+        case lch
 
         /// The Oklch perceptual color space
-        case oklch = "oklch"
+        case oklch
 
         public var description: String { rawValue }
     }
@@ -128,7 +128,10 @@ public struct ColorInterpolationMethod: Sendable, Hashable, CustomStringConverti
     ///   - space: The polar color space to use
     ///   - method: Optional hue interpolation method (defaults to `shorter` if not specified)
     /// - Returns: A color interpolation method configured for the specified space and hue method
-    public static func polar(_ space: PolarColorSpace, _ method: HueInterpolationMethod? = nil) -> Self {
+    public static func polar(
+        _ space: PolarColorSpace,
+        _ method: HueInterpolationMethod? = nil
+    ) -> Self {
         Self(colorSpace: space.rawValue, hueMethod: method?.rawValue)
     }
 

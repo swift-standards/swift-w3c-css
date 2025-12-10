@@ -4,6 +4,7 @@
 // Tests for CSS Selector types
 
 import Testing
+
 @testable import W3C_CSS_Selectors
 
 // MARK: - Universal Selector
@@ -29,7 +30,7 @@ struct `Type Selector - Initialization` {
         ("p", "p"),
         ("span", "span"),
         ("article", "article"),
-        ("section", "section")
+        ("section", "section"),
     ])
     func `type selector initialization`(
         element: String,
@@ -53,7 +54,7 @@ struct `Class Selector - Initialization` {
         ("container", ".container"),
         ("nav-item", ".nav-item"),
         ("active", ".active"),
-        ("btn-primary", ".btn-primary")
+        ("btn-primary", ".btn-primary"),
     ])
     func `class selector initialization`(
         className: String,
@@ -82,7 +83,7 @@ struct `ID Selector - Initialization` {
         ("header", "#header"),
         ("main-content", "#main-content"),
         ("footer", "#footer"),
-        ("nav-123", "#nav-123")
+        ("nav-123", "#nav-123"),
     ])
     func `id selector initialization`(
         id: String,
@@ -115,7 +116,7 @@ struct `Attribute Selector - Existence` {
     @Test(arguments: [
         ("href", "[href]"),
         ("data-value", "[data-value]"),
-        ("aria-label", "[aria-label]")
+        ("aria-label", "[aria-label]"),
     ])
     func `attribute existence with various names`(
         attribute: String,
@@ -136,7 +137,7 @@ struct `Attribute Selector - Exact Match` {
     @Test(arguments: [
         ("href", "https://example.com", "[href=\"https://example.com\"]"),
         ("class", "button", "[class=\"button\"]"),
-        ("id", "main", "[id=\"main\"]")
+        ("id", "main", "[id=\"main\"]"),
     ])
     func `exact match with various attributes`(
         attribute: String,
@@ -244,7 +245,7 @@ struct `Selector - Compound Selectors` {
 struct `Selector - Edge Cases` {
     @Test func `empty string handling`() {
         let selector = TypeSelector("")
-        #expect(selector.description == "")
+        #expect(selector.description.isEmpty)
     }
 
     @Test func `special characters in class names`() {
@@ -263,7 +264,11 @@ struct `Selector - Edge Cases` {
     }
 
     @Test func `attribute with quotes in value`() {
-        let selector = AttributeSelector(attribute: "title", value: "It's \"quoted\"", operator: .equal)
+        let selector = AttributeSelector(
+            attribute: "title",
+            value: "It's \"quoted\"",
+            operator: .equal
+        )
         #expect(selector.description.contains("title"))
     }
 }

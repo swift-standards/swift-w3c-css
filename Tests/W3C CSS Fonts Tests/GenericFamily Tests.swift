@@ -4,6 +4,7 @@
 // Tests for CSS GenericFamily type
 
 import Testing
+
 @testable import W3C_CSS_Fonts
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `GenericFamily - Traditional Families` {
         (.sansSerif, "sans-serif"),
         (.monospace, "monospace"),
         (.cursive, "cursive"),
-        (.fantasy, "fantasy")
+        (.fantasy, "fantasy"),
     ])
     func `traditional generic families have correct raw values`(
         family: GenericFamily,
@@ -33,7 +34,7 @@ struct `GenericFamily - UI-Related Families` {
         (.uiSerif, "ui-serif"),
         (.uiSansSerif, "ui-sans-serif"),
         (.uiMonospace, "ui-monospace"),
-        (.uiRounded, "ui-rounded")
+        (.uiRounded, "ui-rounded"),
     ])
     func `UI-related generic families have correct raw values`(
         family: GenericFamily,
@@ -49,7 +50,7 @@ struct `GenericFamily - Special Purpose Families` {
     @Test(arguments: [
         (GenericFamily.math, "math"),
         (.emoji, "emoji"),
-        (.fangsong, "fangsong")
+        (.fangsong, "fangsong"),
     ])
     func `special purpose generic families have correct raw values`(
         family: GenericFamily,
@@ -85,7 +86,7 @@ struct `GenericFamily - RawRepresentable Conformance` {
         ("monospace", .monospace),
         ("system-ui", .systemUi),
         ("ui-serif", .uiSerif),
-        ("math", .math)
+        ("math", .math),
     ])
     func `generic family can be created from raw value`(rawValue: String, expected: GenericFamily) {
         #expect(GenericFamily(rawValue: rawValue) == expected)
@@ -167,7 +168,7 @@ struct `GenericFamily - CSS Property Usage` {
 struct `GenericFamily - Edge Cases` {
     @Test func `all traditional families are distinct`() {
         let traditionalFamilies: [GenericFamily] = [
-            .serif, .sansSerif, .monospace, .cursive, .fantasy
+            .serif, .sansSerif, .monospace, .cursive, .fantasy,
         ]
         for i in traditionalFamilies.indices {
             for j in traditionalFamilies.indices where i != j {
@@ -178,7 +179,7 @@ struct `GenericFamily - Edge Cases` {
 
     @Test func `all UI families are distinct`() {
         let uiFamilies: [GenericFamily] = [
-            .systemUi, .uiSerif, .uiSansSerif, .uiMonospace, .uiRounded
+            .systemUi, .uiSerif, .uiSansSerif, .uiMonospace, .uiRounded,
         ]
         for i in uiFamilies.indices {
             for j in uiFamilies.indices where i != j {
@@ -200,7 +201,7 @@ struct `GenericFamily - Edge Cases` {
         let allFamilies: [GenericFamily] = [
             .serif, .sansSerif, .monospace, .cursive, .fantasy,
             .systemUi, .uiSerif, .uiSansSerif, .uiMonospace, .uiRounded,
-            .math, .emoji, .fangsong
+            .math, .emoji, .fangsong,
         ]
         for family in allFamilies {
             #expect(!family.rawValue.contains(where: { $0.isUppercase }))
@@ -239,7 +240,7 @@ extension `Performance Tests` {
         @Test(.timeLimit(.minutes(1)))
         func `generic family raw value access 100K times`() {
             let families: [GenericFamily] = [
-                .serif, .sansSerif, .monospace, .systemUi, .math
+                .serif, .sansSerif, .monospace, .systemUi, .math,
             ]
             for i in 0..<100_000 {
                 _ = families[i % families.count].rawValue
@@ -258,7 +259,7 @@ extension `Performance Tests` {
         func `generic family comparison 100K times`() {
             let sansSerif = GenericFamily.sansSerif
             let families: [GenericFamily] = [
-                .serif, .sansSerif, .monospace, .systemUi, .math
+                .serif, .sansSerif, .monospace, .systemUi, .math,
             ]
             for i in 0..<100_000 {
                 _ = families[i % families.count] == sansSerif

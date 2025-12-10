@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:empty` pseudo-class.
 ///
 /// The `:empty` pseudo-class matches elements that have no children.

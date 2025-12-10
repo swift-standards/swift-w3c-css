@@ -1,5 +1,3 @@
-import W3C_CSS_Values
-
 /// Represents CSS named color values.
 ///
 /// The `NamedColor` type represents color names that can be used in CSS properties
@@ -52,6 +50,7 @@ public enum NamedColor: String, Sendable, Hashable, CaseIterable {
 
     // Special keyword
     case transparent
+    // swiftlint:disable:next redundant_string_enum_value
     case currentColor = "currentColor"
 }
 

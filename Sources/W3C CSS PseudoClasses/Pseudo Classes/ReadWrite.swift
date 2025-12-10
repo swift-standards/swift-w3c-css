@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:read-write` pseudo-class.
 ///
 /// The `:read-write` pseudo-class matches elements that are editable by the user, such as text input elements.

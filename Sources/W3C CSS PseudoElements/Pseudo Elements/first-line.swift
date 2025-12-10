@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::first-line pseudo-element.
 ///
 /// The `FirstLine` pseudo-element applies styles to the first line of a block container.

@@ -4,6 +4,7 @@
 // Tests for CSS AnimationDirection type
 
 import Testing
+
 @testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
@@ -21,7 +22,7 @@ struct `AnimationDirection - Basic Values` {
         (AnimationDirection.normal, "normal"),
         (AnimationDirection.reverse, "reverse"),
         (AnimationDirection.alternate, "alternate"),
-        (AnimationDirection.alternateReverse, "alternate-reverse")
+        (AnimationDirection.alternateReverse, "alternate-reverse"),
     ])
     func `renders basic values correctly`(
         value: AnimationDirection,
@@ -40,7 +41,7 @@ struct `AnimationDirection - Global Values` {
         (AnimationDirection.initial, "initial"),
         (AnimationDirection.revert, "revert"),
         (AnimationDirection.revertLayer, "revert-layer"),
-        (AnimationDirection.unset, "unset")
+        (AnimationDirection.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationDirection,
@@ -103,7 +104,9 @@ struct `AnimationDirection - CSS Property Usage` {
     }
 
     @Test func `multiple directions can be combined in array notation`() {
-        let directions = [AnimationDirection.normal, AnimationDirection.reverse, AnimationDirection.alternate]
+        let directions = [
+            AnimationDirection.normal, AnimationDirection.reverse, AnimationDirection.alternate,
+        ]
         let css = directions.map(\.description).joined(separator: ", ")
         #expect(css == "normal, reverse, alternate")
     }

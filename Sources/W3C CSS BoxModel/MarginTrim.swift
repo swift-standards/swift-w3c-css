@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  MarginTrim.swift
 //  swift-css
 //
 //  Created by Coen ten Thije Boonkkamp on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The CSS `margin-trim` property allows a container to trim the margins of its children
 /// where they adjoin the container's edges.

@@ -4,8 +4,9 @@
 // Tests for CSS TransformFunction type
 
 import Testing
-@testable import W3C_CSS_Transforms
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Transforms
 
 // MARK: - Matrix Transformations
 
@@ -24,10 +25,16 @@ struct `TransformFunction - Matrix` {
     @Test(arguments: [
         (1, 0, 0, 1, 0, 0, "matrix(1, 0, 0, 1, 0, 0)"),
         (2, 0, 0, 2, 0, 0, "matrix(2, 0, 0, 2, 0, 0)"),
-        (1, 0, 0, 1, 100, 50, "matrix(1, 0, 0, 1, 100, 50)")
+        (1, 0, 0, 1, 100, 50, "matrix(1, 0, 0, 1, 100, 50)"),
     ])
+    // swiftlint:disable:next function_parameter_count
     func `various 2D matrices render correctly`(
-        a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double,
+        a: Double,
+        b: Double,
+        c: Double,
+        d: Double,
+        tx: Double,
+        ty: Double,
         expected: String
     ) {
         let matrix = TransformFunction.matrix(a: a, b: b, c: c, d: d, tx: tx, ty: ty)
@@ -51,7 +58,7 @@ struct `TransformFunction - Matrix 3D` {
             1, 0, 0, 0,
             0, 1, 0, 0,
             0, 0, 1, 0,
-            0, 0, 0, 1
+            0, 0, 0, 1,
         ])
         #expect(
             identity3d.description == "matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)"
@@ -67,7 +74,7 @@ struct `TransformFunction - Perspective` {
         (Length.px(200), "perspective(200px)"),
         (Length.px(500), "perspective(500px)"),
         (Length.em(10), "perspective(10em)"),
-        (Length.rem(20), "perspective(20rem)")
+        (Length.rem(20), "perspective(20rem)"),
     ])
     func `perspective transformation renders correctly`(
         distance: Length,
@@ -87,7 +94,7 @@ struct `TransformFunction - Rotate 2D` {
         (Angle.deg(90), "rotate(90deg)"),
         (Angle.deg(180), "rotate(180deg)"),
         (Angle.rad(1.57), "rotate(1.57rad)"),
-        (Angle.turn(0.5), "rotate(0.5turn)")
+        (Angle.turn(0.5), "rotate(0.5turn)"),
     ])
     func `2D rotation renders correctly`(
         angle: Angle,
@@ -118,10 +125,13 @@ struct `TransformFunction - Rotate 3D` {
     @Test(arguments: [
         (1, 0, 0, Angle.deg(45), "rotate3d(1, 0, 0, 45deg)"),
         (0, 1, 0, Angle.deg(90), "rotate3d(0, 1, 0, 90deg)"),
-        (0, 0, 1, Angle.deg(180), "rotate3d(0, 0, 1, 180deg)")
+        (0, 0, 1, Angle.deg(180), "rotate3d(0, 0, 1, 180deg)"),
     ])
     func `3D rotation on different axes`(
-        x: Double, y: Double, z: Double, angle: Angle,
+        x: Double,
+        y: Double,
+        z: Double,
+        angle: Angle,
         expected: String
     ) {
         let rotate3d = TransformFunction.rotate3d(x: x, y: y, z: z, angle: angle)
@@ -149,11 +159,13 @@ struct `TransformFunction - Rotate Axes` {
     @Test(arguments: [
         (Angle.deg(0), "rotateX(0deg)", "rotateY(0deg)", "rotateZ(0deg)"),
         (Angle.deg(90), "rotateX(90deg)", "rotateY(90deg)", "rotateZ(90deg)"),
-        (Angle.deg(180), "rotateX(180deg)", "rotateY(180deg)", "rotateZ(180deg)")
+        (Angle.deg(180), "rotateX(180deg)", "rotateY(180deg)", "rotateZ(180deg)"),
     ])
     func `axis rotations with various angles`(
         angle: Angle,
-        expectedX: String, expectedY: String, expectedZ: String
+        expectedX: String,
+        expectedY: String,
+        expectedZ: String
     ) {
         #expect(TransformFunction.rotateX(angle).description == expectedX)
         #expect(TransformFunction.rotateY(angle).description == expectedY)
@@ -179,7 +191,7 @@ struct `TransformFunction - Scale` {
         (1.0, "scale(1)"),
         (2.0, "scale(2)"),
         (0.5, "scale(0.5)"),
-        (0.0, "scale(0)")
+        (0.0, "scale(0)"),
     ])
     func `various uniform scales`(
         scale: Double,
@@ -200,10 +212,12 @@ struct `TransformFunction - Scale 3D` {
     @Test(arguments: [
         (1, 1, 1, "scale3d(1, 1, 1)"),
         (2, 2, 2, "scale3d(2, 2, 2)"),
-        (0.5, 1.5, 2, "scale3d(0.5, 1.5, 2)")
+        (0.5, 1.5, 2, "scale3d(0.5, 1.5, 2)"),
     ])
     func `various 3D scales`(
-        sx: Double, sy: Double, sz: Double,
+        sx: Double,
+        sy: Double,
+        sz: Double,
         expected: String
     ) {
         let scale3d = TransformFunction.scale3d(sx: sx, sy: sy, sz: sz)
@@ -247,7 +261,7 @@ struct `TransformFunction - Skew` {
         (Angle.deg(0), "skew(0deg)"),
         (Angle.deg(15), "skew(15deg)"),
         (Angle.deg(30), "skew(30deg)"),
-        (Angle.deg(-10), "skew(-10deg)")
+        (Angle.deg(-10), "skew(-10deg)"),
     ])
     func `various skew angles`(
         angle: Angle,
@@ -273,11 +287,12 @@ struct `TransformFunction - Skew Axes` {
     @Test(arguments: [
         (Angle.deg(0), "skewX(0deg)", "skewY(0deg)"),
         (Angle.deg(10), "skewX(10deg)", "skewY(10deg)"),
-        (Angle.deg(-15), "skewX(-15deg)", "skewY(-15deg)")
+        (Angle.deg(-15), "skewX(-15deg)", "skewY(-15deg)"),
     ])
     func `axis skews with various angles`(
         angle: Angle,
-        expectedX: String, expectedY: String
+        expectedX: String,
+        expectedY: String
     ) {
         #expect(TransformFunction.skewX(angle).description == expectedX)
         #expect(TransformFunction.skewY(angle).description == expectedY)
@@ -306,10 +321,11 @@ struct `TransformFunction - Translate 2D` {
     @Test(arguments: [
         (0, 0, "translate(0px, 0px)"),
         (100, 50, "translate(100px, 50px)"),
-        (-50, -100, "translate(-50px, -100px)")
+        (-50, -100, "translate(-50px, -100px)"),
     ])
     func `various 2D translations`(
-        x: Int, y: Int,
+        x: Int,
+        y: Int,
         expected: String
     ) {
         let translate = TransformFunction.translate(x, y)
@@ -327,10 +343,12 @@ struct `TransformFunction - Translate 3D` {
     @Test(arguments: [
         (Length.px(0), Length.px(0), Length.px(0), "translate3d(0px, 0px, 0px)"),
         (Length.em(1), Length.em(2), Length.em(3), "translate3d(1em, 2em, 3em)"),
-        (Length.rem(5), Length.rem(10), Length.rem(15), "translate3d(5rem, 10rem, 15rem)")
+        (Length.rem(5), Length.rem(10), Length.rem(15), "translate3d(5rem, 10rem, 15rem)"),
     ])
     func `various 3D translations`(
-        x: Length, y: Length, z: Length,
+        x: Length,
+        y: Length,
+        z: Length,
         expected: String
     ) {
         let translate3d = TransformFunction.translate3d(x, y, z)
@@ -358,11 +376,13 @@ struct `TransformFunction - Translate Axes` {
     @Test(arguments: [
         (Length.px(0), "translateX(0px)", "translateY(0px)", "translateZ(0px)"),
         (Length.em(1), "translateX(1em)", "translateY(1em)", "translateZ(1em)"),
-        (Length.rem(5), "translateX(5rem)", "translateY(5rem)", "translateZ(5rem)")
+        (Length.rem(5), "translateX(5rem)", "translateY(5rem)", "translateZ(5rem)"),
     ])
     func `axis translations with various lengths`(
         length: Length,
-        expectedX: String, expectedY: String, expectedZ: String
+        expectedX: String,
+        expectedY: String,
+        expectedZ: String
     ) {
         #expect(TransformFunction.translateX(length).description == expectedX)
         #expect(TransformFunction.translateY(length).description == expectedY)
@@ -456,13 +476,18 @@ struct `TransformFunction - CSS Property Usage` {
     }
 
     @Test func `multiple transforms in transform property`() {
-        let transform = "transform: \(TransformFunction.translate(100, 50)) \(TransformFunction.rotate(.deg(45))) \(TransformFunction.scale(1.5))"
+        let transform =
+            "transform: \(TransformFunction.translate(100, 50)) \(TransformFunction.rotate(.deg(45))) \(TransformFunction.scale(1.5))"
         #expect(transform == "transform: translate(100px, 50px) rotate(45deg) scale(1.5)")
     }
 
     @Test func `3D transform chain`() {
-        let transform = "transform: \(TransformFunction.translate3d(.px(50), .px(100), .px(50))) \(TransformFunction.rotateX(.deg(45))) \(TransformFunction.scale3d(sx: 1.5, sy: 1.5, sz: 1.5))"
-        #expect(transform == "transform: translate3d(50px, 100px, 50px) rotateX(45deg) scale3d(1.5, 1.5, 1.5)")
+        let transform =
+            "transform: \(TransformFunction.translate3d(.px(50), .px(100), .px(50))) \(TransformFunction.rotateX(.deg(45))) \(TransformFunction.scale3d(sx: 1.5, sy: 1.5, sz: 1.5))"
+        #expect(
+            transform
+                == "transform: translate3d(50px, 100px, 50px) rotateX(45deg) scale3d(1.5, 1.5, 1.5)"
+        )
     }
 }
 

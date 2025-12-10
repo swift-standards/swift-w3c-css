@@ -1,5 +1,5 @@
-import W3C_CSS_Shared
 import INCITS_4_1986
+import W3C_CSS_Shared
 
 /// Represents a CSS @import at-rule.
 ///

@@ -4,6 +4,7 @@
 // Tests for CSS BaselinePosition type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Basic Functionality
@@ -13,7 +14,7 @@ struct `BaselinePosition - Initialization` {
     @Test(arguments: [
         (BaselinePosition.firstBaseline, "first baseline"),
         (BaselinePosition.baseline, "baseline"),
-        (BaselinePosition.lastBaseline, "last baseline")
+        (BaselinePosition.lastBaseline, "last baseline"),
     ])
     func `baseline position renders with correct description`(
         position: BaselinePosition,
@@ -64,7 +65,7 @@ struct `BaselinePosition - Hashable Conformance` {
         let values = [
             BaselinePosition.firstBaseline,
             BaselinePosition.baseline,
-            BaselinePosition.lastBaseline
+            BaselinePosition.lastBaseline,
         ]
         let uniqueValues = Set(values)
         #expect(uniqueValues.count == values.count)

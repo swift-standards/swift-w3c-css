@@ -4,6 +4,7 @@
 // Tests for CSS SystemColor type
 
 import Testing
+
 @testable import W3C_CSS_Color
 
 // MARK: - Basic System Colors
@@ -15,7 +16,7 @@ struct `SystemColor - Basic Colors` {
         (.canvasText, "CanvasText"),
         (.buttonBorder, "ButtonBorder"),
         (.buttonFace, "ButtonFace"),
-        (.buttonText, "ButtonText")
+        (.buttonText, "ButtonText"),
     ])
     func `basic system colors render correctly`(
         color: SystemColor,
@@ -33,7 +34,7 @@ struct `SystemColor - Highlight Colors` {
         (SystemColor.highlight, "Highlight"),
         (.highlightText, "HighlightText"),
         (.selectedItem, "SelectedItem"),
-        (.selectedItemText, "SelectedItemText")
+        (.selectedItemText, "SelectedItemText"),
     ])
     func `highlight and selection system colors render correctly`(
         color: SystemColor,
@@ -50,7 +51,7 @@ struct `SystemColor - Link Colors` {
     @Test(arguments: [
         (SystemColor.linkText, "LinkText"),
         (.activeText, "ActiveText"),
-        (.visitedText, "VisitedText")
+        (.visitedText, "VisitedText"),
     ])
     func `link and text system colors render correctly`(
         color: SystemColor,
@@ -66,7 +67,7 @@ struct `SystemColor - Link Colors` {
 struct `SystemColor - Field Colors` {
     @Test(arguments: [
         (SystemColor.field, "Field"),
-        (.fieldText, "FieldText")
+        (.fieldText, "FieldText"),
     ])
     func `input field system colors render correctly`(
         color: SystemColor,
@@ -82,7 +83,7 @@ struct `SystemColor - Field Colors` {
 struct `SystemColor - Accent Colors` {
     @Test(arguments: [
         (SystemColor.accentColor, "AccentColor"),
-        (.accentColorText, "AccentColorText")
+        (.accentColorText, "AccentColorText"),
     ])
     func `accent system colors render correctly`(
         color: SystemColor,
@@ -98,7 +99,7 @@ struct `SystemColor - Accent Colors` {
 struct `SystemColor - Mark Colors` {
     @Test(arguments: [
         (SystemColor.mark, "Mark"),
-        (.markText, "MarkText")
+        (.markText, "MarkText"),
     ])
     func `mark system colors render correctly`(
         color: SystemColor,
@@ -119,7 +120,7 @@ struct `SystemColor - Deprecated Colors` {
         (.background, "Background"),
         (.buttonHighlight, "ButtonHighlight"),
         (.buttonShadow, "ButtonShadow"),
-        (.captionText, "CaptionText")
+        (.captionText, "CaptionText"),
     ])
     func `deprecated system colors render correctly`(
         color: SystemColor,
@@ -136,7 +137,7 @@ struct `SystemColor - Raw Value Initialization` {
     @Test(arguments: [
         ("Canvas", "Canvas"),
         ("CanvasText", "CanvasText"),
-        ("CustomColor", "CustomColor")
+        ("CustomColor", "CustomColor"),
     ])
     func `raw value initializer works correctly`(
         rawValue: String,
@@ -174,7 +175,7 @@ struct `SystemColor - Hashable Conformance` {
         (SystemColor.canvas, SystemColor.canvasText),
         (.mark, .markText),
         (.field, .fieldText),
-        (.accentColor, .accentColorText)
+        (.accentColor, .accentColorText),
     ])
     func `different color pairs are not equal`(
         color1: SystemColor,
@@ -190,8 +191,8 @@ struct `SystemColor - Hashable Conformance` {
 struct `SystemColor - Edge Cases` {
     @Test func `empty raw value`() {
         let color = SystemColor(rawValue: "")
-        #expect(color.rawValue == "")
-        #expect(color.description == "")
+        #expect(color.rawValue.isEmpty)
+        #expect(color.description.isEmpty)
     }
 
     @Test func `raw value with spaces`() {
@@ -216,7 +217,7 @@ struct `SystemColor - Edge Cases` {
     @Test func `description matches raw value`() {
         let predefinedColors = [
             SystemColor.canvas, .canvasText, .field, .fieldText,
-            .accentColor, .accentColorText, .mark, .markText
+            .accentColor, .accentColorText, .mark, .markText,
         ]
 
         for color in predefinedColors {
@@ -244,7 +245,7 @@ extension `Performance Tests` {
         func `system color description access 100K times`() {
             let colors = [
                 SystemColor.canvas, .canvasText, .field, .fieldText,
-                .accentColor, .accentColorText, .mark, .markText
+                .accentColor, .accentColorText, .mark, .markText,
             ]
 
             for i in 0..<100_000 {
@@ -267,7 +268,7 @@ extension `Performance Tests` {
         func `system color raw value access 100K times`() {
             let colors = [
                 SystemColor.canvas, .canvasText, .field, .fieldText,
-                .accentColor, .accentColorText, .mark, .markText
+                .accentColor, .accentColorText, .mark, .markText,
             ]
 
             for i in 0..<100_000 {

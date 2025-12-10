@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:root` pseudo-class.
 ///
 /// The `:root` pseudo-class matches the root element of the document.

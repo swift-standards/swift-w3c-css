@@ -4,6 +4,7 @@
 // Tests for CSS Frequency type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Frequency - Hertz Values` {
         (0.0, "0Hz"),
         (1000.0, "1000Hz"),
         (123.5, "123.5Hz"),
-        (123.0, "123Hz")
+        (123.0, "123Hz"),
     ])
     func `hertz frequency values render correctly`(
         value: Number,
@@ -33,7 +34,7 @@ struct `Frequency - Kilohertz Values` {
         (0.0, "0kHz"),
         (5.0, "5kHz"),
         (1.75, "1.75kHz"),
-        (3.0, "3kHz")
+        (3.0, "3kHz"),
     ])
     func `kilohertz frequency values render correctly`(
         value: Number,

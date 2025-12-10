@@ -1,4 +1,3 @@
-
 /// Represents a CSS baseline position value for alignment properties.
 ///
 /// The `BaselinePosition` data type is used in various CSS alignment properties to
@@ -27,7 +26,7 @@ public struct BaselinePosition: Sendable, Hashable {
         /// /* or simply */
         /// align-items: baseline;
         /// ```
-        case first = "first"
+        case first
 
         /// Aligns to the last baseline
         ///
@@ -36,7 +35,7 @@ public struct BaselinePosition: Sendable, Hashable {
         /// ```css
         /// align-items: last baseline;
         /// ```
-        case last = "last"
+        case last
 
         public var description: String { rawValue }
     }

@@ -4,6 +4,7 @@
 // Tests for CSS PositionArea type
 
 import Testing
+
 @testable import W3C_CSS_Positioning
 
 // MARK: - None Value
@@ -31,7 +32,7 @@ struct `PositionArea - Single Keywords` {
         (PositionArea.single(.blockStart), "block-start"),
         (PositionArea.single(.blockEnd), "block-end"),
         (PositionArea.single(.inlineStart), "inline-start"),
-        (PositionArea.single(.inlineEnd), "inline-end")
+        (PositionArea.single(.inlineEnd), "inline-end"),
     ])
     func `single keyword values render correctly`(
         area: PositionArea,
@@ -54,7 +55,7 @@ struct `PositionArea - Physical Pairs` {
         (PositionArea.physical(.center, .center), "center center"),
         (PositionArea.physical(.top, .spanAll), "top span-all"),
         (PositionArea.physical(.spanAll, .left), "span-all left"),
-        (PositionArea.physical(.spanTop, .spanLeft), "span-top span-left")
+        (PositionArea.physical(.spanTop, .spanLeft), "span-top span-left"),
     ])
     func `physical pairs render correctly`(
         area: PositionArea,
@@ -72,7 +73,7 @@ struct `PositionArea - Physical X/Y Coordinates` {
         (PositionArea.physical(.yStart, .xEnd), "y-start x-end"),
         (PositionArea.physical(.center, .xStart), "center x-start"),
         (PositionArea.physical(.yStart, .center), "y-start center"),
-        (PositionArea.physical(.spanYStart, .spanXStart), "span-y-start span-x-start")
+        (PositionArea.physical(.spanYStart, .spanXStart), "span-y-start span-x-start"),
     ])
     func `physical coordinate pairs render correctly`(
         area: PositionArea,
@@ -87,7 +88,10 @@ struct `PositionArea - Physical Self Coordinates` {
     @Test(arguments: [
         (PositionArea.physical(.ySelfStart, .xSelfStart), "y-self-start x-self-start"),
         (PositionArea.physical(.ySelfEnd, .xSelfEnd), "y-self-end x-self-end"),
-        (PositionArea.physical(.spanYSelfStart, .spanXSelfStart), "span-y-self-start span-x-self-start")
+        (
+            PositionArea.physical(.spanYSelfStart, .spanXSelfStart),
+            "span-y-self-start span-x-self-start"
+        ),
     ])
     func `physical self coordinate pairs render correctly`(
         area: PositionArea,
@@ -108,7 +112,10 @@ struct `PositionArea - Logical Pairs` {
         (PositionArea.logical(.blockEnd, .inlineEnd), "block-end inline-end"),
         (PositionArea.logical(.center, .center), "center center"),
         (PositionArea.logical(.blockStart, .spanAll), "block-start span-all"),
-        (PositionArea.logical(.spanBlockStart, .spanInlineStart), "span-block-start span-inline-start")
+        (
+            PositionArea.logical(.spanBlockStart, .spanInlineStart),
+            "span-block-start span-inline-start"
+        ),
     ])
     func `logical pairs render correctly`(
         area: PositionArea,
@@ -123,12 +130,21 @@ struct `PositionArea - Logical Pairs` {
 @Suite
 struct `PositionArea - Self-Logical Pairs` {
     @Test(arguments: [
-        (PositionArea.selfLogical(.selfBlockStart, .selfInlineStart), "self-block-start self-inline-start"),
-        (PositionArea.selfLogical(.selfBlockStart, .selfInlineEnd), "self-block-start self-inline-end"),
-        (PositionArea.selfLogical(.selfBlockEnd, .selfInlineStart), "self-block-end self-inline-start"),
+        (
+            PositionArea.selfLogical(.selfBlockStart, .selfInlineStart),
+            "self-block-start self-inline-start"
+        ),
+        (
+            PositionArea.selfLogical(.selfBlockStart, .selfInlineEnd),
+            "self-block-start self-inline-end"
+        ),
+        (
+            PositionArea.selfLogical(.selfBlockEnd, .selfInlineStart),
+            "self-block-end self-inline-start"
+        ),
         (PositionArea.selfLogical(.selfBlockEnd, .selfInlineEnd), "self-block-end self-inline-end"),
         (PositionArea.selfLogical(.center, .center), "center center"),
-        (PositionArea.selfLogical(.selfBlockStart, .spanAll), "self-block-start span-all")
+        (PositionArea.selfLogical(.selfBlockStart, .spanAll), "self-block-start span-all"),
     ])
     func `self-logical pairs render correctly`(
         area: PositionArea,
@@ -149,7 +165,7 @@ struct `PositionArea - StartEnd Pairs` {
         (PositionArea.startEnd(.end, .end), "end end"),
         (PositionArea.startEnd(.center, .center), "center center"),
         (PositionArea.startEnd(.start, .spanAll), "start span-all"),
-        (PositionArea.startEnd(.spanStart, .spanEnd), "span-start span-end")
+        (PositionArea.startEnd(.spanStart, .spanEnd), "span-start span-end"),
     ])
     func `start-end pairs render correctly`(
         area: PositionArea,
@@ -169,7 +185,7 @@ struct `PositionArea - SelfStartEnd Pairs` {
         (PositionArea.selfStartEnd(.selfEnd, .selfStart), "self-end self-start"),
         (PositionArea.selfStartEnd(.selfEnd, .selfEnd), "self-end self-end"),
         (PositionArea.selfStartEnd(.center, .center), "center center"),
-        (PositionArea.selfStartEnd(.selfStart, .spanAll), "self-start span-all")
+        (PositionArea.selfStartEnd(.selfStart, .spanAll), "self-start span-all"),
     ])
     func `self-start-end pairs render correctly`(
         area: PositionArea,
@@ -192,7 +208,7 @@ struct `PositionArea - Vertical and Horizontal` {
         (PositionArea.vertical(.top, .spanAll), "top span-all"),
         (PositionArea.vertical(.spanTop, .spanLeft), "span-top span-left"),
         (PositionArea.vertical(.yStart, .xStart), "y-start x-start"),
-        (PositionArea.vertical(.yEnd, .xEnd), "y-end x-end")
+        (PositionArea.vertical(.yEnd, .xEnd), "y-end x-end"),
     ])
     func `vertical and horizontal convenience method renders correctly`(
         area: PositionArea,
@@ -232,7 +248,7 @@ struct `PositionArea - Physical Enum Raw Values` {
         (PositionArea.Physical.spanXSelfStart, "span-x-self-start"),
         (PositionArea.Physical.spanXSelfEnd, "span-x-self-end"),
         (PositionArea.Physical.spanYSelfStart, "span-y-self-start"),
-        (PositionArea.Physical.spanYSelfEnd, "span-y-self-end")
+        (PositionArea.Physical.spanYSelfEnd, "span-y-self-end"),
     ])
     func `physical enum values have correct raw values`(
         value: PositionArea.Physical,
@@ -254,7 +270,7 @@ struct `PositionArea - Logical Enum Raw Values` {
         (PositionArea.Logical.inlineEnd, "inline-end"),
         (PositionArea.Logical.spanInlineStart, "span-inline-start"),
         (PositionArea.Logical.spanInlineEnd, "span-inline-end"),
-        (PositionArea.Logical.spanAll, "span-all")
+        (PositionArea.Logical.spanAll, "span-all"),
     ])
     func `logical enum values have correct raw values`(
         value: PositionArea.Logical,
@@ -276,7 +292,7 @@ struct `PositionArea - SelfLogical Enum Raw Values` {
         (PositionArea.SelfLogical.selfInlineEnd, "self-inline-end"),
         (PositionArea.SelfLogical.spanSelfInlineStart, "span-self-inline-start"),
         (PositionArea.SelfLogical.spanSelfInlineEnd, "span-self-inline-end"),
-        (PositionArea.SelfLogical.spanAll, "span-all")
+        (PositionArea.SelfLogical.spanAll, "span-all"),
     ])
     func `self-logical enum values have correct raw values`(
         value: PositionArea.SelfLogical,
@@ -294,7 +310,7 @@ struct `PositionArea - StartEnd Enum Raw Values` {
         (PositionArea.StartEnd.end, "end"),
         (PositionArea.StartEnd.spanStart, "span-start"),
         (PositionArea.StartEnd.spanEnd, "span-end"),
-        (PositionArea.StartEnd.spanAll, "span-all")
+        (PositionArea.StartEnd.spanAll, "span-all"),
     ])
     func `start-end enum values have correct raw values`(
         value: PositionArea.StartEnd,
@@ -312,7 +328,7 @@ struct `PositionArea - SelfStartEnd Enum Raw Values` {
         (PositionArea.SelfStartEnd.selfEnd, "self-end"),
         (PositionArea.SelfStartEnd.spanSelfStart, "span-self-start"),
         (PositionArea.SelfStartEnd.spanSelfEnd, "span-self-end"),
-        (PositionArea.SelfStartEnd.spanAll, "span-all")
+        (PositionArea.SelfStartEnd.spanAll, "span-all"),
     ])
     func `self-start-end enum values have correct raw values`(
         value: PositionArea.SelfStartEnd,
@@ -342,7 +358,7 @@ struct `PositionArea - AreaKeyword Enum Raw Values` {
         (PositionArea.AreaKeyword.selfStart, "self-start"),
         (PositionArea.AreaKeyword.selfEnd, "self-end"),
         (PositionArea.AreaKeyword.center, "center"),
-        (PositionArea.AreaKeyword.spanAll, "span-all")
+        (PositionArea.AreaKeyword.spanAll, "span-all"),
     ])
     func `area keyword enum values have correct raw values`(
         value: PositionArea.AreaKeyword,
@@ -389,7 +405,8 @@ struct `PositionArea - CSS Property Usage` {
     }
 
     @Test func `position area renders correctly with logical value`() {
-        let positionAreaLogical = "position-area: \(PositionArea.logical(.blockStart, .inlineStart))"
+        let positionAreaLogical =
+            "position-area: \(PositionArea.logical(.blockStart, .inlineStart))"
         #expect(positionAreaLogical == "position-area: block-start inline-start")
     }
 
@@ -406,14 +423,23 @@ struct `PositionArea - Edge Cases` {
     @Test func `span values render correctly`() {
         #expect(PositionArea.single(.spanAll).description == "span-all")
         #expect(PositionArea.physical(.spanTop, .spanAll).description == "span-top span-all")
-        #expect(PositionArea.physical(.spanYStart, .spanXStart).description == "span-y-start span-x-start")
+        #expect(
+            PositionArea.physical(.spanYStart, .spanXStart).description
+                == "span-y-start span-x-start"
+        )
     }
 
     @Test func `self values render correctly`() {
         #expect(PositionArea.single(.selfStart).description == "self-start")
         #expect(PositionArea.single(.selfEnd).description == "self-end")
-        #expect(PositionArea.selfLogical(.selfBlockStart, .selfInlineStart).description == "self-block-start self-inline-start")
-        #expect(PositionArea.physical(.xSelfStart, .ySelfStart).description == "x-self-start y-self-start")
+        #expect(
+            PositionArea.selfLogical(.selfBlockStart, .selfInlineStart).description
+                == "self-block-start self-inline-start"
+        )
+        #expect(
+            PositionArea.physical(.xSelfStart, .ySelfStart).description
+                == "x-self-start y-self-start"
+        )
     }
 
     @Test func `mixed coordinate pairs`() {

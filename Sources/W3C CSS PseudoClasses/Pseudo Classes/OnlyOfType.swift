@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:only-of-type` pseudo-class.
 ///
 /// The `:only-of-type` pseudo-class matches an element that has no siblings of the same type.

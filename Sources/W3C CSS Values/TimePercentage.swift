@@ -1,4 +1,3 @@
-
 /// Represents a CSS time-percentage value.
 ///
 /// The `TimePercentage` type represents a value that can be either a time value
@@ -65,6 +64,7 @@ extension TimePercentage {
     ///   - lhs: Time-percentage value
     ///   - rhs: Scalar multiplier
     /// - Returns: The product
+    @_disfavoredOverload
     public static func * (lhs: TimePercentage, rhs: Double) -> TimePercentage {
         switch lhs {
         case .time(let time):
@@ -79,6 +79,7 @@ extension TimePercentage {
     ///   - lhs: Time-percentage value
     ///   - rhs: Scalar divisor
     /// - Returns: The quotient
+    @_disfavoredOverload
     public static func / (lhs: TimePercentage, rhs: Double) -> TimePercentage {
         switch lhs {
         case .time(let time):

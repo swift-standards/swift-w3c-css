@@ -1,4 +1,3 @@
-
 /// Represents the Microsoft-specific ::-ms-input-placeholder pseudo-element.
 ///
 /// The `MsInputPlaceholder` pseudo-element represents placeholder text in input fields

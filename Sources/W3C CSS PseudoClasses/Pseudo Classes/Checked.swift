@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:checked` pseudo-class.
 ///
 /// The `:checked` pseudo-class matches radio, checkbox, or option elements that are checked or toggled to an on state.

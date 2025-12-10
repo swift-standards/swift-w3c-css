@@ -3,15 +3,15 @@
 ////
 //// Tests for CSS Types integration and interoperability
 //
-//import Testing
-//@testable import W3C_CSS_Shared
-//@testable import W3C_CSS_Values
-//@testable import W3C_CSS_Transforms
+// import Testing
+// @testable import W3C_CSS_Shared
+// @testable import W3C_CSS_Values
+// @testable import W3C_CSS_Transforms
 //
 //// MARK: - Type Integration
 //
-//@Suite
-//struct `CSS Types - Integration` {
+// @Suite
+// struct `CSS Types - Integration` {
 //    @Test func `types can be combined in transform properties`() {
 //        // Test that transform functions work with length and angle values
 //        let transform = "transform: \(TransformFunction.translate(.px(100), .px(50))) \(TransformFunction.rotate(.deg(45))) \(TransformFunction.scale(sx: 1.5))"
@@ -35,12 +35,12 @@
 //        let backgroundImage = "background-image: \(Url("image.jpg"))"
 //        #expect(backgroundImage == "background-image: url('image.jpg')")
 //    }
-//}
+// }
 //
 //// MARK: - Length Type Integration
 //
-//@Suite
-//struct `CSS Types - Length Integration` {
+// @Suite
+// struct `CSS Types - Length Integration` {
 //    @Test(arguments: [
 //        (Length.px(100), "100px"),
 //        (.em(1.5), "1.5em"),
@@ -57,12 +57,12 @@
 //        let width = Length.px(100)
 //        #expect(width.description == "100px")
 //    }
-//}
+// }
 //
 //// MARK: - Percentage Type Integration
 //
-//@Suite
-//struct `CSS Types - Percentage Integration` {
+// @Suite
+// struct `CSS Types - Percentage Integration` {
 //    @Test(arguments: [
 //        (Percentage(50), "50%"),
 //        (.init(100), "100%"),
@@ -73,12 +73,12 @@
 //        let property = "width: \(percentage)"
 //        #expect(property == "width: \(expected)")
 //    }
-//}
+// }
 //
 //// MARK: - LengthPercentage Type Integration
 //
-//@Suite
-//struct `CSS Types - LengthPercentage Integration` {
+// @Suite
+// struct `CSS Types - LengthPercentage Integration` {
 //    @Test func `length percentage accepts length values`() {
 //        let lengthPct: LengthPercentage = .px(100)
 //        #expect(lengthPct.description == "100px")
@@ -101,12 +101,12 @@
 //        let property = "width: \(value)"
 //        #expect(property == expected)
 //    }
-//}
+// }
 //
 //// MARK: - Time Type Integration
 //
-//@Suite
-//struct `CSS Types - Time Integration` {
+// @Suite
+// struct `CSS Types - Time Integration` {
 //    @Test(arguments: [
 //        (Time.s(1), "1s"),
 //        (.s(0.3), "0.3s"),
@@ -117,12 +117,12 @@
 //        let property = "transition-duration: \(time)"
 //        #expect(property == "transition-duration: \(expected)")
 //    }
-//}
+// }
 //
 //// MARK: - Angle Type Integration
 //
-//@Suite
-//struct `CSS Types - Angle Integration` {
+// @Suite
+// struct `CSS Types - Angle Integration` {
 //    @Test(arguments: [
 //        (Angle.deg(45), "45deg"),
 //        (.rad(1.57), "1.57rad"),
@@ -133,12 +133,12 @@
 //        let property = "rotate: \(angle)"
 //        #expect(property == "rotate: \(expected)")
 //    }
-//}
+// }
 //
 //// MARK: - Number Type Integration
 //
-//@Suite
-//struct `CSS Types - Number Integration` {
+// @Suite
+// struct `CSS Types - Number Integration` {
 //    @Test(arguments: [
 //        (Number(1.5), "1.5"),
 //        (.init(0), "0"),
@@ -149,12 +149,12 @@
 //        let property = "opacity: \(number)"
 //        #expect(property == "opacity: \(expected)")
 //    }
-//}
+// }
 //
 //// MARK: - Integer Type Integration
 //
-//@Suite
-//struct `CSS Types - Integer Integration` {
+// @Suite
+// struct `CSS Types - Integer Integration` {
 //    @Test(arguments: [
 //        (Integer(1), "1"),
 //        (.init(100), "100"),
@@ -165,12 +165,12 @@
 //        let property = "z-index: \(integer)"
 //        #expect(property == "z-index: \(expected)")
 //    }
-//}
+// }
 //
 //// MARK: - Cross-Module Type Usage
 //
-//@Suite
-//struct `CSS Types - Cross-Module Usage` {
+// @Suite
+// struct `CSS Types - Cross-Module Usage` {
 //    @Test func `shared types work across modules`() {
 //        // Url is in Shared module but used in many contexts
 //        let url = Url("image.jpg")
@@ -193,12 +193,12 @@
 //        #expect(margin == "margin: 100px")
 //        #expect(padding == "padding: 100px")
 //    }
-//}
+// }
 //
 //// MARK: - Type Safety
 //
-//@Suite
-//struct `CSS Types - Type Safety` {
+// @Suite
+// struct `CSS Types - Type Safety` {
 //    @Test func `length cannot be used where angle is required`() {
 //        // This test documents type safety - these types are distinct
 //        let length = Length.px(100)
@@ -219,12 +219,12 @@
 //        #expect(length.description.contains("px"))
 //        #expect(time.description != length.description)
 //    }
-//}
+// }
 //
 //// MARK: - Complex Property Values
 //
-//@Suite
-//struct `CSS Types - Complex Properties` {
+// @Suite
+// struct `CSS Types - Complex Properties` {
 //    @Test func `multiple transform functions combined`() {
 //        let transform = "transform: \(TransformFunction.translate(.px(100), .px(50))) \(TransformFunction.rotate(.deg(45))) \(TransformFunction.scale(sx: 1.5)) \(TransformFunction.skew(.deg(10), .deg(5)))"
 //
@@ -245,12 +245,12 @@
 //        #expect(animation.contains("2s"))
 //        #expect(animation.contains("0.5s"))
 //    }
-//}
+// }
 //
 //// MARK: - Edge Cases
 //
-//@Suite
-//struct `CSS Types - Edge Cases` {
+// @Suite
+// struct `CSS Types - Edge Cases` {
 //    @Test func `zero values across different types`() {
 //        let zeroLength = Length.px(0)
 //        let zeroPercentage = Percentage(0)
@@ -294,11 +294,11 @@
 //        #expect(smallNumber.description == "0.001")
 //        #expect(smallTime.description == "0.001s")
 //    }
-//}
+// }
 //
 //// MARK: - Performance
 //
-//extension `Performance Tests` {
+// extension `Performance Tests` {
 //    @Suite
 //    struct `CSS Types - Performance` {
 //        @Test(.timeLimit(.minutes(1)))
@@ -328,4 +328,4 @@
 //            }
 //        }
 //    }
-//}
+// }

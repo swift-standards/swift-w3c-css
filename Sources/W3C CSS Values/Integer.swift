@@ -1,4 +1,3 @@
-
 /// Represents a CSS integer value.
 ///
 /// The `Integer` type represents a positive or negative whole number in CSS.

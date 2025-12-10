@@ -5,7 +5,6 @@
 //  Created by Coen ten Thije Boonkkamp on 29/08/2024.
 //
 
-
 /// Represents CSS angle values used for rotations, gradients, and transforms.
 ///
 /// CSS angles are used in various properties like `transform`, `gradient`, and `animation`,

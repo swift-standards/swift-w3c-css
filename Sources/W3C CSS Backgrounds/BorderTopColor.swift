@@ -1,6 +1,6 @@
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
 
 /// Represents the CSS `border-top-color` property, which sets the color of the top border.
 ///

@@ -1,4 +1,3 @@
-
 /// Represents a CSS ratio value.
 ///
 /// The `Ratio` type represents a proportional relationship between two values in CSS, most commonly
@@ -40,7 +39,9 @@ public struct Ratio: Sendable, Hashable, Comparable {
             throw RatioError.invalidValue("Width component of ratio must be positive, got \(width)")
         }
         guard height >= 0 else {
-            throw RatioError.invalidValue("Height component of ratio must be positive, got \(height)")
+            throw RatioError.invalidValue(
+                "Height component of ratio must be positive, got \(height)"
+            )
         }
         self.width = width
         self.height = height
@@ -74,6 +75,7 @@ public struct Ratio: Sendable, Hashable, Comparable {
         return width / height
     }
 
+    // swiftlint:disable force_try
     /// Creates a square ratio (1:1)
     public static let square = try! Ratio(1, 1)
 
@@ -91,6 +93,7 @@ public struct Ratio: Sendable, Hashable, Comparable {
 
     /// Creates a 2.39:1 ratio (anamorphic widescreen)
     public static let cinemascope = try! Ratio(239, 100)
+    // swiftlint:enable force_try
 }
 
 /// Provides string conversion for CSS output
@@ -110,6 +113,7 @@ extension Ratio: CustomStringConvertible {
 extension Ratio: ExpressibleByIntegerLiteral {
     /// Creates a ratio from an integer literal (value/1)
     public init(integerLiteral value: Int) {
+        // swiftlint:disable:next force_try
         try! self.init(value)
     }
 }
@@ -118,6 +122,7 @@ extension Ratio: ExpressibleByIntegerLiteral {
 extension Ratio: ExpressibleByFloatLiteral {
     /// Creates a ratio from a floating point literal (value/1)
     public init(floatLiteral value: Double) {
+        // swiftlint:disable:next force_try
         try! self.init(value)
     }
 }
@@ -132,6 +137,7 @@ extension Ratio {
     /// Returns the inverse of this ratio (height/width)
     public var inverse: Ratio {
         // Since this ratio is valid, the inverse will also be valid (both components are positive)
+        // swiftlint:disable:next force_try
         return try! Ratio(height, width)
     }
 
@@ -165,6 +171,7 @@ extension Ratio {
 
         let divisor = gcd(width, height)
         // Since we're dividing positive values by a positive divisor, result will be positive
+        // swiftlint:disable:next force_try
         return try! Ratio(width / divisor, height / divisor)
     }
 }

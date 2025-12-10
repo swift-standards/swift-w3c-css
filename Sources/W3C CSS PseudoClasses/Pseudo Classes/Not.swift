@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:not()` pseudo-class.
 ///
 /// The `:not()` pseudo-class matches elements that do not match the given selector.

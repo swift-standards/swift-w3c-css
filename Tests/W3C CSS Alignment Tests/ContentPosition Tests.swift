@@ -4,6 +4,7 @@
 // Tests for CSS ContentPosition type
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -17,7 +18,7 @@ struct `ContentPosition - Initialization` {
         (ContentPosition.flexStart, "flex-start"),
         (ContentPosition.flexEnd, "flex-end"),
         (ContentPosition.left, "left"),
-        (ContentPosition.right, "right")
+        (ContentPosition.right, "right"),
     ])
     func `content position renders with correct description`(
         position: ContentPosition,
@@ -98,7 +99,7 @@ struct `ContentPosition - Hashable Conformance` {
             ContentPosition.flexStart,
             ContentPosition.flexEnd,
             ContentPosition.left,
-            ContentPosition.right
+            ContentPosition.right,
         ]
         let uniqueValues = Set(values)
         #expect(uniqueValues.count == values.count)

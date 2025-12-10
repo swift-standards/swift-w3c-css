@@ -55,7 +55,8 @@ public enum WithGlobal<T: Sendable & Hashable>: Sendable, Hashable {
     ///
     /// Allows chaining operations that themselves produce `WithGlobal` values.
     @inlinable
-    public func flatMap<U: Sendable & Hashable>(_ transform: (T) -> WithGlobal<U>) -> WithGlobal<U> {
+    public func flatMap<U: Sendable & Hashable>(_ transform: (T) -> WithGlobal<U>) -> WithGlobal<U>
+    {
         switch self {
         case .value(let t):
             return transform(t)

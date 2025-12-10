@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:optional` pseudo-class.
 ///
 /// The `:optional` pseudo-class matches form elements that do not have the required attribute set.

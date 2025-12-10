@@ -1,4 +1,3 @@
-
 /// Represents CSS display internal values for elements within table and ruby layouts.
 ///
 /// The `DisplayInternal` data type specifies the role an element plays within complex layout

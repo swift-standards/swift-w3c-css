@@ -4,6 +4,7 @@
 // Tests for CSS TimePercentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `TimePercentage - Time Values` {
         (1.5, "s", "1.5s"),
         (500, "ms", "500ms"),
         (2, "s", "2s"),
-        (100, "ms", "100ms")
+        (100, "ms", "100ms"),
     ])
     func `time value renders correctly`(
         value: Double,
@@ -43,7 +44,7 @@ struct `TimePercentage - Percentage Values` {
         (33.33, "33.33%"),
         (-25, "-25%"),
         (100, "100%"),
-        (0, "0%")
+        (0, "0%"),
     ])
     func `percentage value renders correctly`(
         value: Percentage,

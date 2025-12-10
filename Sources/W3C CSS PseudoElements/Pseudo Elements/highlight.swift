@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::highlight() pseudo-element.
 ///
 /// The `Highlight` pseudo-element applies styles to custom highlight ranges created

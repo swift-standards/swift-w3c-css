@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::placeholder pseudo-element.
 ///
 /// The `Placeholder` pseudo-element represents the placeholder text in an `<input>`

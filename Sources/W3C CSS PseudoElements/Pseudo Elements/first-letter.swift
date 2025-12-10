@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::first-letter pseudo-element.
 ///
 /// The `FirstLetter` pseudo-element applies styles to the first letter of the first line

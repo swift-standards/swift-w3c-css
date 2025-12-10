@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::file-selector-button pseudo-element.
 ///
 /// The `FileSelectorButton` pseudo-element represents the button of an `<input>` element

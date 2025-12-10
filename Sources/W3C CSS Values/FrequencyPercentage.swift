@@ -1,4 +1,3 @@
-
 /// Represents a CSS value that can be either a frequency or a percentage.
 ///
 /// The `FrequencyPercentage` type allows for values expressed either as absolute

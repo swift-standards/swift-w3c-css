@@ -1,6 +1,6 @@
+import W3C_CSS_Images
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Images
 
 /// Represents the CSS `background-image` property, which sets one or more background images on an element.
 ///

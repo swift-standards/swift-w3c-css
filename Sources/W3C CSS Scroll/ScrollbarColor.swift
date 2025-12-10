@@ -1,9 +1,9 @@
-import W3C_CSS_Values
 import W3C_CSS_Color
+import W3C_CSS_Shared
+import W3C_CSS_Values
+
 //
 // ScrollbarColor.swift
-
-import W3C_CSS_Shared
 
 /// The `scrollbar-color` CSS property sets the color of the scrollbar track and thumb.
 ///

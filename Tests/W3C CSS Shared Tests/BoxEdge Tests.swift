@@ -4,6 +4,7 @@
 // Tests for CSS BoxEdge type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Main BoxEdge Values
@@ -17,7 +18,7 @@ struct `BoxEdge - Main Values` {
         (BoxEdge.marginBox, "margin-box"),
         (BoxEdge.fillBox, "fill-box"),
         (BoxEdge.strokeBox, "stroke-box"),
-        (BoxEdge.viewBox, "view-box")
+        (BoxEdge.viewBox, "view-box"),
     ])
     func `main box edge values render correctly`(
         boxEdge: BoxEdge,
@@ -32,7 +33,7 @@ struct `BoxEdge - Raw Values` {
     @Test(arguments: [
         (BoxEdge.contentBox, "content-box"),
         (BoxEdge.borderBox, "border-box"),
-        (BoxEdge.viewBox, "view-box")
+        (BoxEdge.viewBox, "view-box"),
     ])
     func `main raw values are correct`(
         boxEdge: BoxEdge,
@@ -65,7 +66,7 @@ struct `BoxEdge.Visual - Values` {
     @Test(arguments: [
         (BoxEdge.Visual.contentBox, "content-box"),
         (BoxEdge.Visual.paddingBox, "padding-box"),
-        (BoxEdge.Visual.borderBox, "border-box")
+        (BoxEdge.Visual.borderBox, "border-box"),
     ])
     func `visual box edge values render correctly`(
         boxEdge: BoxEdge.Visual,
@@ -83,7 +84,7 @@ struct `BoxEdge.Layout - Values` {
         (BoxEdge.Layout.contentBox, "content-box"),
         (BoxEdge.Layout.paddingBox, "padding-box"),
         (BoxEdge.Layout.borderBox, "border-box"),
-        (BoxEdge.Layout.marginBox, "margin-box")
+        (BoxEdge.Layout.marginBox, "margin-box"),
     ])
     func `layout box edge values render correctly`(
         boxEdge: BoxEdge.Layout,
@@ -102,7 +103,7 @@ struct `BoxEdge.Paint - Values` {
         (BoxEdge.Paint.paddingBox, "padding-box"),
         (BoxEdge.Paint.borderBox, "border-box"),
         (BoxEdge.Paint.fillBox, "fill-box"),
-        (BoxEdge.Paint.strokeBox, "stroke-box")
+        (BoxEdge.Paint.strokeBox, "stroke-box"),
     ])
     func `paint box edge values render correctly`(
         boxEdge: BoxEdge.Paint,
@@ -122,7 +123,7 @@ struct `BoxEdge.Coordinate - Values` {
         (BoxEdge.Coordinate.borderBox, "border-box"),
         (BoxEdge.Coordinate.fillBox, "fill-box"),
         (BoxEdge.Coordinate.strokeBox, "stroke-box"),
-        (BoxEdge.Coordinate.viewBox, "view-box")
+        (BoxEdge.Coordinate.viewBox, "view-box"),
     ])
     func `coordinate box edge values render correctly`(
         boxEdge: BoxEdge.Coordinate,
@@ -143,7 +144,7 @@ struct `BoxEdge.Geometry - Values` {
         (BoxEdge.Geometry.marginBox, "margin-box"),
         (BoxEdge.Geometry.fillBox, "fill-box"),
         (BoxEdge.Geometry.strokeBox, "stroke-box"),
-        (BoxEdge.Geometry.viewBox, "view-box")
+        (BoxEdge.Geometry.viewBox, "view-box"),
     ])
     func `geometry box edge values render correctly`(
         boxEdge: BoxEdge.Geometry,
@@ -212,7 +213,7 @@ struct `BoxEdge - Edge Cases` {
     @Test func `all main box edge types are distinct`() {
         let allBoxEdges: [BoxEdge] = [
             .contentBox, .paddingBox, .borderBox,
-            .marginBox, .fillBox, .strokeBox, .viewBox
+            .marginBox, .fillBox, .strokeBox, .viewBox,
         ]
         let uniqueDescriptions = Set(allBoxEdges.map { $0.description })
         #expect(uniqueDescriptions.count == allBoxEdges.count)

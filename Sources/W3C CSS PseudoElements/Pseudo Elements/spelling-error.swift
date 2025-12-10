@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::spelling-error pseudo-element.
 ///
 /// The `SpellingError` pseudo-element represents a text segment that the user agent

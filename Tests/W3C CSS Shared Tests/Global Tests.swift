@@ -4,6 +4,7 @@
 // Tests for CSS Global type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Global - Enum Cases` {
         (Global.initial, "initial"),
         (Global.revert, "revert"),
         (Global.revertLayer, "revert-layer"),
-        (Global.unset, "unset")
+        (Global.unset, "unset"),
     ])
     func `global enum cases render correctly`(
         global: Global,

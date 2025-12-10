@@ -1,4 +1,3 @@
-
 /// Represents a CSS dimension, which is a number with a unit.
 ///
 /// The `Dimension` data type is the generic parent type for all CSS values that combine

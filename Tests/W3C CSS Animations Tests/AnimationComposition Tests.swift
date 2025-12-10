@@ -4,6 +4,7 @@
 // Tests for CSS AnimationComposition type
 
 import Testing
+
 @testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
@@ -22,7 +23,7 @@ struct `AnimationComposition - Basic Values` {
     @Test(arguments: [
         (AnimationComposition.replace, "replace"),
         (AnimationComposition.add, "add"),
-        (AnimationComposition.accumulate, "accumulate")
+        (AnimationComposition.accumulate, "accumulate"),
     ])
     func `renders basic values correctly`(
         value: AnimationComposition,
@@ -41,7 +42,7 @@ struct `AnimationComposition - Global Values` {
         (AnimationComposition.initial, "initial"),
         (AnimationComposition.revert, "revert"),
         (AnimationComposition.revertLayer, "revert-layer"),
-        (AnimationComposition.unset, "unset")
+        (AnimationComposition.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationComposition,

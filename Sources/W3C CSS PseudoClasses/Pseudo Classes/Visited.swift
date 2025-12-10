@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:visited` pseudo-class.
 ///
 /// The `:visited` pseudo-class matches links that have been visited by the user.

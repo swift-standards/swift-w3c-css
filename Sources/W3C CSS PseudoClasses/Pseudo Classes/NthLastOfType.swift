@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:nth-last-of-type()` pseudo-class.
 ///
 /// The `:nth-last-of-type()` pseudo-class matches elements based on their position among siblings of the same type, counting from the end.

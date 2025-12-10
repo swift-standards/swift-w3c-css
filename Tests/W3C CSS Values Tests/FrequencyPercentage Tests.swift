@@ -4,6 +4,7 @@
 // Tests for CSS FrequencyPercentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `FrequencyPercentage - Frequency Values` {
         (440, "Hz", "440Hz"),
         (2.5, "kHz", "2.5kHz"),
         (100, "Hz", "100Hz"),
-        (1, "kHz", "1kHz")
+        (1, "kHz", "1kHz"),
     ])
     func `frequency value renders correctly`(
         value: Number,
@@ -43,7 +44,7 @@ struct `FrequencyPercentage - Percentage Values` {
         (100, "100%"),
         (0, "0%"),
         (33.3, "33.3%"),
-        (50, "50%")
+        (50, "50%"),
     ])
     func `percentage value renders correctly`(
         value: Percentage,

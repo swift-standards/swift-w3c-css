@@ -4,6 +4,7 @@
 // Tests for CSS AnimationFillMode type
 
 import Testing
+
 @testable import W3C_CSS_Animations
 
 // MARK: - Basic Functionality
@@ -21,7 +22,7 @@ struct `AnimationFillMode - Basic Values` {
         (AnimationFillMode.none, "none"),
         (AnimationFillMode.forwards, "forwards"),
         (AnimationFillMode.backwards, "backwards"),
-        (AnimationFillMode.both, "both")
+        (AnimationFillMode.both, "both"),
     ])
     func `renders basic values correctly`(
         value: AnimationFillMode,
@@ -40,7 +41,7 @@ struct `AnimationFillMode - Global Values` {
         (AnimationFillMode.initial, "initial"),
         (AnimationFillMode.revert, "revert"),
         (AnimationFillMode.revertLayer, "revert-layer"),
-        (AnimationFillMode.unset, "unset")
+        (AnimationFillMode.unset, "unset"),
     ])
     func `renders global values correctly`(
         value: AnimationFillMode,
@@ -107,7 +108,9 @@ struct `AnimationFillMode - CSS Property Usage` {
     }
 
     @Test func `multiple fill modes can be combined in array notation`() {
-        let modes = [AnimationFillMode.forwards, AnimationFillMode.backwards, AnimationFillMode.both]
+        let modes = [
+            AnimationFillMode.forwards, AnimationFillMode.backwards, AnimationFillMode.both,
+        ]
         let css = modes.map(\.description).joined(separator: ", ")
         #expect(css == "forwards, backwards, both")
     }

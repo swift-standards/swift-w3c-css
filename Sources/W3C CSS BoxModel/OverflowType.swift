@@ -16,7 +16,7 @@
 /////         whether to clip the content, show scrollbars, or display the content outside the box.
 /////
 ///// - SeeAlso: [MDN Web Docs on overflow](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
-//public enum Overflow: String, Sendable, Hashable, CaseIterable {
+// public enum Overflow: String, Sendable, Hashable, CaseIterable {
 //    public static let allCases: [Overflow] = [.visible, .hidden, .clip, .scroll, .auto]
 //
 //    /// Content is not clipped and may be visible outside the padding box.
@@ -54,12 +54,12 @@
 //    /// This value is deprecated and should not be used in new code.
 //    @available(*, deprecated, message: "The overlay value is deprecated. Use auto instead.")
 //    case overlay
-//}
+// }
 //
 ///// Provides string conversion for CSS output
-//extension Overflow: CustomStringConvertible {
+// extension Overflow: CustomStringConvertible {
 //    /// Converts the overflow type to its CSS string representation
 //    public var description: String {
 //        return rawValue
 //    }
-//}
+// }

@@ -4,6 +4,7 @@
 // Tests for CSS Combinator types
 
 import Testing
+
 @testable import W3C_CSS_Selectors
 
 // MARK: - Basic Functionality
@@ -367,7 +368,7 @@ struct `Combinator - Hashable Conformance` {
     @Test func `combinators can be used in set`() {
         let set: Set<ChildCombinator> = [
             ChildCombinator(),
-            ChildCombinator()
+            ChildCombinator(),
         ]
         #expect(set.count == 1)
     }

@@ -181,13 +181,34 @@ extension TransformFunction {
     // MARK: - Overloads for Double/Int parameter conversion
 
     /// Creates a matrix transform with Double values
-    public static func matrix(a: Double, b: Double, c: Double, d: Double, tx: Double, ty: Double) -> Self {
-        .matrix(a: Number(a), b: Number(b), c: Number(c), d: Number(d), tx: Number(tx), ty: Number(ty))
+    public static func matrix(
+        a: Double,
+        b: Double,
+        c: Double,
+        d: Double,
+        tx: Double,
+        ty: Double
+    ) -> Self {
+        .matrix(
+            a: Number(a),
+            b: Number(b),
+            c: Number(c),
+            d: Number(d),
+            tx: Number(tx),
+            ty: Number(ty)
+        )
     }
 
     /// Creates a matrix transform with Int values
     public static func matrix(a: Int, b: Int, c: Int, d: Int, tx: Int, ty: Int) -> Self {
-        .matrix(a: Number(a), b: Number(b), c: Number(c), d: Number(d), tx: Number(tx), ty: Number(ty))
+        .matrix(
+            a: Number(a),
+            b: Number(b),
+            c: Number(c),
+            d: Number(d),
+            tx: Number(tx),
+            ty: Number(ty)
+        )
     }
 
     /// Creates a rotate3d transform with Double values

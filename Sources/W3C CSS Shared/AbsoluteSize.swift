@@ -1,4 +1,3 @@
-
 /// Represents absolute size keywords used in CSS font properties.
 ///
 /// The `AbsoluteSize` data type defines a set of predefined size keywords that can be used

@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollMarginBlockStart.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-block-start` CSS property defines the margin of the scroll snap area at the start of the block
 /// dimension. This property is not interpolable according to CSS standards.

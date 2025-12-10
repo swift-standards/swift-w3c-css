@@ -1,12 +1,12 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 //  LightingColor.swift
 //  swift-css
 //
 //  Created by Coen ten Thije Boonkkamp on 28/03/2025.
 //
-
-import W3C_CSS_Shared
 
 /// The lighting-color CSS property defines the color of the light source for the
 /// <feDiffuseLighting> and <feSpecularLighting> SVG lighting filter primitives within an SVG <filter>.

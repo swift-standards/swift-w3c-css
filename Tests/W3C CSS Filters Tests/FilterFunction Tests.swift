@@ -4,8 +4,9 @@
 // Tests for CSS FilterFunction type
 
 import Testing
-@testable import W3C_CSS_Filters
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Filters
 
 // MARK: - Blur Filter
 
@@ -15,7 +16,7 @@ struct `FilterFunction - Blur` {
         (Length.px(5), "blur(5px)"),
         (Length.em(0.5), "blur(0.5em)"),
         (Length.rem(1), "blur(1rem)"),
-        (Length.px(10), "blur(10px)")
+        (Length.px(10), "blur(10px)"),
     ])
     func `blur filter renders correctly`(
         radius: Length,
@@ -35,7 +36,7 @@ struct `FilterFunction - Brightness` {
         (1.0, "brightness(100%)"),
         (0.0, "brightness(0%)"),
         (1.5, "brightness(1.5)"),
-        (2.0, "brightness(2)")
+        (2.0, "brightness(2)"),
     ])
     func `brightness filter renders correctly`(
         value: Double,
@@ -70,7 +71,7 @@ struct `FilterFunction - Contrast` {
         (0.75, "contrast(75%)"),
         (1.0, "contrast(100%)"),
         (2.0, "contrast(2)"),
-        (0.5, "contrast(50%)")
+        (0.5, "contrast(50%)"),
     ])
     func `contrast filter renders correctly`(
         value: Double,
@@ -144,7 +145,7 @@ struct `FilterFunction - Grayscale` {
         (0.5, "grayscale(50%)"),
         (1.0, "grayscale(100%)"),
         (0.0, "grayscale(0%)"),
-        (0.25, "grayscale(25%)")
+        (0.25, "grayscale(25%)"),
     ])
     func `grayscale filter renders correctly`(
         value: Double,
@@ -163,7 +164,7 @@ struct `FilterFunction - Hue Rotate` {
         (Angle.deg(90), "hue-rotate(90deg)"),
         (Angle.deg(180), "hue-rotate(180deg)"),
         (Angle.turn(0.25), "hue-rotate(0.25turn)"),
-        (Angle.rad(1.57), "hue-rotate(1.57rad)")
+        (Angle.rad(1.57), "hue-rotate(1.57rad)"),
     ])
     func `hue-rotate filter renders correctly`(
         angle: Angle,
@@ -197,7 +198,7 @@ struct `FilterFunction - Invert` {
         (0.75, "invert(75%)"),
         (1.0, "invert(100%)"),
         (0.0, "invert(0%)"),
-        (0.5, "invert(50%)")
+        (0.5, "invert(50%)"),
     ])
     func `invert filter renders correctly`(
         value: Double,
@@ -216,7 +217,7 @@ struct `FilterFunction - Opacity` {
         (0.5, "opacity(50%)"),
         (1.0, "opacity(100%)"),
         (0.0, "opacity(0%)"),
-        (0.75, "opacity(75%)")
+        (0.75, "opacity(75%)"),
     ])
     func `opacity filter renders correctly`(
         value: Double,
@@ -235,7 +236,7 @@ struct `FilterFunction - Saturate` {
         (0.5, "saturate(50%)"),
         (1.0, "saturate(100%)"),
         (2.0, "saturate(2)"),
-        (0.0, "saturate(0%)")
+        (0.0, "saturate(0%)"),
     ])
     func `saturate filter renders correctly`(
         value: Double,
@@ -262,7 +263,7 @@ struct `FilterFunction - Sepia` {
         (0.6, "sepia(60%)"),
         (1.0, "sepia(100%)"),
         (0.0, "sepia(0%)"),
-        (0.8, "sepia(80%)")
+        (0.8, "sepia(80%)"),
     ])
     func `sepia filter renders correctly`(
         value: Double,
@@ -365,7 +366,8 @@ struct `FilterFunction - CSS Property Usage` {
     }
 
     @Test func `complex filter chain`() {
-        let filter = "filter: \(FilterFunction.blur(.px(5))) \(FilterFunction.brightness(0.8)) \(FilterFunction.contrast(1.2)) \(FilterFunction.grayscale(0.5))"
+        let filter =
+            "filter: \(FilterFunction.blur(.px(5))) \(FilterFunction.brightness(0.8)) \(FilterFunction.contrast(1.2)) \(FilterFunction.grayscale(0.5))"
         #expect(filter == "filter: blur(5px) brightness(80%) contrast(1.2) grayscale(50%)")
     }
 }

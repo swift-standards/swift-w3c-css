@@ -4,6 +4,7 @@
 // Tests for CSS Position type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -15,7 +16,7 @@ struct `Position - Single Keyword` {
         (Position.keyword(.top), "top"),
         (Position.keyword(.right), "right"),
         (Position.keyword(.bottom), "bottom"),
-        (Position.keyword(.left), "left")
+        (Position.keyword(.left), "left"),
     ])
     func `single keyword renders correctly`(
         position: Position,
@@ -41,7 +42,7 @@ struct `Position - Two Keywords` {
     @Test(arguments: [
         (Position.keywords(.top, .left), "top left"),
         (Position.keywords(.bottom, .right), "bottom right"),
-        (Position.keywords(.center, .center), "center center")
+        (Position.keywords(.center, .center), "center center"),
     ])
     func `two keywords render correctly`(
         position: Position,
@@ -78,7 +79,7 @@ struct `Position - Two Values` {
     @Test(arguments: [
         (Position.values(.px(10), .px(20)), "10px 20px"),
         (Position.values(.percentage(25), .percentage(75)), "25% 75%"),
-        (Position.values(.px(10), .percentage(50)), "10px 50%")
+        (Position.values(.px(10), .percentage(50)), "10px 50%"),
     ])
     func `two values render correctly`(
         position: Position,
@@ -115,7 +116,7 @@ struct `Position - Static Constants` {
         (Position.topLeft, "top left"),
         (Position.topRight, "top right"),
         (Position.bottomLeft, "bottom left"),
-        (Position.bottomRight, "bottom right")
+        (Position.bottomRight, "bottom right"),
     ])
     func `static constants render correctly`(
         position: Position,

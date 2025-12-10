@@ -1,6 +1,6 @@
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
 
 /// The CSS `stop-color` property defines the color to use for an SVG `<stop>` element within
 /// a gradient. If present, it overrides the element's stop-color attribute.

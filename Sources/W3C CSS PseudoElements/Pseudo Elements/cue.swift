@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::cue pseudo-element.
 ///
 /// The `Cue` pseudo-element matches WebVTT cues within a selected element. This can be used

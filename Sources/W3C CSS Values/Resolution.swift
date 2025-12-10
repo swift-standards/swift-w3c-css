@@ -1,4 +1,3 @@
-
 /// Represents a CSS resolution value.
 ///
 /// The `Resolution` type denotes the pixel density of an output device. Resolution values
@@ -49,7 +48,9 @@ public struct Resolution: Sendable, Hashable {
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
     public init(_ value: Double, unit: Unit) throws {
         guard value >= 0 else {
-            throw ResolutionError.invalidValue("Resolution value must be non-negative, got \(value)")
+            throw ResolutionError.invalidValue(
+                "Resolution value must be non-negative, got \(value)"
+            )
         }
         self.value = value
         self.unit = unit
@@ -108,6 +109,7 @@ public struct Resolution: Sendable, Hashable {
 
         // Then convert from dpi to the target unit
         // Note: These won't throw since we're converting from a valid positive value
+        // swiftlint:disable force_try
         switch targetUnit {
         case .dpi:
             return try! Resolution(dpiValue, unit: .dpi)
@@ -118,8 +120,10 @@ public struct Resolution: Sendable, Hashable {
         case .x:
             return try! Resolution(dpiValue / 96, unit: .x)
         }
+        // swiftlint:enable force_try
     }
 
+    // swiftlint:disable force_try
     /// Standard screen resolution (96dpi, 1dppx)
     public static let standard = try! Resolution.dpi(96)
 
@@ -128,6 +132,7 @@ public struct Resolution: Sendable, Hashable {
 
     /// Common print resolution (300dpi)
     public static let print = try! Resolution.dpi(300)
+    // swiftlint:enable force_try
 }
 
 /// Provides string conversion for CSS output

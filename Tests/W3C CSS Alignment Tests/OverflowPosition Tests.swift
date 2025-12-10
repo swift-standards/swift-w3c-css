@@ -4,6 +4,7 @@
 // Tests for CSS OverflowPosition type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Basic Functionality
@@ -12,7 +13,7 @@ import Testing
 struct `OverflowPosition - Initialization` {
     @Test(arguments: [
         (OverflowPosition.safe, "safe"),
-        (OverflowPosition.unsafe, "unsafe")
+        (OverflowPosition.unsafe, "unsafe"),
     ])
     func `overflow position renders with correct description`(
         position: OverflowPosition,
@@ -51,7 +52,7 @@ struct `OverflowPosition - Hashable Conformance` {
     @Test func `all values are distinct`() {
         let values = [
             OverflowPosition.safe,
-            OverflowPosition.unsafe
+            OverflowPosition.unsafe,
         ]
         let uniqueValues = Set(values)
         #expect(uniqueValues.count == values.count)
@@ -92,7 +93,7 @@ struct `OverflowPosition - RawRepresentable Conformance` {
 
     @Test(arguments: [
         ("safe", OverflowPosition.safe),
-        ("unsafe", OverflowPosition.unsafe)
+        ("unsafe", OverflowPosition.unsafe),
     ])
     func `initialization from raw value works correctly`(
         rawValue: String,

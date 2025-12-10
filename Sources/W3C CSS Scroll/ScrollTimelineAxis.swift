@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollTimelineAxis.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-timeline-axis` CSS property specifies the scrollbar direction that will be used to provide the
 /// timeline for a named scroll progress timeline animation, which is progressed through by scrolling a scrollable

@@ -1,9 +1,9 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollMarginInlineEnd.swift
 //
-
-import W3C_CSS_Shared
 
 /// The `scroll-margin-inline-end` CSS property defines the margin of the scroll snap area at the end of the inline
 /// dimension. This property is not interpolable according to CSS standards.

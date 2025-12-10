@@ -4,6 +4,7 @@
 // Tests for CSS Overflow type
 
 import Testing
+
 @testable import W3C_CSS_Shared
 
 // MARK: - Basic Functionality
@@ -16,7 +17,7 @@ struct `Overflow - Enum Cases` {
         (Overflow.clip, "clip"),
         (Overflow.scroll, "scroll"),
         (Overflow.auto, "auto"),
-        (Overflow.overlay, "overlay")
+        (Overflow.overlay, "overlay"),
     ])
     func `enum cases have correct raw values`(
         overflow: Overflow,
@@ -34,7 +35,7 @@ struct `Overflow - Description` {
         (Overflow.clip, "clip"),
         (Overflow.scroll, "scroll"),
         (Overflow.auto, "auto"),
-        (Overflow.overlay, "overlay")
+        (Overflow.overlay, "overlay"),
     ])
     func `description returns raw value`(
         overflow: Overflow,
@@ -91,7 +92,7 @@ struct `Overflow - RawValue Initialization` {
         ("clip", Overflow.clip),
         ("scroll", Overflow.scroll),
         ("auto", Overflow.auto),
-        ("overlay", Overflow.overlay)
+        ("overlay", Overflow.overlay),
     ])
     func `initializes from valid raw values`(
         rawValue: String,

@@ -1,4 +1,3 @@
-
 /// Represents CSS display outside values that determine the element's outer display type.
 ///
 /// The `DisplayOutside` data type specifies the element's outer display type, which defines

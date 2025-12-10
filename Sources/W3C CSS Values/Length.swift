@@ -256,6 +256,7 @@ extension Length: Numeric {
     /// ```swift
     /// let doubled = 5.px * 2 // 10px
     /// ```
+    @_disfavoredOverload
     public static func * (lhs: Length, rhs: Length) -> Length {
         switch (lhs, rhs) {
         case (.length(let v1, let u1), .length(let v2, let u2)) where u1 == u2:
@@ -268,6 +269,7 @@ extension Length: Numeric {
     /// Multiplies a Length value in place
     ///
     /// Replaces the left-hand value with the result of multiplying by the right-hand value.
+    @_disfavoredOverload
     public static func *= (lhs: inout Length, rhs: Length) {
         lhs = lhs * rhs
     }
@@ -283,6 +285,7 @@ extension Length: Numeric {
     /// let sum = 5.px + 10.px // 15px
     /// let mixed = 50.percent + 20.px // calc(50% + 20px)
     /// ```
+    @_disfavoredOverload
     public static func + (lhs: Length, rhs: Length) -> Length {
         switch (lhs, rhs) {
         case (.length(let v1, let u1), .length(let v2, let u2)) where u1 == u2:
@@ -297,6 +300,7 @@ extension Length: Numeric {
     /// Adds a Length value in place
     ///
     /// Replaces the left-hand value with the result of adding the right-hand value.
+    @_disfavoredOverload
     public static func += (lhs: inout Length, rhs: Length) {
         lhs = lhs + rhs
     }
@@ -312,6 +316,7 @@ extension Length: Numeric {
     /// let difference = 15.px - 5.px // 10px
     /// let mixed = 100.percent - 20.px // calc(100% - 20px)
     /// ```
+    @_disfavoredOverload
     public static func - (lhs: Length, rhs: Length) -> Length {
         switch (lhs, rhs) {
         case (.length(let v1, let u1), .length(let v2, let u2)) where u1 == u2:
@@ -326,6 +331,7 @@ extension Length: Numeric {
     /// Subtracts a Length value in place
     ///
     /// Replaces the left-hand value with the result of subtracting the right-hand value.
+    @_disfavoredOverload
     public static func -= (lhs: inout Length, rhs: Length) {
         lhs = lhs - rhs
     }
@@ -347,6 +353,7 @@ extension Length: Numeric {
     /// ```swift
     /// let half = 10.px / 2 // 5px
     /// ```
+    @_disfavoredOverload
     public static func / (lhs: Length, rhs: Double) -> Length {
         // Note: Division by zero produces infinity in floating-point math
         switch lhs {
@@ -378,6 +385,7 @@ extension Length {
     /// ```swift
     /// let third = 15.px / 3 // 5px
     /// ```
+    @_disfavoredOverload
     public static func / (lhs: Length, rhs: Int) -> Length {
         return lhs / Double(rhs)
     }

@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::selection pseudo-element.
 ///
 /// The `Selection` pseudo-element applies styles to the part of a document that has

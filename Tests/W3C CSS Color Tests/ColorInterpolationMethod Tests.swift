@@ -4,8 +4,9 @@
 // Tests for CSS ColorInterpolationMethod type
 
 import Testing
-@testable import W3C_CSS_Color
 import W3C_CSS_Values
+
+@testable import W3C_CSS_Color
 
 // MARK: - Rectangular Color Spaces
 
@@ -22,7 +23,7 @@ struct `ColorInterpolationMethod - Rectangular Spaces` {
         (.oklab, "in oklab"),
         (.xyz, "in xyz"),
         (.xyzD50, "in xyz-d50"),
-        (.xyzD65, "in xyz-d65")
+        (.xyzD65, "in xyz-d65"),
     ])
     func `rectangular color spaces render correctly`(
         space: ColorInterpolationMethod.RectangularColorSpace,
@@ -40,7 +41,7 @@ struct `ColorInterpolationMethod - Polar Spaces Without Hue` {
         (ColorInterpolationMethod.PolarColorSpace.hsl, "in hsl"),
         (.hwb, "in hwb"),
         (.lch, "in lch"),
-        (.oklch, "in oklch")
+        (.oklch, "in oklch"),
     ])
     func `polar color spaces without hue method render correctly`(
         space: ColorInterpolationMethod.PolarColorSpace,
@@ -53,10 +54,13 @@ struct `ColorInterpolationMethod - Polar Spaces Without Hue` {
 @Suite
 struct `ColorInterpolationMethod - Polar Spaces With Hue` {
     @Test(arguments: [
-        (ColorInterpolationMethod.PolarColorSpace.hsl, ColorInterpolationMethod.HueInterpolationMethod.shorter, "in hsl shorter hue"),
+        (
+            ColorInterpolationMethod.PolarColorSpace.hsl,
+            ColorInterpolationMethod.HueInterpolationMethod.shorter, "in hsl shorter hue"
+        ),
         (.hwb, .longer, "in hwb longer hue"),
         (.lch, .increasing, "in lch increasing hue"),
-        (.oklch, .decreasing, "in oklch decreasing hue")
+        (.oklch, .decreasing, "in oklch decreasing hue"),
     ])
     func `polar color spaces with hue method render correctly`(
         space: ColorInterpolationMethod.PolarColorSpace,
@@ -74,7 +78,7 @@ struct `ColorInterpolationMethod - Custom Profile` {
     @Test(arguments: [
         ("my-custom-profile", #"in "my-custom-profile""#),
         ("sRGB-IEC61966", #"in "sRGB-IEC61966""#),
-        ("Adobe-RGB-1998", #"in "Adobe-RGB-1998""#)
+        ("Adobe-RGB-1998", #"in "Adobe-RGB-1998""#),
     ])
     func `custom color profile renders correctly`(
         profileName: String,
@@ -163,7 +167,7 @@ struct `ColorInterpolationMethod - Edge Cases` {
         let spaces: [ColorInterpolationMethod.RectangularColorSpace] = [
             .srgb, .srgbLinear, .displayP3, .a98rgb,
             .prophotoRgb, .rec2020, .lab, .oklab,
-            .xyz, .xyzD50, .xyzD65
+            .xyz, .xyzD50, .xyzD65,
         ]
 
         let methods = spaces.map { ColorInterpolationMethod.rectangular($0) }
@@ -180,7 +184,9 @@ struct `ColorInterpolationMethod - Edge Cases` {
     }
 
     @Test func `all hue interpolation methods are distinct`() {
-        let hueMethods: [ColorInterpolationMethod.HueInterpolationMethod] = [.shorter, .longer, .increasing, .decreasing]
+        let hueMethods: [ColorInterpolationMethod.HueInterpolationMethod] = [
+            .shorter, .longer, .increasing, .decreasing,
+        ]
 
         let methods = hueMethods.map { ColorInterpolationMethod.polar(.hsl, $0) }
         let uniqueMethods = Set(methods)
@@ -210,7 +216,7 @@ extension `Performance Tests` {
             let spaces: [ColorInterpolationMethod.RectangularColorSpace] = [
                 .srgb, .srgbLinear, .displayP3, .a98rgb,
                 .prophotoRgb, .rec2020, .lab, .oklab,
-                .xyz, .xyzD50, .xyzD65
+                .xyz, .xyzD50, .xyzD65,
             ]
 
             for i in 0..<100_000 {
@@ -232,7 +238,9 @@ extension `Performance Tests` {
         @Test(.timeLimit(.minutes(1)))
         func `polar color space with hue method creation 100K times`() {
             let spaces: [ColorInterpolationMethod.PolarColorSpace] = [.hsl, .hwb, .lch, .oklch]
-            let hueMethods: [ColorInterpolationMethod.HueInterpolationMethod] = [.shorter, .longer, .increasing, .decreasing]
+            let hueMethods: [ColorInterpolationMethod.HueInterpolationMethod] = [
+                .shorter, .longer, .increasing, .decreasing,
+            ]
 
             for i in 0..<100_000 {
                 let space = spaces[i % spaces.count]

@@ -4,6 +4,7 @@
 // Tests for CSS alignment-baseline property
 
 import Testing
+
 @testable import W3C_CSS_Alignment
 
 // MARK: - Basic Functionality
@@ -22,7 +23,7 @@ struct `AlignmentBaseline - Declaration Rendering` {
         (AlignmentBaseline.textTop, "alignment-baseline:text-top"),
         (AlignmentBaseline.alphabetic, "alignment-baseline:alphabetic"),
         (AlignmentBaseline.middle, "alignment-baseline:middle"),
-        (AlignmentBaseline.auto, "alignment-baseline:auto")
+        (AlignmentBaseline.auto, "alignment-baseline:auto"),
     ])
     func `declaration renders correctly`(
         value: AlignmentBaseline,
@@ -47,7 +48,7 @@ struct `AlignmentBaseline - Baseline Value` {
 struct `AlignmentBaseline - Text Edge Values` {
     @Test(arguments: [
         (AlignmentBaseline.textTop, "text-top"),
-        (AlignmentBaseline.textBottom, "text-bottom")
+        (AlignmentBaseline.textBottom, "text-bottom"),
     ])
     func `text edge values render correctly`(
         value: AlignmentBaseline,
@@ -66,7 +67,7 @@ struct `AlignmentBaseline - Main Alignment Values` {
         (AlignmentBaseline.central, "central"),
         (AlignmentBaseline.ideographic, "ideographic"),
         (AlignmentBaseline.mathematical, "mathematical"),
-        (AlignmentBaseline.middle, "middle")
+        (AlignmentBaseline.middle, "middle"),
     ])
     func `main alignment values render correctly`(
         value: AlignmentBaseline,
@@ -86,7 +87,7 @@ struct `AlignmentBaseline - Deprecated Values` {
         (AlignmentBaseline.afterEdge, "after-edge"),
         (AlignmentBaseline.hanging, "hanging"),
         (AlignmentBaseline.textBeforeEdge, "text-before-edge"),
-        (AlignmentBaseline.textAfterEdge, "text-after-edge")
+        (AlignmentBaseline.textAfterEdge, "text-after-edge"),
     ])
     func `deprecated values render correctly`(
         value: AlignmentBaseline,
@@ -105,7 +106,7 @@ struct `AlignmentBaseline - Global Values` {
         (AlignmentBaseline.initial, "initial"),
         (AlignmentBaseline.revert, "revert"),
         (AlignmentBaseline.revertLayer, "revert-layer"),
-        (AlignmentBaseline.unset, "unset")
+        (AlignmentBaseline.unset, "unset"),
     ])
     func `global values render correctly`(
         value: AlignmentBaseline,
@@ -125,7 +126,7 @@ struct `AlignmentBaseline - Edge Cases` {
             AlignmentBaseline.central,
             AlignmentBaseline.ideographic,
             AlignmentBaseline.mathematical,
-            AlignmentBaseline.middle
+            AlignmentBaseline.middle,
         ]
 
         let descriptions = Set(values.map { $0.description })
@@ -180,7 +181,7 @@ struct `AlignmentBaseline - Value Categories` {
         let currentValues = [
             AlignmentBaseline.baseline,
             AlignmentBaseline.textTop,
-            AlignmentBaseline.textBottom
+            AlignmentBaseline.textBottom,
         ]
 
         for value in currentValues {
@@ -194,7 +195,7 @@ struct `AlignmentBaseline - Value Categories` {
             AlignmentBaseline.central,
             AlignmentBaseline.ideographic,
             AlignmentBaseline.mathematical,
-            AlignmentBaseline.middle
+            AlignmentBaseline.middle,
         ]
 
         for value in mainValues {
@@ -209,7 +210,7 @@ struct `AlignmentBaseline - Value Categories` {
             AlignmentBaseline.afterEdge,
             AlignmentBaseline.hanging,
             AlignmentBaseline.textBeforeEdge,
-            AlignmentBaseline.textAfterEdge
+            AlignmentBaseline.textAfterEdge,
         ]
 
         for value in deprecatedValues {

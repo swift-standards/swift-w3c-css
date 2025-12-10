@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:placeholder-shown` pseudo-class.
 ///
 /// The `:placeholder-shown` pseudo-class matches input or textarea elements that are currently displaying placeholder text.

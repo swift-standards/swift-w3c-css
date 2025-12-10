@@ -1,4 +1,3 @@
-
 /// Represents the CSS ::column pseudo-element.
 ///
 /// The `Column` pseudo-element represents the individual columns generated when a container

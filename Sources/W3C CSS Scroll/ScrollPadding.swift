@@ -1,8 +1,8 @@
+import W3C_CSS_Shared
 import W3C_CSS_Values
+
 //
 // ScrollPadding.swift
-
-import W3C_CSS_Shared
 
 /// The `scroll-padding` CSS property is a shorthand property that sets scroll padding on all sides of an element at once,
 /// much like the padding property does for padding on an element. The scroll-padding properties define offsets for the

@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:any-link` pseudo-class.
 ///
 /// The `:any-link` pseudo-class matches every `<a>` or `<area>` element that has an href attribute, independent of whether it has been visited or not.

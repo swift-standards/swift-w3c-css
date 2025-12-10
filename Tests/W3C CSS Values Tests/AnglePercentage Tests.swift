@@ -4,6 +4,7 @@
 // Tests for CSS AnglePercentage type
 
 import Testing
+
 @testable import W3C_CSS_Values
 
 // MARK: - Basic Functionality
@@ -14,7 +15,7 @@ struct `AnglePercentage - Angle Values` {
         (Angle.deg(45), "45deg"),
         (Angle.rad(1.5708), "1.5708rad"),
         (Angle.grad(100), "100grad"),
-        (Angle.turn(0.25), "0.25turn")
+        (Angle.turn(0.25), "0.25turn"),
     ])
     func `angle value renders correctly`(
         angle: Angle,
@@ -32,7 +33,7 @@ struct `AnglePercentage - Percentage Values` {
         (50, "50%"),
         (100, "100%"),
         (33.33, "33.33%"),
-        (-25, "-25%")
+        (-25, "-25%"),
     ])
     func `percentage value renders correctly`(
         value: Percentage,

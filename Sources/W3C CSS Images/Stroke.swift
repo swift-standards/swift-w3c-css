@@ -5,9 +5,9 @@
 //  Created by Coen ten Thije Boonkkamp on 28/03/2025.
 //
 
+import W3C_CSS_Color
 import W3C_CSS_Shared
 import W3C_CSS_Values
-import W3C_CSS_Color
 
 /// The CSS `stroke` property defines the color or SVG paint server used to draw an element's stroke outline.
 ///

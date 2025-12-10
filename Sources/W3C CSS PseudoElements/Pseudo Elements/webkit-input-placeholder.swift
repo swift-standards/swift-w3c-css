@@ -1,4 +1,3 @@
-
 /// Represents the WebKit-specific ::-webkit-input-placeholder pseudo-element.
 ///
 /// The `WebkitInputPlaceholder` pseudo-element represents placeholder text in input fields

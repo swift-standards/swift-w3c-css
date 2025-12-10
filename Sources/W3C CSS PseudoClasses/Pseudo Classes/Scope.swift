@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:scope` pseudo-class.
 ///
 /// The `:scope` pseudo-class matches elements that are a reference point for selectors to match against.

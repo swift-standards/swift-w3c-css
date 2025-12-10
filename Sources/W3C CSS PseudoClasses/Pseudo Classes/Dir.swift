@@ -1,4 +1,3 @@
-
 /// Represents the CSS `:dir()` pseudo-class.
 ///
 /// The `:dir()` pseudo-class matches elements based on the directionality of the text they contain.

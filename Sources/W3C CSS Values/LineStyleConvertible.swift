@@ -5,7 +5,6 @@
 //  Created on 03/23/2025.
 //
 
-
 public protocol LineStyleConvertible {
     static func lineStyle(_ lineStyle: LineStyle) -> Self
 }

@@ -1,11 +1,11 @@
 import W3C_CSS_Values
+
 //
 //  File.swift
 //  swift-css
 //
 //  Created by Coen ten Thije Boonkkamp on 01/04/2025.
 //
-
 
 public protocol ColorConvertible {
     static func color(_ color: W3C_CSS_Values.Color) -> Self

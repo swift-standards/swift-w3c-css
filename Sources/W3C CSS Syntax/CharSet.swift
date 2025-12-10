@@ -1,4 +1,3 @@
-
 /// Represents a CSS @charset at-rule.
 ///
 /// The @charset CSS at-rule specifies the character encoding used in the style sheet.

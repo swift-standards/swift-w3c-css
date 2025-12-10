@@ -1,4 +1,3 @@
-
 /// Represents CSS legacy display values for backward compatibility.
 ///
 /// The `DisplayLegacy` data type contains single-keyword values from CSS 2 that represent
