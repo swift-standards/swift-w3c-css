@@ -10,23 +10,23 @@
 /////         No whitespace is allowed between the number and unit.
 /////
 ///// - SeeAlso: [MDN Web Docs on dimension values](https://developer.mozilla.org/en-US/docs/Web/CSS/dimension)
-//package protocol Dimension: Sendable, Hashable, CustomStringConvertible {
+// package protocol Dimension: Sendable, Hashable, CustomStringConvertible {
 //    /// The numeric value of the dimension
 //    var value: Double { get }
 //
 //    /// The unit of the dimension
 //    var unit: String { get }
-//}
+// }
 //
 ///// Default implementation for Dimension types
-//extension Dimension {
+// extension Dimension {
 //    /// Converts the dimension to its CSS string representation
 //    ///
 //    /// This method formats the numeric value with its unit for CSS output.
 //    public var description: String {
 //        return "\(value.formatted(.number))\(unit)"
 //    }
-//}
+// }
 //
 ///// Represents a CSS length dimension.
 /////
@@ -41,7 +41,7 @@
 /////
 ///// - Note: This is a basic implementation. The full library would likely have
 /////         specialized types for each specific dimension category.
-//public struct GenericDimension: Dimension {
+// public struct GenericDimension: Dimension {
 //    /// The numeric value of the dimension
 //    public let value: Double
 //
@@ -67,4 +67,4 @@
 //        self.value = Double(value)
 //        self.unit = unit
 //    }
-//}
+// }
