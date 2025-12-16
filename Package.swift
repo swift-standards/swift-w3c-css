@@ -229,7 +229,8 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
                 .product(name: "INCITS 4 1986", package: "swift-incits-4-1986"),
-                .product(name: "Formatting", package: "swift-standards")
+                .product(name: "Formatting", package: "swift-standards"),
+                .product(name: "Geometry", package: "swift-standards")
             ]
         ),
         .testTarget(
