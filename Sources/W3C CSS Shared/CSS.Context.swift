@@ -18,10 +18,10 @@ private func formatNumber(_ value: Double) -> String {
 
 extension Geometry.Ball where N == 2, Scalar == Double, Space == W3C_CSS.Space {
     /// Access CSS-specific functionality for this circle.
-    public var css: CSSContext { CSSContext(self) }
+    public var css: Context { Context(self) }
 
     /// Context wrapper providing CSS value conversion.
-    public struct CSSContext {
+    public struct Context {
         let circle: Geometry<Double, W3C_CSS.Space>.Circle
 
         init(_ circle: Geometry<Double, W3C_CSS.Space>.Circle) {
@@ -44,10 +44,10 @@ extension Geometry.Ball where N == 2, Scalar == Double, Space == W3C_CSS.Space {
 
 extension Geometry.Orthotope where N == 2, Scalar == Double, Space == W3C_CSS.Space {
     /// Access CSS-specific functionality for this rectangle.
-    public var css: CSSContext { CSSContext(self) }
+    public var css: Context { Context(self) }
 
     /// Context wrapper providing CSS value conversion.
-    public struct CSSContext {
+    public struct Context {
         let rectangle: Geometry<Double, W3C_CSS.Space>.Rectangle
 
         init(_ rectangle: Geometry<Double, W3C_CSS.Space>.Rectangle) {
@@ -87,10 +87,10 @@ extension Geometry.Orthotope where N == 2, Scalar == Double, Space == W3C_CSS.Sp
 
 extension Geometry.Ellipse where Scalar == Double, Space == W3C_CSS.Space {
     /// Access CSS-specific functionality for this ellipse.
-    public var css: CSSContext { CSSContext(self) }
+    public var css: Context { Context(self) }
 
     /// Context wrapper providing CSS value conversion.
-    public struct CSSContext {
+    public struct Context {
         let ellipse: Geometry<Double, W3C_CSS.Space>.Ellipse
 
         init(_ ellipse: Geometry<Double, W3C_CSS.Space>.Ellipse) {
@@ -113,10 +113,10 @@ extension Geometry.Ellipse where Scalar == Double, Space == W3C_CSS.Space {
 
 extension Geometry.Polygon where Scalar == Double, Space == W3C_CSS.Space {
     /// Access CSS-specific functionality for this polygon.
-    public var css: CSSContext { CSSContext(self) }
+    public var css: Context { Context(self) }
 
     /// Context wrapper providing CSS value conversion.
-    public struct CSSContext {
+    public struct Context {
         let polygon: Geometry<Double, W3C_CSS.Space>.Polygon
 
         init(_ polygon: Geometry<Double, W3C_CSS.Space>.Polygon) {
@@ -139,10 +139,10 @@ extension Geometry.Polygon where Scalar == Double, Space == W3C_CSS.Space {
 
 extension Geometry.Path where Scalar == Double, Space == W3C_CSS.Space {
     /// Access CSS-specific functionality for this path.
-    public var css: CSSContext { CSSContext(self) }
+    public var css: Context { Context(self) }
 
     /// Context wrapper providing CSS value conversion.
-    public struct CSSContext {
+    public struct Context {
         let path: Geometry<Double, W3C_CSS.Space>.Path
 
         init(_ path: Geometry<Double, W3C_CSS.Space>.Path) {
