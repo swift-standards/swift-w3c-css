@@ -218,6 +218,7 @@ let package = Package(
         .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.2"),
         .package(url: "https://github.com/swift-standards/swift-standards", from: "0.16.1"),
         .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.3.3"),
+        .package(url: "https://github.com/swift-standards/swift-iec-61966", from: "0.1.3"),
         .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.5"),
         .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.5.3"),
     ],
@@ -243,6 +244,7 @@ let package = Package(
             dependencies: [
                 .w3cCSSShared,
                 .product(name: "IEEE 754", package: "swift-ieee-754"),
+                .product(name: "IEC 61966", package: "swift-iec-61966"),
                 .product(name: "RFC 4648", package: "swift-rfc-4648")
             ]
         ),
