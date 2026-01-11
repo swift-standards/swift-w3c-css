@@ -5,7 +5,7 @@
 //  CSS coordinate space marker for typed geometry operations.
 //
 
-public import Geometry
+public import Geometry_Primitives
 
 public typealias GeometryTypeAlias = Geometry
 

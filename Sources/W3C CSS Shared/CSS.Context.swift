@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import Formatting
-import Geometry
+import Formatting_Primitives
+import Geometry_Primitives
 
 /// Helper for formatting numbers in CSS output.
 private func formatNumber(_ value: Double) -> String {

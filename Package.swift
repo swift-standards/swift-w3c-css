@@ -215,12 +215,13 @@ let package = Package(
         .library(name: .w3cCSS, targets: [.w3cCSS]),
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-cssom", from: "0.1.2"),
-        .package(url: "https://github.com/swift-standards/swift-standards", from: "0.16.1"),
-        .package(url: "https://github.com/swift-standards/swift-ieee-754", from: "0.3.3"),
-        .package(url: "https://github.com/swift-standards/swift-iec-61966", from: "0.1.3"),
-        .package(url: "https://github.com/swift-standards/swift-incits-4-1986", from: "0.6.5"),
-        .package(url: "https://github.com/swift-standards/swift-rfc-4648", from: "0.5.3"),
+        .package(path: "../swift-cssom"),
+        .package(path: "../../swift-primitives/swift-formatting-primitives"),
+        .package(path: "../../swift-primitives/swift-geometry-primitives"),
+        .package(path: "../swift-ieee-754"),
+        .package(path: "../swift-iec-61966"),
+        .package(path: "../swift-incits-4-1986"),
+        .package(path: "../swift-rfc-4648"),
     ],
     targets: [
         // MARK: - Core Modules
@@ -230,8 +231,8 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
                 .product(name: "INCITS 4 1986", package: "swift-incits-4-1986"),
-                .product(name: "Formatting", package: "swift-standards"),
-                .product(name: "Geometry", package: "swift-standards")
+                .product(name: "Formatting Primitives", package: "swift-formatting-primitives"),
+                .product(name: "Geometry Primitives", package: "swift-geometry-primitives")
             ]
         ),
         .testTarget(

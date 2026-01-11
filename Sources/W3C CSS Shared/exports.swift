@@ -5,4 +5,4 @@
 //  Created by Coen ten Thije Boonkkamp on 23/11/2025.
 //
 
-@_exported import Formatting
+@_exported public import Formatting_Primitives
