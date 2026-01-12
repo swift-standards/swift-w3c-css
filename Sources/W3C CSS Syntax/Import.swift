@@ -1,4 +1,4 @@
-import INCITS_4_1986
+import ASCII
 import W3C_CSS_Shared
 
 /// Represents a CSS @import at-rule.

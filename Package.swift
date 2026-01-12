@@ -220,7 +220,7 @@ let package = Package(
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
         .package(path: "../swift-ieee-754"),
         .package(path: "../swift-iec-61966"),
-        .package(path: "../swift-incits-4-1986"),
+        .package(path: "../../swift-foundations/swift-ascii"),
         .package(path: "../swift-rfc-4648"),
     ],
     targets: [
@@ -230,7 +230,7 @@ let package = Package(
             name: .w3cCSSShared,
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-cssom"),
-                .product(name: "INCITS 4 1986", package: "swift-incits-4-1986"),
+                .product(name: "ASCII", package: "swift-ascii"),
                 .product(name: "Formatting Primitives", package: "swift-formatting-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives")
             ]
