@@ -234,7 +234,7 @@ let package = Package(
                 .product(name: "Formatting Primitives", package: "swift-formatting-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives")
     ]
-        )
+        ),
 
         .target(
             name: "W3C CSS Values",
@@ -244,203 +244,203 @@ let package = Package(
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
                 .product(name: "RFC 4648", package: "swift-rfc-4648")
     ]
-        )
+        ),
 
         .target(
             name: "W3C CSS Color",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSSyntax]
-        )
+        ),
 
         .target(
             name: "W3C CSS Syntax",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         .target(
             name: "W3C CSS Cascade",
             dependencies: [.w3cCSSShared, .w3cCSSSyntax, .w3cCSSSelectors]
-        )
+        ),
 
         .target(
             name: "W3C CSS Selectors",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         .target(
             name: "W3C CSS Variables",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         // MARK: - Layout Modules
 
         .target(
             name: "W3C CSS Display",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         .target(
             name: "W3C CSS Flexbox",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSAlignment]
-        )
+        ),
 
         .target(
             name: "W3C CSS Grid",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         .target(
             name: "W3C CSS Positioning",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSSyntax]
-        )
+        ),
 
         .target(
             name: "W3C CSS Multicolumn",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor, .w3cCSSBackgrounds]
-        )
+        ),
 
         .target(
             name: "W3C CSS BoxModel",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         // MARK: - Typography Modules
 
         .target(
             name: "W3C CSS Text",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor]
-        )
+        ),
 
         .target(
             name: "W3C CSS Fonts",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSSyntax, .w3cCSSText]
-        )
+        ),
 
         .target(
             name: "W3C CSS TextDecoration",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor]
-        )
+        ),
 
         .target(
             name: "W3C CSS WritingModes",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         // MARK: - Visual Effects Modules
 
         .target(
             name: "W3C CSS Backgrounds",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor, .w3cCSSImages]
-        )
+        ),
 
         .target(
             name: "W3C CSS Images",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor]
-        )
+        ),
 
         .target(
             name: "W3C CSS Transforms",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         .target(
             name: "W3C CSS Filters",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor]
-        )
+        ),
 
         .target(
             name: "W3C CSS Masking",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSImages, .w3cCSSPositioning]
-        )
+        ),
 
         .target(
             name: "W3C CSS Compositing",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         // MARK: - Animation Modules
 
         .target(
             name: "W3C CSS Animations",
             dependencies: [.w3cCSSShared, .w3cCSSEasing, .w3cCSSMasking, .w3cCSSPositioning]
-        )
+        ),
 
         .target(
             name: "W3C CSS Transitions",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSEasing, .w3cCSSColor, .w3cCSSSyntax]
-        )
+        ),
 
         .target(
             name: "W3C CSS Easing",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         // MARK: - Conditional & Media Modules
 
         .target(
             name: "W3C CSS Conditional",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         .target(
             name: "W3C CSS MediaQueries",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSSyntax]
-        )
+        ),
 
         // MARK: - User Interface Modules
 
         .target(
             name: "W3C CSS UI",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor, .w3cCSSBackgrounds]
-        )
+        ),
 
         .target(
             name: "W3C CSS PseudoElements",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         .target(
             name: "W3C CSS PseudoClasses",
             dependencies: [.w3cCSSShared]
-        )
+        ),
 
         // MARK: - Advanced Feature Modules
 
         .target(
             name: "W3C CSS Containment",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSLists]
-        )
+        ),
 
         .target(
             name: "W3C CSS Scroll",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSColor]
-        )
+        ),
 
         .target(
             name: "W3C CSS Logical",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         .target(
             name: "W3C CSS Alignment",
             dependencies: [.w3cCSSShared, .w3cCSSValues]
-        )
+        ),
 
         // MARK: - Specialized Modules
 
         .target(
             name: "W3C CSS Lists",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSCounterStyles, .w3cCSSImages]
-        )
+        ),
 
         .target(
             name: "W3C CSS CounterStyles",
             dependencies: [.w3cCSSShared, .w3cCSSSyntax]
-        )
+        ),
 
         .target(
             name: "W3C CSS Paged",
             dependencies: [.w3cCSSShared, .w3cCSSValues, .w3cCSSSyntax]
-        )
+        ),
 
         // MARK: - Umbrella Modules
 
