@@ -108,7 +108,7 @@ extension ImageResolution {
     /// - Parameter value: The resolution value in dpi (must be non-negative)
     /// - Returns: An image resolution with the specified dpi value
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public static func dpi(_ value: Double) throws -> ImageResolution {
+    public static func dpi(_ value: Double) throws(Resolution.ResolutionError) -> ImageResolution {
         try .resolution(.dpi(value))
     }
 }

@@ -40,13 +40,13 @@ public enum AspectRatio: Property {
 
     /// Convenience initializer for a specific width-to-height ratio
     /// - Throws: `RatioError.invalidValue` if width or height is negative
-    public static func ratio(_ width: Double, _ height: Double) throws -> AspectRatio {
+    public static func ratio(_ width: Double, _ height: Double) throws(Ratio.RatioError) -> AspectRatio {
         return try .ratio(Ratio(width, height))
     }
 
     /// Convenience initializer for a specific width-to-height ratio with integer values
     /// - Throws: `RatioError.invalidValue` if width or height is negative
-    public static func ratio(_ width: Int, _ height: Int) throws -> AspectRatio {
+    public static func ratio(_ width: Int, _ height: Int) throws(Ratio.RatioError) -> AspectRatio {
         return try .ratio(Ratio(width, height))
     }
 

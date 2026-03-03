@@ -34,7 +34,7 @@ public struct Ratio: Sendable, Hashable, Comparable {
     ///   - width: The width component (must be positive)
     ///   - height: The height component (must be positive)
     /// - Throws: `RatioError.invalidValue` if width or height is negative
-    public init(_ width: Double, _ height: Double) throws {
+    public init(_ width: Double, _ height: Double) throws(RatioError) {
         guard width >= 0 else {
             throw RatioError.invalidValue("Width component of ratio must be positive, got \(width)")
         }
@@ -52,21 +52,21 @@ public struct Ratio: Sendable, Hashable, Comparable {
     ///   - width: The width component (must be positive)
     ///   - height: The height component (must be positive)
     /// - Throws: `RatioError.invalidValue` if width or height is negative
-    public init(_ width: Int, _ height: Int) throws {
+    public init(_ width: Int, _ height: Int) throws(RatioError) {
         try self.init(Double(width), Double(height))
     }
 
     /// Creates a square ratio (width/height = value/1)
     /// - Parameter value: The ratio value (must be positive)
     /// - Throws: `RatioError.invalidValue` if value is negative
-    public init(_ value: Double) throws {
+    public init(_ value: Double) throws(RatioError) {
         try self.init(value, 1)
     }
 
     /// Creates a square ratio (width/height = value/1) from an integer
     /// - Parameter value: The ratio value (must be positive)
     /// - Throws: `RatioError.invalidValue` if value is negative
-    public init(_ value: Int) throws {
+    public init(_ value: Int) throws(RatioError) {
         try self.init(Double(value))
     }
 

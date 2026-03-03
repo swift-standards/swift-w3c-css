@@ -46,7 +46,7 @@ public struct Resolution: Sendable, Hashable {
     ///   - value: The numeric value (must be non-negative)
     ///   - unit: The resolution unit
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public init(_ value: Double, unit: Unit) throws {
+    public init(_ value: Double, unit: Unit) throws(ResolutionError) {
         guard value >= 0 else {
             throw ResolutionError.invalidValue(
                 "Resolution value must be non-negative, got \(value)"
@@ -60,7 +60,7 @@ public struct Resolution: Sendable, Hashable {
     /// - Parameter value: The dpi value (must be non-negative)
     /// - Returns: A resolution value in dpi
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public static func dpi(_ value: Double) throws -> Resolution {
+    public static func dpi(_ value: Double) throws(ResolutionError) -> Resolution {
         return try Resolution(value, unit: .dpi)
     }
 
@@ -68,7 +68,7 @@ public struct Resolution: Sendable, Hashable {
     /// - Parameter value: The dpcm value (must be non-negative)
     /// - Returns: A resolution value in dpcm
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public static func dpcm(_ value: Double) throws -> Resolution {
+    public static func dpcm(_ value: Double) throws(ResolutionError) -> Resolution {
         return try Resolution(value, unit: .dpcm)
     }
 
@@ -76,7 +76,7 @@ public struct Resolution: Sendable, Hashable {
     /// - Parameter value: The dppx value (must be non-negative)
     /// - Returns: A resolution value in dppx
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public static func dppx(_ value: Double) throws -> Resolution {
+    public static func dppx(_ value: Double) throws(ResolutionError) -> Resolution {
         return try Resolution(value, unit: .dppx)
     }
 
@@ -84,7 +84,7 @@ public struct Resolution: Sendable, Hashable {
     /// - Parameter value: The x value (must be non-negative)
     /// - Returns: A resolution value in x units
     /// - Throws: `ResolutionError.invalidValue` if the value is negative
-    public static func x(_ value: Double) throws -> Resolution {
+    public static func x(_ value: Double) throws(ResolutionError) -> Resolution {
         return try Resolution(value, unit: .x)
     }
 
