@@ -1,3 +1,5 @@
+import Formatting_Primitives
+
 /// Represents a CSS time value.
 ///
 /// The `Time` type represents a time value expressed in seconds or milliseconds. It is used

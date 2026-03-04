@@ -1,3 +1,5 @@
+import Formatting_Primitives
+
 /// Represents a CSS ratio value.
 ///
 /// The `Ratio` type represents a proportional relationship between two values in CSS, most commonly

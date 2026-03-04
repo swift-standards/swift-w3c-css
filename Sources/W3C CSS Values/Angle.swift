@@ -3,6 +3,8 @@
 //  swift-html
 //
 //  Created by Coen ten Thije Boonkkamp on 29/08/2024.
+
+import Formatting_Primitives
 //
 
 /// Represents CSS angle values used for rotations, gradients, and transforms.

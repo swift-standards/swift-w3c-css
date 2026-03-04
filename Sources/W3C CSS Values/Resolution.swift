@@ -1,3 +1,5 @@
+import Formatting_Primitives
+
 /// Represents a CSS resolution value.
 ///
 /// The `Resolution` type denotes the pixel density of an output device. Resolution values

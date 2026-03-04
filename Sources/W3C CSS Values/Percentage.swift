@@ -1,3 +1,5 @@
+import Formatting_Primitives
+
 /// Represents a CSS percentage value.
 ///
 /// The `Percentage` type represents a percentage value in CSS, which is often used to
