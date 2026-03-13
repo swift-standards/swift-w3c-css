@@ -220,10 +220,10 @@ let package = Package(
         .package(path: "../swift-cssom"),
         .package(path: "../../swift-primitives/swift-formatting-primitives"),
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
-        .package(path: "../swift-ieee-754"),
-        .package(path: "../swift-iec-61966"),
+        .package(path: "../../../swift-ieee/swift-ieee-754"),
+        .package(path: "../../../swift-iec/swift-iec-61966"),
         .package(path: "../../swift-foundations/swift-ascii"),
-        .package(path: "../swift-rfc-4648")
+        .package(path: "../../../swift-ietf/swift-rfc-4648")
     ],
     targets: [
         // MARK: - Core Modules
