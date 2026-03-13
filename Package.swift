@@ -217,13 +217,13 @@ let package = Package(
         .library(name: "W3C CSS", targets: ["W3C CSS"])
     ],
     dependencies: [
-        .package(path: "../swift-cssom"),
+        .package(path: "../swift-w3c-cssom"),
         .package(path: "../../swift-primitives/swift-formatting-primitives"),
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
-        .package(path: "../../../swift-ieee/swift-ieee-754"),
-        .package(path: "../../../swift-iec/swift-iec-61966"),
+        .package(path: "../../swift-ieee/swift-ieee-754"),
+        .package(path: "../../swift-iec/swift-iec-61966"),
         .package(path: "../../swift-foundations/swift-ascii"),
-        .package(path: "../../../swift-ietf/swift-rfc-4648")
+        .package(path: "../../swift-ietf/swift-rfc-4648")
     ],
     targets: [
         // MARK: - Core Modules
@@ -231,7 +231,7 @@ let package = Package(
         .target(
             name: "W3C CSS Shared",
             dependencies: [
-                .product(name: "W3C CSSOM", package: "swift-cssom"),
+                .product(name: "W3C CSSOM", package: "swift-w3c-cssom"),
                 .product(name: "ASCII", package: "swift-ascii"),
                 .product(name: "Formatting Primitives", package: "swift-formatting-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives")

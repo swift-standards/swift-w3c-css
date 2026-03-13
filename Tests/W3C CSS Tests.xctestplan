@@ -70,7 +70,7 @@
     },
     {
       "target" : {
-        "containerPath" : "container:..\/swift-cssom",
+        "containerPath" : "container:..\/swift-w3c-cssom",
         "identifier" : "W3C CSSOM Tests",
         "name" : "W3C CSSOM Tests"
       }
