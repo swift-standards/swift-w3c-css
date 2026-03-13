@@ -63,3 +63,5 @@ public enum Scale: Property, ExpressibleByIntegerLiteral, ExpressibleByFloatLite
         }
     }
 }
+
+extension Scale: GlobalConvertible {}
