@@ -92,12 +92,12 @@ extension W3C_CSS {
 
 extension W3C_CSS {
     /// An affine transformation matrix in CSS coordinate space.
-    public typealias AffineTransform = W3C_CSS.Geometry.AffineTransform
+    public typealias AffineTransform = W3C_CSS.Geometry.Transform
 }
 
 // MARK: - Edge Insets
 
 extension W3C_CSS {
     /// Edge insets (padding/margin) in CSS coordinate space.
-    public typealias EdgeInsets = W3C_CSS.Geometry.EdgeInsets
+    public typealias EdgeInsets = W3C_CSS.Geometry.Insets
 }
