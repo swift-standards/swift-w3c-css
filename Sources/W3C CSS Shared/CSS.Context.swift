@@ -5,7 +5,6 @@
 //  Context wrappers that convert geometry types to CSS value strings.
 //
 
-public import Foundation
 public import Formatting_Primitives
 public import Geometry_Primitives
 

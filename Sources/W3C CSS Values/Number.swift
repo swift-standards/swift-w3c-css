@@ -1,4 +1,4 @@
-public import Foundation
+import Formatting_Primitives
 public import IEEE_754
 
 /// Represents a CSS number value.
@@ -107,12 +107,12 @@ extension Number {
 
     /// Rounds the number down to the nearest integer
     public var floor: Number {
-        return Number(Foundation.floor(value))
+        return Number(value.rounded(.down))
     }
 
     /// Rounds the number up to the nearest integer
     public var ceil: Number {
-        return Number(Foundation.ceil(value))
+        return Number(value.rounded(.up))
     }
 }
 
