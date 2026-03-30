@@ -4,6 +4,7 @@
 // Tests for CSS AnimationRange type
 
 import Testing
+import W3C_CSS_Shared
 import W3C_CSS_Values
 
 @testable import W3C_CSS_Animations

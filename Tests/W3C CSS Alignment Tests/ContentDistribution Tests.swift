@@ -4,6 +4,7 @@
 // Tests for CSS ContentDistribution type
 
 import Testing
+import W3C_CSS_Shared
 
 @testable import W3C_CSS_Alignment
 

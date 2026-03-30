@@ -4,6 +4,7 @@
 // Tests for CSS align-content property
 
 import Testing
+import W3C_CSS_Shared
 
 @testable import W3C_CSS_Alignment
 

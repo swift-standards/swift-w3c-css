@@ -4,6 +4,7 @@
 // Tests for CSS alignment-baseline property
 
 import Testing
+import W3C_CSS_Shared
 
 @testable import W3C_CSS_Alignment
 

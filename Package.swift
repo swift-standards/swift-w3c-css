@@ -531,168 +531,199 @@ let package = Package(
         .testTarget(
             name: "W3C CSS Alignment Tests",
             dependencies: [
+                "W3C CSS Alignment",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Animations Tests",
             dependencies: [
+                "W3C CSS Animations",
+                "W3C CSS Values",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Backgrounds Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Backgrounds",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS BoxModel Tests",
             dependencies: [
+                "W3C CSS BoxModel",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Cascade Tests",
             dependencies: [
+                "W3C CSS Cascade",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Color Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Color",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS Compositing Tests",
             dependencies: [
+                "W3C CSS Compositing",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Conditional Tests",
             dependencies: [
+                "W3C CSS Conditional",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Containment Tests",
             dependencies: [
+                "W3C CSS Containment",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS CounterStyles Tests",
             dependencies: [
+                "W3C CSS CounterStyles",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Display Tests",
             dependencies: [
+                "W3C CSS Display",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Easing Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Easing",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS Filters Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Filters",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS Flexbox Tests",
             dependencies: [
+                "W3C CSS Flexbox",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Fonts Tests",
             dependencies: [
+                "W3C CSS Fonts",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Grid Tests",
             dependencies: [
+                "W3C CSS Grid",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Images Tests",
             dependencies: [
+                "W3C CSS Images",
+                "W3C CSS Color",
+                "W3C CSS Values",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Lists Tests",
             dependencies: [
+                "W3C CSS Lists",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Logical Tests",
             dependencies: [
+                "W3C CSS Logical",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Masking Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Masking",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS MediaQueries Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS MediaQueries",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS Multicolumn Tests",
             dependencies: [
+                "W3C CSS Multicolumn",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Paged Tests",
             dependencies: [
+                "W3C CSS Paged",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Positioning Tests",
             dependencies: [
+                "W3C CSS Positioning",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS PseudoClasses Tests",
             dependencies: [
+                "W3C CSS PseudoClasses",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS PseudoElements Tests",
             dependencies: [
+                "W3C CSS PseudoElements",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Scroll Tests",
             dependencies: [
+                "W3C CSS Scroll",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Selectors Tests",
             dependencies: [
+                "W3C CSS Selectors",
                 "W3C CSS Shared",
             ]
         ),
@@ -705,54 +736,63 @@ let package = Package(
         .testTarget(
             name: "W3C CSS Syntax Tests",
             dependencies: [
+                "W3C CSS Syntax",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Text Tests",
             dependencies: [
+                "W3C CSS Text",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS TextDecoration Tests",
             dependencies: [
+                "W3C CSS TextDecoration",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Transforms Tests",
             dependencies: [
-                "W3C CSS Shared",
+                "W3C CSS Transforms",
+                "W3C CSS Values",
             ]
         ),
         .testTarget(
             name: "W3C CSS Transitions Tests",
             dependencies: [
+                "W3C CSS Transitions",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS UI Tests",
             dependencies: [
+                "W3C CSS UI",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Values Tests",
             dependencies: [
+                "W3C CSS Values",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS Variables Tests",
             dependencies: [
+                "W3C CSS Variables",
                 "W3C CSS Shared",
             ]
         ),
         .testTarget(
             name: "W3C CSS WritingModes Tests",
             dependencies: [
+                "W3C CSS WritingModes",
                 "W3C CSS Shared",
             ]
         ),
