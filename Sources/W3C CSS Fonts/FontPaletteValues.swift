@@ -1,4 +1,4 @@
-public import ASCII
+public import ASCII_Primitives
 public import W3C_CSS_Shared
 public import W3C_CSS_Syntax
 public import W3C_CSS_Values
@@ -54,11 +54,12 @@ public struct FontPaletteValues: AtRule {
             cleaned = String(cleaned.dropFirst(20))
         }
 
-        // Trim whitespace using INCITS 4-1986
-        cleaned = cleaned.trimming(.ascii.whitespaces)
+        // Trim ASCII whitespace
+        while cleaned.first?.isWhitespace == true { cleaned.removeFirst() }
+        while cleaned.last?.isWhitespace == true { cleaned.removeLast() }
 
         // Extract identifier until whitespace or '{'
-        if let endIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace || $0 == "{" }) {
+        if let endIndex = cleaned.firstIndex(where: { $0.isWhitespace || $0 == "{" }) {
             self.identifier = String(cleaned[..<endIndex])
         } else {
             self.identifier = cleaned

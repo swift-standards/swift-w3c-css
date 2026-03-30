@@ -1,4 +1,4 @@
-public import ASCII
+public import ASCII_Primitives
 public import W3C_CSS_Shared
 
 /// Represents a CSS @import at-rule.
@@ -54,11 +54,12 @@ public struct Import: AtRule {
             cleaned = String(cleaned.dropLast())
         }
 
-        // Trim whitespace using INCITS 4-1986
-        cleaned = cleaned.trimming(.ascii.whitespaces)
+        // Trim ASCII whitespace
+        while cleaned.first?.isWhitespace == true { cleaned.removeFirst() }
+        while cleaned.last?.isWhitespace == true { cleaned.removeLast() }
 
         // Extract first token (the URL) before any conditions
-        if let spaceIndex = cleaned.firstIndex(where: { $0.ascii.isWhitespace }) {
+        if let spaceIndex = cleaned.firstIndex(where: { $0.isWhitespace }) {
             self.urlString = String(cleaned[..<spaceIndex])
         } else {
             self.urlString = cleaned
