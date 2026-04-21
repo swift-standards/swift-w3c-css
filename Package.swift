@@ -218,7 +218,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../swift-w3c-cssom"),
-        .package(path: "../../swift-primitives/swift-formatting-primitives"),
+        .package(path: "../../swift-primitives/swift-format-primitives"),
         .package(path: "../../swift-primitives/swift-geometry-primitives"),
         .package(path: "../../swift-ieee/swift-ieee-754"),
         .package(path: "../../swift-iec/swift-iec-61966"),
@@ -233,7 +233,7 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSSOM", package: "swift-w3c-cssom"),
                 .product(name: "ASCII Primitives", package: "swift-ascii-primitives"),
-                .product(name: "Formatting Primitives", package: "swift-formatting-primitives"),
+                .product(name: "Format Primitives", package: "swift-format-primitives"),
                 .product(name: "Geometry Primitives", package: "swift-geometry-primitives")
     ]
         ),

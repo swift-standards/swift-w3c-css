@@ -1,4 +1,4 @@
-import Formatting_Primitives
+import Format_Primitives
 
 /// Represents a CSS hue angle value for color functions.
 ///

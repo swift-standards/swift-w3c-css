@@ -5,7 +5,7 @@
 //  Context wrappers that convert geometry types to CSS value strings.
 //
 
-public import Formatting_Primitives
+public import Format_Primitives
 public import Geometry_Primitives
 
 /// Helper for formatting numbers in CSS output.
